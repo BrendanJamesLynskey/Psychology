@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iain McGilchrist — The Divided Brain & the Making of the Western World</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal-viewport { background: var(--bg-primary); }
+
+.reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-purple); }
+.reveal .progress span { background: var(--accent-purple); }
+
+/* ───── Utility Classes ───── */
+
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.42em !important;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+}
+
+.quote-box {
+    border-left: 3px solid var(--accent-purple);
+    padding: 0.45em 1em;
+    margin: 0.8em auto;
+    max-width: 80%;
+    text-align: left;
+    background: rgba(155, 114, 207, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.quote-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.44em !important;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.quote-box .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.42em !important;
+    color: var(--text-muted);
+    margin-top: 0.4em;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 0.45em;
+    margin: 0.6em auto;
+    max-width: 90%;
+}
+
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.55em 0.7em;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.card:hover { border-color: var(--accent-purple); }
+
+.card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.60em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+}
+
+.card p {
+    font-size: 0.44em !important;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.card .icon {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8em;
+    text-align: left;
+    margin: 0.25em 0;
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54em;
+    color: var(--accent-purple);
+    min-width: 3.2em;
+    padding-top: 0.15em;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.50em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 0.8em;
+}
+
+.timeline-item .event strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.diagram-container {
+    margin: 0.6em auto;
+    max-width: 85%;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    align-items: start;
+    text-align: left;
+    max-width: 90%;
+    margin: 0.6em auto;
+}
+
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+
+.tag {
+    display: inline-block;
+    background: rgba(155, 114, 207, 0.12);
+    color: var(--accent-purple);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.42em;
+    padding: 0.15em 0.5em;
+    border-radius: 4px;
+    margin: 0.1em 0.15em;
+}
+
+.tag.amber { background: rgba(212, 160, 83, 0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78, 204, 163, 0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207, 114, 114, 0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91, 140, 212, 0.12); color: var(--accent-blue); }
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.35em;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-purple);
+    margin: 0.5em auto;
+    border-radius: 1px;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0.6em auto;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+    text-align: center;
+    min-width: 100px;
+}
+
+.process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.50em;
+    margin: 0 0 0.15em 0;
+}
+
+.process-step p {
+    font-size: 0.40em !important;
+    margin: 0;
+}
+
+.process-arrow {
+    color: var(--accent-purple);
+    font-size: 1.0em;
+}
+
+.reveal section .note-text {
+    font-size: 0.44em !important;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before {
+    content: '\203A';
+    color: var(--accent-purple);
+    font-weight: bold;
+    position: absolute;
+    left: -0.3em;
+}
+
+.mandala-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 0.6em auto;
+}
+
+.mandala-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.concept-map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0.5em auto;
+}
+
+.concept-node {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 30px;
+    padding: 0.25em 0.65em;
+    font-size: 0.44em;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.concept-node.primary {
+    border-color: var(--accent-amber);
+    background: rgba(212, 160, 83, 0.08);
+}
+
+/* Brain container for title */
+.brain-container {
+    width: 180px;
+    height: 100px;
+    margin: 0 auto 0.8em auto;
+}
+
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+
+/* ── Fullscreen Button ── */
+.fullscreen-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div class="brain-container">
+        <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left hemisphere -->
+            <path d="M125 20 C90 18, 40 30, 30 70 C22 105, 55 125, 90 125 C110 125, 122 110, 125 95" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+            <path d="M125 40 C105 38, 65 45, 55 70 C48 90, 65 108, 90 108" fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.3"/>
+            <text x="70" y="75" text-anchor="middle" fill="#5b8cd4" font-size="9" opacity="0.6">RH</text>
+            <!-- Right hemisphere -->
+            <path d="M135 20 C170 18, 220 30, 230 70 C238 105, 205 125, 170 125 C150 125, 138 110, 135 95" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.5"/>
+            <path d="M135 40 C155 38, 195 45, 205 70 C212 90, 195 108, 170 108" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+            <text x="190" y="75" text-anchor="middle" fill="#d4a053" font-size="9" opacity="0.6">LH</text>
+            <!-- Corpus callosum -->
+            <line x1="125" y1="30" x2="135" y2="30" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <line x1="125" y1="50" x2="135" y2="50" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <line x1="125" y1="70" x2="135" y2="70" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <line x1="125" y1="90" x2="135" y2="90" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <!-- Dividing line -->
+            <line x1="130" y1="15" x2="130" y2="130" stroke="#9b72cf" stroke-width="0.6" opacity="0.25" stroke-dasharray="3,3"/>
+        </svg>
+    </div>
+    <h1>Iain McGilchrist</h1>
+    <p class="subtitle">The Divided Brain &amp; the Making of the Western World</p>
+    <div class="separator"></div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.8em;">
+        Hemispheric Attention &middot; The Master &amp; His Emissary &middot; Betweenness &middot; The Matter With Things
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: BIOGRAPHY ═══════════════════ -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Who Is Iain McGilchrist?</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.8em;">
+        <div>
+            <p style="font-size: 0.42em !important; color: var(--text-primary); line-height: 1.7;">
+                Iain McGilchrist <span style="color: var(--text-muted);">(b. 1953)</span> is a Scottish psychiatrist,
+                neuroscience researcher, philosopher, and literary scholar whose work bridges the humanities and the sciences
+                in a way almost no contemporary thinker has attempted.
+            </p>
+            <p style="font-size: 0.42em !important; line-height: 1.7; margin-top: 0.5em;">
+                He read English at Oxford, where he became a Fellow of All Souls College, then retrained in medicine
+                and psychiatry at University College London. He conducted neuroimaging research at Johns Hopkins University
+                and practised psychiatry at the Maudsley Hospital before returning to philosophy full-time.
+                He now lives on the Isle of Skye.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-color: var(--accent-purple);">
+                <h4 class="accent-purple">Central Thesis</h4>
+                <p>The two brain hemispheres attend to the world in fundamentally different ways, and the left hemisphere's
+                mode of attention has come to dominate Western civilization &mdash; with profoundly damaging consequences.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em;">
+                <h4 class="accent-amber">Not Logic vs. Emotion</h4>
+                <p>McGilchrist insists this is <em>not</em> about the old "left-brain = logic, right-brain = creativity"
+                clich&eacute;. It is about two fundamentally different <strong>modes of attention</strong> and engagement with the world.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Life &amp; Intellectual Journey</h2>
+    <div class="separator"></div>
+    <div style="max-width: 80%; margin: 0.6em auto;">
+        <div class="timeline-item">
+            <div class="year">1953</div>
+            <div class="event"><strong>Born in Scotland</strong>Childhood marked by wide-ranging curiosity across literature, philosophy, and the sciences</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1975</div>
+            <div class="event"><strong>Oxford English degree</strong>Deep immersion in Romantic and Renaissance literature; encounters with Heidegger, phenomenology</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1982</div>
+            <div class="event"><strong>All Souls Fellow, Oxford</strong>One of the most prestigious academic fellowships in the world; wrote on English literature</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1980s</div>
+            <div class="event"><strong>Studied medicine at UCL</strong>Retrained in medicine and then psychiatry, driven by questions about the brain and consciousness</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1990s</div>
+            <div class="event"><strong>Psychiatry &amp; neuroimaging research</strong>Work at Johns Hopkins and the Maudsley Hospital; studied split-brain patients and hemispheric specialisation</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">2009</div>
+            <div class="event"><strong><em>The Master and His Emissary</em></strong>Landmark synthesis of neuroscience, philosophy, and cultural history; global impact</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">2010</div>
+            <div class="event"><strong>TED &amp; RSA Animate talks</strong>RSA Animate video on the divided brain viewed millions of times worldwide</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">2021</div>
+            <div class="event"><strong><em>The Matter With Things</em> (2 vols.)</strong>Magnum opus: 1,500+ pages on epistemology, ontology, and the nature of reality</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">Now</div>
+            <div class="event"><strong>Ongoing lectures &amp; dialogues</strong>Lives on the Isle of Skye; continues writing, speaking, and engaging with scientists and philosophers</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: TWO HEMISPHERES, TWO WORLDS ═══════════════════ -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Two Hemispheres, Two Worlds</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Right Hemisphere (left side of diagram) -->
+            <rect x="20" y="20" width="340" height="300" rx="16" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1.2" opacity="0.7"/>
+            <text x="190" y="55" text-anchor="middle" fill="#5b8cd4" font-size="18" font-weight="700" font-family="Playfair Display, serif">Right Hemisphere</text>
+            <text x="190" y="75" text-anchor="middle" fill="#5b8cd4" font-size="11" opacity="0.7">The Master</text>
+            <!-- RH attributes -->
+            <circle cx="60" cy="110" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="114" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Broad, sustained attention</text>
+            <circle cx="60" cy="140" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="144" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Context &amp; the whole</text>
+            <circle cx="60" cy="170" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="174" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">The living, embodied, unique</text>
+            <circle cx="60" cy="200" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="204" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Implicit meaning &amp; metaphor</text>
+            <circle cx="60" cy="230" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="234" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Empathy &amp; betweenness</text>
+            <circle cx="60" cy="260" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="264" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">The new, the Other, the unknown</text>
+            <circle cx="60" cy="290" r="6" fill="#5b8cd4" opacity="0.3"/>
+            <text x="75" y="294" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Music, poetry, the sacred</text>
+
+            <!-- Left Hemisphere (right side of diagram) -->
+            <rect x="440" y="20" width="340" height="300" rx="16" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1.2" opacity="0.7"/>
+            <text x="610" y="55" text-anchor="middle" fill="#d4a053" font-size="18" font-weight="700" font-family="Playfair Display, serif">Left Hemisphere</text>
+            <text x="610" y="75" text-anchor="middle" fill="#d4a053" font-size="11" opacity="0.7">The Emissary</text>
+            <!-- LH attributes -->
+            <circle cx="480" cy="110" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="114" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Narrow, focused attention</text>
+            <circle cx="480" cy="140" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="144" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Parts, categories, abstractions</text>
+            <circle cx="480" cy="170" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="174" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">The static, mechanical, general</text>
+            <circle cx="480" cy="200" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="204" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Explicit, literal language</text>
+            <circle cx="480" cy="230" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="234" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Manipulation &amp; control</text>
+            <circle cx="480" cy="260" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="264" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">The known, the familiar, the fixed</text>
+            <circle cx="480" cy="290" r="6" fill="#d4a053" opacity="0.3"/>
+            <text x="495" y="294" fill="#9a9a9a" font-size="12" font-family="DM Sans, sans-serif">Bureaucracy, mechanism, certainty</text>
+
+            <!-- Connecting arrows (corpus callosum) -->
+            <line x1="370" y1="120" x2="430" y2="120" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+            <line x1="370" y1="170" x2="430" y2="170" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+            <line x1="370" y1="220" x2="430" y2="220" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+            <line x1="370" y1="270" x2="430" y2="270" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+            <text x="400" y="165" text-anchor="middle" fill="#9b72cf" font-size="9" opacity="0.5" transform="rotate(-90, 400, 195)">corpus callosum</text>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">Not logic vs. emotion &mdash; two fundamentally different modes of attending to and engaging with the world.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE MASTER AND HIS EMISSARY ═══════════════════ -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Master &amp; His Emissary</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- The Master (RH) -->
+            <circle cx="160" cy="140" r="100" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1.5" opacity="0.6"/>
+            <text x="160" y="100" text-anchor="middle" fill="#5b8cd4" font-size="16" font-weight="700" font-family="Playfair Display, serif">The Master</text>
+            <text x="160" y="120" text-anchor="middle" fill="#5b8cd4" font-size="10" opacity="0.7">(Right Hemisphere)</text>
+            <text x="160" y="148" text-anchor="middle" fill="#9a9a9a" font-size="10">Broad, contextual</text>
+            <text x="160" y="164" text-anchor="middle" fill="#9a9a9a" font-size="10">Embodied, relational</text>
+            <text x="160" y="180" text-anchor="middle" fill="#9a9a9a" font-size="10">Sees the whole</text>
+
+            <!-- Arrow: Master sends Emissary -->
+            <line x1="270" y1="115" x2="490" y2="115" stroke="#4ecca3" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowGreen)"/>
+            <text x="380" y="105" text-anchor="middle" fill="#4ecca3" font-size="9" opacity="0.7">sends out to investigate</text>
+
+            <!-- Arrow: Emissary should return -->
+            <line x1="490" y1="155" x2="270" y2="155" stroke="#4ecca3" stroke-width="1.5" opacity="0.5" stroke-dasharray="5,3" marker-end="url(#arrowGreenBack)"/>
+            <text x="380" y="175" text-anchor="middle" fill="#4ecca3" font-size="9" opacity="0.7">should return findings</text>
+
+            <!-- The Emissary (LH) -->
+            <circle cx="600" cy="140" r="100" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1.5" opacity="0.6"/>
+            <text x="600" y="100" text-anchor="middle" fill="#d4a053" font-size="16" font-weight="700" font-family="Playfair Display, serif">The Emissary</text>
+            <text x="600" y="120" text-anchor="middle" fill="#d4a053" font-size="10" opacity="0.7">(Left Hemisphere)</text>
+            <text x="600" y="148" text-anchor="middle" fill="#9a9a9a" font-size="10">Narrow, focused</text>
+            <text x="600" y="164" text-anchor="middle" fill="#9a9a9a" font-size="10">Abstracting, manipulative</text>
+            <text x="600" y="180" text-anchor="middle" fill="#9a9a9a" font-size="10">Grasps the parts</text>
+
+            <!-- Usurpation warning -->
+            <text x="600" y="220" text-anchor="middle" fill="#cf7272" font-size="10" font-weight="700" opacity="0.8">USURPS THE MASTER</text>
+            <text x="600" y="236" text-anchor="middle" fill="#cf7272" font-size="9" opacity="0.5">in Western civilisation</text>
+
+            <!-- Arrow definitions -->
+            <defs>
+                <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L8,3 L0,6" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                </marker>
+                <marker id="arrowGreenBack" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L8,3 L0,6" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <div class="quote-box">
+        <p>"The Master needs the Emissary to do certain work on his behalf; but the Emissary, being by nature self-serving, comes to believe he is the Master."</p>
+        <span class="attribution">&mdash; Iain McGilchrist, parable of the Master and his Emissary</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: ATTENTION AS ONTOLOGICALLY CREATIVE ═══════════════════ -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Attention as Ontologically Creative</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.6em;">
+        <div>
+            <p style="font-size: 0.42em !important; color: var(--text-primary); line-height: 1.7;">
+                For McGilchrist, <strong class="accent-purple">attention is not passive reception</strong> but active engagement
+                that partly <em>creates</em> the world we find. How we attend to the world shapes what the world becomes for us.
+            </p>
+            <p style="font-size: 0.42em !important; line-height: 1.7; margin-top: 0.5em;">
+                The left hemisphere's narrow, grasping attention literally brings into being a world of isolated, static,
+                decontextualised fragments. The right hemisphere's broad, receptive attention discloses a world of
+                flowing, interconnected, living presences.
+            </p>
+            <p style="font-size: 0.42em !important; line-height: 1.7; margin-top: 0.5em;">
+                This is not mere subjectivism &mdash; it is a claim about the <strong>participatory nature of reality</strong>.
+                We do not just observe the world; we are in a relationship with it, and that relationship matters ontologically.
+            </p>
+        </div>
+        <div>
+            <div class="diagram-container" style="margin: 0;">
+                <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Observer -->
+                    <circle cx="150" cy="50" r="35" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.2" opacity="0.6"/>
+                    <text x="150" y="48" text-anchor="middle" fill="#9b72cf" font-size="11" font-weight="600">Attention</text>
+                    <text x="150" y="62" text-anchor="middle" fill="#9b72cf" font-size="9" opacity="0.7">(mode matters)</text>
+
+                    <!-- Two beams of attention -->
+                    <!-- RH beam (broad, open) -->
+                    <path d="M125 80 L30 200 L120 220" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+                    <text x="65" y="250" text-anchor="middle" fill="#5b8cd4" font-size="9">Living world</text>
+                    <text x="65" y="263" text-anchor="middle" fill="#5b8cd4" font-size="8" opacity="0.6">flowing, relational</text>
+
+                    <!-- LH beam (narrow, focused) -->
+                    <path d="M175 80 L230 200 L180 220" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+                    <text x="215" y="250" text-anchor="middle" fill="#d4a053" font-size="9">Fragmented world</text>
+                    <text x="215" y="263" text-anchor="middle" fill="#d4a053" font-size="8" opacity="0.6">static, categorical</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: BETWEENNESS ═══════════════════ -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Betweenness</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+            <!-- Subjective pole -->
+            <circle cx="120" cy="125" r="65" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+            <text x="120" y="115" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="600">Subject</text>
+            <text x="120" y="135" text-anchor="middle" fill="#5b8cd4" font-size="10" opacity="0.6">(the knower)</text>
+
+            <!-- Objective pole -->
+            <circle cx="580" cy="125" r="65" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+            <text x="580" y="115" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="600">Object</text>
+            <text x="580" y="135" text-anchor="middle" fill="#d4a053" font-size="10" opacity="0.6">(the known)</text>
+
+            <!-- Between zone -->
+            <ellipse cx="350" cy="125" rx="120" ry="75" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <text x="350" y="105" text-anchor="middle" fill="#9b72cf" font-size="16" font-weight="700" font-family="Playfair Display, serif">Between</text>
+            <text x="350" y="125" text-anchor="middle" fill="#9b72cf" font-size="10" opacity="0.7">the encounter</text>
+            <text x="350" y="142" text-anchor="middle" fill="#9b72cf" font-size="10" opacity="0.7">the relationship</text>
+            <text x="350" y="159" text-anchor="middle" fill="#9b72cf" font-size="10" opacity="0.7">where reality arises</text>
+
+            <!-- Connecting lines -->
+            <line x1="190" y1="125" x2="230" y2="125" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+            <line x1="470" y1="125" x2="510" y2="125" stroke="#9b72cf" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-rose">Neither Purely Subjective</h4>
+            <p>Reality is not merely a projection of the mind. The world has genuine otherness, which we encounter and to which we must attend.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Nor Purely Objective</h4>
+            <p>Nor is reality a collection of "objective facts" independent of all observers. The knower and the known are always in relationship.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE RETURN TO THE WHOLE ═══════════════════ -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Return to the Whole</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Step 1: RH initial apprehension -->
+            <rect x="20" y="40" width="180" height="160" rx="12" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1.2" opacity="0.6"/>
+            <text x="110" y="75" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="700">1. RH Apprehends</text>
+            <text x="110" y="100" text-anchor="middle" fill="#9a9a9a" font-size="10">The whole, living</text>
+            <text x="110" y="116" text-anchor="middle" fill="#9a9a9a" font-size="10">context is grasped</text>
+            <text x="110" y="132" text-anchor="middle" fill="#9a9a9a" font-size="10">in broad attention</text>
+            <text x="110" y="165" text-anchor="middle" fill="#5b8cd4" font-size="28" opacity="0.3">&#9711;</text>
+
+            <!-- Arrow 1 -->
+            <line x1="210" y1="120" x2="280" y2="120" stroke="#4ecca3" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowFlow)"/>
+
+            <!-- Step 2: LH analyses -->
+            <rect x="290" y="40" width="180" height="160" rx="12" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <text x="380" y="75" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="700">2. LH Analyses</text>
+            <text x="380" y="100" text-anchor="middle" fill="#9a9a9a" font-size="10">Unpacks, categorises,</text>
+            <text x="380" y="116" text-anchor="middle" fill="#9a9a9a" font-size="10">makes explicit,</text>
+            <text x="380" y="132" text-anchor="middle" fill="#9a9a9a" font-size="10">fixes in language</text>
+            <text x="380" y="165" text-anchor="middle" fill="#d4a053" font-size="22" opacity="0.4">&#9638;&#9638;&#9638;</text>
+
+            <!-- Arrow 2 -->
+            <line x1="480" y1="120" x2="550" y2="120" stroke="#4ecca3" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowFlow)"/>
+
+            <!-- Step 3: Return to RH -->
+            <rect x="560" y="40" width="220" height="160" rx="12" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <text x="670" y="75" text-anchor="middle" fill="#9b72cf" font-size="13" font-weight="700">3. Return to RH</text>
+            <text x="670" y="100" text-anchor="middle" fill="#9a9a9a" font-size="10">Reintegrated into the</text>
+            <text x="670" y="116" text-anchor="middle" fill="#9a9a9a" font-size="10">living whole, enriched</text>
+            <text x="670" y="132" text-anchor="middle" fill="#9a9a9a" font-size="10">by analysis but not</text>
+            <text x="670" y="148" text-anchor="middle" fill="#9a9a9a" font-size="10">reduced to it</text>
+            <text x="670" y="180" text-anchor="middle" fill="#9b72cf" font-size="28" opacity="0.3">&#9711;</text>
+
+            <defs>
+                <marker id="arrowFlow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L8,3 L0,6" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">Without this return, we are left with the LH's dessicated, fragmented worldview &mdash; the crisis of modernity.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: FLOW AND FIXITY ═══════════════════ -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Flow &amp; Fixity</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">Flow (Right Hemisphere)</h4>
+            <p>The RH sees the living, flowing, contextual world &mdash; a world of process, change, growth, and interconnection.
+            Time is experienced as duration. Things are never fully separable from their context or from the observer.</p>
+            <ul style="margin-top: 0.4em;">
+                <li>Music as it unfolds</li>
+                <li>A face recognised in its uniqueness</li>
+                <li>The implicit, the metaphorical</li>
+                <li>The unrepeatable, the particular</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">Fixity (Left Hemisphere)</h4>
+            <p>The LH sees the static, categorical, decontextualised world &mdash; a world of fixed things, clear boundaries,
+            abstract types, and mechanical relations. Time is a sequence of frozen instants.</p>
+            <ul style="margin-top: 0.4em;">
+                <li>A musical score on paper</li>
+                <li>A face reduced to features in a database</li>
+                <li>The explicit, the literal</li>
+                <li>The repeatable, the general</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.6em;">
+        <p>"The left hemisphere's world is a hall of mirrors &mdash; it can only see what it has already put there."</p>
+        <span class="attribution">&mdash; Iain McGilchrist</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE MATTER WITH THINGS ═══════════════════ -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Matter With Things</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.6em;">
+        <div>
+            <p style="font-size: 0.42em !important; color: var(--text-primary); line-height: 1.7;">
+                McGilchrist's 2021 magnum opus, <strong><em>The Matter With Things: Our Brains, Our Delusions, and the Unmaking of the World</em></strong>,
+                expands from neuroscience into a full epistemology and ontology.
+            </p>
+            <p style="font-size: 0.42em !important; line-height: 1.7; margin-top: 0.5em;">
+                His central claim: <strong class="accent-purple">science, reason, and imagination are complementary paths to truth</strong>,
+                not in conflict. Reality is more like a <strong>living organism</strong> than a machine. The reductive, materialist
+                worldview is not wrong so much as radically incomplete &mdash; a product of left-hemisphere dominance.
+            </p>
+            <p style="font-size: 0.42em !important; line-height: 1.7; margin-top: 0.5em;">
+                The book argues for a participatory cosmos where consciousness, value, and meaning are not epiphenomena
+                but fundamental features of what is.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-color: var(--accent-green);">
+                <h4 class="accent-green">Key Arguments</h4>
+                <p><strong>Against reductionism:</strong> The whole is not merely the sum of parts; there are emergent realities at every level.</p>
+            </div>
+            <div class="card" style="margin-top: 0.4em; border-color: var(--accent-purple);">
+                <h4 class="accent-purple">Against mechanism</h4>
+                <p>The universe is not a machine. Process, flow, and relationship are primary; static entities are abstractions.</p>
+            </div>
+            <div class="card" style="margin-top: 0.4em; border-color: var(--accent-amber);">
+                <h4 class="accent-amber">For a sacred cosmos</h4>
+                <p>Value, beauty, goodness, and the sacred are real features of the world, not subjective projections.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: FOUR PATHS TO TRUTH ═══════════════════ -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Four Paths to Truth</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central truth node -->
+            <circle cx="350" cy="160" r="50" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.5" opacity="0.7"/>
+            <text x="350" y="155" text-anchor="middle" fill="#9b72cf" font-size="14" font-weight="700" font-family="Playfair Display, serif">Truth</text>
+            <text x="350" y="172" text-anchor="middle" fill="#9b72cf" font-size="9" opacity="0.6">(reality disclosed)</text>
+
+            <!-- Science -->
+            <circle cx="130" cy="65" r="45" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1.2" opacity="0.6"/>
+            <text x="130" y="60" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="600">Science</text>
+            <text x="130" y="76" text-anchor="middle" fill="#9a9a9a" font-size="9">Empirical inquiry</text>
+            <line x1="170" y1="95" x2="305" y2="135" stroke="#4ecca3" stroke-width="1" opacity="0.35"/>
+
+            <!-- Reason -->
+            <circle cx="570" cy="65" r="45" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <text x="570" y="60" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="600">Reason</text>
+            <text x="570" y="76" text-anchor="middle" fill="#9a9a9a" font-size="9">Logical analysis</text>
+            <line x1="530" y1="95" x2="395" y2="135" stroke="#d4a053" stroke-width="1" opacity="0.35"/>
+
+            <!-- Intuition -->
+            <circle cx="130" cy="255" r="45" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1.2" opacity="0.6"/>
+            <text x="130" y="250" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="600">Intuition</text>
+            <text x="130" y="266" text-anchor="middle" fill="#9a9a9a" font-size="9">Direct apprehension</text>
+            <line x1="170" y1="225" x2="305" y2="185" stroke="#5b8cd4" stroke-width="1" opacity="0.35"/>
+
+            <!-- Imagination -->
+            <circle cx="570" cy="255" r="45" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1.2" opacity="0.6"/>
+            <text x="570" y="250" text-anchor="middle" fill="#cf7272" font-size="13" font-weight="600">Imagination</text>
+            <text x="570" y="266" text-anchor="middle" fill="#9a9a9a" font-size="9">Creative vision</text>
+            <line x1="530" y1="225" x2="395" y2="185" stroke="#cf7272" stroke-width="1" opacity="0.35"/>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">All four are needed. No single path is sufficient. They are complementary epistemological channels, not rivals.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: HISTORICAL INFLUENCES ═══════════════════ -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Philosophical Influences</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.6em;">
+        <div class="card" style="border-color: var(--accent-purple);">
+            <h4 class="accent-purple">Heidegger</h4>
+            <p>Being-in-the-world; <em>Zuhandenheit</em> (ready-to-hand) vs. <em>Vorhandenheit</em> (present-at-hand) maps directly onto RH vs. LH attention. Technology as the ultimate LH project.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-green);">
+            <h4 class="accent-green">Whitehead</h4>
+            <p>Process philosophy: reality as event, not substance. The fallacy of misplaced concreteness &mdash; treating abstractions as if they were concrete realities.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">Husserl</h4>
+            <p>Phenomenology: the return to experience itself, before theoretical overlay. Intentionality of consciousness &mdash; attention always <em>directed toward</em>.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">Merleau-Ponty</h4>
+            <p>Embodiment: we know the world through the body, not despite it. Perception is not passive reception but active, bodily engagement.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-rose);">
+            <h4 class="accent-rose">Scheler</h4>
+            <p>Value realism: values are objectively real features of the world, not mere subjective projections. The heart has its own order of knowing.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">William James</h4>
+            <p>Radical empiricism: experience is primary. The stream of consciousness. Pragmatic pluralism &mdash; reality is richer than any single framework.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: NIETZSCHE & JUNG ═══════════════════ -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Deeper Roots: Nietzsche &amp; Jung</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-color: var(--accent-rose);">
+            <h4 class="accent-rose">Nietzsche: Apollonian &amp; Dionysian</h4>
+            <p>McGilchrist sees Nietzsche's Apollonian/Dionysian distinction as a precursor to his own hemispheric model.
+            The Apollonian (form, individuation, clarity) parallels LH attention; the Dionysian (flux, intoxication, merger with the whole) parallels RH attention.</p>
+            <p style="margin-top: 0.3em;">Nietzsche's critique of Socratic rationalism as life-denying resonates deeply with McGilchrist's critique of LH dominance.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">Jung: Individuation &amp; the Unconscious</h4>
+            <p>Jung's understanding of the unconscious as a source of wisdom rather than merely repressed material aligns with McGilchrist's view of the RH as the "Master."</p>
+            <p style="margin-top: 0.3em;">The process of individuation &mdash; integrating conscious and unconscious &mdash; parallels the "return to the whole" where LH analysis must be reintegrated by the RH.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"We must combine the two views: the Apollonian gift for clear structure, and the Dionysian awareness that life is a flowing river, not a collection of things."</p>
+        <span class="attribution">&mdash; Echoing Nietzsche through McGilchrist's lens</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: CRITIQUE OF MODERNITY ═══════════════════ -->
+<section>
+    <span class="section-number">13</span>
+    <h2>The Critique of Modernity</h2>
+    <div class="separator"></div>
+    <p style="font-size: 0.42em !important; color: var(--text-primary); text-align: center; margin-bottom: 0.5em;">
+        McGilchrist argues that Western civilisation has increasingly fallen under left-hemisphere dominance:
+    </p>
+    <div class="card-grid cols-4" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-rose">Bureaucracy</h4>
+            <p>Procedure replaces judgment. Rules substitute for wisdom. The letter kills the spirit.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Mechanism</h4>
+            <p>The world &mdash; and people &mdash; treated as machines. Efficiency as the highest value.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Abstraction</h4>
+            <p>Maps confused with territories. Models replace reality. The general overrides the particular.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Fragmentation</h4>
+            <p>Specialisation without integration. Knowledge without wisdom. Parts without wholes.</p>
+        </div>
+    </div>
+    <div class="process-flow" style="margin-top: 0.8em;">
+        <div class="process-step" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">RH world</h4>
+            <p>living, whole</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">LH seizes</h4>
+            <p>analyses, fixes</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step" style="border-color: var(--accent-rose);">
+            <h4 class="accent-rose">No return</h4>
+            <p>refuses to yield back</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step" style="border-color: var(--accent-rose);">
+            <h4 class="accent-rose">Dead world</h4>
+            <p>mechanism, nihilism</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: KEY WORKS ═══════════════════ -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Key Works</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-color: var(--accent-purple);">
+            <h4 class="accent-purple">The Master and His Emissary (2009)</h4>
+            <p>The landmark work: Part I presents the neuroscientific case for hemispheric asymmetry; Part II traces how the balance between the hemispheres has shifted across Western history &mdash; from ancient Greece through the Renaissance, Reformation, Enlightenment, Romanticism, and into modernity.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">The Matter With Things (2021)</h4>
+            <p>The two-volume magnum opus (1,500+ pages). Expands into epistemology, ontology, and cosmology. Argues that science, reason, intuition, and imagination are complementary paths to truth. Reality is more like a living organism than a machine.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-green);">
+            <h4 class="accent-green">Ways of Attending (2019)</h4>
+            <p>A concise, accessible introduction to McGilchrist's core ideas about attention and the hemispheres. An ideal entry point for new readers.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">The Divided Brain (documentary)</h4>
+            <p>A documentary film exploring McGilchrist's thesis, featuring interviews with the author and other neuroscientists. Brings the ideas to a wider audience through visual storytelling.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY & CONNECTIONS ═══════════════════ -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Legacy &amp; Connections</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node: McGilchrist -->
+            <circle cx="400" cy="150" r="55" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+            <text x="400" y="145" text-anchor="middle" fill="#9b72cf" font-size="12" font-weight="700">McGilchrist</text>
+            <text x="400" y="162" text-anchor="middle" fill="#9b72cf" font-size="9" opacity="0.6">divided brain</text>
+
+            <!-- Heidegger -->
+            <circle cx="150" cy="60" r="40" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <text x="150" y="57" text-anchor="middle" fill="#5b8cd4" font-size="10" font-weight="600">Heidegger</text>
+            <text x="150" y="70" text-anchor="middle" fill="#9a9a9a" font-size="8">being-in-the-world</text>
+            <line x1="188" y1="80" x2="352" y2="125" stroke="#5b8cd4" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Whitehead -->
+            <circle cx="650" cy="60" r="40" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="650" y="57" text-anchor="middle" fill="#4ecca3" font-size="10" font-weight="600">Whitehead</text>
+            <text x="650" y="70" text-anchor="middle" fill="#9a9a9a" font-size="8">process philosophy</text>
+            <line x1="612" y1="80" x2="448" y2="125" stroke="#4ecca3" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Nietzsche -->
+            <circle cx="120" cy="200" r="40" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <text x="120" y="197" text-anchor="middle" fill="#cf7272" font-size="10" font-weight="600">Nietzsche</text>
+            <text x="120" y="210" text-anchor="middle" fill="#9a9a9a" font-size="8">Apollonian/Dionysian</text>
+            <line x1="158" y1="190" x2="350" y2="165" stroke="#cf7272" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Jung -->
+            <circle cx="680" cy="200" r="40" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <text x="680" y="197" text-anchor="middle" fill="#d4a053" font-size="10" font-weight="600">Jung</text>
+            <text x="680" y="210" text-anchor="middle" fill="#9a9a9a" font-size="8">individuation</text>
+            <line x1="642" y1="190" x2="450" y2="165" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Scruton -->
+            <circle cx="250" cy="280" r="40" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <text x="250" y="277" text-anchor="middle" fill="#9b72cf" font-size="10" font-weight="600">Scruton</text>
+            <text x="250" y="290" text-anchor="middle" fill="#9a9a9a" font-size="8">beauty &amp; modernity</text>
+            <line x1="280" y1="260" x2="370" y2="195" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Merleau-Ponty -->
+            <circle cx="550" cy="280" r="40" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <text x="550" y="273" text-anchor="middle" fill="#5b8cd4" font-size="9" font-weight="600">Merleau-Ponty</text>
+            <text x="550" y="286" text-anchor="middle" fill="#9a9a9a" font-size="8">embodiment</text>
+            <line x1="520" y1="260" x2="430" y2="195" stroke="#5b8cd4" stroke-width="0.8" opacity="0.3"/>
+        </svg>
+    </div>
+    <div class="concept-map" style="margin-top: 0.4em;">
+        <span class="concept-node primary">Hemispheric Asymmetry</span>
+        <span class="concept-node">Phenomenology</span>
+        <span class="concept-node">Process Philosophy</span>
+        <span class="concept-node">Embodied Cognition</span>
+        <span class="concept-node">Value Realism</span>
+        <span class="concept-node">Anti-Reductionism</span>
+        <span class="concept-node">Participatory Ontology</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 17: CLOSING QUOTE ═══════════════════ -->
+<section>
+    <div class="mandala-container" style="width: 100px; height: 100px;">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left hemisphere arc -->
+            <path d="M100 20 C50 20, 15 60, 15 100 C15 140, 50 180, 100 180" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.4"/>
+            <!-- Right hemisphere arc -->
+            <path d="M100 20 C150 20, 185 60, 185 100 C185 140, 150 180, 100 180" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.4"/>
+            <!-- Inner circles -->
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#9b72cf" stroke-width="0.6" opacity="0.3"/>
+            <!-- Center point -->
+            <circle cx="100" cy="100" r="4" fill="#9b72cf" opacity="0.5"/>
+            <!-- Cross lines (integration) -->
+            <line x1="100" y1="50" x2="100" y2="150" stroke="#9b72cf" stroke-width="0.5" opacity="0.25"/>
+            <line x1="50" y1="100" x2="150" y2="100" stroke="#9b72cf" stroke-width="0.5" opacity="0.25"/>
+        </svg>
+    </div>
+    <h2 style="margin-top: 0.3em;">The Whole &amp; the Between</h2>
+    <div class="separator"></div>
+    <div class="quote-box" style="margin-top: 1em; max-width: 70%;">
+        <p style="font-size: 0.52em !important;">"The world is not a collection of things, but a web of relationships."</p>
+        <span class="attribution">&mdash; Iain McGilchrist</span>
+    </div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 1.5em; text-align: center;">
+        Iain McGilchrist (1953&ndash;) &middot; Psychiatrist, Neuroscientist, Philosopher
+    </p>
+    <div style="margin-top: 1em; text-align: center;">
+        <span class="tag">hemispheric asymmetry</span>
+        <span class="tag amber">attention</span>
+        <span class="tag green">betweenness</span>
+        <span class="tag rose">process</span>
+        <span class="tag blue">integration</span>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02,
+    controls: true,
+    progress: true,
+    history: true
+});
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){
+    document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){
+      s.style.display = 'block';
+      s.style.maxHeight = maxH;
+    });
+  }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+</script>
+</body>
+</html>

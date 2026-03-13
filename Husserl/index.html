@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edmund Husserl — Phenomenology & the Return to Things Themselves</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal-viewport { background: var(--bg-primary); }
+
+.reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-purple); }
+.reveal .progress span { background: var(--accent-purple); }
+
+/* ───── Utility Classes ───── */
+
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.42em !important;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+}
+
+.quote-box {
+    border-left: 3px solid var(--accent-purple);
+    padding: 0.45em 1em;
+    margin: 0.8em auto;
+    max-width: 80%;
+    text-align: left;
+    background: rgba(155, 114, 207, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.quote-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.44em !important;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.quote-box .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.42em !important;
+    color: var(--text-muted);
+    margin-top: 0.4em;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 0.45em;
+    margin: 0.6em auto;
+    max-width: 90%;
+}
+
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.55em 0.7em;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.card:hover { border-color: var(--accent-purple); }
+
+.card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.60em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+}
+
+.card p {
+    font-size: 0.44em !important;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.card .icon {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8em;
+    text-align: left;
+    margin: 0.25em 0;
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54em;
+    color: var(--accent-purple);
+    min-width: 3.2em;
+    padding-top: 0.15em;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.50em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 0.8em;
+}
+
+.timeline-item .event strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.diagram-container {
+    margin: 0.6em auto;
+    max-width: 85%;
+}
+
+.mandala-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 0.6em auto;
+}
+
+.mandala-container svg {
+    width: 100%;
+    height: 100%;
+    animation: mandala-rotate 60s linear infinite;
+}
+
+@keyframes mandala-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    align-items: start;
+    text-align: left;
+    max-width: 90%;
+    margin: 0.6em auto;
+}
+
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+
+.tag {
+    display: inline-block;
+    background: rgba(155, 114, 207, 0.12);
+    color: var(--accent-purple);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.42em;
+    padding: 0.15em 0.5em;
+    border-radius: 4px;
+    margin: 0.1em 0.15em;
+}
+
+.tag.amber { background: rgba(212, 160, 83, 0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78, 204, 163, 0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207, 114, 114, 0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91, 140, 212, 0.12); color: var(--accent-blue); }
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.35em;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-purple);
+    margin: 0.5em auto;
+    border-radius: 1px;
+}
+
+.concept-node {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 30px;
+    padding: 0.3em 1em;
+    font-size: 0.6em;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.concept-node.primary {
+    border-color: var(--accent-amber);
+    background: rgba(212, 160, 83, 0.08);
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0.6em auto;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+    text-align: center;
+    min-width: 100px;
+}
+
+.process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.50em;
+    margin: 0 0 0.15em 0;
+}
+
+.process-step p {
+    font-size: 0.40em !important;
+    margin: 0;
+}
+
+.process-arrow {
+    color: var(--accent-purple);
+    font-size: 1.0em;
+}
+
+.reveal section .note-text {
+    font-size: 0.44em !important;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before {
+    content: '>';
+    color: var(--accent-purple);
+    font-weight: bold;
+    position: absolute;
+    left: -0.3em;
+}
+
+/* Phenomenology emblem */
+.emblem-container {
+    width: 160px;
+    height: 100px;
+    margin: 0 auto 1rem auto;
+}
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+/* ── Fullscreen Button ── */
+.fullscreen-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div class="emblem-container">
+        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Eye of consciousness / intentionality emblem -->
+            <ellipse cx="120" cy="60" rx="80" ry="35" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.4"/>
+            <ellipse cx="120" cy="60" rx="55" ry="25" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+            <circle cx="120" cy="60" r="14" fill="none" stroke="#9b72cf" stroke-width="2" opacity="0.6"/>
+            <circle cx="120" cy="60" r="4" fill="#9b72cf" opacity="0.5"/>
+            <!-- Radiating lines of intentionality -->
+            <line x1="134" y1="60" x2="175" y2="60" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="130" y1="48" x2="160" y2="30" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="130" y1="72" x2="160" y2="90" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="106" y1="60" x2="65" y2="60" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="110" y1="48" x2="80" y2="30" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="110" y1="72" x2="80" y2="90" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <!-- Brackets of epoché -->
+            <path d="M30 30 Q20 60 30 90" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.35"/>
+            <path d="M210 30 Q220 60 210 90" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.35"/>
+        </svg>
+    </div>
+    <h1>Edmund Husserl</h1>
+    <p class="subtitle">Phenomenology &amp; the Return to Things Themselves</p>
+    <div class="separator"></div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.8em;">
+        Intentionality &middot; The Epoch&eacute; &middot; Eidetic Reduction &middot; The Lifeworld
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: OVERVIEW ═══════════════════ -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Who Was Edmund Husserl?</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.8em;">
+        <div>
+            <p style="font-size: 0.42em !important; color: var(--text-primary); line-height: 1.7;">
+                Edmund Husserl <span style="color: var(--text-muted);">(1859&ndash;1938)</span> was a
+                Moravian-born philosopher who founded
+                <span class="accent-purple">phenomenology</span> &mdash; a rigorous philosophical method
+                for investigating the structures of consciousness and experience. Beginning as a
+                mathematician under Weierstrass, he turned to philosophy under the influence of
+                Franz Brentano in Vienna, and devoted his life to establishing philosophy as a
+                &ldquo;rigorous science.&rdquo;
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Husserl&rsquo;s central insight was that consciousness is always <em>intentional</em> &mdash;
+                directed toward objects. By suspending our natural assumptions about the world
+                (the <em>epoch&eacute;</em>), we can examine how things appear to consciousness and
+                discover the essential structures of experience itself.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-purple);">
+                <h4 class="accent-purple">Key Contributions</h4>
+                <p>
+                    Intentionality &middot; Phenomenological reduction &middot; Eidetic intuition &middot;
+                    Noesis/Noema &middot; The lifeworld &middot; Transcendental subjectivity &middot;
+                    Intersubjectivity &middot; Anti-psychologism
+                </p>
+            </div>
+            <div class="card" style="margin-top: 0.5em; border-left: 3px solid var(--accent-amber);">
+                <h4 class="accent-amber">Core Principle</h4>
+                <p>Philosophy must return &ldquo;to the things themselves&rdquo; &mdash; not to
+                theories <em>about</em> experience, but to the phenomena as they actually appear
+                to consciousness, investigated with rigorous descriptive method.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Life &amp; Career</h2>
+    <div class="separator"></div>
+    <div style="max-width: 85%; margin: 0.5em auto;">
+        <div class="timeline-item">
+            <span class="year">1859</span>
+            <div class="event"><strong>Born in Prost&#283;jov, Moravia</strong>Born into a Jewish family in the Austrian Empire. Raised in a culturally assimilated household; later baptised as a Lutheran.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1876</span>
+            <div class="event"><strong>University studies: Leipzig, then Berlin</strong>Studies astronomy, mathematics, physics, and philosophy at Leipzig. Moves to Berlin to study mathematics under Karl Weierstrass.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1882</span>
+            <div class="event"><strong>PhD in mathematics</strong>Completes doctoral dissertation on the calculus of variations at the University of Vienna.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1884</span>
+            <div class="event"><strong>Studies under Franz Brentano</strong>Attends Brentano&rsquo;s lectures in Vienna. Brentano&rsquo;s concept of <em>intentionality</em> transforms Husserl&rsquo;s thinking and turns him toward philosophy.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1887</span>
+            <div class="event"><strong>Habilitation at Halle</strong>Habilitation thesis <em>On the Concept of Number</em>. Begins teaching as <em>Privatdozent</em> at the University of Halle.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1891</span>
+            <div class="event"><strong><em>Philosophy of Arithmetic</em></strong>First major work. Attempts a psychological foundation for arithmetic. Frege&rsquo;s critique of psychologism prompts Husserl to rethink his approach.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1900</span>
+            <div class="event"><strong><em>Logical Investigations</em> (1900&ndash;01)</strong>Husserl&rsquo;s breakthrough. Demolishes psychologism in logic and lays the foundation for phenomenology as a method of investigating consciousness.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1906</span>
+            <div class="event"><strong>Professor at G&ouml;ttingen</strong>Appointed full professor. Develops the phenomenological method with a growing circle of students and collaborators.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1913</span>
+            <div class="event"><strong><em>Ideas I</em> (Ideen)</strong>Introduces the &ldquo;transcendental turn&rdquo; &mdash; the epoch&eacute; and phenomenological reduction. Founds the <em>Jahrbuch f&uuml;r Philosophie</em>.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1916</span>
+            <div class="event"><strong>Professor at Freiburg</strong>Moves to the University of Freiburg, where he remains for the rest of his career. Heidegger becomes his assistant.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1928</span>
+            <div class="event"><strong>Retirement; Heidegger succeeds him</strong>Retires from his chair. Martin Heidegger, his former student and assistant, is appointed as his successor.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1929</span>
+            <div class="event"><strong><em>Cartesian Meditations</em> &amp; <em>Formal and Transcendental Logic</em></strong>Paris lectures develop the theory of intersubjectivity and transcendental ego. <em>Formal and Transcendental Logic</em> deepens his account of logic and meaning.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1935</span>
+            <div class="event"><strong><em>The Crisis of European Sciences</em> (1935&ndash;36)</strong>Final major work. Introduces the concept of the <em>Lebenswelt</em> (lifeworld). Diagnoses the crisis of modern science&rsquo;s alienation from lived experience.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1938</span>
+            <div class="event"><strong>Death in Freiburg</strong>Dies on April 27. Had been stripped of academic rights under Nazi racial laws. His vast unpublished manuscripts are smuggled to Leuven by Herman Leo Van Breda.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: INTENTIONALITY ═══════════════════ -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Intentionality</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>&ldquo;Every mental act has a content; every mental act is directed toward an object. Consciousness is always consciousness <em>of</em> something.&rdquo;</p>
+        <span class="attribution">&mdash; adapted from Husserl, <em>Logical Investigations</em></span>
+    </div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Consciousness circle -->
+            <circle cx="150" cy="110" r="65" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+            <text x="150" y="100" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="14" font-weight="700">CONSCIOUSNESS</text>
+            <text x="150" y="120" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">(Subject)</text>
+            <!-- Arrow of intentionality -->
+            <line x1="220" y1="110" x2="420" y2="110" stroke="#d4a053" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+            <text x="320" y="95" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="14" font-style="italic">Intentional Act</text>
+            <text x="320" y="135" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">&quot;directed toward&quot;</text>
+            <!-- Object -->
+            <rect x="430" y="70" width="130" height="80" rx="10" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="2" opacity="0.7"/>
+            <text x="495" y="105" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="14" font-weight="700">OBJECT</text>
+            <text x="495" y="125" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">(Intentional Object)</text>
+            <!-- Examples below -->
+            <text x="150" y="200" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="10">perceiving, judging, imagining, desiring...</text>
+            <text x="495" y="200" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="10">tree, number, melody, memory...</text>
+            <defs>
+                <marker id="arrowGold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#d4a053"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">
+        Inherited from Brentano but radicalised: intentionality is not a property of some mental states but the <em>defining feature</em> of all consciousness.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE EPOCHÉ ═══════════════════ -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Epoch&eacute; &amp; Phenomenological Reduction</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                The <strong class="accent-purple">epoch&eacute;</strong> (from Greek <em>epoch&#275;</em>,
+                &ldquo;suspension&rdquo;) is Husserl&rsquo;s method of &ldquo;bracketing&rdquo; all
+                assumptions about the existence or nature of the external world. We do not deny the
+                world exists; we simply <em>withhold judgment</em> about it, suspending the
+                <strong>natural attitude</strong> in which we naively take the world for granted.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                What remains after the reduction is <em>pure consciousness</em> and its intentional
+                correlates &mdash; the phenomena as they appear. This allows rigorous description of
+                the structures of experience without metaphysical presuppositions.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
+                <!-- Natural attitude (outer) -->
+                <rect x="20" y="10" width="260" height="260" rx="12" fill="rgba(207,114,114,0.04)" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+                <text x="150" y="35" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="12" font-weight="700">NATURAL ATTITUDE</text>
+                <text x="150" y="52" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">&quot;The world simply exists&quot;</text>
+                <!-- Brackets of epoché -->
+                <path d="M55 70 Q40 140 55 210" fill="none" stroke="#9b72cf" stroke-width="3" opacity="0.7"/>
+                <path d="M245 70 Q260 140 245 210" fill="none" stroke="#9b72cf" stroke-width="3" opacity="0.7"/>
+                <text x="150" y="85" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display" font-size="13" font-style="italic">EPOCH&Eacute;</text>
+                <!-- Inner: what remains -->
+                <rect x="70" y="95" width="160" height="110" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="150" y="120" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="12" font-weight="700">PURE PHENOMENA</text>
+                <text x="150" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">Consciousness &amp; its</text>
+                <text x="150" y="155" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">intentional correlates</text>
+                <text x="150" y="185" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">appearances as appearances</text>
+                <!-- Crossed out: existence claims -->
+                <text x="150" y="240" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10" text-decoration="line-through">existence claims suspended</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: EIDETIC REDUCTION ═══════════════════ -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Eidetic Reduction</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>&ldquo;We must grasp the essence of things &mdash; not merely this or that instance, but the invariant structure without which a thing could not be what it is.&rdquo;</p>
+        <span class="attribution">&mdash; adapted from Husserl, <em>Ideas I</em></span>
+    </div>
+    <div class="process-flow">
+        <div class="process-step" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">Particular Instance</h4>
+            <p>This red apple<br/>on my desk</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">Imaginative Variation</h4>
+            <p>Vary colour, shape,<br/>size, texture...</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-purple);">
+            <h4 class="accent-purple">What Remains Invariant?</h4>
+            <p>What <em>cannot</em> be<br/>varied away</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-green);">
+            <h4 class="accent-green">Eidos (Essence)</h4>
+            <p>The essential structure<br/>of the phenomenon</p>
+        </div>
+    </div>
+    <p class="note-text" style="text-align: center;">
+        The eidetic reduction moves from particular facts to universal essences through <em>imaginative variation</em> &mdash;
+        systematically altering features to discover which are essential and which are contingent.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: NOESIS & NOEMA ═══════════════════ -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Noesis &amp; Noema</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+            <!-- Noesis side -->
+            <rect x="30" y="40" width="220" height="170" rx="12" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+            <text x="140" y="70" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display" font-size="18" font-weight="700">NOESIS</text>
+            <text x="140" y="92" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="12">The Act of Consciousness</text>
+            <line x1="80" y1="102" x2="200" y2="102" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="140" y="122" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">perceiving</text>
+            <text x="140" y="140" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">remembering</text>
+            <text x="140" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">judging</text>
+            <text x="140" y="176" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">imagining</text>
+            <text x="140" y="194" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">desiring</text>
+            <!-- Correlation arrows -->
+            <line x1="260" y1="125" x2="430" y2="125" stroke="#d4a053" stroke-width="2" marker-end="url(#arrowGold2)" marker-start="url(#arrowGoldBack)"/>
+            <text x="345" y="110" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="13" font-style="italic">Correlation</text>
+            <text x="345" y="150" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">inseparable pair</text>
+            <!-- Noema side -->
+            <rect x="440" y="40" width="220" height="170" rx="12" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="2" opacity="0.7"/>
+            <text x="550" y="70" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display" font-size="18" font-weight="700">NOEMA</text>
+            <text x="550" y="92" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="12">The Object-as-Intended</text>
+            <line x1="490" y1="102" x2="610" y2="102" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="550" y="122" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the perceived-as-perceived</text>
+            <text x="550" y="140" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the remembered-as-remembered</text>
+            <text x="550" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the judged-as-judged</text>
+            <text x="550" y="176" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the sense/meaning of the act</text>
+            <text x="550" y="194" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">irreducible to the &quot;real&quot; object</text>
+            <defs>
+                <marker id="arrowGold2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#d4a053"/>
+                </marker>
+                <marker id="arrowGoldBack" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#d4a053"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">
+        Every experience has this dual structure: the <em>noesis</em> (the subjective act) and the <em>noema</em> (the objective sense).
+        They are strictly correlative &mdash; no act without content, no content without an act.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE LIFEWORLD ═══════════════════ -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Lifeworld <span class="accent-amber">(Lebenswelt)</span></h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Lifeworld: large encompassing area -->
+            <ellipse cx="350" cy="160" rx="310" ry="120" fill="rgba(212,160,83,0.04)" stroke="#d4a053" stroke-width="2" opacity="0.5"/>
+            <text x="350" y="40" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="16" font-weight="700">LEBENSWELT (Lifeworld)</text>
+            <text x="350" y="58" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">Pre-theoretical, pre-scientific world of everyday lived experience</text>
+            <!-- Elements of the lifeworld -->
+            <rect x="80" y="80" width="120" height="55" rx="8" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
+            <text x="140" y="103" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="11" font-weight="700">Perception</text>
+            <text x="140" y="120" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">sensory encounter</text>
+            <rect x="230" y="90" width="120" height="55" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1"/>
+            <text x="290" y="113" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11" font-weight="700">Intersubjective</text>
+            <text x="290" y="130" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">shared meanings</text>
+            <rect x="380" y="80" width="120" height="55" rx="8" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1"/>
+            <text x="440" y="103" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="700">Practical</text>
+            <text x="440" y="120" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">tools, tasks, goals</text>
+            <rect x="510" y="90" width="120" height="55" rx="8" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="570" y="113" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="11" font-weight="700">Cultural</text>
+            <text x="570" y="130" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">traditions, values</text>
+            <!-- Science built atop the lifeworld -->
+            <rect x="220" y="180" width="260" height="55" rx="8" fill="rgba(155,114,207,0.03)" stroke="#9b72cf" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="350" y="203" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="12" font-weight="700">MODERN SCIENCE</text>
+            <text x="350" y="220" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">abstracts from the lifeworld &mdash; forgets its origin</text>
+            <!-- Arrow showing abstraction -->
+            <line x1="350" y1="150" x2="350" y2="178" stroke="#9b72cf" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowPurple)"/>
+            <text x="410" y="168" fill="#6a6a7a" font-family="DM Sans" font-size="9" font-style="italic">abstraction</text>
+            <defs>
+                <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#9b72cf"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">
+        The lifeworld is the &ldquo;forgotten foundation&rdquo; of science. Husserl argued that modern science&rsquo;s
+        mathematization of nature has severed it from the pre-theoretical experience that gives it meaning.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: TRANSCENDENTAL SUBJECTIVITY ═══════════════════ -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Transcendental Subjectivity</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Through the phenomenological reduction, Husserl arrives at the
+                <strong class="accent-purple">transcendental ego</strong> &mdash; the constituting
+                consciousness that makes all experience possible. This is not the empirical self studied
+                by psychology, but the <em>condition for the possibility</em> of any experience whatsoever.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                The transcendental ego does not <em>create</em> the world, but <em>constitutes</em> its meaning.
+                It is the &ldquo;absolute being&rdquo; that remains when the natural attitude is suspended &mdash;
+                the field of pure consciousness in which all phenomena appear.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                Husserl&rsquo;s transcendental idealism differs from Kant&rsquo;s: where Kant posited unknowable
+                things-in-themselves, Husserl holds that we can directly intuit the essential structures of
+                consciousness through phenomenological description.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-green);">
+                <h4 class="accent-green">Key Distinction</h4>
+                <p><strong>Empirical ego:</strong> the psychological self, a being in the world, studied by natural science.</p>
+                <p style="margin-top: 0.3em;"><strong>Transcendental ego:</strong> the constituting consciousness, the condition of all possible experience &mdash; discovered only through the reduction.</p>
+            </div>
+            <div class="card" style="margin-top: 0.5em; border-left: 3px solid var(--accent-amber);">
+                <h4 class="accent-amber">Constitution</h4>
+                <p>The transcendental ego <em>constitutes</em> meaning: it is the active source of the sense
+                and validity of everything that appears. World-meaning is not imposed from outside
+                but arises in and through consciousness.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: INTERSUBJECTIVITY ═══════════════════ -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Intersubjectivity</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shared world -->
+            <ellipse cx="350" cy="130" rx="280" ry="110" fill="rgba(212,160,83,0.03)" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+            <text x="350" y="30" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="14" font-weight="700">SHARED WORLD</text>
+            <!-- Subject 1 -->
+            <circle cx="170" cy="130" r="55" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+            <text x="170" y="120" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="12" font-weight="700">EGO</text>
+            <text x="170" y="138" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">my consciousness</text>
+            <!-- Subject 2 -->
+            <circle cx="530" cy="130" r="55" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="2" opacity="0.7"/>
+            <text x="530" y="120" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="12" font-weight="700">ALTER EGO</text>
+            <text x="530" y="138" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">the Other</text>
+            <!-- Connection: empathy / pairing -->
+            <path d="M230 110 Q350 60 470 110" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.6"/>
+            <text x="350" y="80" text-anchor="middle" fill="#cf7272" font-family="Playfair Display" font-size="12" font-style="italic">Empathy (Einf&uuml;hlung)</text>
+            <path d="M230 150 Q350 200 470 150" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.6"/>
+            <text x="350" y="195" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display" font-size="12" font-style="italic">Analogical Appresentation</text>
+            <!-- Common object -->
+            <rect x="310" y="110" width="80" height="40" rx="6" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
+            <text x="350" y="135" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Object</text>
+            <!-- Explanatory text -->
+            <text x="350" y="245" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">I constitute the Other as a subject like myself through &quot;pairing&quot; &mdash; not inference, but lived recognition.</text>
+        </svg>
+    </div>
+    <p class="note-text" style="text-align: center;">
+        How can a transcendental ego constitute <em>other</em> subjects? Husserl&rsquo;s answer: through
+        <em>analogical appresentation</em> &mdash; I experience the Other&rsquo;s body as like mine, and thereby
+        co-constitute them as another centre of consciousness.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: THE CRISIS ═══════════════════ -->
+<section>
+    <span class="section-number">10</span>
+    <h2>The Crisis of European Sciences</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>&ldquo;The crisis of European existence can end in only one of two ways: in the ruin of a Europe alienated from its own rational sense of life&hellip; or in the rebirth of Europe from the spirit of philosophy.&rdquo;</p>
+        <span class="attribution">&mdash; Husserl, <em>The Crisis of European Sciences</em> (1936)</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Diagnosis</h4>
+            <p>Since Galileo, modern science has <em>mathematized nature</em> &mdash; replacing the
+            qualitative world of lived experience with abstract mathematical structures. This is
+            powerful but comes at a cost: science forgets that its abstractions are
+            <em>idealizations</em> of the lifeworld, not reality itself.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">The Remedy</h4>
+            <p>Phenomenology must <em>recover</em> the lifeworld as the forgotten foundation of
+            science. Only by returning to the pre-theoretical experience from which scientific
+            concepts are derived can we restore meaning to knowledge and overcome the crisis
+            of nihilism and technocratic rationality.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">Mathematization of Nature</h4>
+            <p>Galileo&rsquo;s great achievement was also a great concealment: by treating nature
+            as a mathematical manifold, he &ldquo;dressed up&rdquo; the lifeworld in a
+            &ldquo;garb of ideas&rdquo; and mistook the model for reality itself.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-blue);">
+            <h4 class="accent-blue">Relevance Today</h4>
+            <p>Husserl&rsquo;s diagnosis anticipates contemporary critiques of scientism, the
+            reduction of human experience to data, and the alienation produced by treating
+            persons as objects of technical manipulation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: ANTI-PSYCHOLOGISM ═══════════════════ -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Anti-Psychologism</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                One of Husserl&rsquo;s earliest and most influential contributions was his decisive
+                refutation of <strong class="accent-rose">psychologism</strong> &mdash; the doctrine
+                that logical and mathematical truths are merely psychological facts about how
+                humans happen to think.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                In the <em>Prolegomena</em> to the <em>Logical Investigations</em>, Husserl showed
+                that reducing logic to psychology leads to relativism and scepticism. The laws of logic
+                are not descriptions of how we <em>do</em> think but norms for how we <em>ought</em> to
+                think. They are ideal, not empirical.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                This argument had enormous impact, influencing both the phenomenological and analytic
+                traditions. It freed logic from psychology while establishing that consciousness itself
+                can be studied rigorously on its own terms.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-rose);">
+                <h4 class="accent-rose">Psychologism</h4>
+                <p>&ldquo;2 + 2 = 4&rdquo; is true because of how human minds work. Logic is a branch
+                of psychology. Truth is relative to the thinker.</p>
+            </div>
+            <div class="card" style="margin-top: 0.5em; border-left: 3px solid var(--accent-green);">
+                <h4 class="accent-green">Husserl&rsquo;s Reply</h4>
+                <p>Logical truths are <em>ideal</em> &mdash; they hold regardless of who thinks them or
+                whether anyone thinks them at all. Psychology studies <em>acts</em> of thinking;
+                logic studies the <em>content</em> of thought. Confusing the two destroys both.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: METHOD OVERVIEW ═══════════════════ -->
+<section>
+    <span class="section-number">12</span>
+    <h2>The Phenomenological Method</h2>
+    <div class="separator"></div>
+    <div class="process-flow">
+        <div class="process-step" style="border-color: var(--accent-rose);">
+            <h4 class="accent-rose">Natural Attitude</h4>
+            <p>Naive belief in<br/>the world&rsquo;s existence</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-purple);">
+            <h4 class="accent-purple">Epoch&eacute;</h4>
+            <p>Bracket all<br/>existence claims</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-blue);">
+            <h4 class="accent-blue">Phenomenological<br/>Reduction</h4>
+            <p>Turn to pure<br/>consciousness</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-amber);">
+            <h4 class="accent-amber">Eidetic Reduction</h4>
+            <p>Imaginative variation<br/>to find essences</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-green);">
+            <h4 class="accent-green">Transcendental<br/>Reduction</h4>
+            <p>Discover the<br/>constituting ego</p>
+        </div>
+    </div>
+    <div class="card-grid cols-3" style="margin-top: 0.8em;">
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Description, Not Explanation</h4>
+            <p>Phenomenology describes <em>how</em> things appear, not <em>why</em> they exist. It is not causal science but descriptive analysis of the structures of experience.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">First-Person Perspective</h4>
+            <p>Phenomenology takes the first-person perspective as primary. Experience cannot be reduced to third-person, objective description without remainder.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Rigorous Science</h4>
+            <p>Husserl insisted phenomenology is not speculation but a &ldquo;rigorous science&rdquo; &mdash; more fundamental than any empirical science because it examines the conditions of scientific knowledge itself.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: INFLUENCES ═══════════════════ -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Historical Influences</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">Franz Brentano</h4>
+            <p>Husserl&rsquo;s teacher in Vienna. His concept of <em>intentionality</em> &mdash; that every mental
+            phenomenon is directed toward an object &mdash; became the cornerstone of Husserl&rsquo;s phenomenology.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Ren&eacute; Descartes</h4>
+            <p>The model of radical doubt and the turn to the <em>cogito</em> as the foundation of knowledge.
+            Husserl&rsquo;s <em>Cartesian Meditations</em> explicitly follows and radicalises the Cartesian method.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">Immanuel Kant</h4>
+            <p>The transcendental turn: philosophy as the investigation of the conditions of possible experience.
+            Husserl transforms Kant&rsquo;s transcendental philosophy through phenomenological method.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-blue);">
+            <h4 class="accent-blue">Bernard Bolzano &amp; Gottlob Frege</h4>
+            <p>The objectivity of logical and mathematical truths. Frege&rsquo;s critique of <em>Philosophy of
+            Arithmetic</em> pushed Husserl toward anti-psychologism and the distinction between ideal content and real acts.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">Karl Weierstrass</h4>
+            <p>Husserl&rsquo;s mathematics teacher in Berlin. Weierstrass&rsquo;s rigour in mathematical analysis
+            shaped Husserl&rsquo;s lifelong aspiration to make philosophy an equally rigorous discipline.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">David Hume</h4>
+            <p>Hume&rsquo;s radical empiricism and analysis of experience influenced Husserl&rsquo;s insistence
+            on returning to direct experience, though Husserl rejected Hume&rsquo;s sceptical conclusions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY ═══════════════════ -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Legacy &amp; Connections</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.6em;">
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Martin Heidegger</h4>
+            <p>Student and successor. Radicalised phenomenology into an ontology of <em>Dasein</em>.
+            Diverged sharply from Husserl&rsquo;s transcendental idealism; their relationship became painful under Nazism.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Merleau-Ponty</h4>
+            <p>Extended Husserl&rsquo;s phenomenology toward the lived body. The <em>Phenomenology of
+            Perception</em> develops Husserl&rsquo;s lifeworld concept into a philosophy of embodied existence.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Sartre</h4>
+            <p>Took Husserl&rsquo;s intentionality and ran with it: consciousness is &ldquo;nothing&rdquo;
+            &mdash; pure directedness toward the world. Existentialist phenomenology begins from Husserl.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Levinas</h4>
+            <p>One of the first to introduce Husserl to France. Radicalised intersubjectivity into the
+            ethical encounter with the <em>face of the Other</em> as the foundation of philosophy.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Edith Stein &amp; Max Scheler</h4>
+            <p>Stein developed Husserl&rsquo;s theory of empathy; Scheler applied phenomenology to ethics
+            and the theory of values. Both were direct students at G&ouml;ttingen.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Derrida &amp; Gadamer</h4>
+            <p>Derrida&rsquo;s deconstruction begins as an internal critique of Husserl&rsquo;s theory of signs.
+            Gadamer&rsquo;s hermeneutics transforms the lifeworld concept into the tradition of understanding.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">Roger Scruton</h4>
+            <p>Husserl&rsquo;s concept of intentionality influenced Scruton&rsquo;s philosophy of the
+            first-person perspective and his argument that consciousness cannot be reduced to
+            third-person, scientific description.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-blue);">
+            <h4 class="accent-blue">Iain McGilchrist</h4>
+            <p>Husserl&rsquo;s lifeworld concept and his critique of mathematization connect to
+            McGilchrist&rsquo;s argument that the left hemisphere&rsquo;s abstractions have detached us from
+            the lived, relational world of the right hemisphere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: KEY WORKS ═══════════════════ -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Key Works</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Logical Investigations <span style="color: var(--text-muted); font-weight: 400;">(1900&ndash;01)</span></h4>
+            <p>The founding text of phenomenology. Refutes psychologism in logic and develops the
+            first systematic account of intentionality, meaning, and the structures of consciousness.
+            Transformed European philosophy.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">Ideas I <span style="color: var(--text-muted); font-weight: 400;">(1913)</span></h4>
+            <p>Introduces the epoch&eacute; and the transcendental reduction. The &ldquo;transcendental turn&rdquo;
+            that divides Husserl&rsquo;s career. Many students (including the Munich phenomenologists) resisted this move.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">Cartesian Meditations <span style="color: var(--text-muted); font-weight: 400;">(1931)</span></h4>
+            <p>Five meditations modelled on Descartes. Develops the theory of the transcendental ego,
+            intersubjectivity (the Fifth Meditation on the constitution of the Other), and the monadological
+            community of egos.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Crisis of European Sciences <span style="color: var(--text-muted); font-weight: 400;">(1936)</span></h4>
+            <p>Final major work, unfinished. Introduces the lifeworld as the pre-given foundation of science.
+            Diagnoses modernity&rsquo;s crisis as science&rsquo;s forgetfulness of its own origins in lived experience.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-blue); grid-column: span 2;">
+            <h4 class="accent-blue">Formal and Transcendental Logic <span style="color: var(--text-muted); font-weight: 400;">(1929)</span></h4>
+            <p>Deepens the account of logic as a science of ideal meanings. Distinguishes formal logic (apophantic
+            analytics) from transcendental logic (the subjective conditions of logical validity).
+            Bridges the gap between the early anti-psychologism and the later transcendental phenomenology.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 17: CLOSING QUOTE ═══════════════════ -->
+<section>
+    <div class="mandala-container" style="width: 100px; height: 100px;">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rotating phenomenological emblem -->
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+            <circle cx="60" cy="60" r="35" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+            <circle cx="60" cy="60" r="20" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="60" cy="60" r="5" fill="#9b72cf" opacity="0.5"/>
+            <!-- Intentional rays -->
+            <line x1="60" y1="10" x2="60" y2="25" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+            <line x1="60" y1="95" x2="60" y2="110" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+            <line x1="10" y1="60" x2="25" y2="60" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+            <line x1="95" y1="60" x2="110" y2="60" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+            <line x1="18" y1="18" x2="30" y2="30" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="90" y1="90" x2="102" y2="102" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="102" y1="18" x2="90" y2="30" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <line x1="30" y1="90" x2="18" y2="102" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+        </svg>
+    </div>
+    <h2 style="margin-top: 0.3em;">Zu den Sachen selbst!</h2>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width: 65%; margin-top: 1em;">
+        <p>&ldquo;To the things themselves!&rdquo;</p>
+        <span class="attribution">&mdash; Edmund Husserl, the motto of phenomenology</span>
+    </div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 1.5em; text-align: center;">
+        Edmund Husserl (1859&ndash;1938)
+    </p>
+    <p style="font-size: 0.38em !important; color: var(--text-muted); margin-top: 0.5em; text-align: center;">
+        Intentionality &middot; The Epoch&eacute; &middot; Eidetic Reduction &middot; Noesis &amp; Noema &middot;
+        The Lifeworld &middot; Transcendental Subjectivity &middot; Intersubjectivity &middot; The Crisis of European Sciences
+    </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02,
+    controls: true,
+    progress: true,
+    history: true
+});
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){
+    document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){
+      s.style.display = 'block';
+      s.style.maxHeight = maxH;
+    });
+  }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+</script>
+</body>
+</html>

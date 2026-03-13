@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martin Heidegger — Being, Time &amp; the Question of Existence</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal-viewport { background: var(--bg-primary); }
+
+.reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+
+/* ───── Utility Classes ───── */
+
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.42em !important;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+}
+
+.quote-box {
+    border-left: 3px solid var(--accent-amber);
+    padding: 0.45em 1em;
+    margin: 0.8em auto;
+    max-width: 80%;
+    text-align: left;
+    background: rgba(212, 160, 83, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.quote-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.44em !important;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.quote-box .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.42em !important;
+    color: var(--text-muted);
+    margin-top: 0.4em;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 0.45em;
+    margin: 0.6em auto;
+    max-width: 90%;
+}
+
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.55em 0.7em;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.card:hover { border-color: var(--accent-amber); }
+
+.card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.60em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+}
+
+.card p {
+    font-size: 0.44em !important;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.card .icon {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8em;
+    text-align: left;
+    margin: 0.25em 0;
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54em;
+    color: var(--accent-amber);
+    min-width: 3.2em;
+    padding-top: 0.15em;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.50em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 0.8em;
+}
+
+.timeline-item .event strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.diagram-container {
+    margin: 0.6em auto;
+    max-width: 85%;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    align-items: start;
+    text-align: left;
+    max-width: 90%;
+    margin: 0.6em auto;
+}
+
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+
+.tag {
+    display: inline-block;
+    background: rgba(155, 114, 207, 0.12);
+    color: var(--accent-purple);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.42em;
+    padding: 0.15em 0.5em;
+    border-radius: 4px;
+    margin: 0.1em 0.15em;
+}
+
+.tag.amber { background: rgba(212, 160, 83, 0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78, 204, 163, 0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207, 114, 114, 0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91, 140, 212, 0.12); color: var(--accent-blue); }
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.35em;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-amber);
+    margin: 0.5em auto;
+    border-radius: 1px;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0.6em auto;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+    text-align: center;
+    min-width: 100px;
+}
+
+.process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.50em;
+    margin: 0 0 0.15em 0;
+}
+
+.process-step p {
+    font-size: 0.40em !important;
+    margin: 0;
+}
+
+.process-arrow {
+    color: var(--accent-amber);
+    font-size: 1.0em;
+}
+
+.reveal section .note-text {
+    font-size: 0.44em !important;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before {
+    content: '>';
+    color: var(--accent-amber);
+    font-weight: bold;
+    position: absolute;
+    left: -0.3em;
+}
+
+/* Clearing/path decoration on title */
+.clearing-container {
+    width: 160px;
+    height: 80px;
+    margin: 0 auto 1rem auto;
+}
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+/* ── Fullscreen Button ── */
+.fullscreen-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div class="clearing-container">
+        <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Forest clearing / Lichtung -->
+            <ellipse cx="120" cy="80" rx="80" ry="15" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.3"/>
+            <!-- Trees left -->
+            <line x1="30" y1="90" x2="30" y2="30" stroke="#4ecca3" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20 50 L30 20 L40 50" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.3"/>
+            <path d="M22 60 L30 30 L38 60" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.2"/>
+            <!-- Trees right -->
+            <line x1="210" y1="90" x2="210" y2="30" stroke="#4ecca3" stroke-width="1.5" opacity="0.3"/>
+            <path d="M200 50 L210 20 L220 50" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.3"/>
+            <path d="M202 60 L210 30 L218 60" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.2"/>
+            <!-- Light rays from above into clearing -->
+            <line x1="120" y1="5" x2="100" y2="65" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+            <line x1="120" y1="5" x2="120" y2="60" stroke="#d4a053" stroke-width="1" opacity="0.35"/>
+            <line x1="120" y1="5" x2="140" y2="65" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+            <!-- Path/Holzweg -->
+            <path d="M120 95 Q120 75 115 65 Q110 55 120 45" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+            <!-- Ground line -->
+            <line x1="20" y1="90" x2="220" y2="90" stroke="#d4a053" stroke-width="0.8" opacity="0.2"/>
+        </svg>
+    </div>
+    <h1>Martin Heidegger</h1>
+    <p class="subtitle">Being, Time &amp; the Question of Existence</p>
+    <div class="separator"></div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.8em;">
+        Dasein &middot; Being-in-the-World &middot; Temporality &middot; The Question Concerning Technology
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: BIOGRAPHY ═══════════════════ -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Who Was Martin Heidegger?</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.8em;">
+        <div>
+            <p style="font-size: 0.42em !important; color: var(--text-primary); line-height: 1.7;">
+                Martin Heidegger <span style="color: var(--text-muted);">(1889&ndash;1976)</span> was a German
+                philosopher widely regarded as one of the most important &mdash; and controversial &mdash;
+                thinkers of the twentieth century. Born in <span class="accent-amber">Me&szlig;kirch, Baden</span>,
+                he began training for the Catholic priesthood before turning to philosophy at the
+                University of Freiburg, where he studied under <span class="accent-green">Edmund Husserl</span>,
+                the founder of phenomenology.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Heidegger's central question was deceptively simple: <em>What does it mean to be?</em>
+                He argued that Western philosophy had forgotten this question since the pre-Socratics,
+                substituting theories of <em>beings</em> for an inquiry into <em>Being itself</em>.
+                His 1927 masterwork <em>Being and Time</em> transformed phenomenology into an investigation
+                of human existence &mdash; of <span class="accent-purple">Dasein</span>, the being for whom
+                Being is always at stake.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-amber);">
+                <h4 class="accent-amber">Key Contributions</h4>
+                <p>
+                    Dasein &middot; Being-in-the-world &middot; Ready-to-hand / Present-at-hand &middot;
+                    Thrownness &middot; Being-toward-death &middot; The They (das Man) &middot;
+                    Unconcealment (aletheia) &middot; Gestell (enframing) &middot; The Fourfold &middot;
+                    Language as the house of Being
+                </p>
+            </div>
+            <div class="card" style="margin-top: 0.5em; border-left: 3px solid var(--accent-purple);">
+                <h4 class="accent-purple">The Controversy</h4>
+                <p>Heidegger joined the Nazi party in 1933 and served briefly as rector of Freiburg University.
+                Though he resigned the rectorship in 1934, he never publicly repudiated National Socialism.
+                This moral failure remains inseparable from any assessment of his work, even as his
+                philosophical contributions continue to shape contemporary thought.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Life &amp; Career</h2>
+    <div class="separator"></div>
+    <div style="max-width: 85%; margin: 0.5em auto;">
+        <div class="timeline-item">
+            <span class="year">1889</span>
+            <div class="event"><strong>Born in Me&szlig;kirch, Germany</strong>Son of a Catholic sexton. Raised in a deeply religious environment; early education supported by the Church.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1909</span>
+            <div class="event"><strong>Theology, then philosophy at Freiburg</strong>Begins studying theology, soon shifts to philosophy and mathematics. Encounters Husserl's <em>Logical Investigations</em> and Brentano on Aristotle.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1913</span>
+            <div class="event"><strong>Doctoral dissertation</strong><em>The Doctrine of Judgement in Psychologism.</em> Establishes himself in the neo-Kantian and phenomenological traditions.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1915</span>
+            <div class="event"><strong>Habilitation</strong><em>Duns Scotus' Doctrine of Categories and Meaning.</em> Begins teaching at Freiburg as Husserl's assistant.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1923</span>
+            <div class="event"><strong>Marburg professorship</strong>Teaches alongside Bultmann, Gadamer, Arendt, Jonas. The Marburg years are the crucible of <em>Being and Time</em>.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1927</span>
+            <div class="event"><strong><em>Being and Time</em> published</strong>His magnum opus. Transforms phenomenology into existential ontology. Only the first two divisions of the planned work are completed.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1929</span>
+            <div class="event"><strong><em>What is Metaphysics?</em></strong>Inaugural lecture succeeding Husserl at Freiburg. Introduces the concept of <em>das Nichts</em> (the Nothing) and anxiety as philosophical disclosure.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1933</span>
+            <div class="event"><strong>Nazi party membership &amp; rectorship</strong>Joins the NSDAP and becomes rector of Freiburg. Delivers the controversial rectoral address. A permanent stain on his legacy.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1934</span>
+            <div class="event"><strong>Resignation from rectorship</strong>Steps down after less than a year. Retreats from direct political engagement but retains party membership until 1945.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1935</span>
+            <div class="event"><strong>The Kehre (Turn) begins</strong>Shifts from fundamental ontology to the history of Being, truth as unconcealment, and the essence of technology. Lectures on art, poetry, and thinking.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1947</span>
+            <div class="event"><strong><em>Letter on Humanism</em></strong>Written in response to Sartre. Distances himself from existentialism. Articulates language as "the house of Being."</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1950</span>
+            <div class="event"><strong><em>The Thing</em> &amp; <em>Building Dwelling Thinking</em></strong>Develops the Fourfold (earth, sky, divinities, mortals) and the concept of dwelling as the fundamental character of human existence.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1953</span>
+            <div class="event"><strong><em>The Question Concerning Technology</em></strong>Perhaps his most influential late essay. Introduces Gestell (enframing) and "the danger" of technological thinking.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1962</span>
+            <div class="event"><strong><em>Time and Being</em></strong>Reverses the trajectory of <em>Being and Time</em>. Attempts to think Being without recourse to beings.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1976</span>
+            <div class="event"><strong>Death in Freiburg</strong>Dies on 26 May. Buried in Me&szlig;kirch. His <em>Gesamtausgabe</em> (collected works) will eventually exceed 100 volumes.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: DASEIN ═══════════════════ -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Dasein &mdash; Being-There</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Heidegger's term for human existence is <span class="accent-amber">Dasein</span> &mdash;
+                literally "being-there." We are not subjects observing a world of objects; we are
+                the beings for whom <em>Being itself is an issue</em>.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Dasein is always <span class="accent-green">mine</span> (Jemeinigkeit): I cannot
+                transfer my existence to another. And Dasein is always already
+                <span class="accent-purple">in a world</span>, engaged with things, with others,
+                with its own possibilities. Existence precedes any theoretical stance.
+            </p>
+            <div class="quote-box" style="margin-top: 0.6em; max-width: 100%;">
+                <p>"The essence of Dasein lies in its existence."</p>
+                <span class="attribution">&mdash; Being and Time, &sect;9</span>
+            </div>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+                <!-- Dasein circle -->
+                <circle cx="160" cy="130" r="90" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.6"/>
+                <text x="160" y="90" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="16" font-weight="700">DASEIN</text>
+                <text x="160" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">"Being is an issue for it"</text>
+                <!-- Three structural moments -->
+                <circle cx="120" cy="155" r="30" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+                <text x="120" y="152" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Existentiality</text>
+                <text x="120" y="164" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">projection</text>
+                <circle cx="200" cy="155" r="30" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+                <text x="200" y="152" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Facticity</text>
+                <text x="200" y="164" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">thrownness</text>
+                <circle cx="160" cy="200" r="30" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+                <text x="160" y="197" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Falling</text>
+                <text x="160" y="209" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">das Man</text>
+                <!-- Label -->
+                <text x="160" y="250" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">The three structural moments of care (Sorge)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: BEING-IN-THE-WORLD ═══════════════════ -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Being-in-the-World</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Heidegger rejects the Cartesian picture of a mind "inside" a body looking "out" at a world.
+                <span class="accent-amber">Being-in-the-world</span> (In-der-Welt-sein) is a
+                <em>unitary structure</em>: we do not first exist and then relate to a world. We are
+                always already <em>embedded</em>, practically engaged, and attuned.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                The world is not a container of objects but a <span class="accent-green">web of significance</span>
+                &mdash; a referential totality in which things show up as meaningful because of our
+                purposes, projects, and concerns. The hammer is "for hammering," the door "for entering."
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Three moments: <span class="accent-purple">worldhood</span> (the structure of significance),
+                <span class="accent-rose">who</span> is in the world (Dasein, with others),
+                and <span class="accent-blue">Being-in</span> as such (attunement, understanding, discourse).
+            </p>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+                <!-- World as outer ring -->
+                <ellipse cx="150" cy="120" rx="130" ry="100" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.3"/>
+                <text x="150" y="25" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">WORLD (referential totality)</text>
+                <!-- Equipment nexus -->
+                <rect x="30" y="70" width="70" height="35" rx="6" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.5"/>
+                <text x="65" y="85" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9">equipment</text>
+                <text x="65" y="97" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">in-order-to</text>
+                <rect x="200" y="70" width="70" height="35" rx="6" fill="none" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+                <text x="235" y="85" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9">others</text>
+                <text x="235" y="97" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">being-with</text>
+                <!-- Dasein at center -->
+                <circle cx="150" cy="130" r="35" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.6"/>
+                <text x="150" y="127" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="13" font-weight="700">Dasein</text>
+                <text x="150" y="142" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">always already</text>
+                <text x="150" y="153" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">"in" the world</text>
+                <!-- Connecting lines -->
+                <line x1="100" y1="88" x2="115" y2="118" stroke="#4ecca3" stroke-width="1" opacity="0.4"/>
+                <line x1="200" y1="88" x2="185" y2="118" stroke="#5b8cd4" stroke-width="1" opacity="0.4"/>
+                <!-- Mood/attunement -->
+                <rect x="80" y="185" width="60" height="28" rx="6" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                <text x="110" y="203" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9">attunement</text>
+                <!-- Understanding -->
+                <rect x="160" y="185" width="65" height="28" rx="6" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
+                <text x="192" y="203" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">understanding</text>
+                <line x1="140" y1="163" x2="115" y2="185" stroke="#cf7272" stroke-width="1" opacity="0.3"/>
+                <line x1="160" y1="163" x2="185" y2="185" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+                <!-- NOT Cartesian label -->
+                <text x="150" y="235" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="8">not subject/object but a unitary phenomenon</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: READY-TO-HAND / PRESENT-AT-HAND ═══════════════════ -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Ready-to-hand vs Present-at-hand</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-green); margin-bottom: 0.4em;">
+                <h4 class="accent-green">Zuhandenheit (Ready-to-hand)</h4>
+                <p>Our primary relation to things is <em>practical</em>. The tool in use
+                <em>withdraws</em> &mdash; we don't notice the hammer, we notice the nail going in.
+                Equipment forms a referential network: hammer, nails, boards, house, dwelling.
+                Things are transparent when they work.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent-purple); margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Vorhandenheit (Present-at-hand)</h4>
+                <p>Only when equipment <em>breaks down</em> does it become an object of
+                theoretical contemplation. The broken hammer is suddenly <em>there</em> as a thing
+                with properties. Science studies the present-at-hand &mdash; but this is a
+                <em>derivative</em> mode, not the primary one.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent-rose);">
+                <h4 class="accent-rose">Three modes of breakdown</h4>
+                <p><strong>Conspicuousness</strong> (malfunction) &middot;
+                <strong>Obtrusiveness</strong> (missing tool) &middot;
+                <strong>Obstinacy</strong> (obstacle). Each progressively strips away the
+                referential context and reveals the thing "as such."</p>
+            </div>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ready-to-hand: transparent tool -->
+                <text x="150" y="20" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Ready-to-hand (in use)</text>
+                <!-- Hammer shape, translucent -->
+                <rect x="100" y="35" width="12" height="50" rx="2" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.3" stroke-dasharray="3,3"/>
+                <rect x="90" y="30" width="32" height="14" rx="3" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.3" stroke-dasharray="3,3"/>
+                <text x="150" y="60" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">tool withdraws</text>
+                <text x="150" y="73" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">from attention</text>
+                <!-- Arrow down: breakdown -->
+                <line x1="150" y1="90" x2="150" y2="120" stroke="#cf7272" stroke-width="1.5" opacity="0.6"/>
+                <polygon points="145,118 150,128 155,118" fill="#cf7272" opacity="0.6"/>
+                <text x="190" y="110" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9">BREAKDOWN</text>
+                <!-- Present-at-hand: solid object -->
+                <text x="150" y="148" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Present-at-hand (broken)</text>
+                <!-- Hammer shape, solid -->
+                <rect x="100" y="160" width="12" height="50" rx="2" fill="none" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+                <rect x="90" y="155" width="32" height="14" rx="3" fill="none" stroke="#9b72cf" stroke-width="2" opacity="0.7"/>
+                <text x="150" y="185" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">thing becomes</text>
+                <text x="150" y="198" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">visible as object</text>
+                <!-- Key insight -->
+                <rect x="40" y="225" width="220" height="28" rx="6" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.4"/>
+                <text x="150" y="243" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9">Theory is derivative; practice is primary</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: TEMPORALITY ═══════════════════ -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Temporality &mdash; Zeitlichkeit</h2>
+    <div class="separator"></div>
+    <p style="max-width: 80%; margin: 0.3em auto 0.5em auto; font-size: 0.44em !important;">
+        For Heidegger, time is not a sequence of "now-points" but the <span class="accent-amber">deepest structure of Dasein's existence</span>.
+        Dasein <em>is</em> its temporality. The three ecstases of time correspond to the three moments of care.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- Three ecstases -->
+            <circle cx="120" cy="80" r="55" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.4"/>
+            <text x="120" y="65" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="14" font-weight="700">Past</text>
+            <text x="120" y="82" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10">Gewesenheit</text>
+            <text x="120" y="98" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">having-been</text>
+            <text x="120" y="115" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Thrownness</text>
+            <text x="120" y="128" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">(Facticity)</text>
+
+            <circle cx="300" cy="80" r="55" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.4"/>
+            <text x="300" y="65" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">Present</text>
+            <text x="300" y="82" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10">Gegenwart</text>
+            <text x="300" y="98" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">making-present</text>
+            <text x="300" y="115" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Falling</text>
+            <text x="300" y="128" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">(Engagement)</text>
+
+            <circle cx="480" cy="80" r="55" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.4"/>
+            <text x="480" y="65" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="14" font-weight="700">Future</text>
+            <text x="480" y="82" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10">Zukunft</text>
+            <text x="480" y="98" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">coming-toward</text>
+            <text x="480" y="115" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Projection</text>
+            <text x="480" y="128" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">(Existentiality)</text>
+
+            <!-- Connecting arrows -->
+            <path d="M175 80 L245 80" fill="none" stroke="#6a6a7a" stroke-width="1" opacity="0.5" marker-end="url(#arrowGrey)"/>
+            <path d="M355 80 L425 80" fill="none" stroke="#6a6a7a" stroke-width="1" opacity="0.5" marker-end="url(#arrowGrey)"/>
+            <!-- Arrow marker -->
+            <defs>
+                <marker id="arrowGrey" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0,0 8,3 0,6" fill="#6a6a7a" opacity="0.5"/>
+                </marker>
+            </defs>
+            <!-- Label -->
+            <text x="300" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">Authentic temporality: future-directed, owning one's having-been</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Authentic Time</h4>
+            <p>Dasein anticipates its ownmost possibility (death), retrieves its thrown heritage,
+            and acts resolutely in the moment. The future has primacy: I am what I am <em>going to be</em>.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Inauthentic Time</h4>
+            <p>Clock time, "now-time," the endless sequence of present moments. Dasein loses itself in
+            busyness, treats time as something to be "spent" or "killed." The public time of "the They."</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: DAS MAN ═══════════════════ -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The They &mdash; das Man</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Dasein is always already absorbed in the <span class="accent-purple">anonymous public</span> &mdash;
+                "the They" (das Man). We do what "one" does, think what "one" thinks,
+                feel what "one" feels. This is not a moral failing but a <em>structural feature</em>
+                of being human.
+            </p>
+            <div class="card" style="border-left: 3px solid var(--accent-rose); margin-top: 0.4em; margin-bottom: 0.4em;">
+                <h4 class="accent-rose">Three modes of inauthenticity</h4>
+                <p><strong>Idle talk</strong> (Gerede) &mdash; language unmoored from genuine understanding;
+                we pass along what "they say" without thinking.<br/>
+                <strong>Curiosity</strong> (Neugier) &mdash; restless pursuit of novelty for its own sake;
+                never lingering long enough to understand.<br/>
+                <strong>Ambiguity</strong> (Zweideutigkeit) &mdash; everything seems accessible and understood,
+                yet nothing genuinely is.</p>
+            </div>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                Authenticity does not mean escaping das Man but <span class="accent-amber">owning one's existence</span>
+                within the social world &mdash; choosing resolutely rather than drifting with the crowd.
+            </p>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 280 250" xmlns="http://www.w3.org/2000/svg">
+                <!-- das Man cloud -->
+                <ellipse cx="140" cy="70" rx="110" ry="50" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.3"/>
+                <text x="140" y="45" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="15" font-weight="700">das Man</text>
+                <text x="140" y="62" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">"one does..." "they say..."</text>
+                <!-- Three anonymous figures -->
+                <circle cx="80" cy="88" r="8" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+                <circle cx="140" cy="92" r="8" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+                <circle cx="200" cy="88" r="8" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.3"/>
+                <!-- Three modes -->
+                <rect x="15" y="135" width="75" height="40" rx="6" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                <text x="52" y="153" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Idle Talk</text>
+                <text x="52" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">passing along</text>
+                <rect x="103" y="135" width="75" height="40" rx="6" fill="none" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+                <text x="140" y="153" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Curiosity</text>
+                <text x="140" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">restless novelty</text>
+                <rect x="190" y="135" width="75" height="40" rx="6" fill="none" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+                <text x="228" y="153" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Ambiguity</text>
+                <text x="228" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">seeming clarity</text>
+                <!-- Arrow to authenticity -->
+                <line x1="140" y1="185" x2="140" y2="210" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="135,208 140,218 145,208" fill="#4ecca3" opacity="0.5"/>
+                <rect x="70" y="220" width="140" height="25" rx="6" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+                <text x="140" y="237" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">Authenticity (Eigentlichkeit)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: ANXIETY & BEING-TOWARD-DEATH ═══════════════════ -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Anxiety &amp; Being-toward-Death</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                <span class="accent-rose">Angst</span> (anxiety) is not fear of any particular thing.
+                It is the mood in which the world as a whole loses its significance, and Dasein
+                confronts the <em>uncanniness</em> (Unheimlichkeit) of its own existence &mdash;
+                the fact that it has no ultimate ground.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                <span class="accent-amber">Being-toward-death</span> is Dasein's ownmost, non-relational,
+                certain, yet indefinite possibility. Death is not an event at the end of life but
+                a <em>structural feature</em> of existence: we are always already dying. Authentic
+                existence means <em>anticipating</em> death &mdash; not morbidly, but as the horizon
+                that individualises and gives urgency to life.
+            </p>
+            <div class="quote-box" style="margin-top: 0.5em; max-width: 100%;">
+                <p>"As soon as a human being is born, he is old enough to die."</p>
+                <span class="attribution">&mdash; Being and Time, &sect;48</span>
+            </div>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 280 250" xmlns="http://www.w3.org/2000/svg">
+                <!-- Everyday existence -->
+                <rect x="60" y="15" width="160" height="35" rx="8" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+                <text x="140" y="37" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="10">Everyday absorption (das Man)</text>
+                <!-- Arrow down -->
+                <line x1="140" y1="50" x2="140" y2="75" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="135,73 140,83 145,73" fill="#cf7272" opacity="0.5"/>
+                <text x="195" y="68" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9">ANGST</text>
+                <!-- Anxiety zone -->
+                <ellipse cx="140" cy="115" rx="100" ry="35" fill="none" stroke="#cf7272" stroke-width="2" opacity="0.4" stroke-dasharray="5,3"/>
+                <text x="140" y="108" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">World loses significance</text>
+                <text x="140" y="123" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Dasein confronts its finitude</text>
+                <!-- Arrow down -->
+                <line x1="140" y1="152" x2="140" y2="175" stroke="#d4a053" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="135,173 140,183 145,173" fill="#d4a053" opacity="0.5"/>
+                <!-- Being-toward-death -->
+                <rect x="40" y="185" width="200" height="50" rx="8" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.5"/>
+                <text x="140" y="205" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" font-weight="700">Being-toward-Death</text>
+                <text x="140" y="222" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">ownmost, non-relational, certain, indefinite</text>
+                <!-- Authenticity result -->
+                <text x="140" y="248" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="9">=> Resoluteness (Entschlossenheit)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE KEHRE ═══════════════════ -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Kehre &mdash; The Turn</h2>
+    <div class="separator"></div>
+    <p style="max-width: 80%; margin: 0.3em auto 0.5em auto; font-size: 0.44em !important;">
+        After the mid-1930s, Heidegger's thinking undergoes a <span class="accent-amber">fundamental shift</span> &mdash;
+        from the analytic of Dasein to the <em>history of Being</em> (Seinsgeschichte). The question is no longer
+        "How does Dasein disclose Being?" but "How does Being give and withdraw itself across history?"
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Early Heidegger -->
+            <rect x="30" y="30" width="220" height="100" rx="10" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.4"/>
+            <text x="140" y="55" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-weight="700">Early Heidegger</text>
+            <text x="140" y="72" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Fundamental Ontology</text>
+            <text x="140" y="88" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Dasein as starting point</text>
+            <text x="140" y="104" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Being and Time (1927)</text>
+            <text x="140" y="120" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Phenomenological method</text>
+            <!-- Arrow -->
+            <path d="M260 80 L340 80" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.6"/>
+            <polygon points="335,75 345,80 335,85" fill="#d4a053" opacity="0.6"/>
+            <text x="300" y="65" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" font-weight="700">Kehre</text>
+            <text x="300" y="100" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8">~1935-1946</text>
+            <!-- Later Heidegger -->
+            <rect x="350" y="30" width="220" height="100" rx="10" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.4"/>
+            <text x="460" y="55" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13" font-weight="700">Later Heidegger</text>
+            <text x="460" y="72" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">History of Being</text>
+            <text x="460" y="88" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Being as event (Ereignis)</text>
+            <text x="460" y="104" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Truth as aletheia (unconcealment)</text>
+            <text x="460" y="120" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Poetry, art, thinking, dwelling</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Aletheia &mdash; Truth as Unconcealment</h4>
+            <p>Truth is not correctness of propositions but the primordial event in which beings
+            come forth from hiddenness into the open. Every revealing is also a concealing &mdash;
+            truth and untruth belong together. Heidegger finds this insight in the pre-Socratics,
+            especially Heraclitus and Parmenides.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Ereignis &mdash; The Event of Appropriation</h4>
+            <p>In his later thought, Being is no longer a stable ground but an <em>event</em>
+            (Ereignis) in which Being and human thinking are mutually appropriated.
+            Being needs Dasein to be disclosed; Dasein needs Being to exist.
+            This reciprocal belonging replaces subject-object metaphysics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: TECHNOLOGY ═══════════════════ -->
+<section>
+    <span class="section-number">10</span>
+    <h2>The Question Concerning Technology</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Technology is not merely a collection of instruments. Its essence is
+                <span class="accent-amber">Gestell</span> (enframing) &mdash; a mode of revealing that
+                challenges nature to deliver energy that can be extracted, stored, distributed, and switched about.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                Under enframing, everything becomes <span class="accent-rose">standing reserve</span>
+                (Bestand): the river is a hydroelectric power source, the forest is timber,
+                the human is "human resources." Things lose their thingness; beings are reduced
+                to calculable, optimisable units.
+            </p>
+            <div class="quote-box" style="margin-top: 0.5em; max-width: 100%;">
+                <p>"Where the danger is, grows the saving power also."</p>
+                <span class="attribution">&mdash; after H&ouml;lderlin, in <em>The Question Concerning Technology</em></span>
+            </div>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                The <span class="accent-green">saving power</span> lies not in rejecting technology but
+                in recognising its essence as one mode of revealing among others &mdash; and in
+                recovering the poetic and meditative modes that let beings show themselves
+                on their own terms.
+            </p>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+                <!-- Gestell frame -->
+                <rect x="30" y="20" width="220" height="100" rx="8" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.5"/>
+                <text x="140" y="42" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">GESTELL</text>
+                <text x="140" y="58" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9">(Enframing)</text>
+                <!-- Things becoming standing reserve -->
+                <circle cx="80" cy="90" r="16" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                <text x="80" y="87" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">river</text>
+                <text x="80" y="97" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="6">=> power</text>
+                <circle cx="140" cy="90" r="16" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                <text x="140" y="87" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">forest</text>
+                <text x="140" y="97" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="6">=> timber</text>
+                <circle cx="200" cy="90" r="16" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                <text x="200" y="87" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">human</text>
+                <text x="200" y="97" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="6">=> resource</text>
+                <!-- The danger -->
+                <line x1="140" y1="125" x2="140" y2="155" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="135,153 140,163 145,153" fill="#cf7272" opacity="0.5"/>
+                <rect x="50" y="165" width="180" height="30" rx="6" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+                <text x="140" y="184" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">THE DANGER</text>
+                <!-- The saving power -->
+                <line x1="140" y1="200" x2="140" y2="225" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="135,223 140,233 145,223" fill="#4ecca3" opacity="0.5"/>
+                <rect x="40" y="235" width="200" height="30" rx="6" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+                <text x="140" y="254" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">THE SAVING POWER</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE FOURFOLD ═══════════════════ -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Dwelling &amp; the Fourfold</h2>
+    <div class="separator"></div>
+    <p style="max-width: 80%; margin: 0.3em auto 0.5em auto; font-size: 0.44em !important;">
+        In his later work, Heidegger develops the concept of the <span class="accent-amber">Fourfold</span> (das Geviert)
+        &mdash; the gathering of <span class="accent-green">earth</span>, <span class="accent-blue">sky</span>,
+        <span class="accent-purple">divinities</span>, and <span class="accent-rose">mortals</span>.
+        To <em>dwell</em> is to preserve this gathering, to let things be in their essential interconnection.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central diamond / cross -->
+            <!-- Sky (top) -->
+            <circle cx="200" cy="40" r="35" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+            <text x="200" y="37" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="13" font-weight="700">Sky</text>
+            <text x="200" y="52" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">light, seasons, weather</text>
+            <!-- Earth (bottom) -->
+            <circle cx="200" cy="240" r="35" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+            <text x="200" y="237" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-weight="700">Earth</text>
+            <text x="200" y="252" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">sheltering, self-closing</text>
+            <!-- Divinities (left) -->
+            <circle cx="70" cy="140" r="35" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+            <text x="70" y="137" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="12" font-weight="700">Divinities</text>
+            <text x="70" y="152" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">the holy, the absent gods</text>
+            <!-- Mortals (right) -->
+            <circle cx="330" cy="140" r="35" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+            <text x="330" y="137" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="13" font-weight="700">Mortals</text>
+            <text x="330" y="152" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">those who can die</text>
+            <!-- Cross lines -->
+            <line x1="200" y1="75" x2="200" y2="205" stroke="#d4a053" stroke-width="1" opacity="0.25"/>
+            <line x1="105" y1="140" x2="295" y2="140" stroke="#d4a053" stroke-width="1" opacity="0.25"/>
+            <!-- Diagonal lines -->
+            <line x1="100" y1="112" x2="175" y2="65" stroke="#d4a053" stroke-width="0.8" opacity="0.15"/>
+            <line x1="300" y1="112" x2="225" y2="65" stroke="#d4a053" stroke-width="0.8" opacity="0.15"/>
+            <line x1="100" y1="168" x2="175" y2="215" stroke="#d4a053" stroke-width="0.8" opacity="0.15"/>
+            <line x1="300" y1="168" x2="225" y2="215" stroke="#d4a053" stroke-width="0.8" opacity="0.15"/>
+            <!-- Center label -->
+            <circle cx="200" cy="140" r="22" fill="none" stroke="#d4a053" stroke-width="2" opacity="0.4"/>
+            <text x="200" y="138" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">the</text>
+            <text x="200" y="149" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Thing</text>
+        </svg>
+    </div>
+    <p class="note-text">The jug, the bridge, the farmhouse &mdash; genuine "things" gather the Fourfold.
+    They are not mere objects but sites of dwelling where world comes to presence.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: LANGUAGE ═══════════════════ -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Language as the House of Being</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                For the later Heidegger, <span class="accent-amber">language is not a tool</span> we use
+                to label things. Language is the primordial event in which Being comes to word.
+                We do not speak language; <em>language speaks us</em>. It is
+                "the house of Being" in which we dwell.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                <span class="accent-purple">Poetry</span> is the highest form of language because the
+                poet does not impose meanings but <em>listens</em> to what wants to be said.
+                H&ouml;lderlin, Rilke, Trakl &mdash; these poets "name the holy" and thereby
+                open a space for genuine dwelling.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.4em;">
+                <span class="accent-green">Thinking</span> and poetry are neighbours: both attend
+                to what withdraws from ordinary speech. The thinker and the poet dwell on
+                separate mountain peaks but hear the same silence between them.
+            </p>
+            <div class="quote-box" style="margin-top: 0.5em; max-width: 100%;">
+                <p>"Language is the house of Being. In its home human beings dwell."</p>
+                <span class="attribution">&mdash; Letter on Humanism, 1947</span>
+            </div>
+        </div>
+        <div class="diagram-container" style="margin: 0;">
+            <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg">
+                <!-- House shape -->
+                <path d="M50 120 L140 40 L230 120 L230 210 L50 210 Z" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.4"/>
+                <!-- Roof peak -->
+                <text x="140" y="30" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">BEING</text>
+                <!-- Inside the house -->
+                <text x="140" y="95" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">LANGUAGE</text>
+                <text x="140" y="112" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">"the house of Being"</text>
+                <!-- Two dwellers -->
+                <rect x="70" y="135" width="80" height="35" rx="6" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
+                <text x="110" y="150" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Poetry</text>
+                <text x="110" y="163" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">naming the holy</text>
+                <rect x="160" y="135" width="60" height="35" rx="6" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.5"/>
+                <text x="190" y="150" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Thinking</text>
+                <text x="190" y="163" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">attending</text>
+                <!-- Everyday language below -->
+                <rect x="80" y="180" width="120" height="22" rx="4" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.3"/>
+                <text x="140" y="195" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8">everyday talk (idle talk)</text>
+                <!-- Saying -->
+                <text x="140" y="228" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="8">die Sage &mdash; the primordial Saying</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: INFLUENCES & CONNECTIONS ═══════════════════ -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Influences &amp; Connections</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">Who Shaped Heidegger</h4>
+            <p><strong>Husserl</strong> &mdash; phenomenological method: "to the things themselves!"<br/>
+            <strong>Kierkegaard</strong> &mdash; anxiety, authenticity, the individual before God<br/>
+            <strong>Nietzsche</strong> &mdash; nihilism, the death of God, revaluation<br/>
+            <strong>Aristotle</strong> &mdash; phronesis, energeia, the question of being qua being<br/>
+            <strong>Pre-Socratics</strong> &mdash; Heraclitus (logos, physis), Parmenides (Being and thinking)</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Who Heidegger Shaped</h4>
+            <p><strong>Sartre</strong> &mdash; existentialism (though Heidegger rejected the label)<br/>
+            <strong>Gadamer</strong> &mdash; philosophical hermeneutics<br/>
+            <strong>Arendt</strong> &mdash; the human condition, natality, thinking<br/>
+            <strong>Derrida</strong> &mdash; deconstruction as radicalised destruction<br/>
+            <strong>Foucault</strong> &mdash; epistemic frameworks, the history of truth<br/>
+            <strong>Levinas</strong> &mdash; ethics as first philosophy (in response to Heidegger)<br/>
+            <strong>Merleau-Ponty</strong> &mdash; embodied phenomenology</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">McGilchrist &amp; Attention</h4>
+            <p>Iain McGilchrist's account of left- and right-hemisphere attention draws deeply on
+            Heidegger's distinction between present-at-hand (detached, analytical, left-hemisphere)
+            and ready-to-hand (engaged, contextual, right-hemisphere). Heidegger's insight that
+            theoretical abstraction is <em>derivative</em> of lived engagement anticipates McGilchrist's
+            argument that the left hemisphere's mode of attention parasitises the right's primary openness to the world.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">Scruton &amp; Aesthetic Conservatism</h4>
+            <p>Roger Scruton's critique of modern architecture and his defence of beauty as a
+            "real presence" echo Heidegger's analysis of dwelling and the Fourfold. Scruton's
+            insistence that technology strips the world of meaning parallels Heidegger's account
+            of Gestell. Both thinkers see the modern crisis as a loss of the sacred dimension
+            of everyday life &mdash; a forgetting of what it means to <em>dwell</em> rather than
+            merely to function.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY ═══════════════════ -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Legacy &amp; Influence</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Existentialism &amp; Phenomenology</h4>
+            <p>Though Heidegger rejected the existentialist label, <em>Being and Time</em> made existential
+            phenomenology possible. Sartre, Beauvoir, Merleau-Ponty, and the entire French phenomenological
+            tradition are unthinkable without Heidegger.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Hermeneutics &amp; Postmodernism</h4>
+            <p>Gadamer's <em>Truth and Method</em> extends Heidegger's hermeneutics. Derrida, Foucault, and
+            Rorty all pass through Heidegger. His "destruction" of metaphysics becomes deconstruction;
+            his history of Being becomes genealogy.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Ecology &amp; Technology Critique</h4>
+            <p>Deep ecology (Naess), environmental philosophy, and the critique of technological rationality
+            all draw on Heidegger's analysis of Gestell and dwelling. His thought inspires those who seek
+            a non-instrumental relationship with nature.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card" style="border-left: 3px solid var(--accent-blue);">
+            <h4 class="accent-blue">Architecture &amp; Design</h4>
+            <p>Heidegger's "Building Dwelling Thinking" has profoundly shaped architectural theory.
+            Norberg-Schulz, Pallasmaa, and Peter Zumthor draw on his phenomenology of place.
+            The idea that buildings should "gather" a world rather than merely enclose space
+            is directly Heideggerian.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">Thinkers in This Collection</h4>
+            <p>Heidegger connects to <strong>Nietzsche</strong> (confrontation with nihilism),
+            <strong>Dostoevsky</strong> (anxiety and the underground), <strong>Jung</strong> (the question of meaning),
+            <strong>Frankl</strong> (authentic existence and finitude), and
+            <strong>Peterson</strong> (the call to individual responsibility). His critique of technology
+            and defence of dwelling resonate with Scruton's conservatism and McGilchrist's account
+            of hemispheric attention.</p>
+        </div>
+    </div>
+    <p class="note-text">Heidegger remains one of the most cited philosophers of the twentieth century, his influence
+    persisting across continental philosophy, theology, literary theory, ecology, and cognitive science.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: KEY WORKS ═══════════════════ -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Essential Readings</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div>
+            <div class="card" style="margin-bottom: 0.4em; border-left: 3px solid var(--accent-amber);">
+                <h4><em>Being and Time</em> <span style="color: var(--text-muted); font-weight: 400;">(1927)</span></h4>
+                <p>The magnum opus. Analyses Dasein's existence through being-in-the-world, care, temporality,
+                and being-toward-death. Incomplete &mdash; only the first two of three planned divisions were
+                published &mdash; yet it transformed twentieth-century philosophy.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em; border-left: 3px solid var(--accent-purple);">
+                <h4><em>What is Metaphysics?</em> <span style="color: var(--text-muted); font-weight: 400;">(1929)</span></h4>
+                <p>The inaugural Freiburg lecture. Introduces the Nothing (das Nichts) disclosed in anxiety.
+                Provocative and brief &mdash; an ideal entry point to Heidegger's questioning of the foundations
+                of science and logic.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent-green);">
+                <h4><em>The Question Concerning Technology</em> <span style="color: var(--text-muted); font-weight: 400;">(1954)</span></h4>
+                <p>Perhaps his most influential essay. Analyses the essence of modern technology as Gestell
+                (enframing) and argues that the danger of technology lies not in machines but in a mode
+                of revealing that reduces everything to standing reserve.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em; border-left: 3px solid var(--accent-rose);">
+                <h4><em>Poetry, Language, Thought</em> <span style="color: var(--text-muted); font-weight: 400;">(1971)</span></h4>
+                <p>A collection including "The Origin of the Work of Art," "Building Dwelling Thinking,"
+                and "The Thing." The best introduction to Heidegger's later thought on art, dwelling,
+                and the Fourfold. Translated by Albert Hofstadter.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em; border-left: 3px solid var(--accent-blue);">
+                <h4><em>On the Way to Language</em> <span style="color: var(--text-muted); font-weight: 400;">(1959)</span></h4>
+                <p>Heidegger's meditations on language, poetry, and the relationship between thinking and
+                saying. Includes the influential "A Dialogue on Language" and "The Nature of Language."
+                Essential for understanding his claim that language is the house of Being.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent-amber);">
+                <h4><em>Basic Writings</em> <span style="color: var(--text-muted); font-weight: 400;">(ed. Krell)</span></h4>
+                <p>The standard single-volume anthology. Includes key texts from across Heidegger's career:
+                "On the Essence of Truth," "The Origin of the Work of Art," "Letter on Humanism,"
+                "The Question Concerning Technology," and selections from <em>Being and Time</em>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 17: CLOSING ═══════════════════ -->
+<section>
+    <div class="clearing-container" style="width: 120px; height: 60px; margin-bottom: 0.6em;">
+        <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Simplified clearing -->
+            <ellipse cx="120" cy="75" rx="60" ry="12" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.3"/>
+            <line x1="120" y1="10" x2="120" y2="60" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+            <line x1="120" y1="10" x2="95" y2="60" stroke="#d4a053" stroke-width="0.6" opacity="0.2"/>
+            <line x1="120" y1="10" x2="145" y2="60" stroke="#d4a053" stroke-width="0.6" opacity="0.2"/>
+            <line x1="40" y1="85" x2="40" y2="30" stroke="#4ecca3" stroke-width="1" opacity="0.2"/>
+            <path d="M32 45 L40 22 L48 45" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.2"/>
+            <line x1="200" y1="85" x2="200" y2="30" stroke="#4ecca3" stroke-width="1" opacity="0.2"/>
+            <path d="M192 45 L200 22 L208 45" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.2"/>
+            <line x1="20" y1="85" x2="220" y2="85" stroke="#d4a053" stroke-width="0.8" opacity="0.15"/>
+        </svg>
+    </div>
+    <div class="quote-box" style="max-width: 70%; margin: 0.6em auto;">
+        <p>"The most thought-provoking thing in our thought-provoking time is that we are still not thinking."</p>
+        <span class="attribution">&mdash; M. Heidegger, <em>What Is Called Thinking?</em></span>
+    </div>
+    <div class="separator" style="margin: 0.8em auto;"></div>
+    <h3 style="font-size: 0.95em; margin-bottom: 0.3em;">Martin Heidegger</h3>
+    <p style="font-size: 0.5em !important; color: var(--text-muted);">
+        1889 &ndash; 1976 &middot; Me&szlig;kirch &rarr; Freiburg &rarr; Marburg &rarr; Freiburg &rarr; Todtnauberg
+    </p>
+    <p style="font-size: 0.39em !important; color: var(--text-muted); margin-top: 1em;">
+        <em>"Only a god can save us."</em>
+    </p>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02,
+    controls: true,
+    progress: true,
+    history: true
+});
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){
+    document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){
+      s.style.display = 'block';
+      s.style.maxHeight = maxH;
+    });
+  }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+</script>
+</body>
+</html>

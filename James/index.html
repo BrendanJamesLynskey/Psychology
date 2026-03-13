@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William James — Pragmatism, Consciousness & the Varieties of Experience</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+}
+
+.reveal h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+}
+
+.reveal h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+}
+
+.reveal h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--accent-amber);
+}
+
+.reveal p, .reveal li {
+    font-size: 0.85em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.reveal code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg-card);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: var(--accent-green);
+}
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.15em !important;
+    color: var(--text-muted) !important;
+    font-weight: 400;
+    margin-top: 0.5em;
+    font-style: italic;
+}
+
+.quote-box {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-amber);
+    padding: 1.2em 1.8em;
+    margin: 1em auto;
+    max-width: 85%;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.quote-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05em !important;
+    color: var(--text-primary) !important;
+    margin: 0;
+}
+
+.quote-box .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.75em !important;
+    color: var(--text-muted) !important;
+    margin-top: 0.8em;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 1em;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.2em;
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-amber);
+}
+
+.card h3 {
+    font-size: 1em;
+    margin: 0 0 0.5em 0;
+}
+
+.card p {
+    font-size: 0.75em !important;
+    margin: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin: 0.6em 0;
+    text-align: left;
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-amber);
+    font-weight: 500;
+    min-width: 80px;
+    font-size: 0.85em;
+}
+
+.timeline-item .event {
+    color: var(--text-secondary);
+    font-size: 0.8em;
+    line-height: 1.4;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 1em;
+}
+
+.diagram-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5em;
+    margin: 1em auto;
+    max-width: 90%;
+}
+
+.mandala-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+}
+
+.separator {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-amber), var(--accent-purple));
+    margin: 0.8em auto;
+    border-radius: 2px;
+}
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.concept-node {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.8em 1.2em;
+    display: inline-block;
+    margin: 0.3em;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 1em 0;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.8em 1.2em;
+    font-size: 0.8em;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.process-arrow {
+    color: var(--accent-amber);
+    font-size: 1.2em;
+}
+
+.note-text {
+    font-size: 0.7em !important;
+    color: var(--text-muted) !important;
+    font-style: italic;
+    margin-top: 1em;
+}
+
+.fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+
+.reveal ul, .reveal ol {
+    display: block;
+    margin-left: 1em;
+}
+
+.reveal ul li, .reveal ol li {
+    margin-bottom: 0.4em;
+}
+
+.reveal .slides section {
+    overflow-y: auto;
+}
+
+.reveal section {
+    padding: 40px 60px !important;
+    text-align: left;
+    height: auto !important;
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; text-align:center;">
+        <span class="section-number">1842 &mdash; 1910</span>
+        <h1 style="font-size:2.6em;">William James</h1>
+        <div class="separator"></div>
+        <p class="subtitle">Pragmatism, Consciousness & the Varieties of Experience</p>
+        <div class="quote-box" style="margin-top:1.5em;">
+            <p>"The greatest weapon against stress is our ability to choose one thought over another."</p>
+            <span class="attribution">William James</span>
+        </div>
+        <p class="note-text" style="margin-top:2em;">The Father of American Psychology</p>
+    </div>
+</section>
+
+<!-- Slide 2: Biography -->
+<section>
+    <span class="section-number">01 &mdash; Biography</span>
+    <h2>The Life of William James</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="card-grid cols-2" style="margin-top:1em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Origins & Family</h3>
+            <p>Born in New York City, 1842, into one of America's most remarkable intellectual families. His father, Henry James Sr., was a Swedenborgian theologian; his brother, Henry James, became one of the greatest novelists in the English language. A family steeped in ideas, restless inquiry, and transatlantic culture.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">Education & Seeking</h3>
+            <p>James studied painting before turning to chemistry and then medicine at Harvard. He enrolled at the Lawrence Scientific School in 1861, entered Harvard Medical School in 1864, and earned his MD in 1869. His intellectual path was anything but linear &mdash; a genuine seeker across disciplines.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-purple);">Crisis & Resolution</h3>
+            <p>In his late twenties James suffered severe depression and an existential crisis, questioning free will and the meaning of existence. He resolved this crisis through reading Renouvier and his own philosophy of will: his first act of free will was to believe in free will itself. This experience shaped everything that followed.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-blue);">Harvard & Legacy</h3>
+            <p>Began teaching at Harvard in 1872 and remained there for the rest of his career. Founded one of America's first psychology laboratories. Became a towering figure in both philosophy and psychology &mdash; rare in either field, unprecedented in both. Married Alice Gibbens in 1878; died at Chocorua, New Hampshire, in 1910.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Timeline -->
+<section>
+    <span class="section-number">02 &mdash; Timeline</span>
+    <h2>Life & Works</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1em; margin-top:0.8em;">
+        <div>
+            <div class="timeline-item">
+                <span class="year">1842</span>
+                <span class="event">Born in New York City</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1861-64</span>
+                <span class="event">Studies at Lawrence Scientific School, Harvard</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1864</span>
+                <span class="event">Enters Harvard Medical School</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1867-68</span>
+                <span class="event">European travels; onset of severe depression and existential crisis</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1869</span>
+                <span class="event">Receives MD from Harvard</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1872</span>
+                <span class="event">Begins teaching at Harvard (anatomy and physiology)</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1878</span>
+                <span class="event">Marries Alice Howe Gibbens</span>
+            </div>
+        </div>
+        <div>
+            <div class="timeline-item">
+                <span class="year">1890</span>
+                <span class="event"><em>The Principles of Psychology</em> published &mdash; twelve years in the making</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1897</span>
+                <span class="event"><em>The Will to Believe</em> and Other Essays</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1901-02</span>
+                <span class="event">Gifford Lectures at Edinburgh &mdash; becomes <em>The Varieties of Religious Experience</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1907</span>
+                <span class="event"><em>Pragmatism: A New Name for Some Old Ways of Thinking</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1909</span>
+                <span class="event"><em>A Pluralistic Universe</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1910</span>
+                <span class="event">Dies at Chocorua, New Hampshire, aged 68</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1912</span>
+                <span class="event"><em>Essays in Radical Empiricism</em> published posthumously</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Core Concepts Overview -->
+<section>
+    <span class="section-number">03 &mdash; Core Ideas</span>
+    <h2>The Philosophical Architecture</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="card-grid cols-4" style="margin-top:1em;">
+        <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">Stream of Consciousness</h3>
+            <p>Mind as continuous flow, not discrete atoms of thought</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">Pragmatism</h3>
+            <p>Truth is what works &mdash; ideas measured by practical consequences</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-purple);">
+            <h3 style="color:var(--accent-purple);">Radical Empiricism</h3>
+            <p>Experience is the fundamental stuff of reality itself</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-rose);">
+            <h3 style="color:var(--accent-rose);">Varieties of Experience</h3>
+            <p>Religious experience as legitimate domain of inquiry</p>
+        </div>
+    </div>
+    <div class="card-grid cols-4" style="margin-top:0.5em;">
+        <div class="card" style="border-top: 3px solid var(--accent-blue);">
+            <h3 style="color:var(--accent-blue);">The Will to Believe</h3>
+            <p>Justified faith when evidence is insufficient but choice is forced</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">Pluralism</h3>
+            <p>Reality as multiverse admitting of many descriptions</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-purple);">
+            <h3 style="color:var(--accent-purple);">Habit</h3>
+            <p>The flywheel of society &mdash; neuroplasticity avant la lettre</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">James-Lange Theory</h3>
+            <p>We feel sorry because we cry, not the reverse</p>
+        </div>
+    </div>
+    <p class="note-text">James's system is not a system: it is a living web of inquiry, deliberately open and unfinished.</p>
+</section>
+
+<!-- Slide 5: Stream of Consciousness -->
+<section>
+    <span class="section-number">04 &mdash; Stream of Consciousness</span>
+    <h2>The Stream of Consciousness</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"Consciousness, then, does not appear to itself chopped up in bits. Such words as 'chain' or 'train' do not describe it fitly. It is nothing jointed; it flows. A 'river' or a 'stream' are the metaphors by which it is most naturally described."</p>
+        <span class="attribution">The Principles of Psychology, 1890</span>
+    </div>
+    <div class="diagram-container" style="margin-top:1em;">
+        <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <!-- Stream flow path -->
+            <defs>
+                <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#5b8cd4; stop-opacity:0.3"/>
+                    <stop offset="25%" style="stop-color:#9b72cf; stop-opacity:0.5"/>
+                    <stop offset="50%" style="stop-color:#d4a053; stop-opacity:0.6"/>
+                    <stop offset="75%" style="stop-color:#4ecca3; stop-opacity:0.5"/>
+                    <stop offset="100%" style="stop-color:#cf7272; stop-opacity:0.3"/>
+                </linearGradient>
+            </defs>
+            <!-- Stream body -->
+            <path d="M 0,110 C 100,60 150,160 250,100 C 350,40 400,170 500,110 C 600,50 650,160 750,100 C 820,60 870,130 900,110" fill="none" stroke="url(#streamGrad)" stroke-width="50" opacity="0.3"/>
+            <path d="M 0,110 C 100,60 150,160 250,100 C 350,40 400,170 500,110 C 600,50 650,160 750,100 C 820,60 870,130 900,110" fill="none" stroke="url(#streamGrad)" stroke-width="3" opacity="0.9"/>
+            <!-- Substantive parts (islands of focus) -->
+            <circle cx="130" cy="85" r="28" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="130" y="82" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Substantive</text>
+            <text x="130" y="95" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Part</text>
+            <circle cx="380" cy="140" r="28" fill="#161622" stroke="#4ecca3" stroke-width="2"/>
+            <text x="380" y="137" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Substantive</text>
+            <text x="380" y="150" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Part</text>
+            <circle cx="630" cy="75" r="28" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+            <text x="630" y="72" text-anchor="middle" fill="#9b72cf" font-size="10" font-family="DM Sans">Substantive</text>
+            <text x="630" y="85" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Part</text>
+            <!-- Transitive parts labels -->
+            <text x="250" y="45" text-anchor="middle" fill="#6a6a7a" font-size="11" font-family="DM Sans" font-style="italic">transitive (the flow between)</text>
+            <text x="505" y="190" text-anchor="middle" fill="#6a6a7a" font-size="11" font-family="DM Sans" font-style="italic">transitive (the fringe)</text>
+            <!-- The Fringe -->
+            <text x="830" y="65" text-anchor="middle" fill="#cf7272" font-size="11" font-family="DM Sans" font-weight="bold">The Fringe</text>
+            <text x="830" y="80" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans">penumbra of</text>
+            <text x="830" y="92" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans">vague relations</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="margin-top:0.8em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Continuity</h3>
+            <p>Consciousness is never broken &mdash; even gaps (sleep, fainting) are bridged by a felt sense of continuity upon waking.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">Selectivity</h3>
+            <p>Consciousness is always choosing, emphasizing, and ignoring. Attention is its sculptor.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-purple);">The Fringe</h3>
+            <p>Beyond the focal point lies a "halo" of felt relations, tendencies, and nascent meanings &mdash; the penumbral awareness.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Pragmatism -->
+<section>
+    <span class="section-number">05 &mdash; Pragmatism</span>
+    <h2>Pragmatism: Truth as What Works</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"The truth of an idea is not a stagnant property inherent in it. Truth happens to an idea. It becomes true, is made true by events."</p>
+        <span class="attribution">Pragmatism, 1907</span>
+    </div>
+    <div class="diagram-container" style="margin-top:1em;">
+        <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <!-- Central node: Pragmatic Method -->
+            <rect x="330" y="10" width="240" height="60" rx="10" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="450" y="36" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="bold" font-family="DM Sans">The Pragmatic Method</text>
+            <text x="450" y="55" text-anchor="middle" fill="#9a9a9a" font-size="11" font-family="DM Sans">"What difference does it make?"</text>
+            <!-- Arrow down -->
+            <line x1="450" y1="70" x2="450" y2="100" stroke="#d4a053" stroke-width="2" marker-end="url(#arrowAmber)"/>
+            <defs><marker id="arrowAmber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#d4a053"/></marker></defs>
+            <!-- Three branches -->
+            <line x1="450" y1="100" x2="150" y2="140" stroke="#5b8cd4" stroke-width="1.5"/>
+            <line x1="450" y1="100" x2="450" y2="140" stroke="#4ecca3" stroke-width="1.5"/>
+            <line x1="450" y1="100" x2="750" y2="140" stroke="#9b72cf" stroke-width="1.5"/>
+            <!-- Branch 1: Idea -->
+            <rect x="50" y="140" width="200" height="90" rx="8" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="150" y="165" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="bold" font-family="DM Sans">An Idea Arises</text>
+            <text x="150" y="185" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">What practical consequences</text>
+            <text x="150" y="200" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">would follow if it were true?</text>
+            <text x="150" y="218" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">Cash value of the idea</text>
+            <!-- Branch 2: Testing -->
+            <rect x="350" y="140" width="200" height="90" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="450" y="165" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="bold" font-family="DM Sans">Testing in Experience</text>
+            <text x="450" y="185" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Does it help us navigate</text>
+            <text x="450" y="200" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">experience more effectively?</text>
+            <text x="450" y="218" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">Satisfactory relation</text>
+            <!-- Branch 3: Result -->
+            <rect x="650" y="140" width="200" height="90" rx="8" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="750" y="165" text-anchor="middle" fill="#9b72cf" font-size="13" font-weight="bold" font-family="DM Sans">Truth as Process</text>
+            <text x="750" y="185" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Truth is made, not found.</text>
+            <text x="750" y="200" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">It is an event, a verification.</text>
+            <text x="750" y="218" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">Agreement with reality</text>
+        </svg>
+    </div>
+    <p style="font-size:0.8em; color:var(--text-secondary); margin-top:0.8em;">Pragmatism is not a doctrine but a <em>method</em> &mdash; a way of settling metaphysical disputes that might otherwise be interminable. Ideas become true insofar as they help us get into satisfactory relation with other parts of our experience. Against the rationalist view of truth as correspondence with a fixed reality, James insists truth is dynamic, provisional, and lived.</p>
+</section>
+
+<!-- Slide 7: Radical Empiricism -->
+<section>
+    <span class="section-number">06 &mdash; Radical Empiricism</span>
+    <h2>Radical Empiricism</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"To be radical, an empiricism must neither admit into its constructions any element that is not directly experienced, nor exclude from them any element that is directly experienced."</p>
+        <span class="attribution">Essays in Radical Empiricism, 1912</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:1em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">The Thesis</h3>
+            <p>Experience is the fundamental "stuff" of reality. Not matter, not mind, but <em>pure experience</em> &mdash; prior to the subject/object distinction. The world is made of one kind of stuff, variously arranged.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">Relations Are Real</h3>
+            <p>The relations between things (conjunctive and disjunctive) are themselves directly experienced, not imposed by the mind. When you feel the "and" between two thoughts, that is as real as the thoughts themselves.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-purple);">Against Rationalism</h3>
+            <p>Rationalists posit hidden structures behind experience. James says: nothing is needed beyond experience itself. The connections, the transitions, the felt continuities &mdash; all are given in experience.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-blue);">Anticipating Process</h3>
+            <p>Radical empiricism anticipates Whitehead's process philosophy and Bergson's durational ontology. Reality is not a set of objects but a flowing, relational tissue of experience.</p>
+        </div>
+    </div>
+    <p class="note-text">This is James's most metaphysically ambitious position &mdash; and his most prophetic. It dissolves the mind-body problem by refusing its terms.</p>
+</section>
+
+<!-- Slide 8: Varieties of Religious Experience -->
+<section>
+    <span class="section-number">07 &mdash; Religious Experience</span>
+    <h2>The Varieties of Religious Experience</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <!-- Spectrum bar -->
+            <defs>
+                <linearGradient id="spectrumGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#4ecca3; stop-opacity:0.8"/>
+                    <stop offset="50%" style="stop-color:#d4a053; stop-opacity:0.8"/>
+                    <stop offset="100%" style="stop-color:#9b72cf; stop-opacity:0.8"/>
+                </linearGradient>
+            </defs>
+            <rect x="80" y="35" width="740" height="12" rx="6" fill="url(#spectrumGrad)" opacity="0.5"/>
+            <!-- Healthy-Minded pole -->
+            <circle cx="130" cy="41" r="20" fill="#161622" stroke="#4ecca3" stroke-width="2"/>
+            <text x="130" y="45" text-anchor="middle" fill="#4ecca3" font-size="11" font-family="DM Sans" font-weight="bold">H</text>
+            <text x="130" y="15" text-anchor="middle" fill="#4ecca3" font-size="12" font-weight="bold" font-family="DM Sans">Healthy-Minded</text>
+            <text x="130" y="80" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Once-born</text>
+            <text x="130" y="95" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Optimistic</text>
+            <text x="130" y="110" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Evil is incidental</text>
+            <!-- Sick Soul pole -->
+            <circle cx="770" cy="41" r="20" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+            <text x="770" y="45" text-anchor="middle" fill="#9b72cf" font-size="11" font-family="DM Sans" font-weight="bold">S</text>
+            <text x="770" y="15" text-anchor="middle" fill="#9b72cf" font-size="12" font-weight="bold" font-family="DM Sans">Sick Soul</text>
+            <text x="770" y="80" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Twice-born</text>
+            <text x="770" y="95" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Confronts suffering</text>
+            <text x="770" y="110" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Evil is essential</text>
+            <!-- Conversion center -->
+            <rect x="370" y="25" width="160" height="45" rx="8" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="450" y="45" text-anchor="middle" fill="#d4a053" font-size="12" font-weight="bold" font-family="DM Sans">Conversion</text>
+            <text x="450" y="58" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Unification of the self</text>
+            <!-- Mystical Experience box below -->
+            <rect x="300" y="135" width="300" height="80" rx="10" fill="#161622" stroke="#cf7272" stroke-width="2"/>
+            <text x="450" y="158" text-anchor="middle" fill="#cf7272" font-size="13" font-weight="bold" font-family="DM Sans">Mystical Experience</text>
+            <text x="450" y="178" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Ineffable &bull; Noetic &bull; Transient &bull; Passive</text>
+            <text x="450" y="198" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">The four marks of mystical states</text>
+            <!-- Connecting line -->
+            <line x1="450" y1="70" x2="450" y2="135" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="5,5"/>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Method</h3>
+            <p>James studies religion not as doctrine or institution but as <em>personal experience</em>. He collects first-person accounts &mdash; conversions, mystical states, saintliness &mdash; and treats them as data. Religion is real because its effects are real.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">Significance</h3>
+            <p>The Varieties established the psychology of religion as a field. James shows that the "sick soul" who confronts evil and suffering directly often achieves a deeper, more durable faith than the healthy-minded optimist. Saintliness is pragmatically assessed.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: The Will to Believe -->
+<section>
+    <span class="section-number">08 &mdash; The Will to Believe</span>
+    <h2>The Will to Believe</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"Our passional nature not only lawfully may, but must, decide an option between propositions, whenever it is a genuine option that cannot by its nature be decided on intellectual grounds."</p>
+        <span class="attribution">The Will to Believe, 1897</span>
+    </div>
+    <div class="diagram-container" style="margin-top:1em;">
+        <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <defs>
+                <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4ecca3"/></marker>
+                <marker id="arrowRose" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#cf7272"/></marker>
+                <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b8cd4"/></marker>
+            </defs>
+            <!-- Top: The Question -->
+            <rect x="300" y="5" width="300" height="45" rx="10" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="450" y="25" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="bold" font-family="DM Sans">Is this a Genuine Option?</text>
+            <text x="450" y="42" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">A choice we cannot avoid making</text>
+            <!-- Three conditions -->
+            <line x1="350" y1="50" x2="150" y2="90" stroke="#5b8cd4" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="450" y1="50" x2="450" y2="90" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+            <line x1="550" y1="50" x2="750" y2="90" stroke="#cf7272" stroke-width="1.5" marker-end="url(#arrowRose)"/>
+            <rect x="50" y="90" width="200" height="55" rx="8" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="150" y="112" text-anchor="middle" fill="#5b8cd4" font-size="12" font-weight="bold" font-family="DM Sans">Living</text>
+            <text x="150" y="130" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Both options appeal to you</text>
+            <rect x="350" y="90" width="200" height="55" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="450" y="112" text-anchor="middle" fill="#4ecca3" font-size="12" font-weight="bold" font-family="DM Sans">Forced</text>
+            <text x="450" y="130" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">No third way; must choose</text>
+            <rect x="650" y="90" width="200" height="55" rx="8" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="750" y="112" text-anchor="middle" fill="#cf7272" font-size="12" font-weight="bold" font-family="DM Sans">Momentous</text>
+            <text x="750" y="130" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">The stakes are significant</text>
+            <!-- Decision point -->
+            <line x1="150" y1="145" x2="400" y2="185" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="450" y1="145" x2="450" y2="185" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="750" y1="145" x2="500" y2="185" stroke="#2a2a3a" stroke-width="1"/>
+            <rect x="320" y="185" width="260" height="45" rx="10" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="450" y="205" text-anchor="middle" fill="#d4a053" font-size="12" font-weight="bold" font-family="DM Sans">All Three Met?</text>
+            <text x="450" y="222" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Then belief is justified</text>
+            <!-- Result -->
+            <line x1="450" y1="230" x2="450" y2="255" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+            <text x="450" y="275" text-anchor="middle" fill="#d4a053" font-size="12" font-weight="bold" font-family="DM Sans">Our passional nature may &mdash; and must &mdash; decide.</text>
+        </svg>
+    </div>
+    <p style="font-size:0.8em; color:var(--text-secondary); margin-top:0.5em;">Against Clifford's dictum that "it is wrong always to believe anything on insufficient evidence," James argues that in genuine options &mdash; living, forced, and momentous &mdash; withholding belief is itself a choice with consequences. The agnostic's caution is not neutral; it is a wager on one side.</p>
+</section>
+
+<!-- Slide 10: Pluralism -->
+<section>
+    <span class="section-number">09 &mdash; Pluralism</span>
+    <h2>A Pluralistic Universe</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"The world is a buzzing, blooming confusion, and we make of it what we can."</p>
+        <span class="attribution">The Principles of Psychology, 1890</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:1em;">
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h3 style="color:var(--accent-rose);">The Monist Temptation</h3>
+            <p>Rationalists (Hegel, Royce, Bradley) insist reality is ultimately <em>one</em> &mdash; a single Absolute in which all differences are reconciled. James finds this bloodless, abstract, and untrue to experience.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">The Pluralist Vision</h3>
+            <p>Reality is not one unified system but a <em>multiverse</em>: loosely connected, partly determined, partly free, always in the making. It admits of multiple valid descriptions and resists final closure.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">Strung-Along, Not Block</h3>
+            <p>The universe is "strung-along" rather than "block" &mdash; not a completed whole but a series of each-forms, concatenated, overlapping. Things relate to their neighbours, not to everything at once.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h3 style="color:var(--accent-purple);">Ethical Implications</h3>
+            <p>In a pluralistic universe, the outcome is not guaranteed. Our choices <em>matter</em>. The moral life is genuinely risky, genuinely significant. This is a universe in which heroism is possible and needed.</p>
+        </div>
+    </div>
+    <p class="note-text">James's pluralism is not relativism. It is the insistence that reality is richer than any single description can capture.</p>
+</section>
+
+<!-- Slide 11: Habit -->
+<section>
+    <span class="section-number">10 &mdash; Habit</span>
+    <h2>Habit: The Flywheel of Society</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"Could the young but realize how soon they will become mere walking bundles of habits, they would give more heed to their conduct while in the plastic state."</p>
+        <span class="attribution">The Principles of Psychology, 1890</span>
+    </div>
+    <div class="process-flow" style="margin-top:1.2em;">
+        <div class="process-step" style="border-color:var(--accent-amber);">
+            <strong style="color:var(--accent-amber);">Neural Pathway</strong><br/>
+            <span style="font-size:0.8em; color:var(--text-muted);">Action carves a groove</span>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-green);">
+            <strong style="color:var(--accent-green);">Repetition</strong><br/>
+            <span style="font-size:0.8em; color:var(--text-muted);">The groove deepens</span>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-purple);">
+            <strong style="color:var(--accent-purple);">Automaticity</strong><br/>
+            <span style="font-size:0.8em; color:var(--text-muted);">Consciousness withdraws</span>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-rose);">
+            <strong style="color:var(--accent-rose);">Character</strong><br/>
+            <span style="font-size:0.8em; color:var(--text-muted);">We become our habits</span>
+        </div>
+    </div>
+    <div class="card-grid cols-3" style="margin-top:1em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Neuroplasticity <em>Avant la Lettre</em></h3>
+            <p>James understood that the nervous system is plastic &mdash; that repeated actions physically reshape neural pathways. He anticipated modern neuroscience by a century.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">James's Maxims for Habit Change</h3>
+            <p>Launch new habits with maximum initiative. Never let an exception occur. Seize every opportunity to act on a resolution. Keep the faculty of effort alive by small daily acts of voluntary discipline.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-purple);">Social Function</h3>
+            <p>Habit is "the enormous flywheel of society, its most precious conservative agent." It keeps the miner in his mine and the fisherman at sea. Without habit, civilization collapses into perpetual renegotiation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 12: James-Lange Theory of Emotion -->
+<section>
+    <span class="section-number">11 &mdash; Emotion</span>
+    <h2>The James-Lange Theory of Emotion</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="quote-box">
+        <p>"We feel sorry because we cry, angry because we strike, afraid because we tremble, and not that we cry, strike, or tremble because we are sorry, angry, or fearful."</p>
+        <span class="attribution">The Principles of Psychology, 1890</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:1em;">
+        <div class="card" style="border-top: 3px solid var(--accent-rose);">
+            <h3 style="color:var(--accent-rose);">Common-Sense View (Rejected)</h3>
+            <div class="process-flow" style="margin:0.8em 0;">
+                <div class="process-step" style="font-size:0.75em;">Perception<br/><span style="color:var(--text-muted);">(see bear)</span></div>
+                <span class="process-arrow">&rarr;</span>
+                <div class="process-step" style="font-size:0.75em;">Feeling<br/><span style="color:var(--text-muted);">(fear)</span></div>
+                <span class="process-arrow">&rarr;</span>
+                <div class="process-step" style="font-size:0.75em;">Bodily Response<br/><span style="color:var(--text-muted);">(run, tremble)</span></div>
+            </div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">James-Lange View</h3>
+            <div class="process-flow" style="margin:0.8em 0;">
+                <div class="process-step" style="font-size:0.75em;">Perception<br/><span style="color:var(--text-muted);">(see bear)</span></div>
+                <span class="process-arrow">&rarr;</span>
+                <div class="process-step" style="font-size:0.75em;">Bodily Response<br/><span style="color:var(--text-muted);">(run, tremble)</span></div>
+                <span class="process-arrow">&rarr;</span>
+                <div class="process-step" style="font-size:0.75em;">Feeling<br/><span style="color:var(--text-muted);">(fear)</span></div>
+            </div>
+        </div>
+    </div>
+    <p style="font-size:0.8em; color:var(--text-secondary); margin-top:1em;">James reverses the conventional order: emotions are our <em>experience of bodily changes</em> that occur in response to perceptions. The body moves first; the feeling follows. This theory, independently proposed by Carl Lange, was controversial in its time but has been partially vindicated by modern embodied cognition research (Damasio's somatic marker hypothesis, interoception studies).</p>
+    <p class="note-text">James's insight: the body is not the servant of emotion but its source. Change the body and you change the feeling.</p>
+</section>
+
+<!-- Slide 13: Influences On James -->
+<section>
+    <span class="section-number">12 &mdash; Influences</span>
+    <h2>Intellectual Sources</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="card-grid cols-3" style="margin-top:1em;">
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Charles Renouvier</h3>
+            <p>The French neo-Kantian whose defense of free will rescued James from his existential crisis. James's reading of Renouvier was the turning point of his life: "My first act of free will shall be to believe in free will."</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-green);">Charles Sanders Peirce</h3>
+            <p>Peirce originated the pragmatic maxim; James popularized and transformed it. Where Peirce meant pragmatism as a theory of meaning, James made it a theory of truth &mdash; to Peirce's lifelong irritation.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-purple);">John Stuart Mill</h3>
+            <p>Mill's empiricism and his defense of individual liberty shaped James's philosophical temperament. James inherited Mill's conviction that experience is the court of last appeal.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-blue);">Charles Darwin</h3>
+            <p>Darwin's functionalist view of mind &mdash; consciousness as adaptive, serving biological purposes &mdash; pervades James's psychology. The stream of consciousness is shaped by evolutionary pressures.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-rose);">Emanuel Swedenborg</h3>
+            <p>Through his father's devotion to Swedenborg, James absorbed a sense that the spiritual and natural worlds are intimately connected &mdash; a conviction underlying the <em>Varieties</em>.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--accent-amber);">Henri Bergson</h3>
+            <p>A relationship of mutual influence. Bergson's <em>dur&eacute;e</em> and James's stream of consciousness are deeply resonant. James called Bergson's work "a real miracle in the history of philosophy."</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Influence of James -->
+<section>
+    <span class="section-number">13 &mdash; Influence</span>
+    <h2>Legacy &amp; Downstream Influence</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="card-grid cols-3" style="margin-top:1em;">
+        <div class="card" style="border-left:3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">Edmund Husserl</h3>
+            <p>Husserl's phenomenology drew directly on James's analysis of consciousness. The stream of consciousness, intentionality, and the fringe influenced Husserl's <em>Logical Investigations</em>.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">Alfred North Whitehead</h3>
+            <p>James's radical empiricism directly anticipates Whitehead's process philosophy. Both reject substance metaphysics in favour of experience, events, and relations as fundamental.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-purple);">
+            <h3 style="color:var(--accent-purple);">John Dewey</h3>
+            <p>Dewey carried pragmatism into education, politics, and democratic theory. His instrumentalism is unthinkable without James's prior revolution in how we think about truth and inquiry.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-blue);">
+            <h3 style="color:var(--accent-blue);">Ludwig Wittgenstein</h3>
+            <p>Wittgenstein read James carefully. The <em>Varieties</em> and the <em>Principles</em> influenced his thinking on aspect-seeing, religious belief, and the limits of philosophical explanation.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-rose);">
+            <h3 style="color:var(--accent-rose);">Carl Jung</h3>
+            <p>James's <em>Varieties</em> deeply influenced Jung's psychology of religion and his typology. James's treatment of the subliminal self anticipates Jungian concepts of the unconscious.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">Iain McGilchrist</h3>
+            <p>James's stream of consciousness influenced McGilchrist's account of right-hemisphere processing &mdash; its flowing, contextual, relational mode of attending to the world.</p>
+        </div>
+    </div>
+    <p class="note-text">Further connections: Frankl (meaning &amp; religion), Peterson (pragmatic truth, religious experience), Scruton (the sacred), Damasio (embodied emotion).</p>
+</section>
+
+<!-- Slide 15: Connections & Synthesis -->
+<section>
+    <span class="section-number">14 &mdash; Connections</span>
+    <h2>The Jamesian Web</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <!-- Central James node -->
+            <circle cx="450" cy="175" r="50" fill="#161622" stroke="#d4a053" stroke-width="2.5"/>
+            <text x="450" y="170" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="bold" font-family="Playfair Display">William</text>
+            <text x="450" y="190" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="bold" font-family="Playfair Display">James</text>
+            <!-- Surrounding nodes -->
+            <!-- Pragmatism cluster -->
+            <circle cx="200" cy="80" r="35" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="200" y="77" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Peirce</text>
+            <text x="200" y="92" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">pragmatic maxim</text>
+            <line x1="230" y1="105" x2="410" y2="150" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="150" cy="200" r="35" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="150" y="197" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Dewey</text>
+            <text x="150" y="212" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">instrumentalism</text>
+            <line x1="185" y1="197" x2="400" y2="180" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <!-- Process/experience cluster -->
+            <circle cx="700" cy="80" r="35" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="700" y="77" text-anchor="middle" fill="#9b72cf" font-size="10" font-family="DM Sans">Whitehead</text>
+            <text x="700" y="92" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">process</text>
+            <line x1="670" y1="100" x2="490" y2="150" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <circle cx="750" cy="200" r="35" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="750" y="197" text-anchor="middle" fill="#9b72cf" font-size="10" font-family="DM Sans">Husserl</text>
+            <text x="750" y="212" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">phenomenology</text>
+            <line x1="715" y1="197" x2="500" y2="180" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <!-- Bergson -->
+            <circle cx="600" cy="310" r="35" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="600" y="307" text-anchor="middle" fill="#5b8cd4" font-size="10" font-family="DM Sans">Bergson</text>
+            <text x="600" y="322" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">dur&eacute;e</text>
+            <line x1="575" y1="285" x2="475" y2="215" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <!-- Renouvier -->
+            <circle cx="300" cy="310" r="35" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="300" y="307" text-anchor="middle" fill="#cf7272" font-size="10" font-family="DM Sans">Renouvier</text>
+            <text x="300" y="322" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">free will</text>
+            <line x1="325" y1="285" x2="425" y2="215" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <!-- Wittgenstein -->
+            <circle cx="800" cy="310" r="35" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="800" y="310" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Wittgenstein</text>
+            <line x1="770" y1="295" x2="495" y2="200" stroke="#d4a053" stroke-width="1" opacity="0.4"/>
+            <!-- McGilchrist -->
+            <circle cx="100" cy="310" r="35" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="100" y="307" text-anchor="middle" fill="#5b8cd4" font-size="10" font-family="DM Sans">McGilchrist</text>
+            <text x="100" y="322" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">attention</text>
+            <line x1="130" y1="290" x2="410" y2="200" stroke="#5b8cd4" stroke-width="1" opacity="0.4"/>
+            <!-- Darwin -->
+            <circle cx="300" cy="50" r="35" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="300" y="53" text-anchor="middle" fill="#cf7272" font-size="10" font-family="DM Sans">Darwin</text>
+            <line x1="325" y1="75" x2="415" y2="140" stroke="#cf7272" stroke-width="1" opacity="0.4"/>
+            <!-- Jung -->
+            <circle cx="600" cy="50" r="35" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="600" y="53" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Jung</text>
+            <line x1="575" y1="75" x2="485" y2="140" stroke="#d4a053" stroke-width="1" opacity="0.4"/>
+        </svg>
+    </div>
+    <p style="font-size:0.8em; color:var(--text-secondary); margin-top:0.5em;">James stands at the intersection of empirical psychology, phenomenological philosophy, and the study of religious experience. His radical empiricism connects to process philosophy; his pragmatism to Dewey and American thought; his psychology of religion to Frankl, Peterson, and Scruton's treatment of the sacred.</p>
+</section>
+
+<!-- Slide 16: Key Works -->
+<section>
+    <span class="section-number">15 &mdash; Key Works</span>
+    <h2>Essential Texts</h2>
+    <div class="separator" style="margin-left:0;"></div>
+    <div class="card-grid cols-2" style="margin-top:1em;">
+        <div class="card" style="border-left:3px solid var(--accent-amber);">
+            <h3 style="color:var(--accent-amber);">The Principles of Psychology (1890)</h3>
+            <p>A landmark: twelve years in the writing, 1,400 pages. Established psychology as a natural science while insisting on the richness of subjective experience. Contains the stream of consciousness, habit, emotion, will, and the self. James called it "a loathsome, distended, tumefied, bloated, dropsical mass" &mdash; it remains indispensable.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-green);">
+            <h3 style="color:var(--accent-green);">The Varieties of Religious Experience (1902)</h3>
+            <p>The Gifford Lectures. A masterwork of descriptive psychology applied to religion. James treats mysticism, conversion, saintliness, and the divided self with scientific rigour and deep sympathy. Still the finest book on the psychology of religion ever written.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-purple);">
+            <h3 style="color:var(--accent-purple);">Pragmatism (1907)</h3>
+            <p>Eight lectures that redefined American philosophy. James presents pragmatism not as a set of doctrines but as a method for resolving disputes by tracing practical consequences. Electrifying in its clarity and controversial in its claims about truth.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-blue);">
+            <h3 style="color:var(--accent-blue);">A Pluralistic Universe (1909)</h3>
+            <p>James's most metaphysical work. Against the Absolute Idealism of Royce and Bradley, he argues for a reality that is genuinely plural, unfinished, and open. His engagement with Bergson's philosophy of duration is deeply original.</p>
+        </div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--accent-rose); margin-top:0.5em;">
+        <h3 style="color:var(--accent-rose);">Essays in Radical Empiricism (1912)</h3>
+        <p>Published posthumously. James's most concentrated statement of his metaphysics. "Pure experience" as the one primal stuff; the dissolution of the subject-object dualism. These essays point toward where James's thought was heading &mdash; a place he did not live to fully explore.</p>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; text-align:center;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:140px; height:140px;">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="var(--accent-amber)" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="var(--accent-purple)" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="var(--accent-green)" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="30" fill="none" stroke="var(--accent-blue)" stroke-width="1" opacity="0.4"/>
+                <!-- Radial lines -->
+                <line x1="100" y1="10" x2="100" y2="190" stroke="var(--accent-amber)" stroke-width="0.5" opacity="0.2"/>
+                <line x1="10" y1="100" x2="190" y2="100" stroke="var(--accent-amber)" stroke-width="0.5" opacity="0.2"/>
+                <line x1="36" y1="36" x2="164" y2="164" stroke="var(--accent-purple)" stroke-width="0.5" opacity="0.2"/>
+                <line x1="164" y1="36" x2="36" y2="164" stroke="var(--accent-purple)" stroke-width="0.5" opacity="0.2"/>
+                <!-- Center point -->
+                <circle cx="100" cy="100" r="5" fill="var(--accent-amber)" opacity="0.7"/>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:75%; margin-top:1.5em;">
+            <p style="font-size:1.2em !important;">"The greatest discovery of my generation is that a human being can alter his life by altering his attitudes of mind."</p>
+            <span class="attribution">William James</span>
+        </div>
+        <div class="separator" style="margin-top:1.5em;"></div>
+        <p class="subtitle" style="margin-top:0.8em;">William James (1842 &mdash; 1910)</p>
+        <p class="note-text" style="margin-top:1em;">The philosopher who insisted that ideas must be lived, that truth is something that happens to an idea, and that the stream of consciousness is richer than any philosophy can contain.</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">&#x26F6;</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02
+});
+
+// Slide height fix
+document.querySelectorAll('.reveal .slides section').forEach(function(slide) {
+    slide.style.height = 'auto';
+});
+</script>
+</body>
+</html>

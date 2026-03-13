@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfred North Whitehead — Process, Reality & the Philosophy of Organism</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal {
+    background: var(--bg-primary);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.reveal h1 { font-size: 2.6em; font-weight: 900; }
+.reveal h2 { font-size: 1.8em; font-weight: 700; }
+.reveal h3 { font-size: 1.3em; font-weight: 700; }
+.reveal h4 { font-size: 1.0em; font-weight: 700; }
+
+.reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.reveal code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: var(--bg-card);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: var(--accent-green);
+}
+
+.subtitle {
+    font-size: 1.1em !important;
+    color: var(--accent-amber) !important;
+    font-style: italic;
+    font-family: 'Playfair Display', serif !important;
+    margin-top: 0.3em;
+}
+
+.quote-box {
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent-amber);
+    padding: 1.2em 1.6em;
+    margin: 0.8em 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.75em;
+    line-height: 1.7;
+    position: relative;
+}
+
+.quote-box::before {
+    content: '"';
+    position: absolute;
+    top: -0.1em;
+    left: 0.3em;
+    font-size: 3em;
+    color: var(--accent-amber);
+    opacity: 0.3;
+    font-family: 'Playfair Display', serif;
+}
+
+.quote-box .attribution {
+    display: block;
+    margin-top: 0.6em;
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+
+.card-grid {
+    display: grid;
+    gap: 1em;
+    margin: 0.8em 0;
+}
+
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.2em;
+    text-align: left;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-amber);
+    transform: translateY(-2px);
+}
+
+.card h4 {
+    margin: 0 0 0.4em 0;
+    font-size: 0.85em;
+}
+
+.card p {
+    font-size: 0.62em !important;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 0.5em 0;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 1.2em;
+    margin-left: 0.5em;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0.7em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-amber);
+    border: 2px solid var(--bg-primary);
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--accent-amber);
+    min-width: 4em;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.62em;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.diagram-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5em;
+    margin: 0.8em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mandala-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+}
+
+.separator {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-amber), transparent);
+    margin: 0.6em 0;
+    border: none;
+}
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65em;
+    color: var(--accent-amber);
+    opacity: 0.6;
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+.concept-node {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 0.3em 0.9em;
+    font-size: 0.6em;
+    color: var(--accent-green);
+    margin: 0.2em;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    flex-wrap: wrap;
+    margin: 0.8em 0;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.6em 1em;
+    font-size: 0.6em;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.process-arrow {
+    color: var(--accent-amber);
+    font-size: 1.2em;
+}
+
+.note-text {
+    font-size: 0.55em !important;
+    color: var(--text-muted) !important;
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+.fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+}
+
+.reveal ul, .reveal ol {
+    margin-left: 0.6em;
+}
+
+.reveal ul li, .reveal ol li {
+    margin-bottom: 0.3em;
+}
+
+.reveal ul li::marker {
+    color: var(--accent-amber);
+}
+
+.reveal .slides {
+    overflow: visible !important;
+}
+
+.reveal .slides section {
+    padding: 1.5em;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div style="margin-top: 2em;">
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--accent-amber); opacity: 0.7; letter-spacing: 0.2em; text-transform: uppercase;">Philosophy of Organism</p>
+        <h1 style="font-size: 2.8em; margin: 0.2em 0;">Alfred North Whitehead</h1>
+        <div class="separator" style="margin: 0.6em auto; width: 80px;"></div>
+        <p class="subtitle">Process, Reality & the Philosophy of Organism</p>
+        <p style="font-size: 0.65em; color: var(--text-muted); margin-top: 1.5em;">1861 &ndash; 1947</p>
+        <p style="font-size: 0.55em; color: var(--text-muted); margin-top: 0.5em;">Mathematician &bull; Logician &bull; Metaphysician</p>
+    </div>
+</section>
+
+<!-- Slide 2: Biography -->
+<section>
+    <span class="section-number">01</span>
+    <h2>The Life of a Late-Blooming Metaphysician</h2>
+    <div class="separator"></div>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Origins & Mathematics</h4>
+            <p>Born in Ramsgate, Kent in 1861. Entered Trinity College Cambridge in 1880, where he became a distinguished mathematician. Elected Fellow in 1884. His early work centred on universal algebra and the foundations of mathematics. He married Evelyn Wade in 1891.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Principia Mathematica</h4>
+            <p>From 1903 to 1913, Whitehead collaborated with his former student Bertrand Russell on <em>Principia Mathematica</em>, one of the most monumental works in the history of logic &mdash; an attempt to derive all mathematics from pure logic. The collaboration was intense and transformative for both men.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Philosophy of Science</h4>
+            <p>Moving to London and Imperial College in 1910, Whitehead turned from pure mathematics to the philosophy of science and nature, producing <em>An Enquiry Concerning the Principles of Natural Knowledge</em> (1919) and <em>The Concept of Nature</em> (1920).</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">Harvard & Metaphysics</h4>
+            <p>In 1924, at the remarkable age of 63, Whitehead accepted a chair at Harvard and began developing his process philosophy &mdash; one of the most ambitious metaphysical systems since Leibniz. <em>Process and Reality</em> (1929) stands as his magnum opus.</p>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        The safest general characterization of the European philosophical tradition is that it consists of a series of footnotes to Plato.
+        <span class="attribution">&mdash; Process and Reality, 1929</span>
+    </div>
+</section>
+
+<!-- Slide 3: Timeline -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Timeline</h2>
+    <div class="separator"></div>
+
+    <div class="card-grid cols-2">
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">1861</span>
+                <span class="event">Born in Ramsgate, Kent, England</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1880</span>
+                <span class="event">Enters Trinity College, Cambridge</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1884</span>
+                <span class="event">Elected Fellow of Trinity College</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1891</span>
+                <span class="event">Married Evelyn Wade</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1898</span>
+                <span class="event"><em>A Treatise on Universal Algebra</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1903</span>
+                <span class="event">Begins <em>Principia Mathematica</em> with Russell (published 1910&ndash;13)</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1910</span>
+                <span class="event">Moves to London; joins Imperial College</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1919</span>
+                <span class="event"><em>An Enquiry Concerning the Principles of Natural Knowledge</em></span>
+            </div>
+        </div>
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">1920</span>
+                <span class="event"><em>The Concept of Nature</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1924</span>
+                <span class="event">Appointed Professor of Philosophy at Harvard, age 63</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1925</span>
+                <span class="event"><em>Science and the Modern World</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1926</span>
+                <span class="event"><em>Religion in the Making</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1927</span>
+                <span class="event">Gifford Lectures at Edinburgh (1927&ndash;28)</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1929</span>
+                <span class="event"><em>Process and Reality</em> &mdash; his magnum opus</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1933</span>
+                <span class="event"><em>Adventures of Ideas</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1938</span>
+                <span class="event"><em>Modes of Thought</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1947</span>
+                <span class="event">Death in Cambridge, Massachusetts</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: The Fallacy of Misplaced Concreteness -->
+<section>
+    <span class="section-number">03</span>
+    <h2>The Fallacy of Misplaced Concreteness</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">The great error of modern thought: <strong style="color: var(--accent-rose);">mistaking abstractions for concrete realities</strong>. We take our models, categories, and simplifications and treat them as if they were the actual texture of the world. The map is confused with the territory.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Concrete Reality (left) -->
+            <ellipse cx="170" cy="160" rx="130" ry="110" fill="none" stroke="#4ecca3" stroke-width="2" opacity="0.6"/>
+            <text x="170" y="70" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="16" font-weight="700">Concrete Reality</text>
+            <text x="170" y="130" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">rich, interconnected</text>
+            <text x="170" y="150" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">qualitative, processual</text>
+            <text x="170" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">organic, felt</text>
+            <text x="170" y="195" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">the buzzing world of experience</text>
+            <!-- Small circles representing organic connections -->
+            <circle cx="120" cy="210" r="4" fill="#4ecca3" opacity="0.4"/>
+            <circle cx="200" cy="220" r="3" fill="#4ecca3" opacity="0.3"/>
+            <circle cx="150" cy="230" r="5" fill="#4ecca3" opacity="0.35"/>
+            <circle cx="220" cy="200" r="3" fill="#4ecca3" opacity="0.25"/>
+
+            <!-- Arrow -->
+            <line x1="310" y1="130" x2="390" y2="130" stroke="#cf7272" stroke-width="2" marker-end="url(#arrowRed)"/>
+            <text x="350" y="120" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10">ABSTRACTION</text>
+            <!-- Reverse arrow (the fallacy) -->
+            <line x1="390" y1="190" x2="310" y2="190" stroke="#d4a053" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowAmber)"/>
+            <text x="350" y="210" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="9">THE FALLACY</text>
+            <text x="350" y="225" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="8">mistaken for reality</text>
+
+            <!-- Abstractions (right) -->
+            <rect x="400" y="80" width="250" height="160" rx="8" fill="none" stroke="#cf7272" stroke-width="2" opacity="0.6"/>
+            <text x="525" y="70" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="16" font-weight="700">Abstractions</text>
+            <text x="525" y="120" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">"matter" as inert substance</text>
+            <text x="525" y="145" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">"mind" as separate ghost</text>
+            <text x="525" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">nature as mere mechanism</text>
+            <text x="525" y="195" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">simple location in space-time</text>
+            <text x="525" y="225" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">clean models, but lifeless</text>
+
+            <defs>
+                <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#cf7272"/></marker>
+                <marker id="arrowAmber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#d4a053"/></marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="quote-box">
+        The aim of science is to seek the simplest explanations of complex facts. We are apt to fall into the error of thinking that the facts are simple because simplicity is the goal of our quest.
+        <span class="attribution">&mdash; The Concept of Nature, 1920</span>
+    </div>
+</section>
+
+<!-- Slide 5: Actual Occasions -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Actual Occasions (Actual Entities)</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">The fundamental units of reality are not <em>substances</em> but <strong style="color: var(--accent-green);">events</strong> &mdash; momentary occasions of experience. Whitehead calls them <strong style="color: var(--accent-green);">"drops of experience, complex and interdependent."</strong></p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 300" width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Network of actual occasions -->
+            <circle cx="350" cy="150" r="30" fill="#161622" stroke="#4ecca3" stroke-width="2.5"/>
+            <text x="350" y="145" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">ACTUAL</text>
+            <text x="350" y="158" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">OCCASION</text>
+
+            <circle cx="180" cy="90" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5" opacity="0.8"/>
+            <text x="180" y="93" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="520" cy="90" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5" opacity="0.8"/>
+            <text x="520" y="93" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="150" cy="200" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5" opacity="0.8"/>
+            <text x="150" y="203" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="550" cy="200" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5" opacity="0.8"/>
+            <text x="550" y="203" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="260" cy="260" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5" opacity="0.8"/>
+            <text x="260" y="263" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="440" cy="260" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5" opacity="0.8"/>
+            <text x="440" y="263" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8">occasion</text>
+
+            <circle cx="100" cy="140" r="16" fill="#161622" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="600" cy="140" r="16" fill="#161622" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="350" cy="30" r="16" fill="#161622" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+
+            <!-- Prehension lines (connections) -->
+            <line x1="200" y1="100" x2="322" y2="140" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <line x1="500" y1="100" x2="378" y2="140" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <line x1="170" y1="190" x2="325" y2="160" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <line x1="530" y1="190" x2="375" y2="160" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <line x1="278" y1="250" x2="335" y2="175" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <line x1="422" y1="250" x2="365" y2="175" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <line x1="115" y1="138" x2="162" y2="105" stroke="#cf7272" stroke-width="0.8" opacity="0.3"/>
+            <line x1="585" y1="138" x2="540" y2="105" stroke="#cf7272" stroke-width="0.8" opacity="0.3"/>
+            <line x1="350" y1="45" x2="350" y2="120" stroke="#cf7272" stroke-width="0.8" opacity="0.3"/>
+
+            <!-- Labels -->
+            <text x="350" y="15" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">each occasion prehends (grasps) all others</text>
+        </svg>
+    </div>
+
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Not Substances</h4>
+            <p>Reality is not made of enduring "stuff" but of momentary events &mdash; each occasion comes into being, achieves its experience, and perishes, contributing to the next.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Drops of Experience</h4>
+            <p>Each actual occasion is a subject that experiences &mdash; even at the most basic physical level. Experience is not limited to consciousness but is the basic character of reality.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">Interconnected</h4>
+            <p>No occasion exists in isolation. Each arises from its prehensions of the past and contributes to the future. Reality is a web of mutual implication.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Process and Creativity -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Process & Creativity</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">Reality is fundamentally <strong style="color: var(--accent-amber);">process</strong>, not substance. <strong style="color: var(--accent-amber);">Creativity</strong> is the ultimate category &mdash; the universal of universals, the principle of novelty by which the many become one and are increased by one.</p>
+
+    <div class="process-flow">
+        <div class="process-step" style="border-color: var(--accent-purple);">
+            <div style="color: var(--accent-purple); font-weight: 700;">The Many</div>
+            <div style="font-size: 0.85em; color: var(--text-muted);">disjunctive diversity</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-amber);">
+            <div style="color: var(--accent-amber); font-weight: 700;">Creativity</div>
+            <div style="font-size: 0.85em; color: var(--text-muted);">the ultimate principle</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-green);">
+            <div style="color: var(--accent-green); font-weight: 700;">The One</div>
+            <div style="font-size: 0.85em; color: var(--text-muted);">novel conjunctive unity</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color: var(--accent-blue);">
+            <div style="color: var(--accent-blue); font-weight: 700;">The Many + 1</div>
+            <div style="font-size: 0.85em; color: var(--text-muted);">enriched universe</div>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 220" width="700" height="220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Concrescence process -->
+            <text x="350" y="25" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="15" font-weight="700">Concrescence: The Process of Becoming</text>
+
+            <!-- Phase 1 -->
+            <rect x="30" y="50" width="140" height="80" rx="8" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="100" y="75" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Initial Phase</text>
+            <text x="100" y="95" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Physical prehensions</text>
+            <text x="100" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">receive the past</text>
+
+            <line x1="175" y1="90" x2="210" y2="90" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrowAmb2)"/>
+
+            <!-- Phase 2 -->
+            <rect x="215" y="50" width="140" height="80" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="285" y="75" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Supplemental</text>
+            <text x="285" y="95" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Conceptual feelings</text>
+            <text x="285" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">evaluate & value</text>
+
+            <line x1="360" y1="90" x2="395" y2="90" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrowAmb2)"/>
+
+            <!-- Phase 3 -->
+            <rect x="400" y="50" width="140" height="80" rx="8" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="470" y="75" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Satisfaction</text>
+            <text x="470" y="95" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">The occasion achieves</text>
+            <text x="470" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">its definite form</text>
+
+            <line x1="545" y1="90" x2="580" y2="90" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrowAmb2)"/>
+
+            <!-- Perishing / Objective Immortality -->
+            <rect x="585" y="50" width="100" height="80" rx="8" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="635" y="75" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">Perishing</text>
+            <text x="635" y="95" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">becomes datum</text>
+            <text x="635" y="108" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">for the next</text>
+
+            <!-- Feedback loop -->
+            <path d="M 635 135 L 635 180 L 100 180 L 100 135" fill="none" stroke="#6a6a7a" stroke-width="1" stroke-dasharray="5,3"/>
+            <text x="367" y="200" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">objective immortality: the perished occasion lives on as data for new occasions</text>
+
+            <defs>
+                <marker id="arrowAmb2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#d4a053"/></marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="quote-box">
+        The many become one, and are increased by one.
+        <span class="attribution">&mdash; Process and Reality, 1929</span>
+    </div>
+</section>
+
+<!-- Slide 7: Prehension -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Prehension</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">How each actual occasion <strong style="color: var(--accent-purple);">"feels"</strong> or grasps other occasions. Prehension is Whitehead's term for the basic mode of relatedness: every entity takes account of every other. It is pre-cognitive, pre-conscious feeling.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 280" width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central occasion -->
+            <circle cx="350" cy="140" r="40" fill="#161622" stroke="#d4a053" stroke-width="2.5"/>
+            <text x="350" y="133" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">Subject</text>
+            <text x="350" y="148" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">Occasion</text>
+
+            <!-- Physical prehension sources (left) -->
+            <text x="100" y="25" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-weight="700">Physical Prehension</text>
+            <text x="100" y="42" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">(grasping other actual occasions)</text>
+
+            <circle cx="80" cy="80" r="18" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="80" y="83" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">past A</text>
+            <circle cx="120" cy="160" r="18" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="120" y="163" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">past B</text>
+            <circle cx="80" cy="230" r="18" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="80" y="233" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">past C</text>
+
+            <line x1="97" y1="85" x2="312" y2="130" stroke="#4ecca3" stroke-width="1.2" opacity="0.5" marker-end="url(#arrG)"/>
+            <line x1="137" y1="158" x2="312" y2="145" stroke="#4ecca3" stroke-width="1.2" opacity="0.5" marker-end="url(#arrG)"/>
+            <line x1="97" y1="225" x2="318" y2="168" stroke="#4ecca3" stroke-width="1.2" opacity="0.5" marker-end="url(#arrG)"/>
+
+            <!-- Conceptual prehension sources (right) -->
+            <text x="600" y="25" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13" font-weight="700">Conceptual Prehension</text>
+            <text x="600" y="42" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">(grasping eternal objects / potentials)</text>
+
+            <rect x="560" y="65" width="80" height="30" rx="15" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="84" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">beauty</text>
+            <rect x="560" y="115" width="80" height="30" rx="15" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="134" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">redness</text>
+            <rect x="560" y="165" width="80" height="30" rx="15" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="184" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">harmony</text>
+            <rect x="560" y="215" width="80" height="30" rx="15" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="234" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">number</text>
+
+            <line x1="560" y1="82" x2="388" y2="128" stroke="#9b72cf" stroke-width="1.2" opacity="0.5" marker-end="url(#arrP)"/>
+            <line x1="560" y1="130" x2="388" y2="138" stroke="#9b72cf" stroke-width="1.2" opacity="0.5" marker-end="url(#arrP)"/>
+            <line x1="560" y1="180" x2="388" y2="148" stroke="#9b72cf" stroke-width="1.2" opacity="0.5" marker-end="url(#arrP)"/>
+            <line x1="560" y1="228" x2="385" y2="165" stroke="#9b72cf" stroke-width="1.2" opacity="0.5" marker-end="url(#arrP)"/>
+
+            <!-- Negative prehension (bottom) -->
+            <text x="350" y="270" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10">
+                <tspan font-weight="700">Negative prehension:</tspan> the occasion also excludes &mdash; deciding what not to feel
+            </text>
+
+            <defs>
+                <marker id="arrG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4ecca3"/></marker>
+                <marker id="arrP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9b72cf"/></marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="quote-box">
+        Apart from the experiences of subjects there is nothing, nothing, nothing, bare nothingness.
+        <span class="attribution">&mdash; Process and Reality, 1929</span>
+    </div>
+</section>
+
+<!-- Slide 8: The Bifurcation of Nature -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Bifurcation of Nature</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">Whitehead's powerful rejection of the split between <strong style="color: var(--accent-rose);">primary qualities</strong> (extension, mass &mdash; supposedly "objective") and <strong style="color: var(--accent-blue);">secondary qualities</strong> (colour, warmth &mdash; supposedly "subjective"). This bifurcation, inherited from Galileo, Descartes, and Locke, tears nature in two.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 300" width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- The bifurcated view (top) -->
+            <text x="350" y="25" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="14" font-weight="700">The Bifurcated View (which Whitehead rejects)</text>
+
+            <rect x="50" y="45" width="250" height="90" rx="8" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="175" y="70" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="12" font-weight="700">Nature as "Causal"</text>
+            <text x="175" y="90" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Atoms, waves, particles</text>
+            <text x="175" y="105" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Primary qualities: extension, mass</text>
+            <text x="175" y="120" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" font-style="italic">"the real world"</text>
+
+            <text x="350" y="90" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="18">&#x2215;</text>
+            <text x="350" y="75" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="18">&#x2215;</text>
+
+            <rect x="400" y="45" width="250" height="90" rx="8" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="525" y="70" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12" font-weight="700">Nature as "Apparent"</text>
+            <text x="525" y="90" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Colours, sounds, warmth</text>
+            <text x="525" y="105" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Secondary qualities: in the mind</text>
+            <text x="525" y="120" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" font-style="italic">"merely subjective"</text>
+
+            <!-- Divider -->
+            <line x1="100" y1="160" x2="600" y2="160" stroke="#d4a053" stroke-width="1" stroke-dasharray="8,4"/>
+            <text x="350" y="178" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">Whitehead's Alternative</text>
+
+            <!-- Unified view (bottom) -->
+            <rect x="120" y="195" width="460" height="90" rx="10" fill="#161622" stroke="#4ecca3" stroke-width="2"/>
+            <text x="350" y="220" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">Nature as Unified Experience</text>
+            <text x="350" y="243" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Nature is what we perceive in perception. The redness of the sunset is as much</text>
+            <text x="350" y="258" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">a part of nature as the electromagnetic waves. Nature is not to be bifurcated.</text>
+            <text x="350" y="278" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">"Nature is closed to mind" &mdash; i.e., mind does not add to nature; experience IS nature</text>
+        </svg>
+    </div>
+
+    <p class="note-text">This critique anticipates McGilchrist's argument that left-hemisphere thinking strips away the lived qualities of the world, leaving only a mechanical skeleton.</p>
+</section>
+
+<!-- Slide 9: Eternal Objects -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Eternal Objects</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">The realm of <strong style="color: var(--accent-purple);">pure potentials</strong> &mdash; like Platonic forms but participatory, not static. Eternal objects are the "how" of actuality: they <strong style="color: var(--accent-purple);">ingress</strong> into actual occasions, determining their character. A shade of blue, a mathematical ratio, the quality of joy.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 280" width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Realm of eternal objects (top) -->
+            <ellipse cx="350" cy="60" rx="280" ry="45" fill="none" stroke="#9b72cf" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+            <text x="350" y="35" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13" font-weight="700">Realm of Eternal Objects</text>
+            <text x="350" y="52" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">(pure potentials, timeless, not actual)</text>
+
+            <!-- Eternal objects as nodes -->
+            <rect x="110" y="65" width="60" height="24" rx="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+            <text x="140" y="81" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">blueness</text>
+            <rect x="210" y="72" width="60" height="24" rx="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+            <text x="240" y="88" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">circularity</text>
+            <rect x="320" y="65" width="60" height="24" rx="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+            <text x="350" y="81" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">joy</text>
+            <rect x="430" y="72" width="60" height="24" rx="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+            <text x="460" y="88" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">ratio 3:2</text>
+            <rect x="530" y="65" width="60" height="24" rx="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+            <text x="560" y="81" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">warmth</text>
+
+            <!-- Ingression arrows -->
+            <text x="350" y="128" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="11">INGRESSION</text>
+            <line x1="140" y1="90" x2="200" y2="190" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arrPurp)"/>
+            <line x1="350" y1="90" x2="350" y2="190" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arrPurp)"/>
+            <line x1="460" y1="96" x2="400" y2="190" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arrPurp)"/>
+            <line x1="560" y1="90" x2="500" y2="190" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arrPurp)"/>
+
+            <!-- Actual world (bottom) -->
+            <ellipse cx="350" cy="220" rx="220" ry="50" fill="none" stroke="#4ecca3" stroke-width="1.5" opacity="0.6"/>
+            <text x="350" y="210" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-weight="700">Actual Occasions</text>
+            <text x="350" y="228" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">(temporal, concrete, experiential)</text>
+
+            <circle cx="200" cy="220" r="14" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <circle cx="350" cy="220" r="14" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <circle cx="400" cy="230" r="10" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+            <circle cx="500" cy="220" r="14" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+
+            <defs>
+                <marker id="arrPurp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9b72cf"/></marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Not Platonic in the Old Sense</h4>
+            <p>Unlike Plato's static, transcendent Forms, eternal objects are potentials for actuality. They have no agency or existence apart from their ingression into occasions. They are lures, not rulers.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">God's Primordial Nature</h4>
+            <p>Eternal objects are ordered by God's primordial nature &mdash; the conceptual valuation of all possibilities. God's primordial vision provides the "initial aim" for each actual occasion, luring it toward particular potentials.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: God and the World -->
+<section>
+    <span class="section-number">09</span>
+    <h2>God & the World</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">God as the <strong style="color: var(--accent-amber);">principle of concretion</strong>: not a cosmic ruler but the ground of possibility and a <strong style="color: var(--accent-amber);">fellow-sufferer who understands</strong>. God has a dipolar nature &mdash; primordial and consequent.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- God's dipolar nature -->
+            <text x="350" y="25" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="15" font-weight="700">God's Dipolar Nature</text>
+
+            <!-- Primordial Nature (left) -->
+            <ellipse cx="200" cy="130" rx="130" ry="80" fill="none" stroke="#9b72cf" stroke-width="2"/>
+            <text x="200" y="85" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="14" font-weight="700">Primordial Nature</text>
+            <text x="200" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Conceptual valuation of</text>
+            <text x="200" y="125" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">all eternal objects</text>
+            <text x="200" y="148" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8">Unconscious, eternal, infinite</text>
+            <text x="200" y="165" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8">The ground of possibility</text>
+            <text x="200" y="185" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8" font-style="italic">provides the "initial aim"</text>
+
+            <!-- Consequent Nature (right) -->
+            <ellipse cx="500" cy="130" rx="130" ry="80" fill="none" stroke="#4ecca3" stroke-width="2"/>
+            <text x="500" y="85" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="14" font-weight="700">Consequent Nature</text>
+            <text x="500" y="110" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">God's feeling of the</text>
+            <text x="500" y="125" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">actual world</text>
+            <text x="500" y="148" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8">Conscious, temporal, responsive</text>
+            <text x="500" y="165" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8">Grows with the world</text>
+            <text x="500" y="185" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8" font-style="italic">"the fellow-sufferer who understands"</text>
+
+            <!-- Connection -->
+            <line x1="330" y1="130" x2="370" y2="130" stroke="#d4a053" stroke-width="2"/>
+            <circle cx="350" cy="130" r="4" fill="#d4a053"/>
+
+            <!-- The World below -->
+            <rect x="150" y="240" width="400" height="60" rx="10" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="350" y="265" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="13" font-weight="700">The World of Actual Occasions</text>
+            <text x="350" y="283" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Temporal, creative, self-determining</text>
+
+            <!-- Arrows between God and World -->
+            <line x1="200" y1="210" x2="280" y2="240" stroke="#9b72cf" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrPurp2)"/>
+            <text x="210" y="230" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8">initial aims</text>
+
+            <line x1="420" y1="240" x2="480" y2="210" stroke="#4ecca3" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrGrn2)"/>
+            <text x="480" y="230" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">felt by God</text>
+
+            <defs>
+                <marker id="arrPurp2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9b72cf"/></marker>
+                <marker id="arrGrn2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4ecca3"/></marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="quote-box">
+        God is not to be treated as an exception to all metaphysical principles, invoked to save their collapse. He is their chief exemplification.
+        <span class="attribution">&mdash; Process and Reality, 1929</span>
+    </div>
+</section>
+
+<!-- Slide 11: Organism vs Mechanism -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Organism vs. Mechanism</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">Nature is better understood as <strong style="color: var(--accent-green);">organism</strong> than as machine. Every entity has both a <strong style="color: var(--accent-green);">physical pole</strong> (reception of the past) and a <strong style="color: var(--accent-purple);">mental pole</strong> (conceptual valuation, however minimal). Mechanism is an abstraction from the organic reality.</p>
+
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 300" width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mechanism (left) -->
+            <text x="175" y="25" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="15" font-weight="700">Mechanism</text>
+
+            <!-- Gears / rigid connections -->
+            <rect x="60" y="50" width="50" height="50" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <rect x="130" y="50" width="50" height="50" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <rect x="200" y="50" width="50" height="50" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <line x1="110" y1="75" x2="130" y2="75" stroke="#cf7272" stroke-width="2"/>
+            <line x1="180" y1="75" x2="200" y2="75" stroke="#cf7272" stroke-width="2"/>
+
+            <text x="175" y="125" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Inert parts, external relations</text>
+            <text x="175" y="142" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">No interiority, no experience</text>
+            <text x="175" y="159" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Deterministic, value-free</text>
+            <text x="175" y="176" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Nature as dead matter</text>
+
+            <rect x="80" y="195" width="190" height="40" rx="6" fill="#161622" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="175" y="212" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">Descartes, Newton, Laplace</text>
+            <text x="175" y="226" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8">the "scientific materialism" Whitehead opposes</text>
+
+            <!-- Divider -->
+            <line x1="350" y1="20" x2="350" y2="290" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="6,4"/>
+
+            <!-- Organism (right) -->
+            <text x="525" y="25" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="15" font-weight="700">Organism</text>
+
+            <!-- Organic connections -->
+            <circle cx="490" cy="75" r="20" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <circle cx="530" cy="60" r="15" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.7"/>
+            <circle cx="560" cy="80" r="18" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.8"/>
+            <circle cx="520" cy="90" r="12" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.6"/>
+            <!-- Overlapping to show interpenetration -->
+
+            <text x="525" y="125" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Internal relations, mutual feeling</text>
+            <text x="525" y="142" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Every entity: physical + mental pole</text>
+            <text x="525" y="159" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Creative, value-laden, purposive</text>
+            <text x="525" y="176" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Nature as alive with experience</text>
+
+            <rect x="430" y="195" width="190" height="40" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="525" y="212" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">Whitehead's Philosophy of Organism</text>
+            <text x="525" y="226" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">panexperientialism, not panpsychism</text>
+
+            <!-- Bottom note -->
+            <text x="350" y="270" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" font-weight="500">
+                "Biology is the study of the larger organisms; whereas physics is the study of the smaller organisms."
+            </text>
+            <text x="350" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">&mdash; Science and the Modern World, 1925</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: The Categorical Scheme -->
+<section>
+    <span class="section-number">11</span>
+    <h2>The Categorical Scheme</h2>
+    <div class="separator"></div>
+    <p style="max-width: 50em;">Whitehead's speculative philosophy in <em>Process and Reality</em> is built on a rigorous <strong style="color: var(--accent-amber);">categorical scheme</strong> &mdash; a set of fundamental categories meant to be applicable to all experience.</p>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">The Category of the Ultimate</h4>
+            <p><strong>Creativity, Many, One.</strong> Creativity is the ultimate principle by which the many disjunctive entities of the universe become one new conjunctive entity. It is the principle of novelty itself.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Categories of Existence (8)</h4>
+            <p>Actual entities, prehensions, nexus, subjective forms, eternal objects, propositions, multiplicities, contrasts. These are the basic types of things that exist.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Categories of Explanation (27)</h4>
+            <p>Twenty-seven principles explaining how the categories of existence relate. Including: every condition to which process is subject can be found in the constitution of some actual entity.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">Categoreal Obligations (9)</h4>
+            <p>Nine obligations governing the process of concrescence. Including the Category of Subjective Unity, Subjective Harmony, and the key Category of Freedom and Determination.</p>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        Speculative philosophy is the endeavour to frame a coherent, logical, necessary system of general ideas in terms of which every element of our experience can be interpreted.
+        <span class="attribution">&mdash; Process and Reality, opening sentence</span>
+    </div>
+</section>
+
+<!-- Slide 13: Historical Influences -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Intellectual Roots</h2>
+    <div class="separator"></div>
+
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Plato</h4>
+            <p>Whitehead saw himself as completing Plato's project. The eternal objects echo the Forms; the Receptacle of the <em>Timaeus</em> prefigures creativity. "A series of footnotes to Plato."</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Leibniz</h4>
+            <p>The monads anticipate actual occasions; both are "windowless" experiential units. But Whitehead rejects the pre-established harmony &mdash; occasions genuinely feel each other through prehension.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Locke</h4>
+            <p>Whitehead admired Locke's empiricism and concept of "power." He saw himself as reforming Locke's philosophy of experience by removing the bifurcation between primary and secondary qualities.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">William James</h4>
+            <p>Radical empiricism &mdash; the insistence that relations are as real as the things related &mdash; deeply influenced Whitehead. James's "stream of consciousness" anticipates the processual nature of experience.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-rose);">Bergson</h4>
+            <p>Duration, creative evolution, the critique of spatialising time. Bergson's philosophy of becoming strongly resonates with Whitehead, though Whitehead sought more systematic rigour.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Bertrand Russell</h4>
+            <p>Collaborated on <em>Principia Mathematica</em>, then diverged dramatically. Russell moved toward logical atomism and reductionism; Whitehead toward organismic holism. A telling parting of ways.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Legacy and Influence -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Legacy & Influence</h2>
+    <div class="separator"></div>
+
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Process Theology</h4>
+            <p>Charles Hartshorne and John B. Cobb Jr. developed Whitehead's dipolar God into a full theological programme. God as persuasive rather than coercive; the world's suffering felt by God.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">McGilchrist</h4>
+            <p>The "fallacy of misplaced concreteness" is central to McGilchrist's thesis in <em>The Master and His Emissary</em>: left-hemisphere dominance mistakes its own abstractions for the living whole. Whitehead is one of McGilchrist's key allies.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Deleuze</h4>
+            <p>Gilles Deleuze drew heavily on Whitehead's concepts of events, prehension, and eternal objects. <em>The Fold</em> explicitly engages Whitehead alongside Leibniz. Process ontology became central to Deleuze's philosophy of difference.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">Ecological Thought</h4>
+            <p>Whitehead's organismic philosophy &mdash; where every entity is internally related to its environment &mdash; anticipates deep ecology and systems thinking. Nature is not a machine to be exploited but a community of experience.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-rose);">Heidegger Resonance</h4>
+            <p>Though working independently, both Whitehead and Heidegger critiqued the technological-mechanistic worldview. Both rejected substance ontology. Heidegger's "Being" and Whitehead's "Creativity" are strikingly parallel.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Scruton & Conservative Critique</h4>
+            <p>Whitehead's critique of reductive modernism &mdash; that we lose the lived, qualitative world in mechanistic abstraction &mdash; resonates with Scruton's defence of the beauty and meaning that instrumental reason strips away.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Connections Diagram -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Web of Connections</h2>
+    <div class="separator"></div>
+
+    <div class="mandala-container">
+        <svg viewBox="0 0 700 500" width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="250" r="45" fill="#161622" stroke="#d4a053" stroke-width="2.5"/>
+            <text x="350" y="244" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" font-weight="700">Whitehead</text>
+            <text x="350" y="260" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8">1861&ndash;1947</text>
+
+            <!-- Influences (top) -->
+            <text x="350" y="30" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="10" text-transform="uppercase">INFLUENCES</text>
+
+            <circle cx="150" cy="80" r="30" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="150" y="83" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">Plato</text>
+            <line x1="170" y1="105" x2="320" y2="220" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="280" cy="60" r="30" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="280" y="63" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">Leibniz</text>
+            <line x1="295" y1="87" x2="335" y2="210" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="420" cy="60" r="30" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="420" y="63" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">Locke</text>
+            <line x1="405" y1="87" x2="365" y2="210" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="550" cy="80" r="30" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="550" y="76" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">William</text>
+            <text x="550" y="89" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">James</text>
+            <line x1="530" y1="105" x2="385" y2="225" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="80" cy="170" r="28" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="80" y="173" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9">Bergson</text>
+            <line x1="105" y1="180" x2="308" y2="240" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+
+            <!-- Collaborator -->
+            <circle cx="620" cy="170" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="620" y="173" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9">Russell</text>
+            <line x1="595" y1="180" x2="392" y2="240" stroke="#5b8cd4" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+
+            <!-- Influenced (bottom) -->
+            <text x="350" y="480" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="10" text-transform="uppercase">INFLUENCED</text>
+
+            <circle cx="120" cy="380" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="120" y="376" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">Hartshorne</text>
+            <text x="120" y="389" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">& Cobb</text>
+            <line x1="145" y1="360" x2="320" y2="280" stroke="#4ecca3" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="250" cy="420" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="250" y="416" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9">McGilchrist</text>
+            <line x1="265" y1="393" x2="340" y2="290" stroke="#4ecca3" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="450" cy="420" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="450" y="423" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9">Deleuze</text>
+            <line x1="435" y1="393" x2="360" y2="290" stroke="#4ecca3" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="580" cy="380" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="580" y="376" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">Ecological</text>
+            <text x="580" y="389" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">Thought</text>
+            <line x1="555" y1="360" x2="385" y2="275" stroke="#4ecca3" stroke-width="1" opacity="0.4"/>
+
+            <circle cx="60" cy="300" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+            <text x="60" y="303" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8">Scruton</text>
+            <line x1="83" y1="295" x2="307" y2="258" stroke="#4ecca3" stroke-width="0.8" opacity="0.3"/>
+
+            <circle cx="640" cy="300" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+            <text x="640" y="296" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">Heidegger</text>
+            <text x="640" y="308" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7">(parallel)</text>
+            <line x1="617" y1="295" x2="393" y2="258" stroke="#4ecca3" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,3"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Key Works -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Key Works</h2>
+    <div class="separator"></div>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 style="color: var(--accent-amber);">Principia Mathematica <span style="color: var(--text-muted); font-weight: 400;">(with Russell, 1910&ndash;13)</span></h4>
+            <p>The monumental attempt to derive all of mathematics from pure logic. Three volumes of extraordinary rigour. It took 362 pages to prove that 1+1=2. One of the foundational texts of modern logic, even as G&ouml;del later showed its inherent limitations.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Science and the Modern World <span style="color: var(--text-muted); font-weight: 400;">(1925)</span></h4>
+            <p>Whitehead's first major philosophical work at Harvard. A sweeping history of the rise of scientific materialism and its philosophical inadequacies. Introduces the "fallacy of misplaced concreteness" and argues for an organic philosophy of nature.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Process and Reality <span style="color: var(--text-muted); font-weight: 400;">(1929)</span></h4>
+            <p>His magnum opus, subtitled <em>An Essay in Cosmology</em>. Presents the full categorical scheme of his philosophy of organism. Notoriously difficult but astonishingly comprehensive &mdash; one of the most ambitious metaphysical works since Leibniz's <em>Monadology</em>.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-blue);">Adventures of Ideas <span style="color: var(--text-muted); font-weight: 400;">(1933)</span></h4>
+            <p>The most accessible of Whitehead's later works. Traces the role of ideas in civilisational development. Contains his mature reflections on beauty, truth, art, peace, and the "adventure" of ideas through history.</p>
+        </div>
+        <div class="card" style="grid-column: span 2;">
+            <h4 style="color: var(--accent-rose);">Modes of Thought <span style="color: var(--text-muted); font-weight: 400;">(1938)</span></h4>
+            <p>His final major work, distilled from lectures. More personal and aphoristic than <em>Process and Reality</em>. Contains some of his most quotable and penetrating insights into the nature of experience, importance, and the task of philosophy. "The use of philosophy is to maintain an active novelty of fundamental ideas illuminating the social system."</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                <!-- Organic mandala representing process -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="55" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="30" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+                <!-- Rotating dots suggesting process -->
+                <circle cx="100" cy="20" r="4" fill="#d4a053" opacity="0.6"/>
+                <circle cx="169" cy="60" r="4" fill="#d4a053" opacity="0.5"/>
+                <circle cx="169" cy="140" r="4" fill="#d4a053" opacity="0.4"/>
+                <circle cx="100" cy="180" r="4" fill="#d4a053" opacity="0.5"/>
+                <circle cx="31" cy="140" r="4" fill="#d4a053" opacity="0.6"/>
+                <circle cx="31" cy="60" r="4" fill="#d4a053" opacity="0.5"/>
+                <!-- Inner ring -->
+                <circle cx="100" cy="45" r="3" fill="#4ecca3" opacity="0.5"/>
+                <circle cx="148" cy="75" r="3" fill="#4ecca3" opacity="0.4"/>
+                <circle cx="148" cy="125" r="3" fill="#4ecca3" opacity="0.5"/>
+                <circle cx="100" cy="155" r="3" fill="#4ecca3" opacity="0.4"/>
+                <circle cx="52" cy="125" r="3" fill="#4ecca3" opacity="0.5"/>
+                <circle cx="52" cy="75" r="3" fill="#4ecca3" opacity="0.4"/>
+                <!-- Centre -->
+                <circle cx="100" cy="100" r="6" fill="#9b72cf" opacity="0.7"/>
+            </svg>
+        </div>
+
+        <div class="quote-box" style="max-width: 40em; text-align: center; font-size: 0.95em; margin: 1.5em auto; border-left: none; border-top: 2px solid var(--accent-amber); border-radius: 8px;">
+            The art of progress is to preserve order amid change, and to preserve change amid order.
+            <span class="attribution">&mdash; Alfred North Whitehead, <em>Process and Reality</em></span>
+        </div>
+
+        <div class="separator" style="margin: 1em auto; width: 80px;"></div>
+        <p style="font-size: 0.6em; color: var(--text-muted);">Alfred North Whitehead &bull; 1861&ndash;1947</p>
+        <p style="font-size: 0.5em; color: var(--text-muted); margin-top: 0.3em;">Mathematician &bull; Logician &bull; Philosopher of Organism</p>
+
+        <div style="margin-top: 1.5em;">
+            <span class="concept-node">process</span>
+            <span class="concept-node">prehension</span>
+            <span class="concept-node">creativity</span>
+            <span class="concept-node">organism</span>
+            <span class="concept-node">actual occasions</span>
+            <span class="concept-node">eternal objects</span>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()">&#x26F6; Fullscreen</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02
+});
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+// Slide height fix
+document.querySelectorAll('.reveal .slides section').forEach(function(slide) {
+    slide.style.height = '100%';
+});
+</script>
+</body>
+</html>

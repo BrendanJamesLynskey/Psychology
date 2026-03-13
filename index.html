@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Psychology — Interactive Presentations</title>
+<title>Psychology &amp; Philosophy — Interactive Presentations</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -227,10 +227,118 @@ footer a {
 
 footer a:hover { text-decoration: underline; }
 
+/* ── Section Divider ── */
+.section-divider {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 1.5rem 0 0.5rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ── Influence Map ── */
+.influence-section {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 2rem 3rem 2rem;
+}
+
+.influence-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.influence-section .section-intro {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+}
+
+.influence-map {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.influence-map svg text {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.influence-legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.influence-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.influence-legend .legend-line {
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+/* ── Influence Cards ── */
+.influence-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.influence-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    border-left: 3px solid var(--accent-amber);
+}
+
+.influence-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+}
+
+.influence-card p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.influence-card .era {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
 @media (max-width: 600px) {
     header { padding: 3rem 1.2rem 2rem 1.2rem; }
     header h1 { font-size: 2rem; }
     .grid-section { padding: 0 1.2rem 3rem 1.2rem; }
+    .influence-section { padding: 0 1.2rem 3rem 1.2rem; }
     .presentations { grid-template-columns: 1fr; }
 }
 </style>
@@ -258,13 +366,13 @@ footer a:hover { text-decoration: underline; }
         <circle cx="100" cy="100" r="6" fill="#d4a053" opacity="0.5"/>
         <circle cx="100" cy="100" r="3" fill="#0a0a0f"/>
     </svg>
-    <h1>Psychology</h1>
+    <h1>Psychology &amp; Philosophy</h1>
     <div class="subtitle">Interactive Presentations</div>
     <div class="separator"></div>
     <p>
         A series of graphical, interactive presentations exploring foundational thinkers
-        and concepts in psychology. Built as single-file Reveal.js deployments — no build step,
-        no dependencies beyond CDN.
+        in psychology and philosophy — from depth psychology to phenomenology, process thought
+        to aesthetics. Built as single-file Reveal.js deployments — no build step, no dependencies beyond CDN.
     </p>
 </header>
 
@@ -503,13 +611,354 @@ footer a:hover { text-decoration: underline; }
             </a>
         </div>
 
+        <div class="section-divider" style="grid-column: 1 / -1;">Philosophy &amp; Phenomenology</div>
+
+        <!-- 12 — Martin Heidegger -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-purple);"></div>
+            <span class="number">12</span>
+            <h3>Martin Heidegger</h3>
+            <p class="description">
+                Being, time, and the question of existence — Dasein, being-in-the-world,
+                the ready-to-hand, anxiety, the Kehre, the question concerning technology,
+                dwelling, and language. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag">Dasein</span>
+                <span class="tag amber">Being &amp; Time</span>
+                <span class="tag rose">Technology</span>
+            </div>
+            <a href="Heidegger/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
+        <!-- 13 — Edmund Husserl -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-green);"></div>
+            <span class="number">13</span>
+            <h3>Edmund Husserl</h3>
+            <p class="description">
+                Phenomenology and the return to things themselves — intentionality, the epoché,
+                eidetic reduction, noesis and noema, the lifeworld, transcendental subjectivity,
+                and the crisis of the sciences. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag green">Phenomenology</span>
+                <span class="tag amber">Intentionality</span>
+                <span class="tag blue">Lifeworld</span>
+            </div>
+            <a href="Husserl/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
+        <!-- 14 — Alfred North Whitehead -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-blue);"></div>
+            <span class="number">14</span>
+            <h3>Alfred North Whitehead</h3>
+            <p class="description">
+                Process, reality, and the philosophy of organism — actual occasions, prehension,
+                the fallacy of misplaced concreteness, eternal objects, creativity, and the
+                bifurcation of nature. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag blue">Process Philosophy</span>
+                <span class="tag amber">Organism</span>
+                <span class="tag green">Creativity</span>
+            </div>
+            <a href="Whitehead/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
+        <!-- 15 — William James -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">15</span>
+            <h3>William James</h3>
+            <p class="description">
+                Pragmatism, consciousness, and the varieties of experience — the stream
+                of consciousness, radical empiricism, the will to believe, habit, pluralism,
+                and religious experience. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag amber">Pragmatism</span>
+                <span class="tag">Stream of Consciousness</span>
+                <span class="tag rose">Religious Experience</span>
+            </div>
+            <a href="James/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
+        <!-- 16 — Roger Scruton -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-rose);"></div>
+            <span class="number">16</span>
+            <h3>Roger Scruton</h3>
+            <p class="description">
+                Beauty, belonging, and the sacred — oikophilia, the first-person perspective,
+                aesthetic order, conservatism as settlement, the face and the gaze, and the
+                transcendentals. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag rose">Beauty</span>
+                <span class="tag amber">Oikophilia</span>
+                <span class="tag green">The Sacred</span>
+            </div>
+            <a href="Scruton/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
+        <!-- 17 — Iain McGilchrist -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-green);"></div>
+            <span class="number">17</span>
+            <h3>Iain McGilchrist</h3>
+            <p class="description">
+                The divided brain and the making of the Western world — two hemispheres,
+                the master and his emissary, attention as ontologically creative, betweenness,
+                and the four paths to truth. 17 slides with SVG diagrams.
+            </p>
+            <div class="meta">
+                <span class="tag green">Divided Brain</span>
+                <span class="tag">Attention</span>
+                <span class="tag blue">Betweenness</span>
+            </div>
+            <a href="McGilchrist/" class="launch-btn">
+                <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>
+                Launch
+            </a>
+        </div>
+
     </div>
 </main>
+
+<!-- ── Historical Influences ── -->
+<section class="influence-section">
+    <h2>Historical Influences</h2>
+    <p class="section-intro">
+        These thinkers form a deeply interconnected web of influence spanning two centuries.
+        The map below traces the major lines of intellectual inheritance across the collection.
+    </p>
+    <div class="influence-map">
+        <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+            <!-- Connection lines (drawn first, behind nodes) -->
+            <!-- Nietzsche → Jung -->
+            <line x1="95" y1="195" x2="240" y2="120" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Nietzsche → Freud -->
+            <line x1="95" y1="195" x2="240" y2="195" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Nietzsche → Heidegger -->
+            <line x1="95" y1="195" x2="240" y2="270" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Nietzsche → Adler -->
+            <line x1="95" y1="195" x2="400" y2="45" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+            <!-- Dostoevsky → Nietzsche -->
+            <line x1="95" y1="105" x2="95" y2="185" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <!-- Dostoevsky → Jung -->
+            <line x1="95" y1="105" x2="240" y2="120" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <!-- Dostoevsky → Frankl -->
+            <line x1="95" y1="105" x2="400" y2="120" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <!-- James → Husserl -->
+            <line x1="95" y1="345" x2="240" y2="345" stroke="#4ecca3" stroke-width="1.2" opacity="0.4"/>
+            <!-- James → Whitehead -->
+            <line x1="95" y1="345" x2="240" y2="420" stroke="#4ecca3" stroke-width="1.2" opacity="0.4"/>
+            <!-- James → Jung -->
+            <line x1="95" y1="345" x2="240" y2="120" stroke="#4ecca3" stroke-width="0.8" opacity="0.25"/>
+            <!-- Husserl → Heidegger -->
+            <line x1="240" y1="345" x2="240" y2="280" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+            <!-- Husserl → Scruton -->
+            <line x1="240" y1="345" x2="560" y2="345" stroke="#5b8cd4" stroke-width="0.8" opacity="0.25"/>
+            <!-- Freud → Jung -->
+            <line x1="240" y1="195" x2="240" y2="130" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+            <!-- Freud → Adler -->
+            <line x1="240" y1="195" x2="400" y2="45" stroke="#cf7272" stroke-width="1.2" opacity="0.4"/>
+            <!-- Freud → Frankl -->
+            <line x1="240" y1="195" x2="400" y2="120" stroke="#cf7272" stroke-width="0.8" opacity="0.25"/>
+            <!-- Freud → Rogers -->
+            <line x1="240" y1="195" x2="400" y2="195" stroke="#cf7272" stroke-width="0.8" opacity="0.25"/>
+            <!-- Jung → Neumann -->
+            <line x1="240" y1="120" x2="400" y2="270" stroke="#d4a053" stroke-width="1.5" opacity="0.5"/>
+            <!-- Jung → Campbell -->
+            <line x1="240" y1="120" x2="400" y2="345" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Jung → Peterson -->
+            <line x1="240" y1="120" x2="560" y2="120" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Jung → McGilchrist -->
+            <line x1="240" y1="120" x2="720" y2="270" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+            <!-- Heidegger → McGilchrist -->
+            <line x1="240" y1="270" x2="720" y2="270" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
+            <!-- Heidegger → Scruton -->
+            <line x1="240" y1="270" x2="560" y2="345" stroke="#9b72cf" stroke-width="1.0" opacity="0.35"/>
+            <!-- Heidegger → Frankl -->
+            <line x1="240" y1="270" x2="400" y2="120" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <!-- Whitehead → McGilchrist -->
+            <line x1="240" y1="420" x2="720" y2="270" stroke="#4ecca3" stroke-width="1.2" opacity="0.4"/>
+            <!-- Whitehead → Scruton -->
+            <line x1="240" y1="420" x2="560" y2="345" stroke="#4ecca3" stroke-width="0.8" opacity="0.25"/>
+            <!-- Piaget → Peterson -->
+            <line x1="400" y1="420" x2="560" y2="120" stroke="#5b8cd4" stroke-width="0.8" opacity="0.25"/>
+            <!-- Neumann → Campbell -->
+            <line x1="400" y1="270" x2="400" y2="345" stroke="#d4a053" stroke-width="1.0" opacity="0.35"/>
+            <!-- Campbell → Peterson -->
+            <line x1="400" y1="345" x2="560" y2="120" stroke="#d4a053" stroke-width="1.0" opacity="0.35"/>
+            <!-- Nietzsche → Peterson -->
+            <line x1="95" y1="195" x2="560" y2="120" stroke="#d4a053" stroke-width="0.8" opacity="0.2"/>
+            <!-- Scruton ↔ McGilchrist -->
+            <line x1="560" y1="345" x2="720" y2="270" stroke="#cf7272" stroke-width="1.0" opacity="0.35"/>
+
+            <!-- Era labels -->
+            <text x="95" y="490" fill="#6a6a7a" font-size="10" text-anchor="middle" letter-spacing="0.1em">19TH C.</text>
+            <text x="240" y="490" fill="#6a6a7a" font-size="10" text-anchor="middle" letter-spacing="0.1em">EARLY 20TH</text>
+            <text x="400" y="490" fill="#6a6a7a" font-size="10" text-anchor="middle" letter-spacing="0.1em">MID 20TH</text>
+            <text x="560" y="490" fill="#6a6a7a" font-size="10" text-anchor="middle" letter-spacing="0.1em">LATE 20TH</text>
+            <text x="720" y="490" fill="#6a6a7a" font-size="10" text-anchor="middle" letter-spacing="0.1em">21ST C.</text>
+
+            <!-- Era divider lines -->
+            <line x1="167" y1="25" x2="167" y2="470" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <line x1="320" y1="25" x2="320" y2="470" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <line x1="480" y1="25" x2="480" y2="470" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <line x1="640" y1="25" x2="640" y2="470" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+            <!-- Nodes — 19th Century -->
+            <circle cx="95" cy="105" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="95" y="101" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Dostoevsky</text>
+            <text x="95" y="113" fill="#6a6a7a" font-size="7" text-anchor="middle">1821–1881</text>
+
+            <circle cx="95" cy="195" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="95" y="191" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Nietzsche</text>
+            <text x="95" y="203" fill="#6a6a7a" font-size="7" text-anchor="middle">1844–1900</text>
+
+            <circle cx="95" cy="345" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="95" y="341" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">W. James</text>
+            <text x="95" y="353" fill="#6a6a7a" font-size="7" text-anchor="middle">1842–1910</text>
+
+            <!-- Nodes — Early 20th Century -->
+            <circle cx="240" cy="120" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="240" y="116" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Jung</text>
+            <text x="240" y="128" fill="#6a6a7a" font-size="7" text-anchor="middle">1875–1961</text>
+
+            <circle cx="240" cy="195" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="240" y="191" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Freud</text>
+            <text x="240" y="203" fill="#6a6a7a" font-size="7" text-anchor="middle">1856–1939</text>
+
+            <circle cx="240" cy="270" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="240" y="266" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Heidegger</text>
+            <text x="240" y="278" fill="#6a6a7a" font-size="7" text-anchor="middle">1889–1976</text>
+
+            <circle cx="240" cy="345" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="240" y="341" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Husserl</text>
+            <text x="240" y="353" fill="#6a6a7a" font-size="7" text-anchor="middle">1859–1938</text>
+
+            <circle cx="240" cy="420" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="240" y="416" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Whitehead</text>
+            <text x="240" y="428" fill="#6a6a7a" font-size="7" text-anchor="middle">1861–1947</text>
+
+            <!-- Nodes — Mid 20th Century -->
+            <circle cx="400" cy="45" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="400" y="41" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Adler</text>
+            <text x="400" y="53" fill="#6a6a7a" font-size="7" text-anchor="middle">1870–1937</text>
+
+            <circle cx="400" cy="120" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="400" y="116" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Frankl</text>
+            <text x="400" y="128" fill="#6a6a7a" font-size="7" text-anchor="middle">1905–1997</text>
+
+            <circle cx="400" cy="195" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="400" y="191" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Rogers</text>
+            <text x="400" y="203" fill="#6a6a7a" font-size="7" text-anchor="middle">1902–1987</text>
+
+            <circle cx="400" cy="270" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="400" y="266" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Neumann</text>
+            <text x="400" y="278" fill="#6a6a7a" font-size="7" text-anchor="middle">1905–1960</text>
+
+            <circle cx="400" cy="345" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="400" y="341" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Campbell</text>
+            <text x="400" y="353" fill="#6a6a7a" font-size="7" text-anchor="middle">1904–1987</text>
+
+            <circle cx="400" cy="420" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="400" y="416" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Piaget</text>
+            <text x="400" y="428" fill="#6a6a7a" font-size="7" text-anchor="middle">1896–1980</text>
+
+            <!-- Nodes — Late 20th Century -->
+            <circle cx="560" cy="120" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="560" y="116" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Peterson</text>
+            <text x="560" y="128" fill="#6a6a7a" font-size="7" text-anchor="middle">b. 1962</text>
+
+            <circle cx="560" cy="345" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="560" y="341" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">Scruton</text>
+            <text x="560" y="353" fill="#6a6a7a" font-size="7" text-anchor="middle">1944–2020</text>
+
+            <!-- Nodes — 21st Century -->
+            <circle cx="720" cy="270" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="720" y="266" fill="#e8e6e3" font-size="8.5" font-weight="700" text-anchor="middle">McGilchrist</text>
+            <text x="720" y="278" fill="#6a6a7a" font-size="7" text-anchor="middle">b. 1953</text>
+        </svg>
+        <div class="influence-legend">
+            <div class="legend-item"><div class="legend-line" style="background: #d4a053;"></div> Depth Psychology</div>
+            <div class="legend-item"><div class="legend-line" style="background: #cf7272;"></div> Psychoanalysis / Existential</div>
+            <div class="legend-item"><div class="legend-line" style="background: #9b72cf;"></div> Phenomenology / Literature</div>
+            <div class="legend-item"><div class="legend-line" style="background: #4ecca3;"></div> Pragmatism / Process</div>
+            <div class="legend-item"><div class="legend-line" style="background: #5b8cd4;"></div> Epistemology / Development</div>
+        </div>
+    </div>
+
+    <!-- Key Influence Narratives -->
+    <div class="influence-cards">
+        <div class="influence-card" style="border-left-color: var(--accent-amber);">
+            <div class="era">THE DEPTH PSYCHOLOGY LINEAGE</div>
+            <h4>Nietzsche &rarr; Freud &rarr; Jung &rarr; Neumann &rarr; Campbell &rarr; Peterson</h4>
+            <p>Nietzsche's "psychology of the depths" — the will to power, the Dionysian, and the revaluation of values —
+            profoundly shaped both Freud and Jung. Freud's discovery of the unconscious and Jung's subsequent
+            break with him (over the nature of libido and the collective unconscious) generated a tradition that flowed
+            through Neumann's developmental mythology, Campbell's comparative myth studies, and into Peterson's
+            neo-Jungian synthesis of meaning, narrative, and personality psychology. Dostoevsky's literary explorations
+            of the divided self anticipate and enrich the entire tradition.</p>
+        </div>
+        <div class="influence-card" style="border-left-color: var(--accent-purple);">
+            <div class="era">THE PHENOMENOLOGICAL LINEAGE</div>
+            <h4>Husserl &rarr; Heidegger &rarr; McGilchrist &amp; Scruton</h4>
+            <p>Husserl's phenomenological method — the epoché, intentionality, and the return to the lifeworld — was
+            radicalised by his student Heidegger into an analysis of Dasein, being-in-the-world, and the question of
+            technology. McGilchrist draws heavily on Heidegger's distinction between ready-to-hand and present-at-hand
+            to articulate the difference between right- and left-hemisphere modes of attention. Scruton inherits
+            Husserl's intentionality and Heidegger's concept of dwelling to ground his philosophy of beauty, the
+            first-person perspective, and the sacred.</p>
+        </div>
+        <div class="influence-card" style="border-left-color: var(--accent-green);">
+            <div class="era">THE PROCESS &amp; EXPERIENCE LINEAGE</div>
+            <h4>William James &rarr; Whitehead &rarr; McGilchrist</h4>
+            <p>William James's radical empiricism — the insistence that relations are as real as the things they
+            connect, and that experience is the fundamental stuff of reality — directly inspired Whitehead's
+            process philosophy, in which actual occasions of experience replace inert material substances as the
+            building blocks of reality. Whitehead's "fallacy of misplaced concreteness" is central to McGilchrist's
+            thesis that the left hemisphere mistakes its own abstractions for concrete reality. James's work on
+            the stream of consciousness and religious experience also influenced Jung, Husserl, and Frankl.</p>
+        </div>
+        <div class="influence-card" style="border-left-color: var(--accent-rose);">
+            <div class="era">THE CONVERGENCE</div>
+            <h4>McGilchrist &amp; Scruton: Where the Lineages Meet</h4>
+            <p>McGilchrist and Scruton represent a contemporary convergence of these traditions. Both argue that
+            Western modernity has become pathologically one-sided — dominated by abstraction, mechanism, and
+            the instrumental attitude at the expense of embodied presence, beauty, and the sacred. McGilchrist
+            frames this through hemisphere neuroscience; Scruton through aesthetics and conservatism. Both draw
+            on Heidegger's critique of technology (Gestell), Whitehead's critique of materialism, and the depth
+            psychological tradition's insistence on the reality of meaning. Their work suggests that the antidote
+            to modern disenchantment lies not in more information but in a recovery of attention, relationship,
+            and the irreducibility of the first-person perspective.</p>
+        </div>
+    </div>
+</section>
 
 <footer>
     Single-file HTML · Reveal.js · Zero build step · GitHub Pages
     <br>
-    <a href="https://github.com/BrendanJamesLynskey/Psychology">View on GitHub</a>
+    <a href="https://github.com/BrendanJamesLynskey/Psychology_Philosophy">View on GitHub</a>
 </footer>
 
 </body>

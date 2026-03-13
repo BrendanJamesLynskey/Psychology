@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roger Scruton — Beauty, Belonging & the Sacred</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal {
+    background: var(--bg-primary);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.reveal h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+}
+
+.reveal h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+}
+
+.reveal h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--accent-amber);
+}
+
+.reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.reveal section {
+    padding: 40px 50px;
+    text-align: left;
+}
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1em !important;
+    font-weight: 400;
+    color: var(--accent-amber) !important;
+    letter-spacing: 0.05em;
+    margin-top: 0.3em;
+}
+
+.quote-box {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--accent-amber);
+    padding: 25px 30px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85em !important;
+    color: var(--text-primary) !important;
+    line-height: 1.8;
+}
+
+.quote-box .attribution {
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-top: 10px;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 22px;
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-amber);
+}
+
+.card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85em;
+    margin-bottom: 8px;
+    color: var(--accent-amber);
+}
+
+.card p {
+    font-size: 0.65em !important;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-subtle);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5.5px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent-amber);
+    border: 2px solid var(--bg-primary);
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--accent-amber);
+    min-width: 55px;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.65em;
+    color: var(--text-secondary);
+    margin-left: 10px;
+}
+
+.diagram-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mandala-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.separator {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-amber), transparent);
+    margin: 15px 0;
+}
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--accent-amber);
+    opacity: 0.6;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.concept-node {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.65em;
+    color: var(--accent-amber);
+    margin: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 0.65em;
+    color: var(--text-primary);
+    text-align: center;
+    min-width: 100px;
+}
+
+.process-arrow {
+    color: var(--accent-amber);
+    font-size: 1.2em;
+}
+
+.note-text {
+    font-size: 0.6em !important;
+    color: var(--text-muted) !important;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+
+.reveal ul, .reveal ol {
+    margin-left: 0.5em;
+}
+
+.reveal ul li, .reveal ol li {
+    margin-bottom: 0.4em;
+    padding-left: 0.3em;
+}
+
+.reveal ul li::marker {
+    color: var(--accent-amber);
+}
+
+.reveal .slides section {
+    overflow-y: auto;
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div style="display:flex; flex-direction:column; justify-content:center; height:100%; text-align:center;">
+        <p class="subtitle" style="margin-bottom:0.3em;">Philosopher of Beauty, Home & the Sacred</p>
+        <h1>Roger Scruton</h1>
+        <p style="font-size:0.85em; color:var(--text-muted); margin-top:0.2em;">1944 &ndash; 2020</p>
+        <div class="separator" style="margin:20px auto;"></div>
+        <p style="font-size:0.75em; color:var(--text-secondary); max-width:700px; margin:0 auto;">
+            Beauty, Belonging & the Sacred
+        </p>
+        <div class="quote-box" style="max-width:750px; margin:25px auto; text-align:center;">
+            "Beauty is vanishing from our world because we live as though it did not matter."
+            <span class="attribution">&mdash; Roger Scruton</span>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 2: Biography -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Life & Formation</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4>Origins & Education</h4>
+            <p>Born in Bushy, Lincolnshire in 1944 to a working-class family. Educated at a grammar school, he won a place at Jesus College, Cambridge, to read philosophy. His intellectual world was shaped by rigorous analytic training combined with a deep love of music, architecture, and literature.</p>
+        </div>
+        <div class="card">
+            <h4>The Paris Turning Point</h4>
+            <p>In May 1968, Scruton witnessed the student revolts in Paris firsthand. Watching the destruction wrought by radical students, he experienced a visceral conversion to conservatism &mdash; not as ideology but as a felt loyalty to civilisation, order, and inherited beauty against the forces of nihilistic rebellion.</p>
+        </div>
+        <div class="card">
+            <h4>Academic Career & Dissidence</h4>
+            <p>Completed his PhD in 1971 and was appointed to Birkbeck, University of London, where he taught for decades. Throughout the 1980s, he was active in underground education networks in communist Eastern Europe, smuggling books and organising secret seminars in Czechoslovakia, Poland, and Hungary.</p>
+        </div>
+        <div class="card">
+            <h4>Public Intellectual & Legacy</h4>
+            <p>Author of over 50 books spanning philosophy, aesthetics, politics, fiction, and opera. Founded the Salisbury Review. Knighted in 2016 for services to philosophy, teaching, and public education. Died on 12 January 2020, leaving behind one of the most substantial bodies of philosophical work in modern conservatism.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Timeline (Part 1) -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Life & Works: Timeline</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div>
+            <div class="timeline-item">
+                <span class="year">1944</span>
+                <span class="event">Born in Bushy, Lincolnshire</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1965</span>
+                <span class="event">BA in Philosophy, Jesus College, Cambridge</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1968</span>
+                <span class="event">Witnesses Paris student revolts &mdash; crystallises conservative convictions</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1971</span>
+                <span class="event">PhD completed; appointed to Birkbeck, University of London</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1979</span>
+                <span class="event"><em>The Meaning of Conservatism</em> published</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1982</span>
+                <span class="event"><em>The Aesthetics of Architecture</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1986</span>
+                <span class="event"><em>Sexual Desire: A Philosophical Investigation</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1993</span>
+                <span class="event">Founds the <em>Salisbury Review</em></span>
+            </div>
+        </div>
+        <div>
+            <div class="timeline-item">
+                <span class="year">1997</span>
+                <span class="event"><em>The Aesthetics of Music</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2004</span>
+                <span class="event"><em>Death-Devoted Heart</em> &mdash; philosophical study of Wagner</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2006</span>
+                <span class="event"><em>A Political Philosophy: Arguments for Conservatism</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2009</span>
+                <span class="event"><em>Beauty: A Very Short Introduction</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2012</span>
+                <span class="event"><em>The Face of God</em> &mdash; Gifford Lectures</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2014</span>
+                <span class="event"><em>The Soul of the World</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2016</span>
+                <span class="event">Knighted for services to philosophy and public education</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2020</span>
+                <span class="event">Death on 12 January, aged 75</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Core Concept — Beauty as a Transcendental -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Beauty as a Transcendental</h2>
+    <div class="separator"></div>
+    <p>For Scruton, beauty is not mere subjective preference or evolutionary by-product. It is a <strong style="color:var(--accent-amber);">real value</strong> &mdash; a form of rational meaning that discloses the world's fitness for human habitation. Drawing on Kant's aesthetics, beauty involves a <em>judgement</em> that claims universal validity: when I say "this is beautiful," I am not reporting a sensation but making a demand on the agreement of others.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" style="width:100%; max-width:700px;">
+            <!-- Central node -->
+            <circle cx="350" cy="160" r="55" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <text x="350" y="155" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">BEAUTY</text>
+            <text x="350" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Transcendental Value</text>
+            <!-- Truth -->
+            <circle cx="150" cy="80" r="42" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="150" y="75" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13">Truth</text>
+            <text x="150" y="93" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Rational order</text>
+            <line x1="192" y1="96" x2="296" y2="140" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Goodness -->
+            <circle cx="150" cy="240" r="42" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="150" y="235" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13">Goodness</text>
+            <text x="150" y="253" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Moral order</text>
+            <line x1="192" y1="224" x2="296" y2="180" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Unity -->
+            <circle cx="550" cy="80" r="42" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="550" y="75" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="13">Unity</text>
+            <text x="550" y="93" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Wholeness of form</text>
+            <line x1="508" y1="96" x2="404" y2="140" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- The Sacred -->
+            <circle cx="550" cy="240" r="42" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="550" y="235" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="13">The Sacred</text>
+            <text x="550" y="253" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Beyond utility</text>
+            <line x1="508" y1="224" x2="404" y2="180" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+        </svg>
+    </div>
+    <p class="note-text">Beauty for Scruton belongs with the classical transcendentals &mdash; truth, goodness, and unity &mdash; as a fundamental way in which reality discloses meaning to the human person.</p>
+</section>
+
+<!-- Slide 5: The Sacred and the Profane -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Sacred & the Profane</h2>
+    <div class="separator"></div>
+    <p>Scruton argues that the experience of the sacred is <strong style="color:var(--accent-purple);">irreducible</strong> &mdash; it cannot be explained away by evolutionary psychology, neuroscience, or sociological function. The sacred is encountered at the boundary of the everyday: in rites of passage, in consecrated places, in moments of awe, and above all in the human face.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 280" style="width:100%; max-width:700px;">
+            <!-- The Profane domain -->
+            <rect x="30" y="40" width="280" height="200" rx="12" fill="none" stroke="#6a6a7a" stroke-width="1.5"/>
+            <text x="170" y="70" text-anchor="middle" fill="#9a9a9a" font-family="Playfair Display, serif" font-size="14" font-weight="700">The Profane</text>
+            <text x="170" y="100" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Instrumental reason</text>
+            <text x="170" y="120" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Utility &amp; exchange</text>
+            <text x="170" y="140" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Objects as resources</text>
+            <text x="170" y="160" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Desacralised space</text>
+            <text x="170" y="180" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Reduction to mechanism</text>
+            <!-- The Sacred domain -->
+            <rect x="390" y="40" width="280" height="200" rx="12" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="530" y="70" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">The Sacred</text>
+            <text x="530" y="100" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Contemplative attention</text>
+            <text x="530" y="120" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Gift &amp; sacrifice</text>
+            <text x="530" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Persons as ends</text>
+            <text x="530" y="160" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Consecrated place</text>
+            <text x="530" y="180" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Meaning irreducible</text>
+            <!-- Threshold arrows -->
+            <text x="350" y="110" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="11" font-style="italic">Threshold</text>
+            <line x1="330" y1="120" x2="330" y2="200" stroke="#d4a053" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="370" y1="120" x2="370" y2="200" stroke="#d4a053" stroke-width="1" stroke-dasharray="4"/>
+            <polygon points="340,140 350,128 360,140" fill="#d4a053" opacity="0.5"/>
+            <polygon points="340,185 350,197 360,185" fill="#d4a053" opacity="0.5"/>
+        </svg>
+    </div>
+    <div class="quote-box">
+        "The sacred is not a superstition but a need &mdash; the need to stand in relation to something higher, to mark the boundary between what can be used and what must be revered."
+        <span class="attribution">&mdash; Roger Scruton, <em>The Soul of the World</em></span>
+    </div>
+</section>
+
+<!-- Slide 6: Oikophilia — Love of Home -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Oikophilia: Love of Home</h2>
+    <div class="separator"></div>
+    <p>Scruton coined the term <strong style="color:var(--accent-green);">oikophilia</strong> (from Greek <em>oikos</em>, home) to describe the conservative disposition &mdash; not as ideology but as a natural love of the familiar, a sense of belonging and settlement. Against abstract universalism, oikophilia grounds political and moral life in the particular, the local, and the inherited.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 600 360" style="width:100%; max-width:600px;">
+            <!-- Concentric circles of belonging -->
+            <circle cx="300" cy="180" r="160" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="300" y="35" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Civilisation &amp; Heritage</text>
+            <circle cx="300" cy="180" r="125" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="300" y="70" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Nation &amp; Law</text>
+            <circle cx="300" cy="180" r="90" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="300" y="105" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Community &amp; Place</text>
+            <circle cx="300" cy="180" r="55" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="300" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11">Family &amp; Kin</text>
+            <circle cx="300" cy="180" r="22" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <text x="300" y="184" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="11" font-weight="700">Self</text>
+            <!-- Label -->
+            <text x="300" y="355" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-style="italic">Concentric circles of belonging</text>
+        </svg>
+    </div>
+    <p class="note-text">Oikophilia stands against what Scruton called "oikophobia" &mdash; the repudiation of home, the pathological rejection of one's own culture and inheritance that he diagnosed in much of the modern intelligentsia.</p>
+</section>
+
+<!-- Slide 7: The First-Person Perspective -->
+<section>
+    <span class="section-number">06</span>
+    <h2>The First-Person Perspective</h2>
+    <div class="separator"></div>
+    <p>Central to Scruton's philosophy is the claim that the <strong style="color:var(--accent-blue);">"I"</strong> &mdash; the first-person perspective &mdash; is irreducible. Consciousness cannot be fully explained by neuroscience because the subject is a <em>person</em>, not an object. The first-person viewpoint is the condition of all meaning, all moral life, and all aesthetic experience.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 300" style="width:100%; max-width:700px;">
+            <!-- Third-person (objective) side -->
+            <rect x="30" y="60" width="200" height="180" rx="10" fill="none" stroke="#6a6a7a" stroke-width="1.5"/>
+            <text x="130" y="90" text-anchor="middle" fill="#6a6a7a" font-family="Playfair Display, serif" font-size="13">Third-Person</text>
+            <text x="130" y="115" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Objects &amp; causes</text>
+            <text x="130" y="135" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Brain states</text>
+            <text x="130" y="155" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Mechanisms</text>
+            <text x="130" y="175" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Explananda</text>
+            <text x="130" y="210" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">"It / He / She"</text>
+            <!-- Arrow showing irreducibility -->
+            <line x1="250" y1="150" x2="320" y2="150" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="6"/>
+            <text x="285" y="140" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9">Cannot reduce</text>
+            <text x="285" y="168" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="16">&times;</text>
+            <!-- First-person (subject) side -->
+            <rect x="340" y="60" width="200" height="180" rx="10" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="440" y="90" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="13" font-weight="700">First-Person</text>
+            <text x="440" y="115" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Persons &amp; reasons</text>
+            <text x="440" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Consciousness</text>
+            <text x="440" y="155" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Meaning &amp; intention</text>
+            <text x="440" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Freedom &amp; responsibility</text>
+            <text x="440" y="210" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10" font-style="italic">"I"</text>
+            <!-- Emergent domain -->
+            <rect x="570" y="80" width="110" height="140" rx="8" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="625" y="110" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="11">Emergent</text>
+            <text x="625" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Morality</text>
+            <text x="625" y="155" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Beauty</text>
+            <text x="625" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">The Sacred</text>
+            <text x="625" y="195" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Love</text>
+            <line x1="540" y1="150" x2="570" y2="150" stroke="#d4a053" stroke-width="1" stroke-dasharray="4"/>
+        </svg>
+    </div>
+    <div class="quote-box">
+        "The self is not an illusion: it is the point from which all meaning radiates into the world."
+        <span class="attribution">&mdash; Roger Scruton, <em>On Human Nature</em></span>
+    </div>
+</section>
+
+<!-- Slide 8: Sexual Desire as Interpersonal -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Sexual Desire as Interpersonal</h2>
+    <div class="separator"></div>
+    <p>In <em>Sexual Desire</em> (1986), Scruton offers a phenomenological account of desire as <strong style="color:var(--accent-rose);">intentional</strong> &mdash; directed at the embodied person, not mere appetite or biological drive. Desire is an interpersonal relation: it aims at the other as a free subject, involves the mutual revelation of vulnerability, and is inseparable from moral life.</p>
+    <div class="process-flow">
+        <div class="process-step" style="border-color:var(--accent-rose);">
+            <div style="color:var(--accent-rose); font-weight:700; margin-bottom:4px;">Appetite</div>
+            <div style="font-size:0.85em; color:var(--text-muted);">Bodily drive<br/>Impersonal</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-amber);">
+            <div style="color:var(--accent-amber); font-weight:700; margin-bottom:4px;">Desire</div>
+            <div style="font-size:0.85em; color:var(--text-muted);">Intentional<br/>Person-directed</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-purple);">
+            <div style="color:var(--accent-purple); font-weight:700; margin-bottom:4px;">Erotic Love</div>
+            <div style="font-size:0.85em; color:var(--text-muted);">Mutual recognition<br/>Embodied freedom</div>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step" style="border-color:var(--accent-green);">
+            <div style="color:var(--accent-green); font-weight:700; margin-bottom:4px;">Commitment</div>
+            <div style="font-size:0.85em; color:var(--text-muted);">Vow &amp; fidelity<br/>Moral bond</div>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:15px;">
+        <div class="card">
+            <h4>Against Reductionism</h4>
+            <p>Scruton rejects accounts that reduce desire to evolutionary drives or neurochemistry. Desire is not a force acting through us but a stance we take toward another person &mdash; involving imagination, shame, and the sense of the forbidden.</p>
+        </div>
+        <div class="card">
+            <h4>Intentionality &amp; the Body</h4>
+            <p>Drawing on Husserl's concept of intentionality, Scruton shows that desire is always <em>about</em> someone &mdash; it is body-consciousness directed at the embodied individuality of another. The body is not an obstacle to personal encounter but its medium.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Architecture and Aesthetic Order -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Architecture & Aesthetic Order</h2>
+    <div class="separator"></div>
+    <p>For Scruton, architecture is the <strong style="color:var(--accent-amber);">most public of the arts</strong>, because buildings constitute the shared environment in which communities dwell. Modernist architecture, by rejecting ornament, human scale, and the language of traditional forms, assaults the conditions of human belonging.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4>Classical Tradition</h4>
+            <p>Proportion, ornament, human scale, harmony with surroundings, respect for street and skyline, use of local materials, dialogue with the past. Architecture as <em>dwelling</em> in Heidegger's sense: creating a world fit for habitation.</p>
+        </div>
+        <div class="card">
+            <h4>Modernist Assault</h4>
+            <p>Abstract geometry, hostility to ornament, brutal materials, indifference to context, the building as autonomous "statement" rather than contribution to a shared environment. Le Corbusier's "machine for living" as the antithesis of home.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top:18px;">
+        "When buildings are designed without reference to the community that must live with them, architecture becomes a form of aggression."
+        <span class="attribution">&mdash; Roger Scruton, <em>The Aesthetics of Architecture</em></span>
+    </div>
+    <p class="note-text">Scruton's architectural philosophy connects directly to his concept of oikophilia: the built environment is one of the primary ways a community expresses and sustains its sense of home.</p>
+</section>
+
+<!-- Slide 10: Conservatism as Settlement -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Conservatism as Settlement</h2>
+    <div class="separator"></div>
+    <p>Scruton's conservatism is not an ideology but a <strong style="color:var(--accent-green);">disposition toward settlement</strong>. Law, custom, and tradition represent emergent wisdom &mdash; the accumulated experience of generations, tested by time. Following Burke, Scruton conceives society as a contract between the dead, the living, and the yet to be born.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 240" style="width:100%; max-width:700px;">
+            <!-- Burke's contract -->
+            <rect x="40" y="40" width="170" height="160" rx="10" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="125" y="70" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13" font-weight="700">The Dead</text>
+            <text x="125" y="95" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Tradition</text>
+            <text x="125" y="115" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Precedent</text>
+            <text x="125" y="135" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Inherited wisdom</text>
+            <text x="125" y="155" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Custom &amp; ritual</text>
+            <text x="125" y="185" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">What has been given</text>
+            <!-- The Living -->
+            <rect x="265" y="40" width="170" height="160" rx="10" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <text x="350" y="70" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="13" font-weight="700">The Living</text>
+            <text x="350" y="95" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Responsible agency</text>
+            <text x="350" y="115" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Civil association</text>
+            <text x="350" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Law &amp; institution</text>
+            <text x="350" y="155" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10">Prudent reform</text>
+            <text x="350" y="185" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">What is maintained</text>
+            <!-- The Unborn -->
+            <rect x="490" y="40" width="170" height="160" rx="10" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="575" y="70" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display, serif" font-size="13" font-weight="700">The Unborn</text>
+            <text x="575" y="95" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Trust &amp; stewardship</text>
+            <text x="575" y="115" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Environment</text>
+            <text x="575" y="135" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Built heritage</text>
+            <text x="575" y="155" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Moral inheritance</text>
+            <text x="575" y="185" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-style="italic">What is bequeathed</text>
+            <!-- Connecting lines -->
+            <line x1="210" y1="120" x2="265" y2="120" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="435" y1="120" x2="490" y2="120" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="350" y="230" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" font-style="italic">Burke's intergenerational contract</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 11: The Face and the Gaze -->
+<section>
+    <span class="section-number">10</span>
+    <h2>The Face & the Gaze</h2>
+    <div class="separator"></div>
+    <p>Drawing on Levinas and his own phenomenology of the person, Scruton argues that the <strong style="color:var(--accent-blue);">human face</strong> is the primary revelation of personhood. In the face-to-face encounter, another subject addresses me with a moral demand. The gaze is not mere visual data but an encounter with freedom, vulnerability, and the sacred.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 600 260" style="width:100%; max-width:600px;">
+            <!-- Face 1 -->
+            <circle cx="150" cy="130" r="60" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="150" y="125" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="14" font-weight="700">I</text>
+            <text x="150" y="145" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Subject</text>
+            <!-- Face 2 -->
+            <circle cx="450" cy="130" r="60" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <text x="450" y="125" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" font-weight="700">You</text>
+            <text x="450" y="145" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">Person</text>
+            <!-- Gaze lines -->
+            <line x1="210" y1="115" x2="390" y2="115" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="5"/>
+            <line x1="390" y1="145" x2="210" y2="145" stroke="#5b8cd4" stroke-width="1.5" stroke-dasharray="5"/>
+            <text x="300" y="105" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10">Recognition</text>
+            <text x="300" y="165" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10">Response</text>
+            <!-- Emergent -->
+            <text x="300" y="200" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="12" font-style="italic">Mutual accountability</text>
+            <text x="300" y="220" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10">The sacred emerges in the space between persons</text>
+            <!-- Downward arrow to sacred -->
+            <line x1="300" y1="170" x2="300" y2="190" stroke="#9b72cf" stroke-width="1" stroke-dasharray="3"/>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:12px;">
+        <div class="card">
+            <h4>Levinas &amp; the Ethical Demand</h4>
+            <p>The face of the other, for Levinas, issues a command: "do not kill me." Scruton extends this insight to aesthetics and the sacred &mdash; the face is where the transcendent breaks into the empirical world.</p>
+        </div>
+        <div class="card">
+            <h4>The Gaze vs. the Glance</h4>
+            <p>Scruton distinguishes the moral <em>gaze</em> &mdash; which sees the other as a person &mdash; from the objectifying <em>glance</em> that reduces the other to a thing. The loss of the gaze is the loss of the sacred in human relations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 12: Philosophical Influences -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Philosophical Influences</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-4">
+        <div class="card">
+            <h4>Kant</h4>
+            <p>Aesthetic judgement as universal yet subjective. The sensus communis. Beauty as symbol of morality. The transcendental framework of experience.</p>
+        </div>
+        <div class="card">
+            <h4>Hegel</h4>
+            <p>Art as the sensuous manifestation of the Idea. The dialectic of freedom. Spirit realising itself in culture, law, and institution.</p>
+        </div>
+        <div class="card">
+            <h4>Burke</h4>
+            <p>Society as intergenerational compact. Prejudice as accumulated wisdom. Reform over revolution. The "little platoons" of belonging.</p>
+        </div>
+        <div class="card">
+            <h4>Wittgenstein</h4>
+            <p>Language games and forms of life. The limits of explanation. "Whereof one cannot speak." The primacy of practice over theory.</p>
+        </div>
+        <div class="card">
+            <h4>Heidegger</h4>
+            <p>Dwelling and building. The critique of technology as Gestell (enframing). The question of Being. The nearness of things vs. technological distance.</p>
+        </div>
+        <div class="card">
+            <h4>Husserl</h4>
+            <p>Intentionality as the structure of consciousness. The lived world (Lebenswelt). Phenomenological description vs. scientific reduction.</p>
+        </div>
+        <div class="card">
+            <h4>Wagner</h4>
+            <p>The total work of art. Music as revelation of the sacred. Tristan und Isolde as the paradigm of erotic love. Death-devotion and transcendence.</p>
+        </div>
+        <div class="card">
+            <h4>Levinas</h4>
+            <p>The face of the other as ethical epiphany. Responsibility before freedom. The infinite disclosed in the finite encounter with the person.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Connections — McGilchrist & Whitehead -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Connections: McGilchrist & Whitehead</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card" style="border-color:var(--accent-blue);">
+            <h4 style="color:var(--accent-blue);">Iain McGilchrist</h4>
+            <p>Both Scruton and McGilchrist insist on the <strong>primacy of lived experience over abstraction</strong>. McGilchrist's right hemisphere &mdash; attentive, relational, open to the whole &mdash; maps onto Scruton's first-person perspective. Both diagnose modernity as pathologically dominated by an instrumental, left-hemisphere mode of attention that reduces persons to objects and beauty to data.</p>
+        </div>
+        <div class="card" style="border-color:var(--accent-green);">
+            <h4 style="color:var(--accent-green);">Alfred North Whitehead</h4>
+            <p>Whitehead's process philosophy and its emphasis on <strong>organism over mechanism</strong> parallels Scruton's critique of reductionism. Both reject the "bifurcation of nature" into objective fact and subjective value. For both, experience is fundamental &mdash; not an epiphenomenon of matter but the very texture of reality.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:15px;">
+        <div class="card" style="border-color:var(--accent-rose);">
+            <h4 style="color:var(--accent-rose);">Heidegger &amp; Technology</h4>
+            <p>Scruton's critique of technology-as-Gestell closely parallels Heidegger's analysis. Both see modern technology not as mere tool but as a way of <em>revealing</em> that reduces everything to standing-reserve (Bestand). The assault of modernist architecture is, for Scruton, a specific case of technological enframing.</p>
+        </div>
+        <div class="card" style="border-color:var(--accent-purple);">
+            <h4 style="color:var(--accent-purple);">Nietzsche &amp; Tragedy</h4>
+            <p>Scruton's aesthetic philosophy connects to Nietzsche's <em>Birth of Tragedy</em>: the tension between Apollonian form and Dionysian energy, the idea of art as a response to the terror and absurdity of existence, and the conviction that beauty is not ornament but <em>necessity</em>.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Key Works -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Key Works</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4>The Meaning of Conservatism</h4>
+            <p>(1979) Scruton's first major political work. Argues for conservatism as a disposition rooted in authority, allegiance, and tradition rather than liberal individualism or socialist egalitarianism.</p>
+        </div>
+        <div class="card">
+            <h4>Sexual Desire</h4>
+            <p>(1986) A philosophical investigation of desire as intentional, interpersonal, and irreducible to biological drive. Integrates phenomenology, moral philosophy, and aesthetics.</p>
+        </div>
+        <div class="card">
+            <h4>The Aesthetics of Architecture</h4>
+            <p>(1979) Architecture as the public art par excellence. The building as expression of community values, and the moral responsibility of the architect to the shared environment.</p>
+        </div>
+        <div class="card">
+            <h4>Beauty: A Very Short Introduction</h4>
+            <p>(2009) A concise, luminous defence of beauty as a real value and a human need &mdash; not reducible to utility, pleasure, or evolutionary advantage.</p>
+        </div>
+        <div class="card">
+            <h4>The Soul of the World</h4>
+            <p>(2014) Argues that the world has a "face" &mdash; that the first-person perspective reveals a sacred dimension of reality inaccessible to scientific reduction.</p>
+        </div>
+        <div class="card">
+            <h4>The Face of God</h4>
+            <p>(2012) Based on his Gifford Lectures. Explores the sacred as encountered in the face, in music, in architecture, and in the experience of the holy.</p>
+        </div>
+        <div class="card">
+            <h4>On Human Nature</h4>
+            <p>(2017) A defence of the irreducibility of the person against neuroscientific and Darwinian reductionism. The "I" as the ground of moral life.</p>
+        </div>
+        <div class="card">
+            <h4>Fools, Frauds and Firebrands</h4>
+            <p>(2015) A polemical critique of the New Left intellectuals &mdash; from Sartre to Foucault, from Gramsci to Habermas &mdash; whose ideas Scruton saw as corrosive of Western civilisation.</p>
+        </div>
+        <div class="card">
+            <h4>Death-Devoted Heart</h4>
+            <p>(2004) A philosophical study of Wagner's Tristan und Isolde. Explores erotic love, death-devotion, and the metaphysics of music as a disclosure of the sacred.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Beauty as Transcendental — Deeper Diagram -->
+<section>
+    <span class="section-number">14</span>
+    <h2>The Architecture of Meaning</h2>
+    <div class="separator"></div>
+    <p>Scruton's philosophy can be understood as a sustained argument that <strong style="color:var(--accent-amber);">meaning is real</strong> &mdash; that the first-person perspective discloses a world of values, persons, and sacred encounters that cannot be reduced to the impersonal descriptions of natural science.</p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" style="width:100%; max-width:700px;">
+            <!-- Foundation layer -->
+            <rect x="100" y="250" width="500" height="50" rx="8" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="350" y="280" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="12">Natural Science &mdash; Third-Person Descriptions</text>
+            <!-- First person layer -->
+            <rect x="130" y="185" width="440" height="50" rx="8" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="350" y="215" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12">First-Person Perspective &mdash; Persons, Reasons, Freedom</text>
+            <line x1="350" y1="250" x2="350" y2="237" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Aesthetic / Moral layer -->
+            <rect x="160" y="120" width="380" height="50" rx="8" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="350" y="150" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="12">Beauty, Goodness, Truth &mdash; Transcendental Values</text>
+            <line x1="350" y1="185" x2="350" y2="172" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Sacred layer -->
+            <rect x="190" y="55" width="320" height="50" rx="8" fill="none" stroke="#9b72cf" stroke-width="2"/>
+            <text x="350" y="85" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display, serif" font-size="13" font-weight="700">The Sacred</text>
+            <line x1="350" y1="120" x2="350" y2="107" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4"/>
+            <!-- God / Transcendence -->
+            <text x="350" y="35" text-anchor="middle" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" font-style="italic">The Face of God &mdash; Transcendence</text>
+            <line x1="350" y1="55" x2="350" y2="42" stroke="#d4a053" stroke-width="1" stroke-dasharray="3"/>
+            <!-- Arrows indicating irreducibility -->
+            <text x="80" y="270" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" transform="rotate(-90, 80, 200)">Irreducible</text>
+        </svg>
+    </div>
+    <p class="note-text">Each level is real and irreducible to the one below. Scruton's philosophy is a defence of this layered reality against the "nothing-buttery" of scientific reductionism.</p>
+</section>
+
+<!-- Slide 16: Legacy & Connections -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Legacy & Living Connections</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4>Philosophical Legacy</h4>
+            <p>Scruton left behind one of the most substantial and wide-ranging philosophical oeuvres of the late 20th century. His defence of beauty, the sacred, and the first-person perspective offers a counterweight to the reductionism and nihilism that dominate much contemporary thought. His insistence that philosophy must address the whole person &mdash; not just the intellect but feeling, perception, and moral intuition &mdash; places him in the company of thinkers like Whitehead, McGilchrist, and the phenomenological tradition.</p>
+        </div>
+        <div class="card">
+            <h4>Political &amp; Cultural Impact</h4>
+            <p>His underground teaching in communist Eastern Europe helped sustain philosophical culture under totalitarian conditions. His advocacy for traditional architecture, environmental stewardship, and the value of local community continues to influence movements for "gentle density," classical urbanism, and the conservation of the built environment. The Roger Scruton Legacy Foundation carries his work forward.</p>
+        </div>
+    </div>
+    <div style="margin-top:20px;">
+        <h3 style="font-size:0.95em; margin-bottom:12px;">Connections in This Collection</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="concept-node">McGilchrist &mdash; Hemisphere Thesis</span>
+            <span class="concept-node">Whitehead &mdash; Process &amp; Organism</span>
+            <span class="concept-node">Heidegger &mdash; Dwelling &amp; Gestell</span>
+            <span class="concept-node">Nietzsche &mdash; Birth of Tragedy</span>
+            <span class="concept-node">Kant &mdash; Aesthetic Judgement</span>
+            <span class="concept-node">Husserl &mdash; Intentionality</span>
+            <span class="concept-node">Burke &mdash; Tradition &amp; Reform</span>
+            <span class="concept-node">Levinas &mdash; Ethics of the Face</span>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing -->
+<section>
+    <div style="display:flex; flex-direction:column; justify-content:center; height:100%; text-align:center;">
+        <h2 style="font-size:1.8em; margin-bottom:0.3em;">In Closing</h2>
+        <div class="separator" style="margin:15px auto;"></div>
+        <div class="quote-box" style="max-width:800px; margin:25px auto; text-align:center; font-size:1em !important;">
+            "Beauty is vanishing from our world because we live as though it did not matter."
+            <span class="attribution">&mdash; Roger Scruton</span>
+        </div>
+        <p style="font-size:0.8em; color:var(--text-muted); max-width:650px; margin:20px auto 0;">
+            Scruton's life work was a sustained meditation on why beauty, belonging, and the sacred <em>do</em> matter &mdash; and what we lose when we pretend they do not. His philosophy invites us to see the world again with the eyes of the person, not the detached gaze of the scientist, and to recover the sense of home that makes human life meaningful.
+        </p>
+        <div style="margin-top:30px;">
+            <span style="font-family:'Playfair Display', serif; font-size:0.9em; color:var(--accent-amber);">Roger Scruton</span>
+            <span style="color:var(--text-muted); font-size:0.75em;">&ensp;|&ensp;1944 &ndash; 2020</span>
+        </div>
+    </div>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()">&#x26F6; Fullscreen</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02
+});
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+// Slide height fix
+window.addEventListener('load', function() {
+    document.querySelectorAll('.reveal .slides section').forEach(function(slide) {
+        slide.style.height = '100%';
+    });
+});
+</script>
+</body>
+</html>
