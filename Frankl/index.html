@@ -768,8 +768,9 @@
             <text x="150" y="55" text-anchor="middle" fill="#cf7272" font-size="10" font-weight="600">SELF</text>
             <text x="150" y="72" text-anchor="middle" fill="#6a6a7a" font-size="8">observing</text>
             <text x="150" y="85" text-anchor="middle" fill="#6a6a7a" font-size="8">the self</text>
-            <!-- Circular arrow -->
-            <path d="M185 40 Q210 30 200 60" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <!-- Circular arrow (self-referential loop) -->
+            <path d="M185 42 Q210 20 195 55 Q188 68 175 72" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <polygon points="175,72 180,64 170,66" fill="#cf7272" opacity="0.5"/>
             <text x="150" y="128" text-anchor="middle" fill="#cf7272" font-size="9">Hyperreflection</text>
 
             <!-- Arrow from loop to meaning -->
@@ -992,7 +993,7 @@
         </div>
         <div>
             <div class="diagram-container" style="margin: 0;">
-                <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 260px;">
+                <svg viewBox="0 0 280 290" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 260px;">
                     <!-- Self -->
                     <circle cx="100" cy="180" r="40" fill="none" stroke="#cf7272" stroke-width="1.2" stroke-dasharray="5,3"/>
                     <text x="100" y="175" text-anchor="middle" fill="#cf7272" font-size="10" font-weight="600">SELF</text>
@@ -1004,9 +1005,9 @@
                     <text x="210" y="76" text-anchor="middle" fill="#6a6a7a" font-size="8">cause · person</text>
                     <text x="210" y="90" text-anchor="middle" fill="#6a6a7a" font-size="8">task · world</text>
 
-                    <!-- Transcendence arrow -->
-                    <line x1="125" y1="150" x2="180" y2="105" stroke="#d4a053" stroke-width="1.5"/>
-                    <polygon points="180,105 172,112 185,112" fill="#d4a053"/>
+                    <!-- Transcendence arrow (aligned with line direction) -->
+                    <line x1="125" y1="150" x2="175" y2="110" stroke="#d4a053" stroke-width="1.5"/>
+                    <polygon points="182,104 170,108 174,118" fill="#d4a053"/>
                     <text x="130" y="120" fill="#d4a053" font-size="9" font-weight="500">self-transcendence</text>
 
                     <!-- Self-actualisation as by-product -->
