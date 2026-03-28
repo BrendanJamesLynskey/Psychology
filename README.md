@@ -50,23 +50,23 @@ Interactive presentations exploring foundational thinkers in psychology and phil
 | 29 | [Simone Weil — Attention, Affliction & Gravity and Grace](Weil/) | 17 | Complete |
 | 30 | [Byung-Chul Han — The Burnout Society & Psychopolitics](Han/) | 17 | Complete |
 
-### Ancient Philosophy
-
-| # | Topic | Slides | Status |
-|---|-------|--------|--------|
-| 35 | [Socrates — The Examined Life, the Gadfly of Athens & the Philosophical Revolution](Socrates/) | 17 | Complete |
-| 36 | [Plato — The Theory of Forms, the Republic & the Ascent to the Good](Plato/) | 17 | Complete |
-| 37 | [Aristotle — The Philosopher of Nature, Virtue & the Unmoved Mover](Aristotle/) | 17 | Complete |
-| 38 | [Seneca — Stoic Wisdom, Mortality & the Art of Living](Seneca/) | 17 | Complete |
-| 39 | [Plotinus & the Neo-Platonists — Emanation, the One & the Soul's Return](Plotinus/) | 17 | Complete |
-
 ### Medieval Philosophy
 
 | # | Topic | Slides | Status |
 |---|-------|--------|--------|
-| 40 | [Augustine of Hippo — Grace, Time, Memory & the City of God](Augustine/) | 17 | Complete |
-| 41 | [Thomas Aquinas — Scholasticism, Natural Theology & the Synthesis of Faith and Reason](Aquinas/) | 17 | Complete |
-| 42 | [William of Ockham — Nominalism, Ockham's Razor & the Birth of Modernity](Ockham/) | 17 | Complete |
+| 35 | [Augustine of Hippo — Grace, Time, Memory & the City of God](Augustine/) | 17 | Complete |
+| 36 | [Thomas Aquinas — Scholasticism, Natural Theology & the Synthesis of Faith and Reason](Aquinas/) | 17 | Complete |
+| 37 | [William of Ockham — Nominalism, Ockham's Razor & the Birth of Modernity](Ockham/) | 17 | Complete |
+
+### Ancient Philosophy
+
+| # | Topic | Slides | Status |
+|---|-------|--------|--------|
+| 38 | [Socrates — The Examined Life, the Gadfly of Athens & the Philosophical Revolution](Socrates/) | 17 | Complete |
+| 39 | [Plato — The Theory of Forms, the Republic & the Ascent to the Good](Plato/) | 17 | Complete |
+| 40 | [Aristotle — The Philosopher of Nature, Virtue & the Unmoved Mover](Aristotle/) | 17 | Complete |
+| 41 | [Seneca — Stoic Wisdom, Mortality & the Art of Living](Seneca/) | 17 | Complete |
+| 42 | [Plotinus & the Neo-Platonists — Emanation, the One & the Soul's Return](Plotinus/) | 17 | Complete |
 
 ## Historical Influences
 
