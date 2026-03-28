@@ -1093,7 +1093,7 @@ footer a:hover { text-decoration: underline; }
             </a>
         </div>
 
-        <div class="section-divider">Medieval Philosophy</div>
+        <div class="section-divider" style="grid-column: 1 / -1;">Medieval Philosophy</div>
 
         <!-- 35 — Augustine of Hippo -->
         <div class="card">
@@ -1158,7 +1158,7 @@ footer a:hover { text-decoration: underline; }
             </a>
         </div>
 
-        <div class="section-divider">Ancient Philosophy</div>
+        <div class="section-divider" style="grid-column: 1 / -1;">Ancient Philosophy</div>
 
         <!-- 38 — Socrates -->
         <div class="card">
@@ -1168,7 +1168,7 @@ footer a:hover { text-decoration: underline; }
             <p class="description">
                 The examined life — the Socratic method, Socratic ignorance, virtue as knowledge,
                 the daimon, the trial and death in the Apology, and the philosophical revolution
-                that left no writings but founded the Western tradition.
+                that left no writings but founded the Western tradition. 17 slides with SVG diagrams.
             </p>
             <div class="meta">
                 <span class="tag amber">Elenchus</span>
@@ -1284,10 +1284,20 @@ footer a:hover { text-decoration: underline; }
             <line x1="60" y1="50" x2="60" y2="130" stroke="#d4a053" stroke-width="1.8" opacity="0.6"/>
             <!-- Plato → Aristotle -->
             <line x1="60" y1="130" x2="60" y2="210" stroke="#d4a053" stroke-width="1.8" opacity="0.6"/>
+            <!-- Socrates → Seneca (Stoic lineage via Socratic ethics) -->
+            <line x1="60" y1="50" x2="60" y2="290" stroke="#9b72cf" stroke-width="0.8" opacity="0.2" stroke-dasharray="4,3"/>
             <!-- Plato → Plotinus (Platonic tradition) -->
             <line x1="60" y1="130" x2="60" y2="370" stroke="#d4a053" stroke-width="0.8" opacity="0.2" stroke-dasharray="4,3"/>
+            <!-- Seneca → Nietzsche (amor fati, self-mastery) -->
+            <line x1="60" y1="290" x2="500" y2="200" stroke="#9b72cf" stroke-width="0.6" opacity="0.18" stroke-dasharray="4,3"/>
+            <!-- Seneca → Weil (attention, affliction, Stoic asceticism) -->
+            <line x1="60" y1="290" x2="830" y2="520" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
+            <!-- Seneca → Frankl (suffering, virtue, meaning) -->
+            <line x1="60" y1="290" x2="830" y2="130" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
             <!-- Plotinus → Augustine -->
             <line x1="60" y1="370" x2="185" y2="50" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+            <!-- Plotinus → Hegel (the Absolute, dialectical return) -->
+            <line x1="60" y1="370" x2="380" y2="145" stroke="#9b72cf" stroke-width="0.5" opacity="0.12" stroke-dasharray="4,3"/>
             <!-- Aristotle → Aquinas (Aristotelian synthesis) -->
             <line x1="60" y1="210" x2="185" y2="150" stroke="#5b8cd4" stroke-width="1.2" opacity="0.4" stroke-dasharray="4,3"/>
             <!-- Augustine → Aquinas -->
@@ -1296,6 +1306,8 @@ footer a:hover { text-decoration: underline; }
             <line x1="185" y1="150" x2="185" y2="240" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
             <!-- Ockham → Kant (nominalism preconditions critical philosophy) -->
             <line x1="185" y1="240" x2="380" y2="60" stroke="#5b8cd4" stroke-width="0.6" opacity="0.15" stroke-dasharray="4,3"/>
+            <!-- Augustine → Weil (grace, divine love, suffering) -->
+            <line x1="185" y1="50" x2="830" y2="520" stroke="#d4a053" stroke-width="0.5" opacity="0.12" stroke-dasharray="4,3"/>
             <!-- Plato → Schopenhauer (Platonic Ideas / Will as representation) -->
             <line x1="60" y1="130" x2="500" y2="60" stroke="#d4a053" stroke-width="0.5" opacity="0.12" stroke-dasharray="4,3"/>
             <!-- Aristotle → Hegel (teleology, categories) -->
@@ -1348,6 +1360,10 @@ footer a:hover { text-decoration: underline; }
             <line x1="500" y1="270" x2="500" y2="200" stroke="#9b72cf" stroke-width="1.0" opacity="0.35"/>
             <!-- Dostoevsky → Frankl -->
             <line x1="500" y1="270" x2="830" y2="130" stroke="#9b72cf" stroke-width="0.6" opacity="0.2"/>
+            <!-- Dostoevsky → Camus (the absurd, rebellion, guilt) -->
+            <line x1="500" y1="270" x2="1000" y2="375" stroke="#9b72cf" stroke-width="0.6" opacity="0.2"/>
+            <!-- Dostoevsky → Sartre (freedom, underground consciousness) -->
+            <line x1="500" y1="270" x2="1000" y2="250" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
             <!-- Nietzsche → Jung -->
             <line x1="500" y1="200" x2="650" y2="60" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
             <!-- Nietzsche → Freud -->
@@ -1356,6 +1372,12 @@ footer a:hover { text-decoration: underline; }
             <line x1="500" y1="200" x2="650" y2="270" stroke="#d4a053" stroke-width="1.0" opacity="0.35"/>
             <!-- Nietzsche → Peterson -->
             <line x1="500" y1="200" x2="1000" y2="100" stroke="#d4a053" stroke-width="0.6" opacity="0.15"/>
+            <!-- Nietzsche → Camus (amor fati, life-affirmation, Mediterranean) -->
+            <line x1="500" y1="200" x2="1000" y2="375" stroke="#cf7272" stroke-width="0.8" opacity="0.25"/>
+            <!-- Nietzsche → Sartre (death of God, radical freedom, values) -->
+            <line x1="500" y1="200" x2="1000" y2="250" stroke="#cf7272" stroke-width="0.6" opacity="0.2"/>
+            <!-- Schopenhauer → Wittgenstein (the mystical, ethics, the will) -->
+            <line x1="500" y1="60" x2="1000" y2="175" stroke="#5b8cd4" stroke-width="0.6" opacity="0.18" stroke-dasharray="4,3"/>
             <!-- James → Husserl -->
             <line x1="500" y1="410" x2="650" y2="340" stroke="#4ecca3" stroke-width="1.2" opacity="0.4"/>
             <!-- James → Bergson (mutual) -->
@@ -1396,6 +1418,8 @@ footer a:hover { text-decoration: underline; }
             <line x1="650" y1="130" x2="830" y2="630" stroke="#cf7272" stroke-width="1.2" opacity="0.4"/>
             <!-- Freud → Winnicott -->
             <line x1="650" y1="130" x2="1000" y2="495" stroke="#cf7272" stroke-width="0.8" opacity="0.25"/>
+            <!-- Freud → Bion (via Klein, object relations) -->
+            <line x1="650" y1="130" x2="1000" y2="615" stroke="#cf7272" stroke-width="0.8" opacity="0.25"/>
             <!-- Wittgenstein (faint Vienna connection) -->
             <line x1="650" y1="130" x2="1000" y2="175" stroke="#5b8cd4" stroke-width="0.6" opacity="0.15"/>
             <!-- Jung → Neumann -->
@@ -1420,8 +1444,12 @@ footer a:hover { text-decoration: underline; }
             <line x1="650" y1="270" x2="1000" y2="250" stroke="#9b72cf" stroke-width="1.2" opacity="0.4"/>
             <!-- Heidegger → Han -->
             <line x1="650" y1="270" x2="1140" y2="410" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
+            <!-- Heidegger → Weil (Being, attention, rootedness) -->
+            <line x1="650" y1="270" x2="830" y2="520" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
 
             <!-- ── Mid 20th Century ── -->
+            <!-- Adler → Frankl (Viennese lineage, individual meaning) -->
+            <line x1="830" y1="60" x2="830" y2="130" stroke="#cf7272" stroke-width="1.0" opacity="0.35"/>
             <!-- Buber → Rogers -->
             <line x1="830" y1="270" x2="830" y2="200" stroke="#4ecca3" stroke-width="1.2" opacity="0.4"/>
             <!-- Buber → Frankl -->
@@ -1436,20 +1464,34 @@ footer a:hover { text-decoration: underline; }
             <line x1="830" y1="470" x2="830" y2="570" stroke="#d4a053" stroke-width="1.0" opacity="0.35"/>
             <!-- Campbell → Peterson -->
             <line x1="830" y1="570" x2="1000" y2="100" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+            <!-- Weil → Levinas (suffering, the Other, ethical mysticism) -->
+            <line x1="830" y1="520" x2="1000" y2="315" stroke="#9b72cf" stroke-width="0.6" opacity="0.2"/>
+            <!-- Weil → Camus (Mediterranean, limits, revolt against injustice) -->
+            <line x1="830" y1="520" x2="1000" y2="375" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
             <!-- Lacan → Bion -->
             <line x1="830" y1="630" x2="1000" y2="615" stroke="#9b72cf" stroke-width="0.8" opacity="0.25"/>
 
             <!-- ── Late 20th Century ── -->
-            <!-- Sartre → Camus (complex) -->
+            <!-- Sartre → Camus (complex/contested) -->
             <line x1="1000" y1="250" x2="1000" y2="375" stroke="#cf7272" stroke-width="1.0" opacity="0.35" stroke-dasharray="4,3"/>
-            <!-- Levinas → Buber (mutual) -->
+            <!-- Levinas → Buber (mutual critique, I-Thou) -->
             <line x1="1000" y1="315" x2="830" y2="270" stroke="#4ecca3" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,3"/>
+            <!-- Levinas → Han (the Other, disappearance of alterity) -->
+            <line x1="1000" y1="315" x2="1140" y2="410" stroke="#9b72cf" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
+            <!-- Winnicott ↔ Bion (Klein/object relations lineage) -->
+            <line x1="1000" y1="495" x2="1000" y2="615" stroke="#cf7272" stroke-width="0.8" opacity="0.3"/>
+            <!-- Wittgenstein → McGilchrist (language shapes experience) -->
+            <line x1="1000" y1="175" x2="1140" y2="270" stroke="#5b8cd4" stroke-width="0.6" opacity="0.2"/>
             <!-- Piaget → Peterson -->
             <line x1="1000" y1="550" x2="1000" y2="100" stroke="#5b8cd4" stroke-width="0.6" opacity="0.2"/>
             <!-- Scruton ↔ McGilchrist -->
             <line x1="1000" y1="435" x2="1140" y2="270" stroke="#cf7272" stroke-width="1.0" opacity="0.35"/>
+            <!-- Scruton → Han (critique of modernity from different angles) -->
+            <line x1="1000" y1="435" x2="1140" y2="410" stroke="#cf7272" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
             <!-- Haidt ← Piaget -->
             <line x1="1000" y1="550" x2="1140" y2="480" stroke="#5b8cd4" stroke-width="0.8" opacity="0.25"/>
+            <!-- Nietzsche → Han (critique of slave morality → achievement society) -->
+            <line x1="500" y1="200" x2="1140" y2="410" stroke="#cf7272" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,3"/>
 
             <!-- ══ ERA LABELS ══ -->
             <text x="60"   y="660" fill="#6a6a7a" font-size="8"   text-anchor="middle" letter-spacing="0.1em">ANCIENT</text>
@@ -1654,6 +1696,7 @@ footer a:hover { text-decoration: underline; }
             <div class="legend-item"><div class="legend-line" style="background: #9b72cf;"></div> Phenomenology / Literature</div>
             <div class="legend-item"><div class="legend-line" style="background: #4ecca3;"></div> Pragmatism / Process</div>
             <div class="legend-item"><div class="legend-line" style="background: #5b8cd4;"></div> Epistemology / Development</div>
+            <div class="legend-item"><div class="legend-line" style="background: #6a6a7a; background-image: repeating-linear-gradient(90deg, #6a6a7a 0, #6a6a7a 4px, transparent 4px, transparent 7px);background-color:transparent;"></div> Dashed = indirect or contested</div>
         </div>
     </div>
 
@@ -1711,6 +1754,43 @@ footer a:hover { text-decoration: underline; }
             perception maps directly onto right-hemisphere processing, making Merleau-Ponty the key bridge
             figure between phenomenology and hemisphere neuroscience.</p>
         </div>
+        <div class="influence-card" style="border-left-color: var(--accent-rose);">
+            <div class="era">THE PSYCHOANALYTIC LINEAGE</div>
+            <h4>Freud &rarr; Lacan &middot; Winnicott &middot; Bion</h4>
+            <p>Lacan's "return to Freud" re-read psychoanalysis through structural linguistics — the unconscious
+            structured like a language, desire as the desire of the Other, and the three registers (Real, Symbolic,
+            Imaginary) that map the topology of the subject. Winnicott took a different path entirely, emphasising
+            the facilitating environment, the good enough mother, and the transitional space where culture and
+            creativity are born. Bion, trained by Melanie Klein, extended object relations into a theory of thinking
+            itself — container/contained, alpha function that transforms raw experience into thinkable thoughts, and
+            the radical concept of "thoughts without a thinker." All three transformed Freud's legacy in directions
+            he could not have anticipated, yet all remain recognisably psychoanalytic in method and commitment.</p>
+        </div>
+        <div class="influence-card" style="border-left-color: var(--accent-rose);">
+            <div class="era">THE FRENCH EXISTENTIAL LINEAGE</div>
+            <h4>Kierkegaard &rarr; Heidegger &rarr; Sartre &rarr; Camus &middot; Levinas &middot; Weil</h4>
+            <p>Sartre drew on Heidegger's analysis of Dasein and Husserl's phenomenology to produce his radical doctrine
+            of freedom: existence precedes essence, consciousness is pure nothingness, and bad faith is the flight from
+            this terrifying liberty. Camus shared the existential terrain but rejected the label — offering the absurd
+            and Mediterranean revolt as alternatives to Sartre's political engagement. Their famous rupture defined
+            post-war French thought. Levinas turned Heidegger's ontology inside out: ethics, not being, is first
+            philosophy, and the face of the Other commands infinite responsibility. Weil, the most singular figure
+            in this constellation, took suffering, attention, and decreation as paths toward a divine gravity and grace
+            that dissolves the self — a mystical existentialism drawing equally on Plato, the Stoics, and the Gospels.</p>
+        </div>
+        <div class="influence-card" style="border-left-color: var(--accent-blue);">
+            <div class="era">THE ANALYTIC TRADITION</div>
+            <h4>Wittgenstein &mdash; and the Limits of Language</h4>
+            <p>Wittgenstein stands apart from every lineage — connected to Frege and Russell's logic but ultimately
+            dissolving systematic philosophy itself. The early Tractatus drew a limit around what can be said, consigning
+            ethics, aesthetics, and the mystical to silence. The later Philosophical Investigations replaced logical
+            atomism with language games, family resemblance, and forms of life — showing that meaning is use, not
+            reference, and that philosophical problems arise when language goes on holiday. His later work profoundly
+            influenced McGilchrist's understanding of how language shapes (and distorts) experience, and his critique
+            of the "bewitchment of intelligence by means of language" anticipates the left-hemisphere thesis. Schopenhauer's
+            influence on the young Wittgenstein — the mystical, the ethical, the ineffable — is often overlooked but
+            constitutive.</p>
+        </div>
         <div class="influence-card" style="border-left-color: var(--accent-purple);">
             <div class="era">THE ANCIENT LINEAGE</div>
             <h4>Socrates &rarr; Plato &rarr; Aristotle &nbsp;&middot;&nbsp; Zeno &rarr; Seneca &nbsp;&middot;&nbsp; Plotinus</h4>
@@ -1731,15 +1811,17 @@ footer a:hover { text-decoration: underline; }
         </div>
         <div class="influence-card" style="border-left-color: var(--accent-rose);">
             <div class="era">THE CONVERGENCE</div>
-            <h4>McGilchrist &amp; Scruton: Where the Lineages Meet</h4>
-            <p>McGilchrist and Scruton represent a contemporary convergence of these traditions. Both argue that
-            Western modernity has become pathologically one-sided — dominated by abstraction, mechanism, and
-            the instrumental attitude at the expense of embodied presence, beauty, and the sacred. McGilchrist
-            frames this through hemisphere neuroscience; Scruton through aesthetics and conservatism. Both draw
-            on Heidegger's critique of technology (Gestell), Whitehead's critique of materialism, and the depth
-            psychological tradition's insistence on the reality of meaning. Their work suggests that the antidote
-            to modern disenchantment lies not in more information but in a recovery of attention, relationship,
-            and the irreducibility of the first-person perspective.</p>
+            <h4>McGilchrist, Scruton &amp; Han: Where the Lineages Meet</h4>
+            <p>McGilchrist, Scruton, and Han each argue — from very different starting points — that Western modernity
+            has become pathologically one-sided. McGilchrist frames the imbalance through hemisphere neuroscience:
+            the left hemisphere's narrow, analytic, instrumental attention has usurped the right hemisphere's broad,
+            contextual, relational grasp. Scruton diagnoses the same pathology through aesthetics and the sacred:
+            beauty, belonging, and the first-person perspective are sacrificed to utility. Han, drawing on Heidegger
+            and Levinas, identifies a "burnout society" in which the disciplinary power Foucault described has been
+            internalised as auto-exploitation — the achievement-subject who destroys himself in the name of freedom.
+            All three draw on Heidegger's critique of technology, and all converge on the same prescription: the
+            antidote to modern disenchantment lies not in more information, productivity, or optimisation, but in
+            a recovery of attention, contemplation, the Other, and the irreducibility of presence.</p>
         </div>
     </div>
 </section>

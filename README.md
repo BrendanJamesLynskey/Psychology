@@ -1,8 +1,18 @@
 # Psychology & Philosophy
 
-Interactive presentations exploring foundational thinkers in psychology and philosophy — from depth psychology to phenomenology, existentialism to process thought, aesthetics to the neuroscience of attention.
+A growing collection of **42 interactive presentations** exploring foundational thinkers across 2,500 years of Western thought — from Socrates and Plato through medieval scholasticism, the Enlightenment, depth psychology, phenomenology, existentialism, and process thought, to contemporary thinkers like McGilchrist, Scruton, and Han.
+
+Each presentation is a self-contained, single-file HTML deployment using [Reveal.js](https://revealjs.com/), featuring inline SVG diagrams, concept maps, and process flows. No build step, no bundler, no local dependencies beyond CDN.
 
 **Live site:** [brendanjameslynskey.github.io/Psychology_Philosophy](https://brendanjameslynskey.github.io/Psychology_Philosophy)
+
+### How to Navigate
+
+- **Arrow keys** or **click** to advance slides
+- **Escape** to see the slide overview
+- **F** for fullscreen
+- **S** for speaker notes (where available)
+- The landing page includes an interactive **influence map** tracing intellectual connections across the collection
 
 ## Presentations
 
@@ -30,25 +40,25 @@ Interactive presentations exploring foundational thinkers in psychology and phil
 | 18 | [Wilfred Bion — Container/Contained & Thoughts Without a Thinker](Bion/) | 17 | Complete |
 | 19 | [Jonathan Haidt — Moral Foundations & the Anxious Generation](Haidt/) | 17 | Complete |
 
-### Philosophy & Phenomenology
+### Philosophy, Phenomenology & Existentialism
 
 | # | Topic | Slides | Status |
 |---|-------|--------|--------|
-| 16 | [Martin Heidegger — Being, Time & the Question of Existence](Heidegger/) | 17 | Complete |
-| 17 | [Edmund Husserl — Phenomenology & the Return to Things Themselves](Husserl/) | 17 | Complete |
-| 18 | [Henri Bergson — Duration, Intuition & Creative Evolution](Bergson/) | 17 | Complete |
-| 19 | [Alfred North Whitehead — Process, Reality & the Philosophy of Organism](Whitehead/) | 17 | Complete |
-| 20 | [William James — Pragmatism, Consciousness & the Varieties of Experience](James/) | 17 | Complete |
-| 21 | [Martin Buber — I and Thou & the Philosophy of Dialogue](Buber/) | 17 | Complete |
-| 22 | [Maurice Merleau-Ponty — Phenomenology of Perception & the Lived Body](Merleau-Ponty/) | 17 | Complete |
-| 23 | [Roger Scruton — Beauty, Belonging & the Sacred](Scruton/) | 17 | Complete |
-| 24 | [Iain McGilchrist — The Divided Brain & the Making of the Western World](McGilchrist/) | 17 | Complete |
-| 25 | [Emmanuel Levinas — The Face of the Other & Ethics as First Philosophy](Levinas/) | 17 | Complete |
-| 26 | [Jean-Paul Sartre — Being and Nothingness & Radical Freedom](Sartre/) | 17 | Complete |
-| 27 | [Albert Camus — The Absurd, Revolt & Mediterranean Thought](Camus/) | 17 | Complete |
-| 28 | [Ludwig Wittgenstein — Language Games, Family Resemblance & Forms of Life](Wittgenstein/) | 17 | Complete |
-| 29 | [Simone Weil — Attention, Affliction & Gravity and Grace](Weil/) | 17 | Complete |
-| 30 | [Byung-Chul Han — The Burnout Society & Psychopolitics](Han/) | 17 | Complete |
+| 20 | [Martin Heidegger — Being, Time & the Question of Existence](Heidegger/) | 17 | Complete |
+| 21 | [Edmund Husserl — Phenomenology & the Return to Things Themselves](Husserl/) | 17 | Complete |
+| 22 | [Henri Bergson — Duration, Intuition & Creative Evolution](Bergson/) | 17 | Complete |
+| 23 | [Alfred North Whitehead — Process, Reality & the Philosophy of Organism](Whitehead/) | 17 | Complete |
+| 24 | [William James — Pragmatism, Consciousness & the Varieties of Experience](James/) | 17 | Complete |
+| 25 | [Martin Buber — I and Thou & the Philosophy of Dialogue](Buber/) | 17 | Complete |
+| 26 | [Maurice Merleau-Ponty — Phenomenology of Perception & the Lived Body](Merleau-Ponty/) | 17 | Complete |
+| 27 | [Roger Scruton — Beauty, Belonging & the Sacred](Scruton/) | 17 | Complete |
+| 28 | [Iain McGilchrist — The Divided Brain & the Making of the Western World](McGilchrist/) | 17 | Complete |
+| 29 | [Emmanuel Levinas — The Face of the Other & Ethics as First Philosophy](Levinas/) | 17 | Complete |
+| 30 | [Jean-Paul Sartre — Being and Nothingness & Radical Freedom](Sartre/) | 17 | Complete |
+| 31 | [Albert Camus — The Absurd, Revolt & Mediterranean Thought](Camus/) | 17 | Complete |
+| 32 | [Ludwig Wittgenstein — Language Games, Family Resemblance & Forms of Life](Wittgenstein/) | 17 | Complete |
+| 33 | [Simone Weil — Attention, Affliction & Gravity and Grace](Weil/) | 17 | Complete |
+| 34 | [Byung-Chul Han — The Burnout Society & Psychopolitics](Han/) | 17 | Complete |
 
 ### Medieval Philosophy
 
@@ -103,14 +113,19 @@ Lacan's "return to Freud" re-read psychoanalysis through structural linguistics 
 Sartre drew on Heidegger and Husserl to produce radical freedom and bad faith. Camus shared the existential terrain but rejected the label, offering the absurd and revolt as alternatives to Sartre's engagement. Levinas turned Heidegger's ontology into ethics — the face of the Other. Weil's mystical existentialism took suffering and attention as paths to the divine.
 
 ### The Analytic Tradition
-**Wittgenstein**
+**Wittgenstein — and the Limits of Language**
 
-Wittgenstein stands apart — connected to Frege and Russell's logic but ultimately dissolving systematic philosophy through language games, family resemblance, and forms of life. His later work influenced McGilchrist's understanding of how language shapes (and distorts) experience.
+Wittgenstein stands apart from every lineage — connected to Frege and Russell's logic but ultimately dissolving systematic philosophy itself. The early *Tractatus* drew a limit around what can be said, consigning ethics, aesthetics, and the mystical to silence. The later *Philosophical Investigations* replaced logical atomism with language games, family resemblance, and forms of life. Schopenhauer's influence on the young Wittgenstein is often overlooked but constitutive. His later work profoundly influenced McGilchrist's understanding of how language shapes (and distorts) experience.
+
+### The Stoic Thread
+**Socrates → Seneca → Nietzsche & Frankl**
+
+The Socratic commitment to self-examination and virtue as knowledge passed through Zeno's Stoa into Seneca's letters, Epictetus's discourses, and Marcus Aurelius's meditations. Stoic themes — amor fati, the dichotomy of control, the sovereignty of the inner life — resurface in Nietzsche's life-affirmation, Frankl's logotherapy (meaning through suffering), and even Weil's ascetic attention. Seneca's insistence that philosophy is preparation for death echoes forward through Heidegger's being-toward-death.
 
 ### The Convergence
 **McGilchrist, Scruton & Han**
 
-McGilchrist, Scruton, and Han each argue that Western modernity has become pathologically one-sided. McGilchrist frames this through hemisphere neuroscience; Scruton through aesthetics; Han through the critique of the achievement society and neoliberal psychopolitics. All draw on Heidegger's technology critique.
+McGilchrist, Scruton, and Han each argue — from very different starting points — that Western modernity has become pathologically one-sided. McGilchrist frames this through hemisphere neuroscience; Scruton through aesthetics, beauty, and the sacred; Han through the critique of the achievement society and neoliberal psychopolitics. All draw on Heidegger's critique of technology (Gestell), and all converge on the same prescription: the antidote to modern disenchantment lies not in more information or optimisation, but in a recovery of attention, contemplation, the Other, and the irreducibility of presence.
 
 ### The Ancient Lineage
 **Socrates → Plato → Aristotle; Zeno → Seneca; Plotinus**
@@ -130,6 +145,8 @@ Each presentation is a single-file HTML deployment using [Reveal.js](https://rev
 Psychology_Philosophy/
 ├── index.html              ← Landing page with influence map
 ├── README.md
+│
+│   ── Psychology ──
 ├── Jung/index.html
 ├── Freud/index.html
 ├── Rogers/index.html
@@ -145,6 +162,12 @@ Psychology_Philosophy/
 ├── Hegel/index.html
 ├── Kierkegaard/index.html
 ├── Schopenhauer/index.html
+├── Lacan/index.html
+├── Winnicott/index.html
+├── Bion/index.html
+├── Haidt/index.html
+│
+│   ── Philosophy & Phenomenology ──
 ├── Heidegger/index.html
 ├── Husserl/index.html
 ├── Bergson/index.html
@@ -154,16 +177,24 @@ Psychology_Philosophy/
 ├── Merleau-Ponty/index.html
 ├── Scruton/index.html
 ├── McGilchrist/index.html
-├── Han/index.html
-├── Haidt/index.html
-├── Lacan/index.html
-├── Winnicott/index.html
-├── Bion/index.html
 ├── Levinas/index.html
 ├── Sartre/index.html
 ├── Camus/index.html
 ├── Wittgenstein/index.html
-└── Weil/index.html
+├── Weil/index.html
+├── Han/index.html
+│
+│   ── Medieval ──
+├── Augustine/index.html
+├── Aquinas/index.html
+├── Ockham/index.html
+│
+│   ── Ancient ──
+├── Socrates/index.html
+├── Plato/index.html
+├── Aristotle/index.html
+├── Seneca/index.html
+└── Plotinus/index.html
 ```
 
 ## Design
