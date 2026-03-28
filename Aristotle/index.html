@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aristotle — The Philosopher of Nature, Virtue &amp; the Unmoved Mover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: TITLE -->
+<section style="padding: 2em 2.5em; text-align: center;">
+  <span class="section-number">PHILOSOPHY SERIES</span>
+  <svg viewBox="0 0 480 240" style="width:70%; max-width:520px; margin: 0.4em auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Four quadrant grid for the Four Causes -->
+    <rect x="10" y="10" width="220" height="105" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1.2"/>
+    <rect x="250" y="10" width="220" height="105" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1.2"/>
+    <rect x="10" y="125" width="220" height="105" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1.2"/>
+    <rect x="250" y="125" width="220" height="105" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1.2"/>
+    <!-- Material Cause icon: cube/ore -->
+    <polygon points="80,28 105,40 105,65 80,78 55,65 55,40" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+    <line x1="80" y1="28" x2="80" y2="53" stroke="#d4a053" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="120" y="48" font-family="Playfair Display,serif" font-size="11" fill="#e8e6e3" font-weight="700">Material Cause</text>
+    <text x="120" y="62" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">What it is made of</text>
+    <text x="120" y="75" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">Bronze → statue</text>
+    <!-- Formal Cause icon: human silhouette outline -->
+    <ellipse cx="285" cy="36" rx="10" ry="10" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+    <line x1="285" y1="46" x2="285" y2="72" stroke="#4ecca3" stroke-width="1.5"/>
+    <line x1="285" y1="54" x2="270" y2="65" stroke="#4ecca3" stroke-width="1.5"/>
+    <line x1="285" y1="54" x2="300" y2="65" stroke="#4ecca3" stroke-width="1.5"/>
+    <line x1="285" y1="72" x2="275" y2="88" stroke="#4ecca3" stroke-width="1.5"/>
+    <line x1="285" y1="72" x2="295" y2="88" stroke="#4ecca3" stroke-width="1.5"/>
+    <text x="315" y="48" font-family="Playfair Display,serif" font-size="11" fill="#e8e6e3" font-weight="700">Formal Cause</text>
+    <text x="315" y="62" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">What defines its shape</text>
+    <text x="315" y="75" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">Human form → statue</text>
+    <!-- Efficient Cause icon: hand/tool -->
+    <path d="M60,145 Q75,135 85,148 Q95,158 80,168 L60,175 Z" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+    <line x1="85" y1="148" x2="110" y2="138" stroke="#9b72cf" stroke-width="2"/>
+    <text x="120" y="158" font-family="Playfair Display,serif" font-size="11" fill="#e8e6e3" font-weight="700">Efficient Cause</text>
+    <text x="120" y="172" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">The agent of change</text>
+    <text x="120" y="185" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">Sculptor → statue</text>
+    <!-- Final Cause icon: star/goal -->
+    <polygon points="285,140 290,155 305,155 294,164 298,180 285,171 272,180 276,164 265,155 280,155" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+    <text x="315" y="158" font-family="Playfair Display,serif" font-size="11" fill="#e8e6e3" font-weight="700">Final Cause</text>
+    <text x="315" y="172" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">The purpose / telos</text>
+    <text x="315" y="185" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">Beauty &amp; honour → statue</text>
+    <!-- Central dividers -->
+    <line x1="240" y1="10" x2="240" y2="230" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="10" y1="117" x2="470" y2="117" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+    <circle cx="240" cy="117" r="6" fill="#d4a053" opacity="0.8"/>
+    <text x="240" y="238" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a" text-anchor="middle">THE FOUR CAUSES — ΑἸΤΊΑ</text>
+  </svg>
+  <h1>Aristotle</h1>
+  <p class="subtitle">Logic · Metaphysics · Ethics · Natural Philosophy · Politics</p>
+  <div class="separator"></div>
+  <div class="quote-box" style="margin: 0.6em auto;">
+    <p>"It is the mark of an educated mind to be able to entertain a thought without accepting it."</p>
+    <span class="attribution">— Often attributed to Aristotle (paraphrase of <em>Nicomachean Ethics</em> I.3)</span>
+  </div>
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.38em; color:var(--text-muted); margin-top:0.8em; letter-spacing:0.1em;">384–322 BCE · Stagira &amp; Athens</p>
+</section>
+
+<!-- SLIDE 2: LIFE & FORMATION -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">01 — BIOGRAPHY</span>
+  <h2>Life &amp; Formation</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="icon accent-amber">⚕</span>
+      <h4 class="accent-amber">Stagira &amp; the Macedonian Court</h4>
+      <p>Born in 384 BCE in Stagira, a small Greek colony in Chalcidice on the northern Aegean coast. His father Nicomachus served as personal physician to Amyntas III, king of Macedon — a fact whose significance is hard to overstate. Aristotle grew up in a medical household, surrounded by empirical observation of the natural world, dissection, and the practical classification of biological phenomena. This environment planted the seeds of his lifelong dedication to systematic inquiry. He was orphaned young and raised by his guardian Proxenus of Atarneus. The Macedonian court connection would persist and define his life's trajectory in ways he could scarcely have anticipated at birth.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-green">🏛</span>
+      <h4 class="accent-green">Plato's Academy (367–347 BCE)</h4>
+      <p>At age seventeen, Aristotle travelled to Athens and enrolled in Plato's Academy, where he would remain for twenty years — not merely as a student but, by most ancient accounts, as its most brilliant and eventually its most independent-minded member. Plato reportedly called him "the mind of the school" (<em>nous tês scholês</em>). Their intellectual relationship was deeply formative yet increasingly adversarial. Aristotle absorbed the full range of Platonic metaphysics, epistemology, and ethics, but by degrees fashioned a thoroughgoing critique. He stayed through Plato's death in 347 BCE, but was passed over as Plato's successor (the headship going to Plato's nephew Speusippus), prompting his departure from Athens.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-purple">⚔</span>
+      <h4 class="accent-purple">Tutoring Alexander (343–335 BCE)</h4>
+      <p>On the invitation of Philip II of Macedon, Aristotle returned to Macedonia around 343 BCE to tutor the young Alexander, then thirteen years old. He established a school at Mieza in a garden sanctuary called the Nymphaeum. For three years he shaped the mind of the future conqueror of the known world, instructing him in medicine, philosophy, rhetoric, and literature — presenting him, according to Plutarch, with an annotated edition of the <em>Iliad</em>. Alexander later said he owed to his father merely life, but to Aristotle a life worth living. Their relationship cooled as Alexander's imperial ambitions diverged from Aristotle's more circumscribed vision of the polis; Aristotle's nephew Callisthenes was later executed by Alexander — a rupture that left a permanent mark.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-rose">📚</span>
+      <h4 class="accent-rose">The Lyceum (335–323 BCE)</h4>
+      <p>Returning to Athens in 335 BCE, Aristotle founded his own institution in the gymnasium of the Lyceum, sacred to Apollo Lykeios, on the eastern edge of the city. The school became known as the Peripatetic (<em>peripatetikos</em>) — "of those who walk about" — either from the covered walkways (<em>peripatos</em>) of the grounds or from Aristotle's habit of lecturing while walking. The Lyceum assembled an extraordinary library and became the first institution to pursue systematically organised research across all branches of human knowledge. Aristotle and his associates produced foundational works in logic, biology, zoology, physics, astronomy, rhetoric, poetics, ethics, politics, and metaphysics. After Alexander's death in 323 BCE, anti-Macedonian sentiment in Athens endangered Aristotle; he withdrew to Chalcis in Euboea, reportedly refusing to let Athens "sin twice against philosophy" (a reference to Socrates' execution). He died there in 322 BCE aged sixty-two.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: TIMELINE -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">02 — CHRONOLOGY</span>
+  <h2>A Life in Time</h2>
+  <div class="separator"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2em; margin-top:0.8em; max-width:92%; margin-left:auto; margin-right:auto;">
+    <div>
+      <div class="timeline-item"><span class="year">384 BCE</span><div class="event"><strong>Birth in Stagira</strong>Father Nicomachus is court physician to Amyntas III of Macedon; early exposure to empirical medicine and biological observation.</div></div>
+      <div class="timeline-item"><span class="year">367 BCE</span><div class="event"><strong>Enters Plato's Academy</strong>Travels to Athens aged 17; begins two decades of study, teaching, and increasingly independent philosophical development.</div></div>
+      <div class="timeline-item"><span class="year">360s BCE</span><div class="event"><strong>Early Dialogues</strong>Writes dialogues in the Platonic style (<em>Eudemus</em>, <em>Protrepticus</em>); most lost, but fragments reveal gradual divergence from Plato on Forms.</div></div>
+      <div class="timeline-item"><span class="year">347 BCE</span><div class="event"><strong>Plato Dies — Departure from Athens</strong>Passes over for Academy leadership. Travels to Atarneus with Xenocrates; marries Pythias, niece of Hermias of Atarneus.</div></div>
+      <div class="timeline-item"><span class="year">345 BCE</span><div class="event"><strong>Lesbos — Biological Research</strong>With Theophrastus, conducts extensive marine biological investigations in the lagoon at Pyrrha; results inform <em>Historia Animalium</em>.</div></div>
+      <div class="timeline-item"><span class="year">343 BCE</span><div class="event"><strong>Tutor to Alexander</strong>Philip II of Macedon invites Aristotle to tutor thirteen-year-old Alexander at Mieza; teaches philosophy, medicine, rhetoric for three years.</div></div>
+      <div class="timeline-item"><span class="year">340 BCE</span><div class="event"><strong>Alexander Assumes Regency</strong>As Philip campaigns, Alexander takes over; Aristotle's formal tutorship ends but their relationship persists.</div></div>
+      <div class="timeline-item"><span class="year">338 BCE</span><div class="event"><strong>Battle of Chaeronea</strong>Philip defeats the Greek city-states; Macedonian hegemony over Greece established — the political world of the independent polis begins to fade.</div></div>
+    </div>
+    <div>
+      <div class="timeline-item"><span class="year">336 BCE</span><div class="event"><strong>Philip II Assassinated</strong>Alexander ascends to the Macedonian throne aged twenty. Aristotle's nephew Callisthenes accompanies Alexander's campaigns as court historian.</div></div>
+      <div class="timeline-item"><span class="year">335 BCE</span><div class="event"><strong>Founds the Lyceum</strong>Returns to Athens; establishes the Peripatetic school with its library, lecture halls, and systematic research programme across all disciplines.</div></div>
+      <div class="timeline-item"><span class="year">330s BCE</span><div class="event"><strong>Encyclopaedic Output</strong>Composes or dictates the works on logic (<em>Organon</em>), physics, metaphysics, psychology (<em>De Anima</em>), ethics, and politics that constitute the extant corpus.</div></div>
+      <div class="timeline-item"><span class="year">327 BCE</span><div class="event"><strong>Callisthenes Executed</strong>Aristotle's nephew, court historian to Alexander, refuses to perform proskynesis and is charged with conspiracy; executed. Relations with Alexander sour permanently.</div></div>
+      <div class="timeline-item"><span class="year">323 BCE</span><div class="event"><strong>Alexander Dies in Babylon</strong>With Macedonian patronage gone, anti-Macedonian faction in Athens rises. Aristotle charged with impiety — echoing Socrates' fate.</div></div>
+      <div class="timeline-item"><span class="year">323 BCE</span><div class="event"><strong>Flees to Chalcis</strong>Withdraws to his late mother's estate in Chalcis, Euboea. Reportedly refuses to let Athens "sin twice against philosophy."</div></div>
+      <div class="timeline-item"><span class="year">322 BCE</span><div class="event"><strong>Death in Chalcis</strong>Dies of a stomach illness at age 62. Theophrastus inherits the Lyceum and the library — which eventually reaches Rome and shapes the transmission of Aristotelian texts.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: THE FOUR CAUSES -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">03 — METAPHYSICS</span>
+  <h2>The Four Causes</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin: 0.4em auto 0.6em; text-align:left;">Aristotle's doctrine of the four causes (<em>aitiai</em>) is one of antiquity's most powerful analytical frameworks for explaining <em>why</em> anything is the way it is. Where earlier thinkers (Thales, Heraclitus, Empedocles) sought single-principle explanations — water, fire, the elements — Aristotle argued that complete explanation of any natural or artificial thing requires four distinct but complementary answers. The example of a bronze statue running through all four illuminates the structure:</p>
+  <svg viewBox="0 0 760 310" style="width:88%; display:block; margin:0 auto 0.5em;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect x="0" y="0" width="760" height="310" rx="10" fill="#12121a"/>
+    <!-- Four columns -->
+    <rect x="12" y="12" width="170" height="286" rx="7" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+    <rect x="196" y="12" width="170" height="286" rx="7" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+    <rect x="380" y="12" width="170" height="286" rx="7" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+    <rect x="564" y="12" width="184" height="286" rx="7" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+    <!-- Titles -->
+    <text x="97" y="36" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#d4a053" font-weight="700">Material Cause</text>
+    <text x="97" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">hyle / causa materialis</text>
+    <text x="281" y="36" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#4ecca3" font-weight="700">Formal Cause</text>
+    <text x="281" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">morphe / causa formalis</text>
+    <text x="465" y="36" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#9b72cf" font-weight="700">Efficient Cause</text>
+    <text x="465" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">arche kinéseos / causa efficiens</text>
+    <text x="656" y="36" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#cf7272" font-weight="700">Final Cause</text>
+    <text x="656" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">telos / causa finalis</text>
+    <!-- Dividers -->
+    <line x1="22" y1="58" x2="172" y2="58" stroke="#2a2a3a" stroke-width="1"/>
+    <line x1="206" y1="58" x2="356" y2="58" stroke="#2a2a3a" stroke-width="1"/>
+    <line x1="390" y1="58" x2="540" y2="58" stroke="#2a2a3a" stroke-width="1"/>
+    <line x1="574" y1="58" x2="738" y2="58" stroke="#2a2a3a" stroke-width="1"/>
+    <!-- Content col 1 -->
+    <text x="97" y="76" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Question asked:</text>
+    <text x="97" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9a9a9a">"What is it made of?"</text>
+    <text x="97" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Statue example:</text>
+    <text x="97" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#d4a053">The bronze</text>
+    <text x="97" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Human body:</text>
+    <text x="97" y="164" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Flesh, bones, organs</text>
+    <text x="97" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Key insight:</text>
+    <foreignObject x="20" y="196" width="155" height="90">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:DM Sans,sans-serif;font-size:9px;color:#9a9a9a;line-height:1.5;text-align:center;">Matter is potential (<em>dynamis</em>) — it can become many things. The same bronze can be a sword, a coin, or a god. Matter alone does not explain what a thing <em>is</em>.</div>
+    </foreignObject>
+    <!-- Content col 2 -->
+    <text x="281" y="76" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Question asked:</text>
+    <text x="281" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9a9a9a">"What pattern defines it?"</text>
+    <text x="281" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Statue example:</text>
+    <text x="281" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4ecca3">The human form</text>
+    <text x="281" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Human body:</text>
+    <text x="281" y="164" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">The soul as functional form</text>
+    <text x="281" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Key insight:</text>
+    <foreignObject x="204" y="196" width="155" height="90">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:DM Sans,sans-serif;font-size:9px;color:#9a9a9a;line-height:1.5;text-align:center;">Form (<em>eidos</em>) is actuality (<em>energeia</em>). Unlike Plato's separated Forms, Aristotle's forms are <em>in</em> things — the shape, structure, or defining pattern that makes a thing what it is.</div>
+    </foreignObject>
+    <!-- Content col 3 -->
+    <text x="465" y="76" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Question asked:</text>
+    <text x="465" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9a9a9a">"What brought it into being?"</text>
+    <text x="465" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Statue example:</text>
+    <text x="465" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9b72cf">The sculptor</text>
+    <text x="465" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Human body:</text>
+    <text x="465" y="164" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">The parents; genetic process</text>
+    <text x="465" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Key insight:</text>
+    <foreignObject x="388" y="196" width="155" height="90">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:DM Sans,sans-serif;font-size:9px;color:#9a9a9a;line-height:1.5;text-align:center;">Modern science focuses almost exclusively here. Efficient causation is the proximate mechanism — what modern physics and chemistry explain with great power but at the cost of the other three.</div>
+    </foreignObject>
+    <!-- Content col 4 -->
+    <text x="656" y="76" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Question asked:</text>
+    <text x="656" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9a9a9a">"What is it for?"</text>
+    <text x="656" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Statue example:</text>
+    <text x="656" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Beauty, memorial, honour</text>
+    <text x="656" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Human body:</text>
+    <text x="656" y="164" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">To realise the good life</text>
+    <text x="656" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Key insight:</text>
+    <foreignObject x="572" y="196" width="162" height="90">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:DM Sans,sans-serif;font-size:9px;color:#9a9a9a;line-height:1.5;text-align:center;">Teleology: nature acts <em>as if</em> for a purpose. The eye is for seeing; the heart for pumping blood. This is Aristotle's most revolutionary and most contested claim — it was abandoned by modern science but revived, controversially, in evolutionary biology.</div>
+    </foreignObject>
+  </svg>
+  <p class="note-text" style="text-align:center;">Note: Aristotle insists all four causes are genuinely explanatory and often co-present. The formal and final cause frequently coincide: the form of a thing just <em>is</em> its end-directed nature.</p>
+</section>
+
+<!-- SLIDE 5: SUBSTANCE, FORM AND MATTER -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">04 — METAPHYSICS</span>
+  <h2>Substance, Form &amp; Matter — Hylomorphism</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin: 0.4em auto 0.7em;">Aristotle's metaphysics centres on the concept of <span class="accent-amber">substance</span> (<em>ousia</em>) — the primary mode of being. Against Plato, who held that universal Forms exist separately and eternally in a transcendent realm, Aristotle insists that what <em>is</em> in the most fundamental sense are individual things: this horse, this man, this oak tree. His hylomorphic analysis (from <em>hyle</em>, matter, and <em>morphe</em>, form) decomposes every substance into two inseparable principles.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">Hylomorphism</h4>
+      <p>Every physical substance is a compound of matter (<em>hyle</em>) and form (<em>morphe/eidos</em>). Neither exists independently in the natural world: prime matter is a philosophical abstraction (pure potentiality with no actuality), and forms without matter exist only for Aristotle's God (the Unmoved Mover). A living oak is form (oakness) actualised in this specific woody matter. The human soul is the form of the organic body — not imprisoned within it (Plato) but identical with its actualised structure and capacities.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Categories</h4>
+      <p>In the <em>Categories</em> — the first of the logical treatises — Aristotle identifies ten fundamental ways in which things can be said to be: substance, quantity, quality, relation, place, time, position, state, action, and passion. Only <em>primary substances</em> (individual things like Socrates) exist independently; <em>secondary substances</em> (species and genera, like "man" or "animal") exist only in and through individuals. This distinction fundamentally reverses Platonic ontology, where the universal is more real than the particular.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Essence and Accident</h4>
+      <p>Aristotle distinguishes a thing's <em>essence</em> (to ti en einai — literally "the what it was to be for it") from its <em>accidental</em> properties. Socrates is essentially a rational animal; that he is snub-nosed, five feet tall, and sitting now are accidents — he could be otherwise without ceasing to be Socrates. The essence constitutes the real definition of a kind and is what demonstrative science aims to capture. This distinction drives his entire programme of natural classification and scientific explanation.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Potentiality &amp; Actuality</h4>
+      <p>Perhaps Aristotle's most fruitful conceptual pair: <em>dynamis</em> (potentiality, power) vs <em>energeia/entelecheia</em> (actuality, being-at-work). An acorn is potentially an oak; a sleeping knower is potentially thinking; a builder at rest is potentially building. Change is the actualization of what exists potentially, <em>as</em> potential. This framework dissolves the Eleatic paradoxes about change and motion while preserving a genuine ontological distinction between what a thing <em>is</em> and what it <em>can become</em>.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Universals — The Anti-Platonic Move</h4>
+      <p>Plato's Theory of Forms posited that "Horse," "Justice," and "Beauty" exist as eternal, transcendent, self-subsisting entities of which earthly things are pale imitations. Aristotle's devastating objection — the Third Man Argument — shows this generates an infinite regress. His solution: universals exist <em>in rebus</em> (in things themselves), abstracted by the mind from encounters with particulars. "Horse" exists only because there are horses; it has no independent existence separable from the horses that instantiate it.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Change and the Predicables</h4>
+      <p>In the <em>Topics</em>, Aristotle analyses the five "predicables": genus, differentia, species, property, and accident — the logical relations by which predicates relate to subjects. These tools of definition and classification undergird his entire scientific programme. Change itself comes in four kinds: substantial (generation/corruption), qualitative (alteration), quantitative (growth/diminution), and locomotion (local motion). All require the hylomorphic substrate: something persists through change — the matter — while form is acquired or lost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: THE UNMOVED MOVER -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">05 — METAPHYSICS / THEOLOGY</span>
+  <h2>The Unmoved Mover</h2>
+  <div class="separator"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1em; max-width:90%; margin:0.7em auto 0;">
+    <div>
+      <p style="text-align:left; margin-bottom:0.5em;">In <em>Physics</em> VIII and <em>Metaphysics</em> Lambda (Book XII), Aristotle constructs one of antiquity's most influential arguments for a divine first principle. The argument begins from the fact of eternal motion in the heavens and reasons backward to its cause.</p>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">The Argument from Eternal Motion</h4>
+        <p>Motion (change) requires a mover. An infinite regress of movers is impossible — it would explain nothing. Therefore there must be a first mover. Since motion is eternal (there was no "first moment" before which there was nothing, for even the question "what was before?" presupposes time), the first mover must be eternal. But an eternal mover that was merely potential (that could be otherwise) might fail to move — so it must be pure actuality (<em>energeia</em>), with no potentiality, no matter, no change in itself.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Pure Actuality — No Matter, No Change</h4>
+        <p>The Unmoved Mover has no body, no matter, no potentiality. It is pure form — pure act. It cannot change, because change involves moving from potential to actual, and it has no potential. It does not deliberate, because deliberation involves uncertainty. It does not act on the world directly (that would require change in it). Instead, it moves as an object of love and desire — the cosmos is drawn toward it as toward a final cause, the way beauty moves those who behold it.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Noesis Noeseos — Thought Thinking Itself</h4>
+        <p>What does the Unmoved Mover do? It thinks — but it cannot think anything lesser than itself, for that would make it dependent on something external and thus less than perfectly self-sufficient. So its eternal activity is <em>noesis noeseos</em>: thought thinking itself. It is pure intellect contemplating its own contemplation, absolute self-knowledge. This is the highest form of life — the life of pure theoria. Aristotle says it is the kind of life humans can enjoy only occasionally and briefly; God enjoys it eternally.</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 340 380" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="340" height="380" rx="8" fill="#12121a"/>
+        <!-- Concentric circles representing celestial spheres -->
+        <circle cx="170" cy="220" r="145" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+        <circle cx="170" cy="220" r="120" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+        <circle cx="170" cy="220" r="95" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+        <circle cx="170" cy="220" r="70" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+        <circle cx="170" cy="220" r="45" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+        <circle cx="170" cy="220" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+        <!-- Labels for spheres -->
+        <text x="170" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">Earth</text>
+        <text x="170" y="226" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#5b8cd4">(sublunary)</text>
+        <text x="220" y="178" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">Moon</text>
+        <text x="224" y="152" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">Sun</text>
+        <text x="225" y="128" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">Planets</text>
+        <text x="224" y="104" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">Fixed Stars</text>
+        <!-- Unmoved Mover at top -->
+        <circle cx="170" cy="32" r="20" fill="none" stroke="#d4a053" stroke-width="2"/>
+        <circle cx="170" cy="32" r="12" fill="#d4a053" opacity="0.15"/>
+        <text x="170" y="28" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#d4a053" font-weight="700">UNMOVED</text>
+        <text x="170" y="38" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#d4a053" font-weight="700">MOVER</text>
+        <!-- Arrow indicating attraction (final causation) -->
+        <path d="M170,52 L170,72" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#d4a053"/></marker></defs>
+        <text x="185" y="64" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9a9a9a">draws by love</text>
+        <!-- noesis text -->
+        <text x="170" y="14" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">νόησις νοήσεως</text>
+        <!-- Outer sphere label -->
+        <text x="170" y="378" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6a6a7a">Aristotelian Cosmos — 55 Celestial Spheres</text>
+      </svg>
+      <div class="card" style="margin-top:0.45em;">
+        <h4 class="accent-rose">Medieval Reception</h4>
+        <p>Aquinas identifies the Unmoved Mover with the Christian God in his <em>Summa Theologiae</em> (the First Way). Islamic philosophers al-Farabi, Avicenna, and Averroes debated its relationship to Islamic theology. The Unmoved Mover became a cornerstone of natural theology — the attempt to demonstrate God's existence through reason alone — well into the Early Modern period, surviving Copernicus and challenged only by Hume and Kant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: LOGIC -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">06 — LOGIC</span>
+  <h2>The Organon — Logic as the Instrument of Science</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.6em;">Before Aristotle, no systematic logic existed. The <em>Organon</em> ("instrument") — comprising the <em>Categories</em>, <em>De Interpretatione</em>, <em>Prior Analytics</em>, <em>Posterior Analytics</em>, <em>Topics</em>, and <em>Sophistical Refutations</em> — constitutes the first complete logical system in Western thought. Kant, writing two millennia later, declared that logic had made no essential progress since Aristotle. Though Frege's mathematical logic eventually surpassed Aristotelian syllogistic in expressive power, Aristotle's foundational insights remain philosophically indispensable.</p>
+  <div style="display:grid; grid-template-columns: 1.1fr 1fr; gap:0.8em; max-width:90%; margin:0 auto;">
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">The Syllogism</h4>
+        <p>A syllogism is a deductive argument in which a conclusion follows necessarily from two premises sharing a middle term. The <em>Barbara</em> syllogism (AAA-1) is the paradigm case: <br/><br/>
+        All men are mortal. (Major premise)<br/>
+        Socrates is a man. (Minor premise)<br/>
+        ∴ Socrates is mortal. (Conclusion)<br/><br/>
+        Aristotle catalogues 256 possible syllogistic forms (64 in each of four "figures") and demonstrates which 24 are valid. The middle term (men/man) appears in both premises but not the conclusion — it mediates the logical connection.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">The Law of Non-Contradiction</h4>
+        <p>In <em>Metaphysics</em> Gamma, Aristotle argues that the most certain of all principles is that the same attribute cannot at the same time belong and not belong to the same subject in the same respect. This cannot be proved — it is a precondition of all proof. His defence is ad hominem and elenctic: anyone who tries to deny the principle must use it in the very act of denial. It is the bedrock of all rational discourse.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Demonstrative Science</h4>
+        <p>In the <em>Posterior Analytics</em>, Aristotle articulates the ideal of scientific knowledge (<em>episteme</em>): a body of necessary truths derived by syllogism from first principles (<em>archai</em>) that are themselves indemonstrable, immediate, and better known than what they explain. Scientific explanation is not merely valid deduction but deduction from the <em>causes</em> — it answers "why?" not just "what?" This remains the template for axiomatic-deductive science, influencing Euclid's geometry, Spinoza's <em>Ethics</em>, and Newton's <em>Principia</em>.</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 330 360" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="330" height="360" rx="8" fill="#12121a"/>
+        <text x="165" y="22" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#d4a053" font-weight="700">Syllogistic Structure</text>
+        <!-- Major Premise box -->
+        <rect x="15" y="35" width="300" height="50" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+        <text x="165" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10.5" fill="#e8e6e3" font-weight="700">Major Premise</text>
+        <text x="165" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="#9a9a9a">All M are P</text>
+        <!-- Minor Premise box -->
+        <rect x="15" y="105" width="300" height="50" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+        <text x="165" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10.5" fill="#e8e6e3" font-weight="700">Minor Premise</text>
+        <text x="165" y="142" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="#9a9a9a">All S are M</text>
+        <!-- Arrows -->
+        <line x1="165" y1="85" x2="165" y2="105" stroke="#6a6a7a" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6a6a7a"/></marker></defs>
+        <line x1="165" y1="155" x2="165" y2="185" stroke="#6a6a7a" stroke-width="1.5" marker-end="url(#arr3)"/>
+        <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6a6a7a"/></marker></defs>
+        <!-- Conclusion -->
+        <rect x="15" y="185" width="300" height="50" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+        <text x="165" y="206" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10.5" fill="#9b72cf" font-weight="700">∴ Conclusion</text>
+        <text x="165" y="222" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="#9a9a9a">All S are P</text>
+        <!-- Middle term highlight -->
+        <rect x="15" y="248" width="300" height="40" rx="6" fill="rgba(212,160,83,0.06)" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="165" y="264" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#d4a053" font-weight="700">Middle Term (M)</text>
+        <text x="165" y="278" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Links premises; absent from conclusion</text>
+        <!-- Example -->
+        <rect x="15" y="300" width="300" height="50" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="165" y="316" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Example (Barbara — AAA-1):</text>
+        <text x="165" y="330" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">All men [M] are mortal [P]</text>
+        <text x="165" y="344" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">Socrates [S] is a man [M] ∴ Socrates is mortal</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: NICOMACHEAN ETHICS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">07 — ETHICS</span>
+  <h2>The Nicomachean Ethics — Living the Good Life</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.6em;">The <em>Nicomachean Ethics</em> opens with one of philosophy's great claims: "Every art, every inquiry, every action and choice, seems to aim at some good." The book's central question — <em>what is the highest good for a human being?</em> — is answered not by appeal to abstract principle but by a careful analysis of what human nature is and what conditions allow it to flourish fully.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">Eudaimonia</h4>
+      <p><em>Eudaimonia</em> — traditionally translated "happiness" but better rendered "flourishing" or "living well and doing well" — is the highest good. Unlike pleasure, wealth, or honour, it is chosen for its own sake and never as a means to something else. It is not a feeling but an <em>activity</em>: specifically, the activity of the soul in accordance with its highest virtue over a complete life. This teleological framing makes ethics inseparable from psychology and biology: to know how humans should live, one must first know what kind of thing a human being is.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Function Argument</h4>
+      <p>Everything with a function (a knife, a flautist) has its good defined by performing that function excellently. What is the distinctive function (<em>ergon</em>) of a human being? Not mere life (shared with plants) nor mere sentience (shared with animals) but rational activity — the exercise of the distinctively human capacity for reason. Therefore human flourishing consists in the excellent exercise of reason: in theoretical contemplation (<em>theoria</em>) and in virtuous practical activity guided by practical wisdom (<em>phronesis</em>). This is the most influential and most contested argument in the history of ethics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Doctrine of the Mean</h4>
+      <p>Moral virtue is a stable disposition (<em>hexis</em>) to choose the action and feel the emotion appropriate to the situation — the mean (<em>mesotes</em>) between excess and deficiency. This is not a mathematical middle but the mean "relative to us," determined by practical wisdom. Courage is the mean between cowardice (deficiency of confidence) and rashness (excess); generosity between miserliness and prodigality; proper pride between vanity and self-deprecation. The virtuous agent does not suppress their feelings — they feel the right emotions, at the right time, toward the right people, in the right way.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Role of Habituation</h4>
+      <p>We become just by doing just acts, courageous by doing courageous acts, temperate by doing temperate acts. Character is formed by practice, not by theoretical instruction: "The virtues we get by first exercising them, as also happens in the case of the arts" (1103a). This means that moral education is primarily a matter of shaping habits, emotions, and desires — not just conveying correct beliefs. The good person does not merely act rightly but feels well-directed pleasure in acting rightly. Moral psychology cannot be separated from pedagogy and politics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Practical Wisdom (Phronesis)</h4>
+      <p><em>Phronesis</em> — practical wisdom, prudence — is the master virtue that guides all the others. It is the intellectual virtue concerned with deliberation about what conduces to the good life as a whole. It cannot be reduced to rule-following or theoretical knowledge: it requires perception of the morally salient features of particular situations and the capacity to reason well about what to do in them. This is why Aristotle insists that ethics cannot be a purely theoretical discipline — the goal is not knowledge but action, and action requires the cultivated judgement of the experienced person.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Friendship (Philia)</h4>
+      <p>Two of the ten books of the <em>Nicomachean Ethics</em> are devoted to friendship (<em>philia</em>) — a signal of its importance. Aristotle distinguishes three kinds: friendships of utility (business partners), of pleasure (drinking companions), and of virtue (friends who love each other for what they truly are). Only virtue-friendship is perfect and enduring. The good person needs friends because self-knowledge requires an external mirror; a happy life is essentially social; and the political community itself is a form of extended friendship among citizens who share a common conception of the good.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: THE VIRTUOUS MEAN -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">08 — ETHICS</span>
+  <h2>The Virtuous Mean — Mesotés</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; text-align:left; margin: 0.4em auto 0.55em;">Aristotle catalogues the virtues by applying the doctrine of the mean systematically across the spheres of human life and emotion. Each virtue is a stable disposition occupying the mean between two vicious extremes, but the mean is always context-sensitive, requiring practical wisdom (<em>phronesis</em>) to discern in particular cases.</p>
+  <svg viewBox="0 0 760 370" style="width:88%; display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="760" height="370" rx="8" fill="#12121a"/>
+    <!-- Column headers -->
+    <text x="118" y="22" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272" font-weight="700">DEFICIENCY (Vice)</text>
+    <text x="380" y="22" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#d4a053" font-weight="700">VIRTUE (Mean)</text>
+    <text x="642" y="22" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272" font-weight="700">EXCESS (Vice)</text>
+    <!-- Domain labels column -->
+    <text x="8" y="22" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">Domain</text>
+    <!-- Vertical lines -->
+    <line x1="248" y1="28" x2="248" y2="365" stroke="#2a2a3a" stroke-width="1"/>
+    <line x1="510" y1="28" x2="510" y2="365" stroke="#2a2a3a" stroke-width="1"/>
+    <line x1="0" y1="28" x2="760" y2="28" stroke="#2a2a3a" stroke-width="1"/>
+    <!-- Row data -->
+    <!-- Row 1 -->
+    <rect x="2" y="32" width="756" height="34" rx="3" fill="rgba(255,255,255,0.015)"/>
+    <text x="10" y="46" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Fear / Danger</text>
+    <text x="10" y="58" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">courage</text>
+    <text x="118" y="53" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Cowardice</text>
+    <text x="380" y="53" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Courage</text>
+    <text x="642" y="53" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Rashness</text>
+    <!-- Row 2 -->
+    <rect x="2" y="66" width="756" height="34" rx="3" fill="rgba(255,255,255,0.03)"/>
+    <text x="10" y="80" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Wealth / Giving</text>
+    <text x="10" y="92" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">generosity</text>
+    <text x="118" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Miserliness</text>
+    <text x="380" y="87" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Generosity</text>
+    <text x="642" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Prodigality</text>
+    <!-- Row 3 -->
+    <rect x="2" y="100" width="756" height="34" rx="3" fill="rgba(255,255,255,0.015)"/>
+    <text x="10" y="114" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Pleasure / Pain</text>
+    <text x="10" y="126" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">temperance</text>
+    <text x="118" y="121" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Insensibility</text>
+    <text x="380" y="121" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Temperance</text>
+    <text x="642" y="121" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Licentiousness</text>
+    <!-- Row 4 -->
+    <rect x="2" y="134" width="756" height="34" rx="3" fill="rgba(255,255,255,0.03)"/>
+    <text x="10" y="148" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Honour (great)</text>
+    <text x="10" y="160" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">magnanimity</text>
+    <text x="118" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Small-mindedness</text>
+    <text x="380" y="155" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Magnanimity</text>
+    <text x="642" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Vanity</text>
+    <!-- Row 5 -->
+    <rect x="2" y="168" width="756" height="34" rx="3" fill="rgba(255,255,255,0.015)"/>
+    <text x="10" y="182" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Anger</text>
+    <text x="10" y="194" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">good temper</text>
+    <text x="118" y="189" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Spiritlessness</text>
+    <text x="380" y="189" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Good Temper</text>
+    <text x="642" y="189" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Irascibility</text>
+    <!-- Row 6 -->
+    <rect x="2" y="202" width="756" height="34" rx="3" fill="rgba(255,255,255,0.03)"/>
+    <text x="10" y="216" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Social intercourse</text>
+    <text x="10" y="228" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">wit</text>
+    <text x="118" y="221" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Boorishness</text>
+    <text x="380" y="221" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Wit</text>
+    <text x="642" y="221" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Buffoonery</text>
+    <!-- Row 7 -->
+    <rect x="2" y="236" width="756" height="34" rx="3" fill="rgba(255,255,255,0.015)"/>
+    <text x="10" y="250" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Truth about self</text>
+    <text x="10" y="262" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">truthfulness</text>
+    <text x="118" y="255" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Self-deprecation</text>
+    <text x="380" y="255" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Truthfulness</text>
+    <text x="642" y="255" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Boastfulness</text>
+    <!-- Row 8 -->
+    <rect x="2" y="270" width="756" height="34" rx="3" fill="rgba(255,255,255,0.03)"/>
+    <text x="10" y="284" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Shame</text>
+    <text x="10" y="296" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">modesty</text>
+    <text x="118" y="289" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Shamelessness</text>
+    <text x="380" y="289" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Modesty</text>
+    <text x="642" y="289" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Excessive shame</text>
+    <!-- Row 9 -->
+    <rect x="2" y="304" width="756" height="34" rx="3" fill="rgba(255,255,255,0.015)"/>
+    <text x="10" y="318" font-family="DM Sans,sans-serif" font-size="9" fill="#6a6a7a">Righteous anger</text>
+    <text x="10" y="330" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4">indignation</text>
+    <text x="118" y="323" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Callousness</text>
+    <text x="380" y="323" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">Righteous Indignation</text>
+    <text x="642" y="323" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272">Envy</text>
+    <!-- Note -->
+    <text x="380" y="358" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">The mean is always "relative to us" — the right amount, for the right person, at the right time, in the right way.</text>
+  </svg>
+</section>
+
+<!-- SLIDE 10: POLITICS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">09 — POLITICAL PHILOSOPHY</span>
+  <h2>Politics — The Human Animal and the Just City</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.6em;">The <em>Politics</em> picks up where the <em>Ethics</em> leaves off: since eudaimonia is only fully achievable within political community, the study of the best life is inseparable from the study of the best constitution. Aristotle's approach is empirical as well as normative — he and his students at the Lyceum collected and analysed 158 constitutions of Greek city-states before drawing theoretical conclusions.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent-amber">The Political Animal</h4>
+      <p>The opening lines of the <em>Politics</em> declare that every community aims at some good, and the highest community — the polis — aims at the highest good. More strikingly: the polis is natural, not conventional. Man is by nature a <em>political animal</em> (<em>zōon politikon</em>). He who can live outside the polis is either a beast or a god; he who is driven to found one is more central to his own nature than a bee or an ant, because he alone possesses logos (reason and language) by which he can deliberate about justice and the common good. The polis is not a contract among pre-social individuals (as for Hobbes) but the natural telos of human social development, from household to village to city.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Classification of Constitutions</h4>
+      <p>Aristotle classifies constitutions by two criteria: (1) whether the ruler rules for the common good or for private benefit; (2) whether rule is exercised by one, few, or many. This generates six forms in a systematic typology: Monarchy (one ruler, common good) / Tyranny (its corruption); Aristocracy (few rulers, common good) / Oligarchy (its corruption, rule of the wealthy for themselves); Polity or Republic (<em>politeia</em> — many, common good) / Democracy (its corruption, rule of the poor for themselves). This schema — the earliest systematic constitutional typology in Western political thought — shaped Cicero, Aquinas, Machiavelli, Montesquieu, and the American Founders.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Middle Class and Political Stability</h4>
+      <p>Aristotle's most sociologically penetrating claim in the <em>Politics</em>: the best constitution in practice is the <em>polity</em> — a mixed constitution anchored by a large middle class. Extremes of wealth and poverty generate faction, resentment, and revolution. The middle class is least susceptible to ambition (unlike the very wealthy) and least susceptible to resentment (unlike the very poor), and is therefore most capable of ruling and being ruled in turn for the common good. This is the ancient ancestor of Tocqueville's and Madison's arguments about the stabilising role of the middling orders in republican government.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Slavery — The Deepest Problem</h4>
+      <p>Aristotle defends natural slavery in <em>Politics</em> I: some human beings are "slaves by nature" — those whose rational capacity is insufficient for self-governance and who therefore benefit from direction by a natural master. This is one of the most morally troubling arguments in the entire philosophical tradition. Already in antiquity, the Sophist Alcidamas argued that "God made all men free." Aristotle himself introduces significant caveats: conventional slavery (war-captivity) is not natural; and natural slavery, even on his own terms, applies only to those genuinely incapable of rational self-direction — a category he never successfully identifies or delimits. The argument was repeatedly invoked to justify the Atlantic slave trade.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.5em;">
+    <p>"Man is by nature a political animal. He who is without a city, through his own nature and not by chance, is either bad or superior to man."</p>
+    <span class="attribution">— Aristotle, <em>Politics</em> I.2, 1253a3–5</span>
+  </div>
+</section>
+
+<!-- SLIDE 11: DE ANIMA -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">10 — PHILOSOPHY OF MIND</span>
+  <h2>The Theory of the Soul — <em>De Anima</em></h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">Written probably in the mid-330s BCE, <em>De Anima</em> (On the Soul) is Aristotle's most sustained work in philosophy of mind and remains one of the most discussed texts in contemporary debates about consciousness, intentionality, and the mind-body problem. Its central move is to apply the hylomorphic framework to living things: the soul (<em>psyche</em>) is not a separate substance imprisoned in the body (as Plato held) but the <em>form</em> of a natural organised body that has the potential for life.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent-amber">Soul as Form — Against Platonic Dualism</h4>
+      <p>Plato held that the soul is an immortal, immaterial substance temporarily housed in the body, recollecting knowledge it possessed before birth, and yearning to be free of its bodily prison. Aristotle rejects this wholesale. The soul is the form of the body — its actuality, its functional organisation. Just as the axe's "soul" (if it had one) would be its sharpness, the eye's soul would be sight, the human soul is the set of life-capacities actualised in a properly organised organic body. This means that asking whether the soul and body are "one thing" is as misguided as asking whether the wax and the shape of the wax are one thing. They are not two things; the soul is the body's actualised form.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Three Souls — A Hierarchy of Life</h4>
+      <p>Aristotle identifies three levels of soul, each building on and presupposing the one below: (1) the <em>vegetative soul</em> — capacities for nutrition, growth, and reproduction; possessed by all living things, including plants; (2) the <em>sensitive soul</em> — capacities for perception, desire, pleasure, pain, and locomotion; possessed by all animals; (3) the <em>rational soul</em> — capacities for thought and deliberation; distinctive to humans. Higher souls include lower ones but not vice versa. A human has all three; a plant has only the first. This hierarchy became the basis of medieval faculty psychology and influenced the biology of comparative anatomy well into the early modern period.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Perception and the Reception of Form</h4>
+      <p>Aristotle's account of sense perception is strikingly original: perception is the reception of the <em>form</em> of the sensible object <em>without its matter</em>. As wax receives the shape of a signet ring without receiving the gold or bronze of the ring, so the eye receives the form of colour without receiving the coloured object. This means perception is intrinsically intentional — it is always of something, always has a formal content — without requiring that the sense organ literally become the object perceived. This foreshadows Brentano's notion of intentionality and much of contemporary philosophy of perception.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Active Intellect — The Enduring Controversy</h4>
+      <p>In the most contested passage of the entire corpus (<em>De Anima</em> III.5), Aristotle distinguishes two aspects of intellect: the passive or potential intellect (which receives intelligible forms as perception receives sensible ones) and the active intellect (<em>nous poietikos</em>) which "makes all things" as light makes actual colours visible that are potentially so. The active intellect is described as separable, impassive, unmixed, and immortal. Does it survive bodily death? Is it personal or universal? Is it identical to the Unmoved Mover? The text does not say. It generated centuries of controversy: Alexander of Aphrodisias, Themistius, Averroes (a single universal active intellect for all humanity), Aquinas (an individuated faculty), and continues to animate contemporary cognitive science debates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12: RHETORIC AND POETICS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">11 — RHETORIC & POETICS</span>
+  <h2>Rhetoric, Poetics &amp; the Defence of Art</h2>
+  <div class="separator"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9em; max-width:90%; margin:0.7em auto 0;">
+    <div>
+      <p style="text-align:left; font-size:0.55em; line-height:1.6; color:var(--text-secondary); margin-bottom:0.5em;">Aristotle's <em>Rhetoric</em> and <em>Poetics</em> can both be read as systematic defences of practices Plato had sharply criticised: rhetoric as politically dangerous sophistry, poetry as twice-removed from reality and corrupter of the soul. Aristotle rehabilitates both by analysing their cognitive and emotional functions with characteristic precision.</p>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">The Three Modes of Persuasion</h4>
+        <p>The <em>Rhetoric</em> defines rhetoric as the faculty of discovering in any given case the available means of persuasion. Three fundamental modes: <strong class="accent-amber">Ethos</strong> — the character and credibility of the speaker as projected in the speech (not pre-existing reputation); <strong class="accent-green">Pathos</strong> — the emotional state of the audience, brought into the appropriate condition by the speech; <strong class="accent-purple">Logos</strong> — the argument itself, specifically the enthymeme (a rhetorical syllogism with a probable premise) and the example (rhetorical induction). All three are legitimate and necessary; a rhetoric relying only on emotional manipulation without argument is corrupt. This tripartite framework remains the foundational vocabulary of rhetorical theory.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">The Rhetorical Genres</h4>
+        <p>Aristotle distinguishes three species of rhetoric by their temporal focus and audience: (1) <em>Deliberative</em> (political oratory) — concerned with future benefit or harm, addressed to the political assembly; (2) <em>Forensic</em> (legal oratory) — concerned with past action, justice and injustice, addressed to the jury; (3) <em>Epideictic</em> (ceremonial oratory) — concerned with praise and blame of present qualities, addressed to spectators. Each genre has its characteristic topics (<em>topoi</em>), appropriate emotional appeals, and stylistic norms — a rigour wholly absent from Plato's dismissal of rhetoric as mere flattery.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-purple">Tragedy and Catharsis</h4>
+        <p>The <em>Poetics</em> defines tragedy as "an imitation of an action that is serious, complete, and of a certain magnitude... through pity and fear effecting the catharsis of these emotions." The meaning of <em>catharsis</em> (purgation? purification? clarification?) has been debated since antiquity. But the key move is clear: tragedy serves a legitimate cognitive-emotional function. We learn from imitation (<em>mimesis</em>) the universal patterns of human action; we come to understand what kinds of people do what kinds of things; pity and fear, properly exercised in the fictional space of the theatre, develop our emotional responsiveness to real moral situations.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-rose">Six Elements of Tragedy</h4>
+        <p>Aristotle ranks the six components of tragedy in order of importance: (1) <strong>Plot</strong> (<em>mythos</em>) — the supreme element, the "soul of tragedy," the ordering of the incidents, structured around reversal (<em>peripeteia</em>) and recognition (<em>anagnorisis</em>); (2) <strong>Character</strong> (<em>ethos</em>); (3) <strong>Thought</strong> (<em>dianoia</em>); (4) <strong>Diction</strong> (<em>lexis</em>); (5) <strong>Music</strong> (<em>melos</em>); (6) <strong>Spectacle</strong> (<em>opsis</em>) — the least important. The ranking of plot over character inverts the modern expectation and generated endless controversy through the Renaissance and into the 18th century.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">Imitation as Natural and Cognitive</h4>
+        <p>Plato condemned mimesis as twice-removed from the Forms and therefore epistemically worthless — mere copying of copies. Aristotle counters: imitation is natural to humans from childhood and constitutes a primary mode of learning. We learn our earliest lessons through imitation; we take pleasure in representations even of things that are painful or ugly in reality (corpses, vermin). This pleasure is cognitive — it is the pleasure of recognition, of learning, of seeing the universal in the particular. Poetry is therefore more philosophical than history: it deals not with what happened but what could happen — with the universal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: NATURAL PHILOSOPHY -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">12 — NATURAL PHILOSOPHY</span>
+  <h2>Natural Philosophy — The World as It Is</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">Aristotle was the ancient world's most ambitious and prolific natural philosopher. His biological writings alone — the <em>Historia Animalium</em>, <em>De Partibus Animalium</em>, <em>De Generatione Animalium</em>, and related treatises — describe over 500 animal species with a detail and accuracy not surpassed until the 16th century. Darwin kept a copy of the zoological works and called Aristotle the father of biology. Yet his physics and cosmology, while internally coherent, were comprehensively overturned by the Scientific Revolution.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">The Biological Works</h4>
+      <p>The <em>Historia Animalium</em> is a systematic zoological survey: anatomy, reproduction, behaviour, and ecology of fish, birds, insects, crustaceans, and mammals — including the remarkable description of the placental shark (<em>Mustelus laevis</em>), whose uterine structure Aristotle correctly described and which was not verified again until the 19th century. He developed a system of biological classification — differentiated by mode of reproduction, blood/bloodlessness, and habitat — that anticipates the Linnaean system. His principle that nature makes nothing in vain (teleological economy) guided comparative anatomy for two millennia.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Physics — Motion and Change</h4>
+      <p>In the <em>Physics</em>, Aristotle analyses nature (<em>physis</em>) as the principle of motion and rest intrinsic to natural things (vs. artificial things, which are moved by external agents). Natural motion is teleological: earth and water move downward toward their natural place; fire and air move upward. Violent motion (throwing a stone) requires a continuous mover — Aristotle's account of projectile motion (the medium keeps the stone moving) was one of his most severely criticised claims and was replaced by Buridan's impetus theory and ultimately Newton's inertia. His definition of time as "the number of motion with respect to before and after" remains philosophically influential.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Four Elements &amp; Celestial Spheres</h4>
+      <p>In the sublunary world, all matter is composed of four elements (earth, water, air, fire), each characterised by pairs of the primary qualities (hot/cold, wet/dry). The celestial realm beyond the moon is composed of a fifth element — <em>aether</em> (quintessence) — which is naturally circular and eternal. The heavens are concentric crystalline spheres bearing the planets, sun, and moon, driven by Unmoved Movers (55 in the final account) in uniform circular motion. This geocentric cosmology dominated European and Islamic thought until Copernicus (1543), though it was challenged by Aristarchus, Ptolemy, and the Islamic astronomers who elaborated it.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Teleology in Nature</h4>
+      <p>Throughout the natural works, Aristotle insists that natural processes occur for an end: the eye is for seeing; the heart is for distributing vital heat; the parts of animals are what they are for the sake of the animal's life and flourishing. This is not supernatural design but immanent purposiveness: natural kinds have their characteristic functions built in to what they are. After Darwin, teleological language in biology ("the heart's function is...") became controversial. But evolutionary biologists continue to use it, and philosophers like Ernst Mayr distinguished "teleonomy" (function-talk grounded in evolutionary history) from strong teleology — suggesting Aristotle's framework survives, reinterpreted, in modern biology.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Aristotle vs Modern Science</h4>
+      <p>The Scientific Revolution of the 16th–17th centuries was in large measure a rejection of Aristotelian natural philosophy. Galileo's kinematics refuted Aristotle's dynamics; Harvey's circulation of the blood undermined his cardiology; Copernicus and Kepler displaced his geocentric cosmology; Newton's inertia and force concepts replaced his qualitative physics. Yet the rejection was often polemical and partial: Aristotle's insistence on empirical observation, his systematic taxonomy, his teleological biology, and his conceptual analysis of causation all anticipate or survive in modified form in modern science.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Meteorology and the Middle Sciences</h4>
+      <p>Between pure physics and biology, Aristotle treats <em>meteorological</em> phenomena: clouds, rain, snow, thunder, lightning, earthquakes, comets, the Milky Way. His explanation of the rainbow (by reflection and refraction of sunlight from a cloud, correctly identifying its geometry) was refined but not fundamentally surpassed until Descartes. He also wrote on chemistry (<em>De Generatione et Corruptione</em>), the soul-body relation in reproduction, sensation, memory, sleep, dreams, and prophecy — constituting the most comprehensive scientific system antiquity produced.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: ARISTOTLE vs PLATO -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">13 — COMPARATIVE PHILOSOPHY</span>
+  <h2>Aristotle versus Plato</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">Raphael's <em>School of Athens</em> captures the essential contrast: Plato points upward (to the transcendent Forms); Aristotle gestures downward (to this world, these things). Their disagreement is not merely temperamental but systematic — running through every domain of philosophy. Aristotle himself says: "It is a duty we owe both to the truth and to our friends to honour truth more." (<em>Nicomachean Ethics</em> I.6)</p>
+  <svg viewBox="0 0 760 320" style="width:88%; display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="760" height="320" rx="8" fill="#12121a"/>
+    <!-- Headers -->
+    <rect x="12" y="10" width="338" height="36" rx="6" fill="rgba(91,140,212,0.12)" stroke="#5b8cd4" stroke-width="1.5"/>
+    <text x="181" y="33" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" fill="#5b8cd4" font-weight="700">PLATO (428–348 BCE)</text>
+    <rect x="410" y="10" width="338" height="36" rx="6" fill="rgba(212,160,83,0.12)" stroke="#d4a053" stroke-width="1.5"/>
+    <text x="579" y="33" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" fill="#d4a053" font-weight="700">ARISTOTLE (384–322 BCE)</text>
+    <!-- Divider column label -->
+    <line x1="380" y1="10" x2="380" y2="310" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Row 1 -->
+    <text x="8" y="62" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">Universals</text>
+    <line x1="0" y1="54" x2="760" y2="54" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="181" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Forms exist separately, transcendently,</text>
+    <text x="181" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">more real than particulars (<em>chorismos</em>)</text>
+    <text x="579" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Forms are <em>in</em> things; universals abstracted</text>
+    <text x="579" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">from particulars; <em>in rebus</em> realism</text>
+    <!-- Row 2 -->
+    <line x1="0" y1="92" x2="760" y2="92" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="103" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">Knowledge</text>
+    <text x="181" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Recollection (<em>anamnesis</em>) of Forms</text>
+    <text x="181" y="119" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">known before birth; dialectic ascent</text>
+    <text x="579" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Abstraction from sense experience;</text>
+    <text x="579" y="119" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">demonstration from first principles</text>
+    <!-- Row 3 -->
+    <line x1="0" y1="130" x2="760" y2="130" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="141" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">The Soul</text>
+    <text x="181" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Immortal substance separate from body;</text>
+    <text x="181" y="157" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">tripartite (reason/spirit/appetite)</text>
+    <text x="579" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Form of the organic body; not separable</text>
+    <text x="579" y="157" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">(except possibly the active intellect)</text>
+    <!-- Row 4 -->
+    <line x1="0" y1="168" x2="760" y2="168" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="179" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">The Good</text>
+    <text x="181" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">The Form of the Good — transcendent,</text>
+    <text x="181" y="195" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">unified, the source of all being and knowledge</text>
+    <text x="579" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Eudaimonia — activity of the soul in accordance</text>
+    <text x="579" y="195" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">with virtue; plural, embedded, contextual</text>
+    <!-- Row 5 -->
+    <line x1="0" y1="206" x2="760" y2="206" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="217" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">Ethics</text>
+    <text x="181" y="221" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Ideal, geometric; justice as mathematical</text>
+    <text x="181" y="233" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">proportion; philosophers should rule</text>
+    <text x="579" y="221" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Practical, contextual; phronesis as guide;</text>
+    <text x="579" y="233" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">middle class and mixed constitution</text>
+    <!-- Row 6 -->
+    <line x1="0" y1="244" x2="760" y2="244" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="255" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">Art / Poetry</text>
+    <text x="181" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Mimesis is epistemically worthless (twice</text>
+    <text x="181" y="271" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">removed from Forms); dangerous to the soul</text>
+    <text x="579" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Mimesis is natural and cognitive; poetry is</text>
+    <text x="579" y="271" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">more philosophical than history</text>
+    <!-- Row 7 -->
+    <line x1="0" y1="282" x2="760" y2="282" stroke="#2a2a3a" stroke-width="0.5"/>
+    <text x="8" y="293" font-family="JetBrains Mono,monospace" font-size="8" fill="#6a6a7a">Method</text>
+    <text x="181" y="297" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Dialectic, mathematical reasoning,</text>
+    <text x="181" y="309" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">ascent from sensible to intelligible</text>
+    <text x="579" y="297" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">Empirical observation, classification,</text>
+    <text x="579" y="309" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9a9a9a">demonstration; endoxa (reputable opinions)</text>
+  </svg>
+</section>
+
+<!-- SLIDE 15: CORE TENSIONS & LEGACY -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">14 — CRITICAL ASSESSMENT</span>
+  <h2>Core Tensions &amp; Contested Legacy</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">Teleology After Darwin</h4>
+      <p>Darwin's theory of evolution by natural selection seemed to demolish Aristotelian teleology: there is no cosmic purpose, no intrinsic end-directedness in nature — just blind variation and selection. Yet evolutionary biologists continue to use function-talk ("the eye is for seeing"), and philosophers of biology have debated whether natural selection provides a naturalistic vindication of teleological language (as in Ruth Millikan's "proper functions" or Larry Wright's "etiological functions"). Aristotle's teleology may survive in a deflationary, naturalistic form — as the claim that functional explanation is irreducible in biology, even without cosmic design.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Unmoved Mover and Providence</h4>
+      <p>The Unmoved Mover thinks only itself — it has no knowledge of, no concern for, and no relationship with the cosmos it moves. This is deeply troubling for theistic appropriations (Aquinas, Maimonides): the God of Abraham cares about creation, intervenes in history, hears prayer. Aristotle's God does none of these things. Medieval theologians performed extraordinary feats of reconciliation, but the tension between the God of the philosophers and the God of the Bible was never fully resolved — as Blaise Pascal's memorial card, sewn into his coat ("God of Abraham, God of Isaac, God of Jacob, not the god of the philosophers and scholars"), movingly attests.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Slavery and Gender</h4>
+      <p>Aristotle's defence of natural slavery in the <em>Politics</em> and his extensive claims about women's natural inferiority (women are "incomplete males," their deliberative faculty is "without authority") represent the darkest aspects of his social philosophy. These arguments were not incidental — they were systematically integrated into his teleological biology (women as cold and passive, men as hot and active) and his political theory. They were invoked for centuries to justify real oppression. The challenge for scholars is to distinguish what can be salvaged from Aristotle's ethics and politics from what must be repudiated as a function of his historical and ideological situation.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Practical vs Theoretical Wisdom</h4>
+      <p>The <em>Nicomachean Ethics</em> is genuinely ambiguous about the relation between the ethical and intellectual life. Book X, presenting theoretical contemplation (<em>theoria</em>) as the highest human activity, seems to conflict with the earlier presentation of the political, practically engaged life as the fullest expression of human flourishing. Is the philosopher-scientist who contemplates the stars and the Unmoved Mover living the best life? Or the politically engaged statesman guided by practical wisdom? Aristotle may intend a hierarchy rather than a contradiction — but the tension is real and has generated a large scholarly literature.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Medieval Scholasticism</h4>
+      <p>From the 12th century, when Aristotle's full corpus reached Western Europe through Arabic translations (Averroes' commentaries were the crucial conduit), he became simply "the Philosopher" — an authority whose word, in the new universities of Paris and Oxford, carried quasi-scriptural weight. This ossification of Aristotle into an official doctrine — "Aristotelianism" — was deeply anti-Aristotelian in spirit. Aristotle himself revised his views, engaged in empirical research, and acknowledged aporiai (genuine puzzles). The dogmatic scholasticism that invoked his name would have puzzled and troubled its alleged founder.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">The Transmission Problem</h4>
+      <p>The works we possess are probably Aristotle's lecture notes or notes taken by students — not polished philosophical texts intended for publication. His actual published dialogues (like Plato's) were praised in antiquity for their literary beauty; all are lost. What we have is the esoteric, school-internal material: dense, often elliptical, sometimes internally inconsistent. The <em>Metaphysics</em> is almost certainly a composite of originally separate treatises arranged by later editors. This means Aristotle interpretation is irreducibly reconstructive — and scholarly consensus, on everything from hylomorphism to the active intellect, is perpetually contested.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 16: ESSENTIAL READINGS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">15 — BIBLIOGRAPHY</span>
+  <h2>Essential Readings</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <span class="icon accent-amber">📖</span>
+      <h4 class="accent-amber">Nicomachean Ethics</h4>
+      <p>The central Aristotelian text for anyone beginning. The Ross translation (Oxford) is reliable and readable; Irwin's translation (Hackett) with copious notes is indispensable for serious study. Books I–II (the good, eudaimonia, virtue), VI (phronesis), and IX–X (friendship, contemplation) are particularly essential. All serious engagement with virtue ethics in contemporary philosophy — Anscombe, MacIntyre, Foot, Nussbaum — proceeds through this text.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-green">📖</span>
+      <h4 class="accent-green">Metaphysics</h4>
+      <p>Books Alpha (survey of predecessors), Gamma (law of non-contradiction), Zeta (substance and essence — the most discussed book in the entire corpus), and Lambda (the Unmoved Mover) are the core. Anscombe and Geach's <em>Three Philosophers</em> (1961) provides an excellent introduction to the Metaphysics. Ross's two-volume commentary remains essential. Frede and Patzig's commentary on Book Zeta is the most rigorous modern treatment.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-purple">📖</span>
+      <h4 class="accent-purple">De Anima</h4>
+      <p>Books II–III, on the levels of soul, perception, and intellect, are the key passages. Hamlyn's translation and commentary (Oxford) is an excellent starting point; the collection <em>Essays on Aristotle's De Anima</em> edited by Nussbaum and Rorty (1992) represents the best of late-20th-century scholarship. Burnyeat's "Is an Aristotelian Philosophy of Mind Still Credible?" is the essential provocation for contemporary readers.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-rose">📖</span>
+      <h4 class="accent-rose">Politics</h4>
+      <p>Books I (household, natural slavery), III (citizenship, constitutions), and VII–VIII (the ideal state) are the essential core. Lord's translation (University of Chicago) is excellent. For context: Josiah Ober's <em>Political Dissent in Democratic Athens</em> (1998) is essential background; MacIntyre's <em>After Virtue</em> (1981) is the most important contemporary appropriation of Aristotelian political philosophy, arguing for a return to virtue-based politics against the dominant liberal tradition.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-blue">📖</span>
+      <h4 class="accent-blue">Secondary Works</h4>
+      <p>Jonathan Barnes, <em>Aristotle: A Very Short Introduction</em> (OUP, 2000) — the best short introduction. Jonathan Lear, <em>Aristotle: The Desire to Understand</em> (Cambridge, 1988) — the finest philosophical introduction in English. W.D. Ross, <em>Aristotle</em> (Methuen, 1923) — still valuable as a systematic survey. Alasdair MacIntyre, <em>After Virtue</em> (1981) — the most influential contemporary re-appropriation. Martha Nussbaum, <em>The Fragility of Goodness</em> (Cambridge, 1986) — ethics and the role of luck and emotion.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-amber">📖</span>
+      <h4 class="accent-amber">Poetics &amp; Rhetoric</h4>
+      <p>The <em>Poetics</em> is the most readable of Aristotle's works — short, clear, and endlessly illuminating. Halliwell's translation and commentary (Duckworth, 1987) is the best. The <em>Rhetoric</em> is underread but enormously rewarding: Kennedy's translation (Oxford, 1991) is definitive. For reception: Stephen Halliwell's <em>Aristotle's Poetics</em> (Duckworth, 1998) traces its influence from antiquity to the present; Amélie Rorty's essay collection <em>Essays on Aristotle's Poetics</em> (Princeton, 1992) is the scholarly standard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: CLOSING -->
+<section style="padding: 2em 2.5em; text-align: center;">
+  <span class="section-number">CODA</span>
+  <svg viewBox="0 0 480 180" style="width:65%; max-width:500px; margin: 0.3em auto 0.5em; display:block;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Laurel wreath -->
+    <g transform="translate(240,90)">
+      <!-- Left side leaves -->
+      <ellipse cx="-80" cy="0" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(-15)"/>
+      <ellipse cx="-65" cy="-28" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(-40)"/>
+      <ellipse cx="-40" cy="-50" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(-65)"/>
+      <ellipse cx="-10" cy="-62" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(-85)"/>
+      <!-- Right side leaves -->
+      <ellipse cx="80" cy="0" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(15)"/>
+      <ellipse cx="65" cy="-28" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(40)"/>
+      <ellipse cx="40" cy="-50" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(65)"/>
+      <ellipse cx="10" cy="-62" rx="28" ry="9" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(85)"/>
+      <!-- Central text -->
+      <text x="0" y="-18" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#d4a053" font-weight="900">ΑΡΙΣΤΟΤΕΛΗΣ</text>
+      <text x="0" y="0" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">384 – 322 BCE</text>
+      <text x="0" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9a9a9a">Stagira · Athens · The Lyceum</text>
+      <!-- Stem at bottom -->
+      <path d="M-30,60 Q0,45 30,60" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+      <line x1="0" y1="45" x2="0" y2="60" stroke="#4ecca3" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <h2 style="margin-bottom:0.2em;">The Unmoved Mover of Western Thought</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin:0.7em auto; max-width:80%;">
+    <div class="quote-box" style="margin:0; max-width:100%;">
+      <p>"We are what we repeatedly do. Excellence, then, is not an act, but a habit."</p>
+      <span class="attribution">— Will Durant, paraphrasing Aristotle, <em>Nicomachean Ethics</em> II.4<br/>(Aristotle's actual text: "the virtues we get by first exercising them")</span>
+    </div>
+    <div class="quote-box" style="margin:0; max-width:100%;">
+      <p>"The energy of the mind is the essence of life... In all things of nature there is something of the marvellous."</p>
+      <span class="attribution">— Aristotle, <em>Parts of Animals</em> I.5 &amp; <em>Nicomachean Ethics</em> X.7</span>
+    </div>
+  </div>
+  <p style="font-size:0.44em; color:var(--text-muted); margin-top:0.8em; max-width:75%; margin-left:auto; margin-right:auto; line-height:1.7;">Aristotle shaped logic for two thousand years, grounded medieval theology, founded biology as a science, established the template for systematic ethics, and produced the first comprehensive political science. Hegel called him the peak of ancient thought. Dante called him "the master of those who know." Whatever we think of his conclusions, the power of the method — careful analysis, systematic comparison, respect for received opinion, unflinching willingness to follow argument wherever it leads — remains exemplary.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display='block'; s.style.maxHeight=maxH; }); } Reveal.on('ready',fixSlides); Reveal.on('slidechanged',fixSlides); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){ if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();} }</script>
+</body>
+</html>

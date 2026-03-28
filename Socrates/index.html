@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Socrates — The Examined Life, the Gadfly of Athens &amp; the Philosophical Revolution</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 180px; height: 100px; margin: 0 auto 0.8em auto;">
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dialectical spiral: concentric circles with question marks and arrows -->
+            <!-- Outermost circle -->
+            <circle cx="150" cy="80" r="70" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.18" stroke-dasharray="4 3"/>
+            <circle cx="150" cy="80" r="54" fill="none" stroke="#d4a053" stroke-width="0.9" opacity="0.28" stroke-dasharray="4 3"/>
+            <circle cx="150" cy="80" r="38" fill="none" stroke="#d4a053" stroke-width="1.1" opacity="0.40" stroke-dasharray="4 3"/>
+            <circle cx="150" cy="80" r="22" fill="none" stroke="#d4a053" stroke-width="1.4" opacity="0.58"/>
+            <!-- Central node -->
+            <circle cx="150" cy="80" r="7" fill="#d4a053" opacity="0.85"/>
+            <!-- Radial spokes suggesting dialectical movement -->
+            <line x1="150" y1="73" x2="150" y2="26" stroke="#d4a053" stroke-width="0.8" opacity="0.35"/>
+            <line x1="150" y1="87" x2="150" y2="134" stroke="#d4a053" stroke-width="0.8" opacity="0.35"/>
+            <line x1="143" y1="80" x2="96" y2="80" stroke="#d4a053" stroke-width="0.8" opacity="0.35"/>
+            <line x1="157" y1="80" x2="204" y2="80" stroke="#d4a053" stroke-width="0.8" opacity="0.35"/>
+            <line x1="145" y1="75" x2="112" y2="42" stroke="#d4a053" stroke-width="0.8" opacity="0.22"/>
+            <line x1="155" y1="85" x2="188" y2="118" stroke="#d4a053" stroke-width="0.8" opacity="0.22"/>
+            <line x1="155" y1="75" x2="188" y2="42" stroke="#d4a053" stroke-width="0.8" opacity="0.22"/>
+            <line x1="145" y1="85" x2="112" y2="118" stroke="#d4a053" stroke-width="0.8" opacity="0.22"/>
+            <!-- Question marks at ring intersections -->
+            <text x="150" y="30" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="11" opacity="0.6">?</text>
+            <text x="215" y="84" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="11" opacity="0.6">?</text>
+            <text x="150" y="142" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="11" opacity="0.6">?</text>
+            <text x="85" y="84" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="11" opacity="0.6">?</text>
+        </svg>
+    </div>
+    <h1>Socrates</h1>
+    <p class="subtitle">The Examined Life, the Gadfly of Athens &amp; the Philosophical Revolution</p>
+    <div class="separator"></div>
+    <div class="quote-box" style="margin-top: 0.9em;">
+        <p>"The unexamined life is not worth living."</p>
+        <span class="attribution">— Apology 38a</span>
+    </div>
+    <p style="font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.8em;">
+        470&ndash;399 BCE &middot; Athens
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: BIOGRAPHY ═══════════════════ -->
+<section>
+    <span class="section-number">01 &mdash; BIOGRAPHY</span>
+    <h2>Who Was Socrates?</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.8em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Socrates <span style="color: var(--text-muted);">(c. 470&ndash;399 BCE)</span> was an Athenian stonemason's son who became the foundational figure of Western philosophy — a thinker who, paradoxically, <span class="accent-amber">wrote nothing</span>. Everything we know of him arrives through the accounts of others, principally Plato, Xenophon, and the comic poet Aristophanes, each constructing a different Socrates for different purposes.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Physically described as ugly — snub-nosed, bulging-eyed, ungainly — Socrates haunted the agora, the gymnasiums, and the homes of wealthy Athenians, engaging all comers in relentless questioning. His vocation was not the teaching of a doctrine but the <span class="accent-green">practice of examination itself</span>: eliciting assumptions, exposing contradictions, and driving interlocutors toward the recognition of their own ignorance.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                His father Sophroniscus was a sculptor; his mother Phaenarete a midwife — a fact Socrates exploited philosophically, describing his own method as <em>maieutic</em>, the art of intellectual midwifery: not implanting knowledge but drawing it out from those who already carry it within them.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-amber);">
+                <h4 class="accent-amber">Key Facts</h4>
+                <p>Born c. 470 BCE in Alopeke, Attica. Served with distinction as a hoplite at Potidaea (432), Delium (424), and Amphipolis (422). Married Xanthippe; possibly a second wife Myrto. Three sons. Tried and executed by hemlock in 399 BCE, aged approximately 70.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-left: 3px solid var(--accent-purple);">
+                <h4 class="accent-purple">The Philosophical Mission</h4>
+                <p>After the Oracle at Delphi reportedly told his friend Chaerephon that no one was wiser than Socrates, he set about testing the claim — questioning politicians, poets, and craftsmen. His conclusion: they claimed knowledge they did not possess; he at least knew that he did not know.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-left: 3px solid var(--accent-green);">
+                <h4 class="accent-green">Historical Context</h4>
+                <p>Socrates lived through Athens' golden age under Pericles, the catastrophic Peloponnesian War (431–404 BCE), the reign of the Thirty Tyrants, and the restored democracy that eventually condemned him. Philosophy was not remote from politics; it was dangerously entangled with it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 &mdash; CHRONOLOGY</span>
+    <h2>Life &amp; Historical Context</h2>
+    <div class="separator"></div>
+    <div style="max-width: 85%; margin: 0.5em auto;">
+        <div class="timeline-item">
+            <span class="year">c.470</span>
+            <div class="event"><strong>Born in Alopeke, Attica</strong>Son of Sophroniscus (sculptor) and Phaenarete (midwife). Athens is entering its classical peak under the Delian League. The Parthenon has not yet been built.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">c.450</span>
+            <div class="event"><strong>Association with Archelaus &amp; the Sophists</strong>As a young man, possibly studied natural philosophy under Archelaus, a student of Anaxagoras. Grows disillusioned with cosmological speculation and turns to ethical questions.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">432</span>
+            <div class="event"><strong>Military service at Potidaea</strong>Distinguished by extraordinary endurance — standing motionless in meditation through a winter night. Saves the life of the young Alcibiades in battle, deflecting honours onto his companion instead.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">424</span>
+            <div class="event"><strong>Battle of Delium</strong>Athens suffers a significant defeat. Socrates is notable for his orderly, fearless retreat — witnessed by the young Laches and the general Xenophon later records approvingly.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">423</span>
+            <div class="event"><strong>Aristophanes' <em>Clouds</em></strong>Socrates is lampooned as a Sophist who teaches how to make the weaker argument defeat the stronger and who speculates about the heavens. Socrates later cites this play as a source of prejudice against him at his trial.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">406</span>
+            <div class="event"><strong>Epistates of the Assembly (Prytany)</strong>As a member of the presiding committee, Socrates alone refuses to put to the vote the illegal collective trial of the generals after Arginusae — a rare act of institutional courage.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">404</span>
+            <div class="event"><strong>The Thirty Tyrants</strong>After Athens' defeat, the oligarchs order Socrates and four others to arrest Leon of Salamis. Socrates simply goes home. Two of his associates — Critias and Charmides — are among the Thirty, complicating his political reputation.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">399</span>
+            <div class="event"><strong>Trial and Death</strong>Charged by Meletus, Anytus, and Lycon with impiety and corrupting the youth. Found guilty by 280 to 220 votes. Refuses to flee (per Crito). Drinks hemlock surrounded by friends, continuing to philosophise on the immortality of the soul.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE SOCRATIC METHOD / ELENCHUS ═══════════════════ -->
+<section>
+    <span class="section-number">03 &mdash; METHOD</span>
+    <h2>The Elenchus — Dialectical Cross-Examination</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        The <span class="accent-amber">elenchus</span> (Greek: ἔλεγχος, "refutation" or "cross-examination") is Socrates' signature philosophical procedure. He invites an interlocutor to define a virtue or concept — piety, justice, courage, knowledge — then subjects the definition to a series of counter-examples and logical challenges until the definition collapses. The aim is not victory but <em>aporia</em>: productive perplexity.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 740 290" xmlns="http://www.w3.org/2000/svg">
+            <!-- Step boxes -->
+            <!-- Step 1: Initial claim -->
+            <rect x="10" y="20" width="160" height="68" rx="8" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="90" y="46" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="11" font-weight="700">1. Initial Claim</text>
+            <text x="90" y="62" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">"Piety is doing what</text>
+            <text x="90" y="74" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">is pleasing to the gods"</text>
+            <!-- Arrow -->
+            <path d="M170 54 L200 54" stroke="#d4a053" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+            <!-- Step 2: Accepted premises -->
+            <rect x="200" y="20" width="160" height="68" rx="8" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="280" y="46" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="11" font-weight="700">2. Accepted Premises</text>
+            <text x="280" y="62" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">Interlocutor agrees to</text>
+            <text x="280" y="74" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">further propositions</text>
+            <!-- Arrow -->
+            <path d="M360 54 L390 54" stroke="#9b72cf" stroke-width="1.2" marker-end="url(#arrowhead2)"/>
+            <!-- Step 3: Contradiction derived -->
+            <rect x="390" y="20" width="160" height="68" rx="8" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="470" y="46" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="700">3. Contradiction</text>
+            <text x="470" y="62" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">The premises entail</text>
+            <text x="470" y="74" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">the claim is false</text>
+            <!-- Arrow -->
+            <path d="M550 54 L580 54" stroke="#cf7272" stroke-width="1.2" marker-end="url(#arrowhead3)"/>
+            <!-- Step 4: Aporia -->
+            <rect x="580" y="20" width="150" height="68" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="655" y="46" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11" font-weight="700">4. Aporia</text>
+            <text x="655" y="62" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">Productive perplexity:</text>
+            <text x="655" y="74" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9.5">we do not know</text>
+            <!-- Arrowhead markers -->
+            <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#d4a053"/></marker>
+                <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9b72cf"/></marker>
+                <marker id="arrowhead3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#cf7272"/></marker>
+                <marker id="arrowhead4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4ecca3"/></marker>
+            </defs>
+            <!-- Feedback arrow: Aporia prompts revised claim -->
+            <path d="M655 88 L655 135 L90 135 L90 88" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrowhead4)"/>
+            <text x="375" y="130" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" opacity="0.75">Revised definition proposed — cycle restarts</text>
+            <!-- Maieutic section below -->
+            <rect x="60" y="160" width="590" height="110" rx="10" fill="#12121a" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="355" y="183" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="12" font-weight="700">The Maieutic Dimension</text>
+            <!-- Three outcomes -->
+            <rect x="80" y="196" width="160" height="58" rx="6" fill="#161622" stroke="#d4a053" stroke-width="0.8"/>
+            <text x="160" y="216" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="600">Moral Improvement</text>
+            <text x="160" y="230" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Caring about virtue &gt;</text>
+            <text x="160" y="242" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">caring about reputation</text>
+            <rect x="267" y="196" width="160" height="58" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="347" y="216" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="600">Self-Knowledge</text>
+            <text x="347" y="230" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Recognising the limits</text>
+            <text x="347" y="242" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">of one's own knowledge</text>
+            <rect x="454" y="196" width="165" height="58" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="536" y="216" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="600">Conceptual Clarity</text>
+            <text x="536" y="230" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Distinguishing genuine</text>
+            <text x="536" y="242" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">knowledge from opinion</text>
+        </svg>
+    </div>
+    <p class="note-text">The elenchus operates through genuine dialectic — not sophistic rhetoric. It requires good faith: Socrates insists interlocutors say only what they actually believe.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: SOCRATIC IGNORANCE ═══════════════════ -->
+<section>
+    <span class="section-number">04 &mdash; EPISTEMOLOGY</span>
+    <h2>Socratic Ignorance — "I Know That I Know Nothing"</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        This famous phrase is actually a later paraphrase; the Apology is subtler. Socrates claims a specific and <span class="accent-amber">superior form of ignorance</span>: unlike politicians, poets, and craftsmen, who mistake competence in one domain for wisdom about everything, Socrates knows that his apparent knowledge does not amount to genuine understanding. This "second-order" self-knowledge — knowing the boundaries of one's knowledge — is itself a form of philosophical wisdom.
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Oracle's Puzzle</h4>
+            <p>The Delphic Oracle's verdict that no one is wiser than Socrates presents a paradox: he believes himself ignorant, yet the god declares him wisest. His resolution is that true wisdom begins with recognising what one does not know. The craftsmen know their craft but extrapolate beyond it; Socrates does not. That limited, honest self-appraisal is what the oracle means by wisdom.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Human Wisdom vs. Divine Wisdom</h4>
+            <p>Socrates draws a pointed distinction between <em>anthropine sophia</em> (human wisdom) and the perfect knowledge that belongs to the gods. Human wisdom is at best "worth little or nothing" — yet it is still far better than the pretense of knowledge. Philosophy does not culminate in certainty; it cultivates a disciplined relationship to uncertainty, holding open what must remain open.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">The Philosophical Stakes</h4>
+            <p>Socratic ignorance is not scepticism or relativism — Socrates passionately believes virtue matters and that good and bad are real. What he denies is possessing a systematic account of virtue adequate to ground moral action. The examined life is not a life of conclusions but a perpetual inquiry. To stop inquiring, to rest satisfied with received opinion, is the philosophical failure he most deplores.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.6em;">
+        <p>"I know nothing except the fact of my ignorance."</p>
+        <span class="attribution">— Attributed (paraphrase of <em>Apology</em> 21d)</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: VIRTUE AS KNOWLEDGE ═══════════════════ -->
+<section>
+    <span class="section-number">05 &mdash; ETHICS</span>
+    <h2>Virtue as Knowledge — The Unity of the Virtues</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        Socrates' most radical ethical claim: <span class="accent-amber">virtue (aretē) is a form of knowledge</span>, and wrongdoing is always a form of ignorance. No one does wrong willingly — those who act badly do so because they mistakenly believe that what they pursue is truly good. This doctrine of <em>acrasia</em> denial (the impossibility of genuine weakness of will) sharply distinguishes his position from common sense morality and from Aristotle, who later argued that one can know the good and fail to do it.
+    </p>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">No One Errs Willingly (<em>Protagoras</em> 345d)</h4>
+            <p>If someone chooses what is harmful, it is because they believe it to be beneficial. Evil is a cognitive failure, not a moral failure in the traditional sense. The cure for vice is therefore <em>education</em> — specifically, the philosophical clarification that enables correct judgement of what is genuinely good for the soul. This makes Socrates' ethics fundamentally intellectualist: the will follows understanding.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">The Unity of the Virtues</h4>
+            <p>Socrates argues provocatively that all virtues — courage, piety, justice, temperance — are ultimately one thing: knowledge of the good. A person who truly knows what courage is cannot lack justice; a person who truly knows piety cannot lack temperance. The apparent diversity of virtues is a symptom of our confused grasp of them. When properly understood, virtue is a single, interconnected understanding of what is genuinely beneficial for the human soul.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Caring for the Soul (<em>psyche</em>)</h4>
+            <p>The foundational Socratic imperative: care for the soul (<em>epimeleia tēs psychēs</em>) above all else — above money, reputation, political power, and bodily pleasure. The soul is the locus of reasoning and virtue; to neglect it for external goods is a catastrophic self-betrayal. This is the charge Socrates prosecutes against his fellow Athenians in the Apology, and it is the mission for which he accepts execution rather than compromise.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Good Is Beneficial to the Doer</h4>
+            <p>Socrates holds the deeply counterintuitive position that acting unjustly harms the agent more than the victim. To do wrong corrupts one's own soul; to suffer wrong leaves the soul intact. This is why he refuses to escape from prison: the alternative — doing something unjust to save his life — would damage the very thing he has spent his life trying to protect and improve. Death is a lesser harm than moral self-corruption.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: THE DAIMON ═══════════════════ -->
+<section>
+    <span class="section-number">06 &mdash; PSYCHOLOGY</span>
+    <h2>The Daimonion — Socrates' Inner Divine Sign</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left" style="margin-top: 0.7em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Throughout his life, Socrates claimed to be guided by a <span class="accent-amber">daimonion</span> — a divine, inner voice or sign that warned him away from certain courses of action but never commanded him positively. It manifested not as a daemon in the later Christian sense (a supernatural being), but as a quasi-divine restraining signal, like an instinct elevated to the status of conscience.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Crucially, the daimonion is apophatic: it says "do not" rather than "do." Socrates uses it to explain why he has not entered politics — the sign would have stopped him constantly, since political life requires compromises incompatible with philosophical integrity. It also explains his refusal to prepare a conventional defence speech: the sign did not prevent him from going to trial, suggesting some higher purpose was at work.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                The charge of impiety at his trial included the accusation of introducing <em>kaina daimonia</em> — "new divinities." Scholars debate whether the daimonion is: (a) a genuine religious experience; (b) a poetic or ironic way of speaking about rational intuition; or (c) a psychophysiological phenomenon such as an inner voice associated with his characteristic deep meditative states.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-top: 2px solid var(--accent-amber);">
+                <h4 class="accent-amber">Nature of the Sign</h4>
+                <p>Purely inhibitory — warns but never prescribes. Appears from childhood (<em>Apology</em> 31d). Reliable: Socrates treats its absence on the morning of the trial as confirmation that death may be good for him. Not a universal moral faculty but a personal divine accompaniment.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-top: 2px solid var(--accent-purple);">
+                <h4 class="accent-purple">Theological Implications</h4>
+                <p>The daimonion places Socrates in a complex theological position. He affirms traditional Athenian deities and takes religious duties seriously. Yet he also insists that the gods cannot command evil, and that a command from the god to stop philosophising would be one he could not obey. His piety is thus filtered through philosophical reason.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-top: 2px solid var(--accent-green);">
+                <h4 class="accent-green">Later Reception</h4>
+                <p>Plutarch wrote an entire essay on the daimonion, interpreting it as a form of divine intellection purer than speech. Apuleius linked it to the Platonic doctrine of personal guardian spirits. In modernity, it has been read as an early articulation of the conscience or unconscious moral intuition by figures from Hegel to Foucault.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE APOLOGY ═══════════════════ -->
+<section>
+    <span class="section-number">07 &mdash; THE TRIAL</span>
+    <h2>The Apology — Socrates on Trial</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        In 399 BCE, Socrates was brought before a jury of approximately 500 Athenian citizens on charges of <span class="accent-rose">impiety</span> (failing to acknowledge the gods the city acknowledges, introducing new divine entities) and <span class="accent-rose">corrupting the youth</span>. Plato's <em>Apology</em> records his defence — not an apology in the modern sense but a formal speech of self-justification (<em>apologia</em>).
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Political Background</h4>
+            <p>The restored democracy of 403 BCE had just overthrown the oligarchic Thirty Tyrants. Two of Socrates' closest associates — Critias and Alcibiades — were associated with oligarchic and anti-democratic politics. A general amnesty prevented direct political charges, but the trial functioned partly as a displaced political prosecution. Anytus, the lead accuser, was a prominent democratic politician.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Defence Strategy</h4>
+            <p>Rather than seeking acquittal by conventional means — emotional appeals, producing weeping family members, flattering the jury — Socrates turns the trial into a philosophical inquiry. He argues that the Oracle's verdict means he must continue questioning; to stop would be to disobey the god. He proposes, provocatively, that his "punishment" should be free meals at the Prytaneion — Athens' highest civic honour.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">The Verdict &amp; Death Sentence</h4>
+            <p>The jury voted 280-220 to convict. In the penalty phase, Meletus proposed death; Socrates' counter-proposal of free meals (later revised to a small fine) was read as contempt, and 360 voted for death — more than had voted to convict. Plato's <em>Crito</em> records Socrates' refusal to escape, on grounds that to do so would violate his implicit contract with the laws of Athens.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.6em;">
+        <p>"I would rather die having spoken after my manner than speak in your manner and live. For neither in war nor yet at law ought I or any man use every way of escaping death."</p>
+        <span class="attribution">— <em>Apology</em> 39a (Jowett trans.)</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE PHAEDO AND DEATH ═══════════════════ -->
+<section>
+    <span class="section-number">08 &mdash; THE PHAEDO</span>
+    <h2>The Phaedo — Philosophy as a Practice of Death</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        Plato's <em>Phaedo</em> takes place on the day of Socrates' death and is the greatest philosophical meditation on mortality in antiquity. Socrates' central claim is that philosophy is essentially a <span class="accent-green">practice of dying</span>: habitually separating the soul from bodily distraction to attend to pure reasoning. Death — the actual separation of soul from body — is therefore not a tragedy but a consummation of the philosophical life.
+    </p>
+    <div class="card-grid cols-2" style="margin-top: 0.45em;">
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">Why the Philosopher Welcomes Death</h4>
+            <p>The body is a distraction and a distorter: it produces appetites, pains, diseases, and false perceptions. Pure knowledge — knowledge of the Forms — is accessible to the soul only when it is liberated from bodily interference. The philosopher who spends a lifetime purifying the soul from bodily attachment should, Socrates argues, greet death as the final, successful completion of that purification. To fear death is to betray the philosophical life one has professed.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Four Arguments for Immortality</h4>
+            <p>The Cyclical Argument: opposites generate each other — life from death, death from life. The Recollection Argument: we remember things (perfect equality, beauty itself) we never encountered in this life, so the soul must have pre-existed. The Affinity Argument: the soul resembles eternal, invisible, unchanging Forms rather than perishable bodies. The Form of Life Argument: the soul participates in the Form of Life and so cannot admit death.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Socratic Serenity</h4>
+            <p>The <em>Phaedo</em>'s literary power derives from the contrast between Socrates' absolute composure and his friends' grief. He bathes, says farewell to his wife and children, then returns to philosophy, arguing about immortality until the hemlock takes effect. His final words — "Crito, we owe a cock to Asclepius" — are read as either a humorous last joke or a thanksgiving for the cure (death) that heals the disease of embodiment.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Narrative Context</h4>
+            <p>Plato was notably absent from the deathbed scene due to illness — or so he claims. The narrative is filtered through Phaedo of Elis (later founder of his own Socratic school) recounting the events to Echecrates of Phlius. This layered narration signals that what we receive is not raw reportage but a philosophically shaped memorial, raising questions about how much of the argument is Socratic versus Platonic.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: SOCRATIC IRONY ═══════════════════ -->
+<section>
+    <span class="section-number">09 &mdash; IRONY</span>
+    <h2>Socratic Irony — The Mask and What Lies Behind It</h2>
+    <div class="separator"></div>
+    <div class="two-col" style="margin-top: 0.7em;">
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                <span class="accent-amber">Eironeia</span> in antiquity meant something closer to deliberate dissimulation or understatement — not gentle wit but a rhetorically and philosophically significant strategy of concealment. Socrates' interlocutors are often unsure whether he is being sincere or mocking them. This uncertainty is not incidental; it is the engine of the dialectic.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                When Socrates claims to know nothing and asks to learn from his interlocutors, he is doing something philosophically complex: (a) genuinely claiming ignorance in the technical sense (no systematic knowledge); (b) ironically positioning himself as the learner when he is plainly the superior reasoner; (c) creating a dynamic in which the interlocutor is forced to commit to positions they then must defend.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Kierkegaard, in his doctoral dissertation <em>The Concept of Irony with Constant Reference to Socrates</em> (1841), argued that irony for Socrates was not a rhetorical device but an <em>existential position</em> — a total stance toward existence characterised by infinite negativity: refusing to be caught in any positive doctrine. Gregory Vlastos, by contrast, distinguished "simple" from "complex" irony in Socrates, arguing that sincere claims are embedded within the ironic frame.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent-amber);">
+                <h4 class="accent-amber">The Compliment Trap</h4>
+                <p>A characteristic move: Socrates praises an interlocutor's reputation for wisdom and expresses hope they can teach him. The lavish praise puts the interlocutor on guard — and then traps them when they fail to provide the definition they had promised. Flattery transforms into exposure. Alcibiades in the <em>Symposium</em> describes this as being "bitten by philosophy" — a sting from which one cannot recover.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-left: 3px solid var(--accent-purple);">
+                <h4 class="accent-purple">Irony vs. Sophistry</h4>
+                <p>The difference from sophistic rhetoric is crucial. Sophists use irony to win arguments and gain fees. Socrates uses it in service of truth — his ironic poses are designed to strip away pretense and reach genuine conviction. He claims never to teach for money and never to assert that he has transmitted knowledge to anyone. His irony is inseparable from his philosophy of ignorance.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-left: 3px solid var(--accent-green);">
+                <h4 class="accent-green">The Irony of the Trial</h4>
+                <p>The deepest Socratic irony may be the trial itself: the city that prided itself on free inquiry condemned its most relentless inquirer. Socrates meets this with a final irony — proclaiming that by executing him the Athenians harm themselves more than him, and that another gadfly will come to take his place. The examined life triumphs in death precisely because death cannot silence what it represents.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: SOCRATIC SCHOOLS ═══════════════════ -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>The Socratic Schools — Competing Inheritors</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        After Socrates' death, his followers dispersed and founded distinct schools (<em>haireseis</em>), each seizing a different strand of the Socratic legacy. Plato's Academy was by far the most influential, but the so-called <span class="accent-amber">Minor Socratic schools</span> reveal how genuinely open Socratic philosophy was — different interpreters drew radically incompatible conclusions from the same conversations.
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Cynics (Antisthenes)</h4>
+            <p>Antisthenes of Athens emphasised Socrates' frugality, self-sufficiency (<em>autarkeia</em>), and contempt for conventional goods. He stripped away Platonic metaphysics entirely, insisting that virtue alone is sufficient for happiness and that external circumstances — poverty, slavery, disgrace — are genuinely indifferent. His student Diogenes of Sinope pushed this to provocative extremes, living in a jar and publicly violating social convention to demonstrate philosophy's independence from custom.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">The Cyrenaics (Aristippus)</h4>
+            <p>Aristippus of Cyrene, also a Socratic associate, developed the polar opposite conclusion: since external goods are genuinely indifferent, and since the only criterion of value is the experience of pleasure and pain, the wise person maximises immediate bodily pleasure. Socratic self-knowledge becomes, on this reading, knowledge of which pleasures to pursue most effectively. The Cyrenaics pioneered a sophisticated philosophy of sensation that anticipates Epicureanism, though without Epicurus' focus on long-term tranquillity.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">The Megarian School (Euclid)</h4>
+            <p>Euclid of Megara combined Socratic ethics with Eleatic metaphysics: the Good is one, unchanging, and identical with Being, Reason, and God. His school became famous for paradoxes and logical puzzles — the Liar paradox, the Sorites (heap) paradox, the Master Argument — which influenced Stoic logic. The Megarians read Socrates as primarily a logician rather than an ethical reformer, treating the elenchus as a weapon for exposing conceptual incoherence rather than a tool of moral transformation.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.45em; max-width: 72%;">
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">The Elian &amp; Eretrian Schools</h4>
+            <p>Phaedo of Elis (present at the deathbed) and Menedemus of Eretria continued Socratic dialogue in a more modest register, focusing on careful logical practice rather than grand metaphysical or ethical systems. Their works are lost, but their schools suggest that the Socratic tradition had a broad institutional and geographical reach well beyond Athens in the fourth century.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Plato's Academy</h4>
+            <p>Founded around 387 BCE, the Academy developed Socratic questioning into a comprehensive philosophical programme: metaphysics (Theory of Forms), epistemology (recollection, divided line), political philosophy (the <em>Republic</em>), cosmology (<em>Timaeus</em>), and mathematical training as preparation for philosophy. Plato both preserved Socrates and, arguably, transformed him — the later dialogues' Socrates is increasingly a mouthpiece for distinctly Platonic doctrines.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE SOURCES PROBLEM ═══════════════════ -->
+<section>
+    <span class="section-number">11 &mdash; HISTORIOGRAPHY</span>
+    <h2>The Socratic Problem — Sources &amp; Their Agendas</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        Since Socrates wrote nothing, all our information comes from secondary sources with their own agendas. The <span class="accent-amber">Socratic problem</span> — determining who the "real" Socrates was — is among the most vexed questions in classical scholarship. Three main sources dominate: Plato, Xenophon, and Aristophanes, with brief but important testimony from Aristotle, who was born fifteen years after Socrates' death.
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card" style="border-left: 4px solid var(--accent-amber);">
+            <h4 class="accent-amber">Plato (428/7–348/7 BCE)</h4>
+            <p>The richest and most philosophically developed source. The early dialogues (<em>Apology, Euthyphro, Crito, Charmides, Laches, Ion, Hippias Minor, Protagoras</em>) are generally held to depict a more historically plausible Socrates committed to elenchus and profession of ignorance. The middle dialogues (Republic, Phaedo, Phaedrus, Meno) introduce doctrines — the Theory of Forms, the tripartite soul, recollection — that most scholars attribute to Plato himself. Socrates becomes Plato's philosophical mouthpiece. The dramatic frame is Socratic; the doctrine is often not.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--accent-green);">
+            <h4 class="accent-green">Xenophon (c.430–354 BCE)</h4>
+            <p>Soldier and historian, present in some Socratic circles. His <em>Memorabilia</em>, <em>Symposium</em>, <em>Oeconomicus</em>, and <em>Apology</em> portray a practical, pious, morally earnest Socrates — a model general, household manager, and public citizen. Scholars find Xenophon's Socrates too conventional, too morally tidy, too unlike the disturbing, subversive figure of Plato's early dialogues. Yet Xenophon had no philosophical axe to grind and may preserve aspects of Socrates' character that Plato aestheticised or elevated.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--accent-rose);">
+            <h4 class="accent-rose">Aristophanes (c.446–386 BCE)</h4>
+            <p>The comic playwright's <em>Clouds</em> (423 BCE) portrays Socrates as a Sophist who runs a "Thinkery," studies meteorology and atheistic cosmology, and teaches dishonest rhetoric for fees. Socrates claims at his trial that this portrait created lasting prejudice. Scholars debate whether Aristophanes preserves a genuine pre-Platonic Socrates (a natural philosopher who later pivoted to ethics) or whether the play is a satirical composite drawing on multiple intellectual figures. The truth is probably a mixture of both.</p>
+        </div>
+    </div>
+    <div class="card" style="max-width: 82%; margin: 0.45em auto; border-left: 3px solid var(--accent-purple);">
+        <h4 class="accent-purple">Aristotle's Testimony</h4>
+        <p style="font-size: 0.44em !important;">Aristotle, who never met Socrates, provides important third-party testimony. He attributes to Socrates two specific contributions: <em>epagoge</em> (inductive argument) and universal definitions — and firmly assigns the Theory of Forms to Plato, not Socrates. Aristotle's testimony is valuable precisely because he had no personal stake in the Socratic legend, though he was deeply influenced by both Plato and the Socratic tradition he encountered at the Academy.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: SOCRATES ON LOVE / SYMPOSIUM ═══════════════════ -->
+<section>
+    <span class="section-number">12 &mdash; EROS</span>
+    <h2>Eros &amp; Ascent — Socrates in the Symposium</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right" style="margin-top: 0.7em;">
+        <div>
+            <div class="card" style="border-top: 2px solid var(--accent-rose);">
+                <h4 class="accent-rose">The Speech of Diotima</h4>
+                <p>Socrates does not deliver his own speech on love but reports the teachings of Diotima of Mantinea — a priestess (possibly fictional, possibly historical) who instructed him in erotic matters. By ventriloquising a female religious authority, Socrates both performs his characteristic modesty and subtly elevates the speech beyond ordinary philosophical argument, giving it quasi-prophetic status.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em; border-top: 2px solid var(--accent-amber);">
+                <h4 class="accent-amber">The Ladder of Love (<em>klimax</em>)</h4>
+                <p>Eros begins as love of a beautiful body, ascends to love of all beautiful bodies, then to love of beautiful souls, activities, and laws; then to love of the beauty of knowledge; and finally to the direct apprehension of Beauty Itself — absolute, eternal, unchanging. The lover ascends by using each beautiful thing as a step toward a transcendence that ultimately leaves particulars behind. This is the philosophical life understood as erotic ascent.</p>
+            </div>
+        </div>
+        <div>
+            <p style="font-size: 0.44em !important; color: var(--text-primary); line-height: 1.7;">
+                Plato's <em>Symposium</em> presents a series of speeches on love (<em>eros</em>) at a dinner party following a theatrical victory. Each speaker — Phaedrus, Pausanias, Eryximachus, Aristophanes, Agathon — offers a distinctive account. Socrates' speech is the philosophical climax, but it is framed and then implicitly contested by <span class="accent-rose">Alcibiades' confession</span>: the most beautiful man in Athens admits that Socrates has rejected his physical advances and that Socrates' strange beauty — of soul rather than body — is the most maddening and irresistible he has encountered.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                Alcibiades' speech introduces a different Socrates: not the serene philosopher-teacher but a <span class="accent-amber">deeply strange</span>, physically impervious, internally armoured figure who resembles the Sileni statuettes — ugly on the outside, containing golden images of gods within. This is the biographical Socrates embedded in the philosophical Socrates: a man whose personal conduct was the lived argument for his philosophy.
+            </p>
+            <p style="font-size: 0.44em !important; margin-top: 0.5em;">
+                The tension between Diotima's ladder of love (which leaves particular beloved persons behind) and the devotion Socrates inspires in those he actually knew is philosophically unresolved in the dialogue — a deliberate productive tension.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: POLITICAL PHILOSOPHY / CRITO ═══════════════════ -->
+<section>
+    <span class="section-number">13 &mdash; POLITICS</span>
+    <h2>Political Philosophy &amp; the Crito — Obedience and Conscience</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        Socrates presents a complex and internally tense political philosophy. He is deeply critical of Athenian democracy — its reliance on popular opinion rather than knowledge, its susceptibility to demagogues, its tendency to reward rhetoric over truth. Yet in the <em>Crito</em>, he constructs the most famous early argument for civic obedience, refusing to escape from prison on the grounds that the Laws of Athens have given him his life and education.
+    </p>
+    <div class="card-grid cols-2" style="margin-top: 0.45em;">
+        <div class="card" style="border-left: 3px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Argument of the Laws (<em>Crito</em> 50a–54d)</h4>
+            <p>Socrates personifies the Laws of Athens and gives them a speech: they have raised him, educated him, given him everything. By remaining in Athens throughout his life rather than emigrating, he has implicitly agreed to abide by their decisions — including adverse ones. To escape now would be to undermine the legal system entirely, substituting private judgement for public law. This argument anticipates social contract theory and raises deep questions about whether consent can be implied from residence.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-purple);">
+            <h4 class="accent-purple">Democracy and Expert Knowledge</h4>
+            <p>In several dialogues, Socrates uses the analogy of craft: we would not take a vote on how to treat a medical condition — we consult an expert. Why, then, should we take votes on questions of justice and the good for the city? This epistemic critique of democracy is among the most politically charged aspects of his thought, and it explains why he attracted associates — Alcibiades, Critias — drawn to anti-democratic politics, though Socrates himself never endorsed oligarchy.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+            <h4 class="accent-green">The Gadfly and the City</h4>
+            <p>In the Apology, Socrates describes his relationship to Athens as that of a gadfly to a great noble horse: the city is powerful, well-bred, and sluggish, and he has been sent by the god to sting it into wakefulness. This image captures his ambivalence: he loves Athens enough to devote his life to its improvement, and that love expresses itself as an irritant. He is simultaneously Athens' most loyal citizen and its most disruptive one.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-rose);">
+            <h4 class="accent-rose">Civil Disobedience</h4>
+            <p>The <em>Apology</em> contains a striking exception to the civic obedience of the <em>Crito</em>: if the city ordered him to stop philosophising, Socrates says he would disobey. "I shall obey the god rather than you." This seeds a tradition of principled civil disobedience rooted in conscience — the precedent for Thoreau's civil disobedience, King's "Letter from Birmingham Jail", and modern conscience-based resistance to unjust laws.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: CORE TENSIONS ═══════════════════ -->
+<section>
+    <span class="section-number">14 &mdash; TENSIONS</span>
+    <h2>Core Tensions &amp; Unresolved Problems</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.5em; font-size: 0.44em !important;">
+        Socrates does not present a finished system; he leaves a field of <span class="accent-amber">productive tensions</span> that subsequent philosophy has been working through for 2,400 years. These are not failures of his thought but constitutive features of it — the engine of the philosophical tradition he inaugurated.
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-amber">Ignorance vs. Strong Moral Claims</h4>
+            <p>Socrates claims to know nothing, yet makes strong ethical claims: that virtue is knowledge, that injustice harms the soul of the doer more than the victim, that no one errs willingly. How can someone who professes radical ignorance hold substantive moral positions? The tension runs through every early dialogue: the profession of ignorance seems itself to be a kind of Socratic irony operating at the philosophical level.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Civic Obedience vs. Philosophical Conscience</h4>
+            <p>The <em>Crito</em> argues for obedience to law; the <em>Apology</em> argues for disobedience to unjust commands. Scholars have proposed numerous reconciliations: (a) only unjust orders from the city are disobeyed; (b) the Crito argument applies specifically to escape, not to the content of his teaching; (c) the tension is irreducible and reflects genuine complexity in Socrates' political self-understanding.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Elenchus vs. Positive Doctrine</h4>
+            <p>If Socrates' method is purely negative — refuting claims without replacing them — how do we explain his positive commitments: to the soul's immortality, to the Forms (in Platonic texts), to virtue as knowledge? Either these are Platonic additions, or the elenctic method is in service of positive philosophical positions Socrates held but could not fully systematise. The debate between "the historical Socrates" and "the literary Socrates" remains open.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Eros and the Impersonal Good</h4>
+            <p>Diotima's ladder of love ends by transcending love for particular persons in favour of Beauty Itself. Yet Socrates himself inspired fierce personal devotion — in Alcibiades, in Plato, in Phaedo. Does the philosophy of love that Socrates teaches require leaving behind the very relationships that motivate the philosophical ascent? This tension between philosophical universalism and personal love is one of the deepest unresolved problems in the Platonic corpus.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Teaching vs. Disclaiming Teaching</h4>
+            <p>Socrates repeatedly insists he has never taught anyone anything. Yet clearly people learned from him — Plato, Alcibiades, Xenophon, dozens of others. The disclaimer is connected to his method: he does not transmit knowledge but stimulates its recognition. Yet this raises the question of his moral responsibility for the actions of his associates, which his prosecutors exploited with some justification.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Writing Problem</h4>
+            <p>Socrates' choice not to write was itself a philosophical statement: philosophy is a living activity of dialogue, not a transmissible body of doctrine. Plato's <em>Phaedrus</em> has Socrates argue against writing — ironically in a written dialogue. The oral philosopher who becomes the most-discussed figure in the written philosophical tradition creates an irreducible irony at the origin of Western thought.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: ESSENTIAL READINGS ═══════════════════ -->
+<section>
+    <span class="section-number">15 &mdash; READINGS</span>
+    <h2>Essential Readings</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div>
+            <p style="font-size: 0.48em !important; color: var(--accent-amber); font-weight: 700; margin-bottom: 0.3em;">Primary Texts</p>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-amber">Plato — <em>Apology</em></h4>
+                <p>The indispensable starting point: Socrates' defence speech at his trial. Combines historical argument, philosophical doctrine, and personal testimony in the most concentrated form. The best philosophical autobiography in antiquity, notwithstanding its mediated character.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-amber">Plato — <em>Phaedo</em></h4>
+                <p>The dialogue of Socrates' death: four arguments for the soul's immortality, a meditation on philosophy as practice of dying, and the mythological vision of the afterlife. Simultaneously the most beautiful and the most technically demanding of the early Platonic works.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-amber">Plato — <em>Symposium</em></h4>
+                <p>Speeches on love culminating in Diotima's ladder and Alcibiades' biographical confession. The most literary of the dialogues and the richest for understanding Socrates as a person — his physical strangeness, his erotic power, his armoured self-sufficiency.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">Plato — <em>Crito</em> &amp; <em>Euthyphro</em></h4>
+                <p>The Crito presents the argument for civic obedience; the Euthyphro the classic refutation of the divine command theory of morality through the Euthyphro dilemma: "Is something pious because the gods love it, or do the gods love it because it is pious?"</p>
+            </div>
+        </div>
+        <div>
+            <p style="font-size: 0.48em !important; color: var(--accent-green); font-weight: 700; margin-bottom: 0.3em;">Secondary Literature</p>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-green">Gregory Vlastos — <em>Socrates: Ironist and Moral Philosopher</em> (1991)</h4>
+                <p>The landmark twentieth-century study. Vlastos reconstructs a "Socratic philosophy" from the early dialogues, distinguishes it from Platonism, and analyses Socratic irony with extraordinary precision. Indispensable for anyone serious about the Socratic problem.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-green">C.C.W. Taylor — <em>Socrates: A Very Short Introduction</em> (1998)</h4>
+                <p>The best brief scholarly introduction: rigorous, balanced, and engaging. Covers the sources problem, the elenchus, and Socratic ethics without oversimplification. Ideal first secondary text.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-green">Søren Kierkegaard — <em>The Concept of Irony</em> (1841)</h4>
+                <p>The most profound reading of Socratic irony as an existential stance. Kierkegaard sees Socrates as the historical limit-figure of irony — negativity in person — whose execution by Athens is the historical world's refusal of the infinite demand of self-examination.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Xenophon — <em>Memorabilia</em></h4>
+                <p>Essential counterweight to Plato: a more pedestrian, practical, but arguably more historically grounded Socrates. Read alongside Plato's early dialogues to calibrate what different sources emphasise and omit. Book I contains the most sustained defence of Socrates against the charges at his trial.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 17: CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">16 &mdash; LEGACY</span>
+    <h2>The Socratic Legacy — Philosophy as a Way of Life</h2>
+    <div class="separator"></div>
+    <p style="max-width: 82%; margin: 0.3em auto 0.6em; font-size: 0.44em !important;">
+        Socrates' execution in 399 BCE was intended to silence a troublesome gadfly. Instead it created a <span class="accent-amber">founding myth</span> for Western philosophy: the image of the thinker who values truth over life, who faces death serenely because he has understood what death is, who refuses to stop questioning even when questioning costs him everything.
+    </p>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Philosophy as Practice</h4>
+            <p>Socrates established the model of philosophy as a lived practice, not merely a theoretical discipline. His influence on Stoicism (through Antisthenes and Zeno), Epicureanism (through the Cyrenaic tradition), and all subsequent virtue ethics runs directly through this insight. The Pierre Hadot tradition of reading ancient philosophy as "spiritual exercises" is fundamentally Socratic in orientation.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">The Democratic Ideal</h4>
+            <p>Socrates questioned everyone — slaves, craftsmen, politicians, generals, poets — without regard to social rank. The radical democratic implication of this universalism (every soul has worth; every person can inquire) coexists with his epistemic critique of majority rule. Both strands remain alive in contemporary political philosophy's debates about deliberative democracy and epistocracy.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">The Wound in Philosophy</h4>
+            <p>The death of Socrates left a wound that Western philosophy has never fully healed: the possibility that the examined life, pursued honestly, terminates not in wisdom's reward but in persecution and execution. Nietzsche, Hegel, Hannah Arendt, and Simone Weil all returned to this wound. Philosophy that begins in Socratic wonder must also reckon with Socratic tragedy.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.7em;">
+        <p>"I tell you that no greater good can happen to a man than to discuss virtue every day and the other things about which you hear me conversing and examining both myself and others, for the unexamined life is not worth living for man."</p>
+        <span class="attribution">— Plato, <em>Apology</em> 38a (Fowler trans.)</span>
+    </div>
+    <p class="note-text" style="margin-top: 0.5em;">470–399 BCE &middot; The philosophical revolution has not ended.</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Aquinas — Scholasticism, Natural Theology &amp; the Synthesis of Faith and Reason</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal-viewport { background: var(--bg-primary); }
+
+.reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.42em !important;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+}
+
+.quote-box {
+    border-left: 3px solid var(--accent-amber);
+    padding: 0.45em 1em;
+    margin: 0.8em auto;
+    max-width: 80%;
+    text-align: left;
+    background: rgba(212, 160, 83, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.quote-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.44em !important;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.quote-box .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.42em !important;
+    color: var(--text-muted);
+    margin-top: 0.4em;
+    display: block;
+}
+
+.card-grid {
+    display: grid;
+    gap: 0.45em;
+    margin: 0.6em auto;
+    max-width: 90%;
+}
+
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.55em 0.7em;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.card:hover { border-color: var(--accent-amber); }
+
+.card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.60em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+}
+
+.card p {
+    font-size: 0.44em !important;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.card .icon {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8em;
+    text-align: left;
+    margin: 0.25em 0;
+}
+
+.timeline-item .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54em;
+    color: var(--accent-amber);
+    min-width: 3.2em;
+    padding-top: 0.15em;
+    font-weight: 500;
+}
+
+.timeline-item .event {
+    font-size: 0.50em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 0.8em;
+}
+
+.timeline-item .event strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.diagram-container {
+    margin: 0.6em auto;
+    max-width: 85%;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-amber);
+    border-radius: 1px;
+    margin: 0.4em auto;
+}
+
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5em;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.concept-node {
+    display: inline-block;
+    border: 1px solid var(--border-subtle);
+    border-radius: 30px;
+    padding: 0.3em 1em;
+    font-size: 0.6em;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.concept-node.primary {
+    border-color: var(--accent-amber);
+    background: rgba(212, 160, 83, 0.08);
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0.6em auto;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+    text-align: center;
+    min-width: 100px;
+}
+
+.process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.50em;
+    margin: 0 0 0.15em 0;
+}
+
+.process-step p {
+    font-size: 0.40em !important;
+    margin: 0;
+}
+
+.process-arrow {
+    color: var(--accent-amber);
+    font-size: 1.0em;
+}
+
+.reveal section .note-text {
+    font-size: 0.44em !important;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before {
+    content: '\203A';
+    color: var(--accent-amber);
+    font-weight: bold;
+    position: absolute;
+    left: -0.3em;
+}
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+
+.fullscreen-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--text-primary);
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================ -->
+<!-- SLIDE 1 — TITLE -->
+<!-- ============================================================ -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="thomasCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#d4a053;stop-opacity:0.6"/>
+                    <stop offset="50%" style="stop-color:#9b72cf;stop-opacity:0.15"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <!-- Outer circle — divine perfection -->
+            <circle cx="60" cy="60" r="55" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <!-- Reason circle -->
+            <circle cx="60" cy="60" r="42" fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.5"/>
+            <!-- Faith circle -->
+            <circle cx="60" cy="60" r="30" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+            <!-- The Five Ways — radiating lines -->
+            <line x1="60" y1="60" x2="60" y2="8" stroke="#d4a053" stroke-width="0.7" opacity="0.5"/>
+            <line x1="60" y1="60" x2="105" y2="33" stroke="#d4a053" stroke-width="0.7" opacity="0.5"/>
+            <line x1="60" y1="60" x2="105" y2="87" stroke="#d4a053" stroke-width="0.7" opacity="0.5"/>
+            <line x1="60" y1="60" x2="15" y2="87" stroke="#d4a053" stroke-width="0.7" opacity="0.5"/>
+            <line x1="60" y1="60" x2="15" y2="33" stroke="#d4a053" stroke-width="0.7" opacity="0.5"/>
+            <!-- Central glow — God as first cause -->
+            <circle cx="60" cy="60" r="10" fill="url(#thomasCore)" stroke="#d4a053" stroke-width="1" opacity="0.8"/>
+            <circle cx="60" cy="60" r="3.5" fill="#d4a053" opacity="0.95"/>
+            <!-- Outer nodes — five ways -->
+            <circle cx="60" cy="8" r="3" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="105" cy="33" r="3" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="105" cy="87" r="3" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="15" cy="87" r="3" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="15" cy="33" r="3" fill="#5b8cd4" opacity="0.7"/>
+        </svg>
+    </div>
+    <h1>Thomas Aquinas</h1>
+    <div class="separator"></div>
+    <p class="subtitle">SCHOLASTICISM &middot; THE FIVE WAYS &middot; NATURAL THEOLOGY &middot; FAITH &amp; REASON</p>
+    <div class="quote-box" style="margin-top: 1.2em;">
+        <p>"Grace does not destroy nature but perfects it."</p>
+        <span class="attribution">&mdash; <em>Summa Theologiae</em>, I, q.1, a.8</span>
+    </div>
+    <p class="note-text">1225&ndash;1274 &middot; Aquino, Kingdom of Sicily</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2 — BIOGRAPHY -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Life &amp; Formation</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <span class="icon">&#127963;</span>
+            <h4 class="accent-amber">Aristocratic Origins</h4>
+            <p>Born c.1225 at Roccasecca Castle near Aquino in southern Italy, to the noble family of the Counts of Aquino. His family expected him to become Abbot of the wealthy Benedictine monastery of Monte Cassino, advancing family interests through the Church. But Thomas had other plans. At around age five he was sent to Monte Cassino as an oblate; at fourteen he moved to the University of Naples, then the most intellectually adventurous university in Europe, where he first encountered Aristotle and Islamic philosophy.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#9986;</span>
+            <h4 class="accent-blue">The Dominican Vocation</h4>
+            <p>Around 1244 Thomas decided to join the mendicant Dominican Order — a scandalous choice that horrified his noble family, who saw it as a descent into begging. His brothers physically kidnapped him and held him captive at Roccasecca for nearly a year, reportedly even sending a prostitute to his room to tempt him from his vow of chastity. He allegedly drove her out with a burning brand. Eventually released, he joined Albert the Great in Cologne and Paris, where his intellectual gifts rapidly emerged.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#128218;</span>
+            <h4 class="accent-green">The Dumb Ox</h4>
+            <p>So silent and apparently slow was Thomas in class that fellow students called him <em>bos mutus</em> — "the dumb ox." Albert the Great famously responded: "We call this lad a dumb ox, but his bellowing in doctrine will one day resound throughout the world." Thomas wrote with extraordinary speed and depth: his complete works fill over forty large volumes, including the <em>Summa Theologiae</em>, <em>Summa contra Gentiles</em>, detailed commentaries on Aristotle, and hundreds of disputed questions.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#10024;</span>
+            <h4 class="accent-purple">The Mystical Experience</h4>
+            <p>On 6 December 1273, while celebrating Mass at Naples, Thomas had a profound mystical experience after which he never wrote again. When his secretary Reginald urged him to continue the <em>Summa</em>, he replied: "I cannot go on. All that I have written seems to me like so much straw compared to what I have seen and what has been revealed to me." He died three months later, aged forty-nine, en route to the Council of Lyon, and was canonised in 1323.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3 — TIMELINE -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Timeline</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">~1225</span>
+                <span class="event"><strong>Born at Roccasecca, Kingdom of Sicily</strong>Youngest son of Count Landulf of Aquino; Benedictine oblate at Monte Cassino from age 5</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1239</span>
+                <span class="event"><strong>University of Naples</strong>Studies the <em>libri naturales</em> — first exposure to Aristotle and Averroës; encounters the Dominicans</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1244</span>
+                <span class="event"><strong>Joins the Dominican Order</strong>Family kidnaps him; held captive for ~18 months; resolute in his vocation</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1245</span>
+                <span class="event"><strong>Studies under Albert the Great</strong>Paris then Cologne; the "dumb ox" emerges as the most gifted student of his generation</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1252</span>
+                <span class="event"><strong>First Paris Regency</strong>Bachelor of the Sentences; begins teaching at the University of Paris; prolific output begins</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1256</span>
+                <span class="event"><strong>Master of Theology, Paris</strong>Encounters fierce opposition from secular masters; defended by Alexander IV</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1259</span>
+                <span class="event"><strong><em>Summa contra Gentiles</em> begins</strong>Philosophical theology addressed to non-Christians; a defence of rational natural theology</span>
+            </div>
+        </div>
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">1265</span>
+                <span class="event"><strong><em>Summa Theologiae</em> begins</strong>The masterwork: a systematic exposition of Christian theology structured around objections and replies</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1268</span>
+                <span class="event"><strong>Second Paris Regency</strong>Battles on two fronts: against Augustinian conservatives and radical Aristotelians (Averroists)</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1269</span>
+                <span class="event"><strong>Controversy over Aristotle</strong>Confronts Siger of Brabant; insists on the unity of intellect against Latin Averroism</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1272</span>
+                <span class="event"><strong>Establishes Dominican <em>studium</em> at Naples</strong>Returns to Italy; writes final portions of the <em>Summa Theologiae</em></span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1273</span>
+                <span class="event"><strong>The Mystical Silence</strong>"All I have written seems straw compared to what I have seen" — ceases writing after December Mass</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1274</span>
+                <span class="event"><strong>Death at Fossanova Abbey</strong>Dies en route to the Council of Lyon; aged ~49; canonised 1323; declared Doctor of the Church 1567</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4 — FAITH AND REASON -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Faith &amp; Reason: Two Wings of the Mind</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"Since therefore grace does not abolish nature but perfects it, natural reason should minister to faith as the natural bent of the will ministers to charity."</p>
+        <span class="attribution">&mdash; <em>Summa Theologiae</em>, I, q.1, a.8 ad 2</span>
+    </div>
+    <div class="diagram-container">
+        <svg width="680" height="220" viewBox="0 0 680 220">
+            <!-- Natural Reason domain -->
+            <rect x="20" y="30" width="290" height="160" rx="8" fill="none" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="165" y="58" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#5b8cd4">NATURAL REASON</text>
+            <text x="165" y="76" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Philosophy &amp; Science</text>
+            <text x="60" y="105" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; God's existence</text>
+            <text x="60" y="122" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Natural moral law</text>
+            <text x="60" y="139" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Causality &amp; order</text>
+            <text x="60" y="156" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Human nature &amp; ends</text>
+            <text x="60" y="173" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Soul as form of body</text>
+            <!-- Overlap zone -->
+            <rect x="260" y="55" width="160" height="110" rx="6" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="340" y="88" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">OVERLAP</text>
+            <text x="340" y="104" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">Preambles of faith</text>
+            <text x="340" y="119" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">God's existence</text>
+            <text x="340" y="134" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">Unity of God</text>
+            <text x="340" y="149" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">Providence</text>
+            <!-- Sacred Doctrine domain -->
+            <rect x="370" y="30" width="290" height="160" rx="8" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="515" y="58" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#d4a053">SACRED DOCTRINE</text>
+            <text x="515" y="76" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Theology &amp; Revelation</text>
+            <text x="410" y="105" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; The Trinity</text>
+            <text x="410" y="122" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Incarnation &amp; Redemption</text>
+            <text x="410" y="139" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; The sacraments</text>
+            <text x="410" y="156" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Beatific Vision</text>
+            <text x="410" y="173" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Original sin &amp; grace</text>
+            <!-- Not opposed arrow -->
+            <text x="340" y="207" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#4ecca3">Neither contradicts the other — faith elevates, not negates, reason</text>
+        </svg>
+    </div>
+    <p class="note-text">Aquinas's great achievement: reason and faith occupy distinct but harmonious domains. Apparent contradictions indicate error in reasoning, not conflict with revelation.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5 — THE FIVE WAYS -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Five Ways: Arguments for God's Existence</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-1" style="margin-top: 0.4em; max-width: 92%;">
+        <div class="card-grid cols-5" style="margin: 0; max-width: 100%;">
+            <div class="card" style="border-top: 2px solid var(--accent-amber);">
+                <h4 class="accent-amber" style="font-size: 0.52em;">I. Motion</h4>
+                <p>Everything in motion is moved by another. We cannot regress infinitely. Therefore there exists an Unmoved Mover — <em>primum movens immobile</em>.</p>
+            </div>
+            <div class="card" style="border-top: 2px solid var(--accent-blue);">
+                <h4 class="accent-blue" style="font-size: 0.52em;">II. Causation</h4>
+                <p>Every effect has a cause. No thing causes itself. The series of efficient causes cannot be infinite. Therefore there is a First Cause — <em>causa prima</em>.</p>
+            </div>
+            <div class="card" style="border-top: 2px solid var(--accent-green);">
+                <h4 class="accent-green" style="font-size: 0.52em;">III. Contingency</h4>
+                <p>Contingent beings come into and pass out of existence. If everything were contingent, there would have been nothing. Therefore there exists a Necessary Being.</p>
+            </div>
+            <div class="card" style="border-top: 2px solid var(--accent-purple);">
+                <h4 class="accent-purple" style="font-size: 0.52em;">IV. Gradation</h4>
+                <p>We perceive degrees of goodness, truth, nobility. Such gradations imply a maximum — that which is most fully being, goodness, truth. This maximum is God.</p>
+            </div>
+            <div class="card" style="border-top: 2px solid var(--accent-rose);">
+                <h4 class="accent-rose" style="font-size: 0.52em;">V. Teleology</h4>
+                <p>Non-intelligent natural things act for ends. Things without intellect cannot direct themselves to ends unless directed by an intelligent being. Therefore an Intelligent Director exists.</p>
+            </div>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.6em;">
+        <p>"The existence of God can be proved in five ways."</p>
+        <span class="attribution">&mdash; <em>Summa Theologiae</em>, I, q.2, a.3</span>
+    </div>
+    <p class="note-text">The Five Ways are <em>a posteriori</em> — they begin from the observable world. Aquinas rejected Anselm's <em>a priori</em> ontological argument as illegitimately moving from concept to existence.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6 — ESSENCE AND EXISTENCE -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Essence &amp; Existence: The Real Distinction</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="660" height="250" viewBox="0 0 660 250">
+            <!-- Creaturely beings -->
+            <rect x="20" y="20" width="290" height="210" rx="8" fill="none" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="165" y="48" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#9b72cf">CREATURELY BEINGS</text>
+            <text x="165" y="65" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Essence ≠ Existence</text>
+            <!-- essence box -->
+            <rect x="45" y="80" width="100" height="50" rx="5" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="95" y="109" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#9b72cf">ESSENCE</text>
+            <text x="95" y="122" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#6a6a7a">What a thing is</text>
+            <!-- plus -->
+            <text x="165" y="110" text-anchor="middle" font-family="DM Sans" font-size="20" fill="#d4a053">+</text>
+            <!-- existence box -->
+            <rect x="185" y="80" width="100" height="50" rx="5" fill="#161622" stroke="#5b8cd4" stroke-width="0.8"/>
+            <text x="235" y="109" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#5b8cd4">EXISTENCE</text>
+            <text x="235" y="122" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#6a6a7a">That a thing is</text>
+            <text x="165" y="155" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">Existence is received — participated</text>
+            <text x="165" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">from an external source. Could be</text>
+            <text x="165" y="185" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">otherwise. Contingent.</text>
+            <text x="165" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">e.g. a human, a tree, an angel</text>
+            <!-- Arrow -->
+            <text x="330" y="130" text-anchor="middle" font-family="DM Sans" font-size="22" fill="#d4a053">&#x21DB;</text>
+            <!-- God -->
+            <rect x="350" y="20" width="290" height="210" rx="8" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="495" y="48" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#d4a053">GOD — IPSUM ESSE SUBSISTENS</text>
+            <text x="495" y="65" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Pure Act of Being — Essence = Existence</text>
+            <rect x="395" y="80" width="200" height="50" rx="5" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
+            <text x="495" y="109" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#d4a053">ESSENCE ≡ EXISTENCE</text>
+            <text x="495" y="122" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">To be God is to exist necessarily</text>
+            <text x="495" y="155" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">God does not receive existence</text>
+            <text x="495" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">from outside — God IS existence.</text>
+            <text x="495" y="185" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">Necessary. Pure Actuality. Simple.</text>
+            <text x="495" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#d4a053">Ipsum Esse Subsistens — Subsisting Being Itself</text>
+        </svg>
+    </div>
+    <p class="note-text">The real distinction between essence and existence in creatures — and its identity in God — is the metaphysical foundation of Thomistic theology. Creation is God's act of giving existence to essences.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7 — HYLOMORPHISM AND THE SOUL -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Hylomorphism &amp; the Human Soul</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"The soul is defined as the first actuality of a natural body having the potentiality of life."</p>
+        <span class="attribution">&mdash; After Aristotle, <em>De Anima</em> II.1 — Aquinas's commentary</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-amber">Matter &amp; Form (Hylomorphism)</h4>
+            <p>Following Aristotle, Aquinas holds that every physical substance is a compound of matter (<em>hyle</em>) and form (<em>morphe</em>). Matter is the principle of potentiality — the stuff that can be something. Form is the principle of actuality — the organising principle that makes something the kind of thing it is. In a human being, the body is the matter and the soul (<em>anima</em>) is the substantial form.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Rational Soul</h4>
+            <p>Aquinas distinguishes three levels: the vegetative soul (growth, nutrition — plants), the sensitive soul (sensation, appetite, locomotion — animals), and the rational soul (intellect, will — humans). The human soul incorporates all three. Because the intellect can know all material things without being any of them, the soul is itself immaterial — and therefore incorruptible and immortal.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Against Platonic Dualism</h4>
+            <p>Against Plato, Aquinas insists the soul is not merely imprisoned in the body — it is the form <em>of</em> the body. Soul and body are one substance, not two. This means the intellect needs the senses: all knowledge begins in sensory experience (<em>nihil in intellectu quod non prius in sensu</em>). The soul separated from the body after death is in an unnatural, incomplete state; resurrection of the body is philosophically coherent as the soul's completion.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Intellect &amp; Will</h4>
+            <p>The intellect apprehends truth; the will tends toward the good. The will is free because the intellect can present multiple goods, none of which is identical with the universal Good (God). Freedom is not arbitrariness but the rational appetite's response to genuine goods. The ultimate end of the will — the beatific vision of God — is the only object that fully satisfies the intellect's desire for truth and the will's desire for goodness.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8 — NATURAL LAW -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Natural Law: The Hierarchy of Law</h2>
+    <div class="separator"></div>
+    <div class="process-flow" style="margin-top: 0.5em; flex-direction: column; gap: 0.3em;">
+        <div class="process-step" style="width: 80%; border-color: var(--accent-amber); border-width: 1.5px;">
+            <h4 class="accent-amber" style="font-size: 0.55em;">ETERNAL LAW (Lex Aeterna)</h4>
+            <p>God's rational governance of all creation — the divine reason ordering all things to their ends. The ground of all other law. Fully known only to God.</p>
+        </div>
+        <div style="color: var(--accent-amber); font-size: 1.1em;">&#8595;</div>
+        <div class="process-step" style="width: 76%; border-color: var(--accent-blue); border-width: 1.5px;">
+            <h4 class="accent-blue" style="font-size: 0.55em;">NATURAL LAW (Lex Naturalis)</h4>
+            <p>The rational creature's participation in eternal law. Written into human nature — discoverable by reason. "Do good and avoid evil" is its first precept. Grounds universal moral obligations.</p>
+        </div>
+        <div style="color: var(--accent-amber); font-size: 1.1em;">&#8595;</div>
+        <div class="process-step" style="width: 72%; border-color: var(--accent-green); border-width: 1.5px;">
+            <h4 class="accent-green" style="font-size: 0.55em;">HUMAN LAW (Lex Humana)</h4>
+            <p>Particular applications of natural law by civil authority. Just laws bind in conscience; unjust laws are no laws at all (<em>lex iniusta non est lex</em>). Must serve the common good.</p>
+        </div>
+        <div style="color: var(--accent-amber); font-size: 1.1em;">&#8595;</div>
+        <div class="process-step" style="width: 68%; border-color: var(--accent-purple); border-width: 1.5px;">
+            <h4 class="accent-purple" style="font-size: 0.55em;">DIVINE LAW (Lex Divina)</h4>
+            <p>Revealed law (Old and New Testaments) — guides human beings to their supernatural end, which reason alone cannot reach. Supplements but does not contradict natural law.</p>
+        </div>
+    </div>
+    <p class="note-text">Natural law theory has been enormously influential in Catholic social teaching, international law, human rights discourse, and the philosophy of Grotius, Locke, and beyond.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 9 — THE SUMMA THEOLOGIAE -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">08</span>
+    <h2>The <em>Summa Theologiae</em>: Structure &amp; Method</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="200" viewBox="0 0 680 200">
+            <!-- Three Parts -->
+            <rect x="20" y="30" width="195" height="150" rx="8" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="117" y="58" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#d4a053">PRIMA PARS (I)</text>
+            <text x="117" y="76" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">God &amp; Creation</text>
+            <text x="35" y="100" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Sacred doctrine</text>
+            <text x="35" y="116" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; God's nature &amp; Trinity</text>
+            <text x="35" y="132" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Creation &amp; angels</text>
+            <text x="35" y="148" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Human nature &amp; soul</text>
+            <text x="117" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">119 questions</text>
+
+            <rect x="242" y="30" width="195" height="150" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="339" y="52" text-anchor="middle" font-family="Playfair Display" font-size="10" fill="#4ecca3">SECUNDA PARS (I–II &amp; II–II)</text>
+            <text x="339" y="68" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Moral Theology — The Human Act</text>
+            <text x="257" y="94" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Happiness &amp; the ultimate end</text>
+            <text x="257" y="110" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Acts, passions, habits, virtues</text>
+            <text x="257" y="126" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Law &amp; grace</text>
+            <text x="257" y="142" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; The theological &amp; cardinal virtues</text>
+            <text x="339" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">~303 questions</text>
+
+            <rect x="464" y="30" width="195" height="150" rx="8" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="561" y="58" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#9b72cf">TERTIA PARS (III)</text>
+            <text x="561" y="76" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">Christ &amp; the Sacraments</text>
+            <text x="479" y="100" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; The Incarnation</text>
+            <text x="479" y="116" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Life and work of Christ</text>
+            <text x="479" y="132" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; The seven sacraments</text>
+            <text x="479" y="148" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Eschatology (Supplement)</text>
+            <text x="561" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">90 questions (unfinished)</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>The Scholastic Method:</strong> Each article poses a question → lists objections → states a contrary authority → gives Thomas's reply (the <em>corpus</em>) → responds to each objection. Rigour, charity to opponents, and synthesis in a single form.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10 — ANALOGY OF BEING -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Analogy of Being</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">The Problem</h4>
+            <p>How can we say anything true about God, who infinitely transcends all creaturely categories? If "good" means the same when applied to humans and to God (<em>univocal</em>), we reduce God to a creature. If it means something entirely different (<em>equivocal</em>), theology becomes impossible — we can say nothing true about God at all.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Analogy of Attribution</h4>
+            <p>Aquinas's solution: our terms apply to God and creatures <em>analogically</em> — neither in the same sense nor in a wholly different sense. "Good" said of humans and of God refers to a genuine but proportionate similarity. Creaturely goodness participates imperfectly in divine goodness as its source. The <em>analogia entis</em> — analogy of being — grounds all theological language.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Via Negativa &amp; Eminence</h4>
+            <p>Aquinas deploys three paths: <em>via negativa</em> (God is not limited, not composite, not changeable), <em>via causalitatis</em> (God is the cause of all perfections), and <em>via eminentiae</em> (divine perfections infinitely exceed creaturely ones). Together they allow genuine theological assertion without idolatrous projection. God is not a large human — God is Being itself.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"No name is predicated univocally of God and creatures... nor purely equivocally... but by analogy, that is, according to an order to something one."</p>
+        <span class="attribution">&mdash; <em>Summa contra Gentiles</em>, I.34</span>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 11 — VIRTUE ETHICS AND HAPPINESS -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Virtue, Happiness &amp; the Human Good</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Beatitudo — True Happiness</h4>
+            <p>Following Aristotle's <em>eudaimonia</em> but transforming it, Aquinas argues the ultimate end of human life is <em>beatitudo</em> — happiness. But true happiness cannot be achieved through wealth, honour, power, pleasure, or even bodily health: all finite goods leave the intellect's desire for truth and the will's desire for goodness unfulfilled. Only the beatific vision of God — direct intellectual knowledge of the divine essence — fully satisfies the human person.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Cardinal Virtues</h4>
+            <p>Inherited from Aristotle and Plato, the four cardinal virtues structure the moral life: <em>Prudentia</em> (practical wisdom — right reason in action), <em>Iustitia</em> (giving each their due), <em>Fortitudo</em> (courage in facing difficulty), and <em>Temperantia</em> (moderation of appetites). These are cultivated through habituation and shape both action and character. They are the natural virtues perfected by grace.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Theological Virtues</h4>
+            <p>Beyond the natural virtues, the three theological virtues — <em>Fides</em> (faith), <em>Spes</em> (hope), and <em>Caritas</em> (charity) — are infused by grace and orient the person toward the supernatural end. Charity is the "form" of all the virtues: it orders every other virtuous act toward God. Without charity, even the acquired virtues do not achieve their final perfection.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Vice as Privation</h4>
+            <p>Evil is not a positive substance but a privation — the absence of a good that ought to be present. Moral evil is the defect in an act that should conform to reason and the natural law. Sin is a disordered act in which the will turns from God (the ultimate good) toward a creaturely good treated as ultimate. This Augustinian insight grounds Aquinas's whole moral psychology without making evil a cosmic principle rivalling God.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 12 — ARISTOTLE AND CHRISTIAN SYNTHESIS -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">11</span>
+    <h2>The Aristotelian-Christian Synthesis</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="200" viewBox="0 0 680 200">
+            <!-- Aristotle -->
+            <rect x="20" y="20" width="230" height="160" rx="8" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="135" y="48" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#5b8cd4">ARISTOTLE</text>
+            <text x="40" y="72" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Hylomorphism (matter &amp; form)</text>
+            <text x="40" y="90" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Teleology (final causes)</text>
+            <text x="40" y="108" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Virtue ethics &amp; eudaimonia</text>
+            <text x="40" y="126" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Categories &amp; syllogistic logic</text>
+            <text x="40" y="144" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; The Unmoved Mover</text>
+            <text x="40" y="162" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Soul as form of the body</text>
+            <!-- Synthesis zone -->
+            <rect x="268" y="50" width="144" height="100" rx="6" fill="rgba(212,160,83,0.07)" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="340" y="78" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">SYNTHESIS</text>
+            <text x="340" y="97" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">Grace perfects</text>
+            <text x="340" y="112" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">nature</text>
+            <text x="340" y="130" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#4ecca3">Thomism</text>
+            <!-- Augustine / Christian Tradition -->
+            <rect x="430" y="20" width="230" height="160" rx="8" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="545" y="48" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#d4a053">CHRISTIAN TRADITION</text>
+            <text x="450" y="72" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Creation ex nihilo</text>
+            <text x="450" y="90" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Providence &amp; divine freedom</text>
+            <text x="450" y="108" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Grace &amp; supernatural end</text>
+            <text x="450" y="126" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Incarnation &amp; Trinity</text>
+            <text x="450" y="144" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Augustinian illumination</text>
+            <text x="450" y="162" font-family="DM Sans" font-size="9" fill="#9a9a9a">&#8250; Neo-Platonic participation</text>
+        </svg>
+    </div>
+    <p class="note-text">Aquinas's bold appropriation of Aristotle was initially controversial: Aristotle's works had been banned at Paris in 1210–1215. Aquinas showed the "Philosopher" need not be read through the materialist lens of the Averroists — his teleological framework was compatible with, and enriched by, Christian doctrine.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 13 — POLITICAL PHILOSOPHY -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Political Philosophy &amp; the Common Good</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Political Animal</h4>
+            <p>Following Aristotle, Aquinas holds that humans are naturally political and social animals. Political community is not a consequence of the Fall (Augustine) or an artificial contract (Hobbes/Locke) — it is intrinsic to human nature. We are completed by community; the isolated individual is either a beast or a god. Government is natural, not merely a remedy for sin.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Common Good</h4>
+            <p>The purpose of political authority is the <em>bonum commune</em> — the common good, which is more than the aggregate of individual goods. Justice demands that laws and institutions serve the flourishing of the whole community and each of its members. Private property is legitimate but carries social obligations. Rulers who act against the common good become tyrants and forfeit their authority.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Just War Theory</h4>
+            <p>Aquinas systematised the conditions for a just war: legitimate authority must declare it; the cause must be just (e.g., defence against aggression); the intention must be good (not mere conquest or vengeance); and it must be a last resort. This framework became the foundation of international law and military ethics, developed by Vitoria, Suárez, Grotius, and later just war theorists.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-purple">Church and State</h4>
+            <p>Aquinas distinguishes the temporal and spiritual orders but does not sharply separate them. Civil authority has legitimate autonomy in its own sphere; the Church does not rule temporal affairs directly. Yet the spiritual end is higher, and if temporal authority gravely sins against natural law or divine law, the Church may ultimately intervene. This nuanced position shaped medieval and early modern political thought.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Lex Iniusta Non Est Lex</h4>
+            <p>"An unjust law is no law at all." Human law that contradicts natural law does not truly bind the conscience, though Aquinas is cautious about the conditions for licit civil disobedience, emphasising the danger of disorder. This principle was cited by Martin Luther King Jr. in <em>Letter from Birmingham Jail</em> (1963) and remains central to natural law jurisprudence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 14 — THE CONDEMNATION OF 1277 AND AFTERMATH -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Controversy, Condemnation &amp; Legacy</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-rose">The Condemnation of 1277</h4>
+            <p>Three years after Aquinas's death, the Bishop of Paris, Étienne Tempier, condemned 219 philosophical propositions — some of them Thomistic. This was partly an attack on the Aristotelian-Christian synthesis Aquinas had built. The condemnation was a significant setback, but Aquinas's own Dominican order defended his work vigorously. The Paris condemnation of his specific theses was lifted in 1325, two years after his canonisation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Canonisation &amp; Thomism</h4>
+            <p>Canonised in 1323 by Pope John XXII; declared Doctor of the Church in 1567 by Pius V. The Council of Trent (1545–63) placed the <em>Summa Theologiae</em> on the altar beside the Bible and the Decretals. Pope Leo XIII's <em>Aeterni Patris</em> (1879) declared Thomism the official philosophy of the Catholic Church, sparking Neo-Scholasticism and Neo-Thomism movements into the 20th century.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Neo-Thomism</h4>
+            <p>The 20th-century revival of Thomism produced major thinkers including Jacques Maritain (human rights, personalism), Étienne Gilson (the history of philosophy), Bernard Lonergan (method in theology), Elizabeth Anscombe (modern moral philosophy), and Alasdair MacIntyre (<em>After Virtue</em>, virtue ethics). Neo-Thomism profoundly shaped Catholic social teaching and natural law theory in bioethics and jurisprudence.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Analytic Thomism</h4>
+            <p>From the 1990s, Analytic Thomism (John Haldane, Herbert McCabe, Brian Davies, Edward Feser) brought Thomistic metaphysics into dialogue with analytic philosophy — philosophy of mind, ontology, and natural theology. Arguments for God's existence, the hylomorphic account of mind-body, and the natural law tradition have all been rigorously re-examined and defended in analytic idiom, showing Aquinas's continuing philosophical fertility.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 15 — AQUINAS AND THE TRADITION -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Aquinas in the Philosophical Lineage</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="210" viewBox="0 0 680 210">
+            <!-- Sources -->
+            <rect x="10" y="20" width="100" height="40" rx="5" fill="#161622" stroke="#6a6a7a" stroke-width="0.8"/>
+            <text x="60" y="44" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">Aristotle</text>
+            <line x1="110" y1="40" x2="160" y2="80" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+
+            <rect x="10" y="80" width="100" height="40" rx="5" fill="#161622" stroke="#6a6a7a" stroke-width="0.8"/>
+            <text x="60" y="104" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">Augustine</text>
+            <line x1="110" y1="100" x2="160" y2="100" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+
+            <rect x="10" y="140" width="100" height="40" rx="5" fill="#161622" stroke="#6a6a7a" stroke-width="0.8"/>
+            <text x="60" y="164" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9a9a9a">Avicenna / Averroës</text>
+            <line x1="110" y1="160" x2="160" y2="120" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+
+            <!-- Aquinas node -->
+            <rect x="160" y="65" width="120" height="70" rx="6" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="220" y="95" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#d4a053">Aquinas</text>
+            <text x="220" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">1225–1274</text>
+            <line x1="280" y1="100" x2="340" y2="70" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <line x1="280" y1="100" x2="340" y2="100" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <line x1="280" y1="100" x2="340" y2="130" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <line x1="280" y1="100" x2="340" y2="160" stroke="#d4a053" stroke-width="1.0" opacity="0.5"/>
+
+            <!-- Descendants -->
+            <rect x="340" y="50" width="140" height="35" rx="5" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="410" y="72" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9b72cf">Duns Scotus (reaction)</text>
+
+            <rect x="340" y="92" width="140" height="35" rx="5" fill="#161622" stroke="#5b8cd4" stroke-width="0.8"/>
+            <text x="410" y="114" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#5b8cd4">Suárez · Cajetan</text>
+
+            <rect x="340" y="133" width="140" height="35" rx="5" fill="#161622" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="410" y="155" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#4ecca3">Natural Law (Grotius, Locke)</text>
+
+            <line x1="480" y1="67" x2="545" y2="67" stroke="#9b72cf" stroke-width="0.8" opacity="0.5"/>
+            <line x1="480" y1="109" x2="545" y2="90" stroke="#5b8cd4" stroke-width="0.8" opacity="0.5"/>
+            <line x1="480" y1="150" x2="545" y2="140" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+
+            <rect x="545" y="55" width="125" height="35" rx="5" fill="#161622" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="607" y="77" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#cf7272">Maritain · MacIntyre</text>
+
+            <rect x="545" y="125" width="125" height="35" rx="5" fill="#161622" stroke="#d4a053" stroke-width="0.8"/>
+            <text x="607" y="147" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">Analytic Thomism</text>
+        </svg>
+    </div>
+    <p class="note-text">Aquinas sits at the hinge of two millennia — synthesising ancient philosophy with medieval Christianity, and generating traditions (Thomism, natural law, scholastic metaphysics) that remain alive in contemporary philosophy, jurisprudence, and Catholic thought.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 16 — CORE TENSIONS & LEGACY -->
+<!-- ============================================================ -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Core Tensions &amp; Enduring Legacy</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">The Problem of Evil</h4>
+            <p>If God is all-powerful, all-knowing, and all-good, why does evil exist? Aquinas's response — evil is privation, and God permits evil to draw greater goods from it — remains deeply contested. His theodicy shaped centuries of Christian apologetics and provoked equally searching responses from critics from Bayle to Dostoevsky to contemporary philosophy of religion.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Faith, Reason &amp; Secularity</h4>
+            <p>Aquinas's ambitious synthesis presupposes that natural reason and Christian revelation converge. Critics ask whether this synthesis is self-deception — whether reason is secretly shaped by prior faith commitments. The question of the relationship between philosophy and theology, secular and religious reason, remains as urgent as ever in an increasingly pluralist world.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Aristotle's Limits</h4>
+            <p>Thomas appropriated Aristotle's teleological biology — but modern biology, from Darwin onwards, poses a radical challenge to teleological accounts of nature. Can natural law theory survive the collapse of Aristotle's teleological biology? Contemporary Thomists have proposed various responses: neo-Aristotelian biology, biosemiotics, and sophisticated accounts of natural function that do not require Aristotle's metaphysics.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">The Doctor Communis</h4>
+            <p>Called <em>Doctor Communis</em> — the Universal Teacher — and <em>Doctor Angelicus</em> — the Angelic Doctor — Aquinas's influence on Western civilisation is immeasurable. Through the <em>Summa Theologiae</em>, Thomism shaped Catholic doctrine, Western jurisprudence, medieval and early modern universities, political philosophy, the philosophy of mind, and the theory of knowledge. Few individuals have done more to shape the intellectual tradition of the West.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Contemporary Relevance</h4>
+            <p>The revival of virtue ethics (MacIntyre's <em>After Virtue</em>), natural law theory in bioethics and international law, neo-Aristotelian philosophy of mind and action, and the analytic philosophy of religion have all drawn heavily on Aquinas. His insistence that reason and faith are allies rather than enemies, and that the moral life is grounded in human nature rather than arbitrary command, continues to generate rich philosophical debate.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 17 — CLOSING -->
+<!-- ============================================================ -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="closingGlowThomas" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#d4a053;stop-opacity:0.5"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <circle cx="50" cy="50" r="32" fill="none" stroke="#5b8cd4" stroke-width="0.6" opacity="0.4"/>
+            <circle cx="50" cy="50" r="20" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="50" cy="50" r="10" fill="url(#closingGlowThomas)" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+            <!-- Five ways nodes -->
+            <circle cx="50" cy="5" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+            <circle cx="87" cy="27" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+            <circle cx="73" cy="68" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+            <circle cx="27" cy="68" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+            <circle cx="13" cy="27" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+            <line x1="50" y1="50" x2="50" y2="7" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <line x1="50" y1="50" x2="85" y2="29" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <line x1="50" y1="50" x2="71" y2="66" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <line x1="50" y1="50" x2="29" y2="66" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <line x1="50" y1="50" x2="15" y2="29" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="50" cy="50" r="3" fill="#d4a053" opacity="0.9"/>
+        </svg>
+    </div>
+    <div class="quote-box">
+        <p>"Three things are necessary for the salvation of man: to know what he ought to believe; to know what he ought to desire; and to know what he ought to do."</p>
+        <span class="attribution">&mdash; Thomas Aquinas, <em>Two Precepts of Charity</em></span>
+    </div>
+    <div class="separator" style="margin: 0.6em auto;"></div>
+    <h3 style="font-size: 0.9em; margin-bottom: 0.15em;">Thomas Aquinas</h3>
+    <p style="text-align: center; color: var(--text-muted); font-size: 0.52em !important;">1225&ndash;1274 &middot; <em>Doctor Angelicus</em> &middot; Doctor of the Church</p>
+    <div class="quote-box" style="margin-top: 0.6em; border-left-color: var(--accent-blue);">
+        <p style="font-size: 0.40em !important;">"To one who has faith, no explanation is necessary. To one without faith, no explanation is possible."</p>
+        <span class="attribution">&mdash; attributed to Thomas Aquinas</span>
+    </div>
+    <p class="note-text" style="margin-top: 1em;">The philosopher who showed reason and faith are not enemies but allies —<br>and whose synthesis continues to shape theology, ethics, and metaphysics eight centuries on.</p>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1280,
+    height: 900,
+    margin: 0.02,
+    controls: true,
+    progress: true,
+    history: true
+});
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){
+    document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){
+      s.style.display = 'block';
+      s.style.maxHeight = maxH;
+    });
+  }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+</script>
+</body>
+</html>

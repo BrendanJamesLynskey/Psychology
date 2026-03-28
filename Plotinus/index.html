@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plotinus &amp; the Neo-Platonists — Emanation, the One, and the Soul's Return</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" />
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+
+/* Local layout helpers */
+.slide-pad { padding: 1.6em 2em 1em 2em; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; margin: 0.6em 0; }
+.two-col-wide { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.2em; align-items: start; margin: 0.6em 0; }
+.body-text { font-size: 0.50em; color: var(--text-secondary); line-height: 1.7; margin: 0.5em 0; }
+.body-text strong { color: var(--text-primary); }
+.label-chip { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.38em; padding: 0.2em 0.6em; border-radius: 3px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5em; }
+.chip-amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); border: 1px solid rgba(212,160,83,0.3); }
+.chip-green { background: rgba(78,204,163,0.10); color: var(--accent-green); border: 1px solid rgba(78,204,163,0.25); }
+.chip-purple { background: rgba(155,114,207,0.10); color: var(--accent-purple); border: 1px solid rgba(155,114,207,0.25); }
+.chip-rose { background: rgba(207,114,114,0.10); color: var(--accent-rose); border: 1px solid rgba(207,114,114,0.25); }
+.chip-blue { background: rgba(91,140,212,0.10); color: var(--accent-blue); border: 1px solid rgba(91,140,212,0.25); }
+.concept-row { display: flex; gap: 0.5em; flex-wrap: wrap; margin: 0.4em 0; }
+.concept-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; padding: 0.18em 0.55em; border-radius: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: TITLE -->
+<section>
+<div class="slide-pad" style="text-align:center; padding-top:1.4em;">
+  <span class="section-number">ANCIENT PHILOSOPHY · NEO-PLATONISM</span>
+  <h1>Plotinus <span class="accent-amber">&amp;</span> the<br/>Neo-Platonists</h1>
+  <p class="subtitle">THE ONE · EMANATION · NOUS · THE WORLD SOUL · THE RETURN</p>
+  <div class="separator"></div>
+
+  <!-- Concentric Emanation SVG -->
+  <div style="margin: 0.7em auto; width: 340px; height: 260px;">
+    <svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+      <defs>
+        <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#d4a053" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#d4a053" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#9b72cf" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#9b72cf" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ecca3" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#4ecca3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glow4" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#5b8cd4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#5b8cd4" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- Outermost ring: Matter -->
+      <ellipse cx="170" cy="130" rx="155" ry="115" fill="url(#glow4)" stroke="#2a2a3a" stroke-width="1.2"/>
+      <!-- Soul ring -->
+      <ellipse cx="170" cy="130" rx="116" ry="86" fill="url(#glow3)" stroke="#4ecca3" stroke-width="1" stroke-dasharray="6 3" opacity="0.65"/>
+      <!-- Nous ring -->
+      <ellipse cx="170" cy="130" rx="77" ry="57" fill="url(#glow2)" stroke="#9b72cf" stroke-width="1.2" opacity="0.8"/>
+      <!-- The One core -->
+      <ellipse cx="170" cy="130" rx="36" ry="27" fill="url(#glow1)" stroke="#d4a053" stroke-width="1.8"/>
+      <ellipse cx="170" cy="130" rx="14" ry="10" fill="#d4a053" opacity="0.9"/>
+
+      <!-- Emanation arrows (downward, right side) -->
+      <line x1="208" y1="128" x2="244" y2="128" stroke="#9b72cf" stroke-width="1" marker-end="url(#arr-purple)" opacity="0.6"/>
+      <line x1="248" y1="128" x2="285" y2="128" stroke="#4ecca3" stroke-width="1" marker-end="url(#arr-green)" opacity="0.6"/>
+      <defs>
+        <marker id="arr-purple" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#9b72cf" opacity="0.7"/>
+        </marker>
+        <marker id="arr-green" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#4ecca3" opacity="0.7"/>
+        </marker>
+        <marker id="arr-amber-up" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,6 L6,3 L0,0 Z" fill="#d4a053" opacity="0.7"/>
+        </marker>
+      </defs>
+
+      <!-- Return arrow (upward, left side arc hint) -->
+      <path d="M 58 155 Q 40 130 58 105" fill="none" stroke="#d4a053" stroke-width="1.2" stroke-dasharray="4 2" marker-end="url(#arr-amber-up)" opacity="0.5"/>
+
+      <!-- Labels -->
+      <text x="170" y="134" text-anchor="middle" font-family="Playfair Display,serif" font-size="9" fill="#0a0a0f" font-weight="700">THE ONE</text>
+      <text x="170" y="108" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#9b72cf" opacity="0.85">NOUS</text>
+      <text x="170" y="156" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#4ecca3" opacity="0.8">WORLD SOUL</text>
+      <text x="170" y="229" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4" opacity="0.65">MATTER</text>
+
+      <text x="232" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#9b72cf" opacity="0.6">emanation</text>
+      <text x="274" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#4ecca3" opacity="0.6">emanation</text>
+      <text x="34" y="130" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#d4a053" opacity="0.6">return</text>
+    </svg>
+  </div>
+
+  <div class="quote-box" style="margin: 0.5em auto; max-width: 72%;">
+    <p>"The soul is many things — it is all things, the upper world and the lower world. It is of the divine, and there it has its being."</p>
+    <span class="attribution">— Enneads IV.3.4</span>
+  </div>
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.38em; color:var(--text-muted); letter-spacing:0.15em; margin-top:0.6em;">
+    204/5–270 CE · ALEXANDRIA &amp; ROME · PORPHYRY · IAMBLICHUS · PROCLUS · PSEUDO-DIONYSIUS
+  </p>
+</div>
+</section>
+
+<!-- SLIDE 2: LIFE & FORMATION -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">01 / LIFE &amp; FORMATION</span>
+  <h2>Life <span class="accent-amber">&amp;</span> Formation</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="icon">🌍</span>
+      <h4><span class="accent-amber">Egypt and Alexandria</span></h4>
+      <p>Born c. 204/5 CE in Lyco or Lycopolis in Upper Egypt. At the age of twenty-seven, drawn by an inner restlessness towards philosophy, Plotinus arrived in Alexandria and attached himself to <strong style="color:var(--text-primary)">Ammonius Saccas</strong> — a self-taught former porter whose other pupils included Origen the Christian and Longinus. He stayed for eleven years, reportedly refusing to leave or study with anyone else. Ammonius left no writings; his teaching was entirely oral. Plotinus absorbed that tradition of spoken philosophical conversation which prizes insight over system, presence over text.</p>
+    </div>
+    <div class="card">
+      <span class="icon">⚔️</span>
+      <h4><span class="accent-purple">The Persian Campaign</span></h4>
+      <p>Around 242 CE, Plotinus joined the military expedition of Emperor Gordian III against Persia — not as a soldier but as a philosopher seeking access to the wisdom of the <strong style="color:var(--text-primary)">Persian Magi and Indian Brahmins</strong>. The campaign ended in disaster: Gordian was assassinated at Zaitha on the Euphrates, almost certainly by the Praetorian prefect Philip. Plotinus fled with difficulty to Antioch. He never reached the East he sought, yet the episode speaks to a philosophical ambition that looked beyond Hellenism. He was nearly forty, and had yet to teach or write.</p>
+    </div>
+    <div class="card">
+      <span class="icon">🏛️</span>
+      <h4><span class="accent-green">Rome and the School</span></h4>
+      <p>From c. 244 CE Plotinus settled in Rome and opened a school that met at the house of a wealthy widow, Gemina. His circle was exceptional: it included <strong style="color:var(--text-primary)">senators, court physicians, a former consul (Rogatianus), aristocratic women, and the philosopher-editor Porphyry</strong> who would become his literary executor. The Emperor Gallienus and the Empress Salonina attended. Plotinus proposed founding a city — Platonopolis — governed on Platonic principles, but the scheme was blocked at court. He was generous, serving as guardian to the orphaned children of deceased friends.</p>
+    </div>
+    <div class="card">
+      <span class="icon">📜</span>
+      <h4><span class="accent-rose">Character and the Enneads</span></h4>
+      <p>Plotinus wrote nothing for the first ten years of teaching. It was only when Porphyry arrived (263 CE) that he began composing treatises at his pupil's urging. He reportedly dictated without revision — writing from a continuous interior vision, not from notes. He was <strong style="color:var(--text-primary)">ashamed to be in a body</strong>: he refused to be painted or sculpted ("Is it not enough to carry the image in which nature has encased us?"), would not celebrate his own birthday, kept no memory of his earthly parents, and avoided physicians. He died of a disfiguring disease in Campania, c. 270 CE. His last words, to his physician Eustochius: "I was waiting for you, before that which is divine in me departs to unite itself with the Divine in the universe."</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 3: TIMELINE -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">02 / TIMELINE</span>
+  <h2>The Neo-Platonic <span class="accent-amber">Timeline</span></h2>
+  <div class="separator"></div>
+  <div style="margin-top:0.75em; max-width: 82%; margin-left:auto; margin-right:auto;">
+    <div class="timeline-item">
+      <div class="year">204 CE</div>
+      <div class="event"><strong>Birth of Plotinus</strong> Lyco/Lycopolis, Upper Egypt. Exact birthdate unknown — he refused to reveal it.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">232</div>
+      <div class="event"><strong>Studies under Ammonius Saccas</strong> Alexandria. Eleven years of intensive oral instruction; other pupils include Origen and Longinus. Ammonius reportedly required pupils not to divulge his doctrines.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">242</div>
+      <div class="event"><strong>Persian Campaign</strong> Joins Gordian III's expedition. Campaign fails; Plotinus escapes to Antioch and eventually reaches Rome.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">c.244</div>
+      <div class="event"><strong>Founds school in Rome</strong> Teaches for nearly a decade without writing. Circle includes senators, physicians, the Emperor Gallienus and Empress Salonina.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">263</div>
+      <div class="event"><strong>Porphyry arrives in Rome</strong> His pupil-to-be and eventual editor joins the school. Plotinus begins composing the Enneads at Porphyry's urging; writes 21 treatises in Porphyry's six years with him.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">270</div>
+      <div class="event"><strong>Death of Plotinus</strong> Campania. 54 treatises composed in total. Porphyry arranges these into six groups of nine — the <em>Enneads</em> (ennea = nine).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">c.232–305</div>
+      <div class="event"><strong>Porphyry of Tyre</strong> Writes <em>Life of Plotinus</em>, the <em>Isagoge</em> (Introduction to Aristotle's Categories), and <em>Against the Christians</em> — ordered burned by Constantine. His work ensures Neo-Platonism becomes the dominant school of philosophy for centuries.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">c.245–325</div>
+      <div class="event"><strong>Iamblichus of Chalcis</strong> Syrian school. Introduces ritual theurgy as a path superior to pure intellectual contemplation. <em>On the Mysteries</em>. Decisive influence on Julian the Apostate and the late antique pagan revival.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">354–430</div>
+      <div class="event"><strong>Augustine of Hippo</strong> Reads Latin translations of Plotinus (via Marius Victorinus) shortly before his conversion. The "books of the Platonists" provide the philosophical scaffolding for his theology of the soul and evil.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">412–485</div>
+      <div class="event"><strong>Proclus Diadochus</strong> Head of the Platonic Academy in Athens. <em>Elements of Theology</em>, <em>Platonic Theology</em>, Commentaries on the Timaeus and Parmenides. The supreme systematic Neo-Platonist; 211 propositions in the Elements.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">c.500</div>
+      <div class="event"><strong>Pseudo-Dionysius the Areopagite</strong> Unknown Syrian Christian monk. <em>Divine Names</em>, <em>Mystical Theology</em>, <em>Celestial Hierarchy</em>. Christianises Proclus; shapes all subsequent Western mystical theology including Eckhart, Aquinas, and the Cloud of Unknowing.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">529</div>
+      <div class="event"><strong>Closure of the Academy</strong> Justinian's edict closes the Platonic Academy in Athens; the last Neo-Platonists (Damascius, Simplicius) take refuge at the court of the Persian king Chosroes I.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 4: STRUCTURE OF REALITY: EMANATION -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">03 / THE SYSTEM</span>
+  <h2>The Structure of Reality: <span class="accent-amber">Emanation</span></h2>
+  <div class="separator"></div>
+  <div class="two-col-wide" style="align-items:center;">
+    <!-- SVG Diagram -->
+    <div style="display:flex; justify-content:center;">
+      <svg viewBox="0 0 320 500" xmlns="http://www.w3.org/2000/svg" style="width:280px;height:440px;">
+        <defs>
+          <marker id="down-amber" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M1,1 L7,4 L1,7 Z" fill="#d4a053"/>
+          </marker>
+          <marker id="up-amber" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="270">
+            <path d="M1,1 L7,4 L1,7 Z" fill="#d4a053" opacity="0.55"/>
+          </marker>
+          <marker id="down-purple" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M1,1 L7,4 L1,7 Z" fill="#9b72cf"/>
+          </marker>
+          <marker id="down-green" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M1,1 L7,4 L1,7 Z" fill="#4ecca3"/>
+          </marker>
+          <marker id="down-blue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M1,1 L7,4 L1,7 Z" fill="#5b8cd4"/>
+          </marker>
+          <filter id="glow-node">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Level 1: The One -->
+        <rect x="85" y="14" width="150" height="44" rx="8" fill="#1a1508" stroke="#d4a053" stroke-width="1.8" filter="url(#glow-node)"/>
+        <text x="160" y="32" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#d4a053" font-weight="700">THE ONE</text>
+        <text x="160" y="47" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#d4a053" opacity="0.6">τὸ Ἕν · beyond being</text>
+
+        <!-- Arrow: One → Nous -->
+        <line x1="160" y1="58" x2="160" y2="112" stroke="#9b72cf" stroke-width="1.4" marker-end="url(#down-purple)" stroke-dasharray="5 2"/>
+        <text x="172" y="88" font-family="DM Sans,sans-serif" font-size="7.5" fill="#9b72cf" opacity="0.7">1st emanation</text>
+
+        <!-- Level 2: Nous -->
+        <rect x="75" y="113" width="170" height="44" rx="8" fill="#130f1e" stroke="#9b72cf" stroke-width="1.5"/>
+        <text x="160" y="131" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#9b72cf" font-weight="700">NOUS · INTELLECT</text>
+        <text x="160" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#9b72cf" opacity="0.6">νοῦς · realm of Forms</text>
+
+        <!-- Arrow: Nous → Soul -->
+        <line x1="160" y1="157" x2="160" y2="211" stroke="#4ecca3" stroke-width="1.4" marker-end="url(#down-green)" stroke-dasharray="5 2"/>
+        <text x="172" y="187" font-family="DM Sans,sans-serif" font-size="7.5" fill="#4ecca3" opacity="0.7">2nd emanation</text>
+
+        <!-- Level 3: World Soul -->
+        <rect x="65" y="212" width="190" height="44" rx="8" fill="#0d1a16" stroke="#4ecca3" stroke-width="1.5"/>
+        <text x="160" y="230" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#4ecca3" font-weight="700">WORLD SOUL</text>
+        <text x="160" y="247" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#4ecca3" opacity="0.6">ψυχή · individual souls</text>
+
+        <!-- Arrow: Soul → Matter -->
+        <line x1="160" y1="256" x2="160" y2="310" stroke="#5b8cd4" stroke-width="1.4" marker-end="url(#down-blue)" stroke-dasharray="5 2"/>
+        <text x="172" y="286" font-family="DM Sans,sans-serif" font-size="7.5" fill="#5b8cd4" opacity="0.7">3rd emanation</text>
+
+        <!-- Level 4: Matter -->
+        <rect x="60" y="311" width="200" height="44" rx="8" fill="#0a0e14" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4 2"/>
+        <text x="160" y="329" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#5b8cd4" font-weight="700">MATTER</text>
+        <text x="160" y="346" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#5b8cd4" opacity="0.6">ὕλη · privation of Good</text>
+
+        <!-- Return arrow left side -->
+        <path d="M 60 340 Q 18 290 18 200 Q 18 110 55 65" fill="none" stroke="#d4a053" stroke-width="1.3" stroke-dasharray="5 3" marker-end="url(#up-amber)" opacity="0.55"/>
+        <text x="6" y="205" font-family="DM Sans,sans-serif" font-size="7.5" fill="#d4a053" opacity="0.55" transform="rotate(-90,6,205)">ἐπιστροφή · the return</text>
+
+        <!-- Henosis label -->
+        <rect x="82" y="440" width="156" height="30" rx="5" fill="#1a1208" stroke="#d4a053" stroke-width="1" opacity="0.7"/>
+        <text x="160" y="453" text-anchor="middle" font-family="Playfair Display,serif" font-size="9.5" fill="#d4a053" font-style="italic">henosis · union with the One</text>
+        <text x="160" y="466" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#d4a053" opacity="0.55">the soul's goal</text>
+
+        <line x1="160" y1="355" x2="160" y2="440" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Text -->
+    <div>
+      <p class="body-text">Plotinus inherits Plato's divided universe but transforms it into something radically new: a <strong>dynamic, living hierarchy</strong> in which all reality flows outward from a single sourceless source and is drawn, by its own deepest nature, to return.</p>
+      <p class="body-text">The key term is <strong>emanation (aporroia)</strong> — a flowing-out, like light from the sun or heat from fire. The source does not diminish; the product does not separate. Plotinus insists that <strong>the One does not choose to create</strong>: it overflows by necessity of its own perfection, as a full vessel spills over without loss.</p>
+      <p class="body-text">Each level of reality is <strong>generated by the contemplation of the level above it</strong>. Nous contemplates the One and in that contemplation generates the Forms. Soul contemplates Nous and in doing so generates the physical cosmos. Matter is the ultimate limit — not a thing but a privation, the last echo of the Good.</p>
+      <div class="quote-box" style="margin-top:0.6em;">
+        <p>"The One is perfect because it seeks nothing, has nothing, needs nothing; and being perfect, it overflows, and its superabundance makes something other than itself."</p>
+        <span class="attribution">— Enneads V.2.1</span>
+      </div>
+      <div class="concept-row" style="margin-top:0.5em;">
+        <span class="concept-tag">ἀπόρροια emanation</span>
+        <span class="concept-tag">ὑπόστασις hypostasis</span>
+        <span class="concept-tag">ἐπιστροφή return</span>
+        <span class="concept-tag">ἕνωσις henosis</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 5: THE ONE -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">04 / THE HYPOSTASES</span>
+  <h2>The <span class="accent-amber">One</span> — Beyond Being</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">The One (τὸ Ἕν) is the <strong>first hypostasis</strong> and the absolute first principle of all reality. But it is not a being, not a substance, not even a mind: it surpasses all predication. Plotinus insists that the One is <strong>beyond being (ἐπέκεινα τῆς οὐσίας)</strong> — a phrase drawn from Plato's <em>Republic</em> (509b), where the Form of the Good is said to be "beyond being in dignity and power."</p>
+      <p class="body-text">This creates the central philosophical problem: <strong>how can we say anything at all about what exceeds all language?</strong> Plotinus employs what later thinkers called the <em>via negativa</em>: we approach the One by removing every predicate we might attach to it. The One is not good — it is the source of the Good. It is not intelligent — it is the source of intelligence. It is not one in the way a number is one — it is prior to all number.</p>
+      <p class="body-text">There is an apparent paradox: if the One is ineffable, we cannot even say "the One is one" — for that would attribute oneness to it as a quality. Plotinus acknowledges this. The name "the One" is an <strong>index of negation</strong>, pointing away from multiplicity rather than asserting positive unity.</p>
+      <div class="quote-box">
+        <p>"We say what It is not; what It is we cannot say... it is not anything that is: it is prior to everything; it neither knows nor is knowable."</p>
+        <span class="attribution">— Enneads V.3.14</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">The One and the Self-Thinking Thought</span></h4>
+        <p>Aristotle's Unmoved Mover is Intellect thinking itself — the highest being. For Plotinus, this is already too low: <strong>self-thinking implies duality</strong> (thinker and thought), which implies multiplicity. The One cannot think itself without becoming two. It is therefore <strong>prior to thought, prior to consciousness</strong>, prior to all relation. This is simultaneously the most exalted and the most vertiginous move in ancient philosophy.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">Mystical Contact, Not Rational Argument</span></h4>
+        <p>Discursive reason (διάνοια) cannot reach the One. The approach is through <strong>simplification of the soul</strong> — stripping away every attachment, every thought, every self-awareness, until all that remains is a bare receptivity. The experience Plotinus calls <em>henosis</em> (union) leaves no memory because there is, momentarily, no subject to remember: <strong>"a flight of the alone to the Alone."</strong></p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">The Good and the One</span></h4>
+        <p>Plotinus identifies the One with the Good (τἀγαθόν), following Plato. All things desire the Good — which means all things desire the One, their ultimate source. Evil is understood as <strong>distance from the Good</strong>, not as a positive substance. The soul's desire for return is therefore the metaphysical expression of the universal pull all finite things feel toward their origin.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 6: NOUS -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">05 / THE HYPOSTASES</span>
+  <h2><span class="accent-purple">Nous</span> — The Divine Intellect</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">Nous (νοῦς — Intellect, Mind) is the <strong>first emanation</strong>, and the highest being. Where the One exceeds being, Nous is the fullness of being. It is the realm of Plato's Forms: in Nous, the Forms are not static objects but <strong>living, luminous realities identical with the mind that thinks them</strong>. Thinker and thought are one: Intellect just is its objects.</p>
+      <p class="body-text">This is Plotinus's transformation of Aristotle's <em>Metaphysics</em> Λ: the Unmoved Mover as <em>noesis noeseos</em> (thought thinking itself). But where Aristotle's God thinks only itself as a single object, Plotinus's Nous thinks the entire world of Forms — a universe of intelligible beauty. <strong>The Beautiful (τὸ Καλόν) and the True coincide in Intellect</strong>: to see clearly is to see beautifully, and vice versa.</p>
+      <p class="body-text">Nous is produced when the indefinite "first movement" away from the One turns back to contemplate its source. In that turning-back (<em>epistrophe</em>), it becomes determined, structured, unified-in-multiplicity. <strong>Every act of contemplation is also an act of generation</strong> — this is the deep logic of Plotinian metaphysics: to think is to produce.</p>
+      <div class="quote-box">
+        <p>"Intellect, by the very fact of having turned toward the One, becomes perfect, and in becoming perfect it engenders; and so looking toward it, it sees; and in that vision it engenders Soul."</p>
+        <span class="attribution">— Enneads V.2.1</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">The Identity of Thinker and Thought</span></h4>
+        <p>In Nous, there is <strong>no gap between knower and known</strong>. This is the model for genuine knowledge: true episteme is not a relation between a subject and an external object, but an identity. Ordinary human cognition falls short of this because discursive thought moves step by step, holding subject and object apart. Nous sees everything simultaneously, in an eternal present. <strong>Philosophy is the practice of moving toward this kind of identity.</strong></p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">The Forms as Living Beings</span></h4>
+        <p>The Platonic Forms, in Plotinus, are not Plato's static archetypes hovering in a separate heaven. They are the <strong>living, active thoughts of Nous</strong> — each Form is an intelligence, a life, a form of beauty. The Form of Man is not merely the concept of humanity but a <em>living intellect</em> that the individual human participates in. This transforms Platonism into something closer to what Whitehead would later call a "philosophy of organism."</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">Nous and the Logos</span></h4>
+        <p>Plotinus uses the term <em>logos</em> for the rational principle that Nous "sends down" into Soul and through Soul into the cosmos. This terminology is absorbed wholesale by early Christian theologians: the <strong>Logos doctrine of John's Gospel</strong> — "In the beginning was the Word" — moves in the same conceptual space. The Johannine prologue and Ennead V are illuminatingly read side by side.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 7: WORLD SOUL -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">06 / THE HYPOSTASES</span>
+  <h2>The <span class="accent-green">World Soul</span></h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">Soul (ψυχή) is the <strong>second emanation</strong>, generated by Nous as Nous is generated by the One: through an overflow of contemplation. The World Soul is the great intermediary — it has a higher face turned toward Nous in eternal contemplation, and a lower face turned toward the sensible world in generative activity.</p>
+      <p class="body-text">The World Soul <strong>produces the cosmos</strong> not by a deliberate act of will but, again, by overflow: its contemplation of the intelligible generates the rational order (<em>logos</em>) that structures matter. Plotinus's cosmos is therefore not created — it is <strong>eternally generated</strong>, as the shadow of an eternal light. Time itself is produced by the Soul's activity: where Intellect has eternity, Soul generates time as "the moving image of eternity" (borrowing Plato's <em>Timaeus</em>).</p>
+      <p class="body-text">Individual human souls are <strong>parts or expressions of the World Soul</strong>, not separate substances accidentally housed in bodies. Even when descended into matter, every soul retains its higher part — "there is always something of us above" (<em>Enneads</em> IV.8). This undescended intellect in us is the ground of our capacity for mystical ascent.</p>
+      <div class="quote-box">
+        <p>"Let us then, not marvel that those souls which are parts of the World Soul produce the world of sense in their individual contemplations, keeping ever fixed their gaze on the higher world."</p>
+        <span class="attribution">— Enneads III.8.4</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-green">The Soul's Double Life</span></h4>
+        <p>Every soul lives simultaneously on two levels: its <strong>higher part (the undescended intellect)</strong> remains forever in contemplation of Nous, untouched by time and matter. Its lower part descends, animates a body, and becomes entangled in sensation, passion, and opinion. This double life means that <strong>no soul is ever wholly lost</strong> — the path of return is never entirely blocked, because something in us never fell.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">Soul and the Living Cosmos</span></h4>
+        <p>The physical cosmos is <strong>ensouled</strong>: the World Soul is its life. This gives Neo-Platonism a profoundly anti-mechanistic cosmology. The stars are divine intellects; the earth is alive; plants participate in the World Soul at its lowest extension. There is <strong>no dead matter in Plotinus's cosmos</strong> — everything is an expression of spiritual energy at varying degrees of intensity. This is why later Neo-Platonists took astrology and magic seriously: all things are connected through the World Soul.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-rose">The Problem of the Descent</span></h4>
+        <p>Why do individual souls descend into bodies at all? Plotinus gives <strong>two different answers</strong> in different treatises: in <em>Ennead</em> IV.8 he treats descent as a kind of inevitability — the soul's productive nature overflows downward. In IV.3 he allows a Platonic language of "forgetting" and "wandering." The tension is never fully resolved, and becomes central to debates in later Neo-Platonism about the soul's freedom and responsibility.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 8: MATTER AND EVIL -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">07 / MATTER &amp; EVIL</span>
+  <h2>Matter <span class="accent-amber">&amp;</span> <span class="accent-rose">Evil</span></h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">Matter (ὕλη) is the last and lowest term of the emanative sequence. It is <strong>not a being in any positive sense</strong>: it is the absence of form, the privation of all determination, the utmost darkness in which the light of the Good is extinguished. Plotinus describes it as a mirror that reflects no image, a surface with no substance, "a lying imitation of magnitude."</p>
+      <p class="body-text">This makes evil <strong>privative rather than positive</strong>. Evil is not a rival power to the Good (as in Gnosticism or Manichaeism) but the <em>absence</em> of the Good, the condition of maximal distance from the source of being. Matter is evil not because it is anything but because it <strong>lacks everything</strong>. A person becomes evil not by acquiring a malignant essence but by turning away from the Good — by allowing the soul's attention to sink into the appetites and forget its origin.</p>
+      <div class="quote-box">
+        <p>"Matter is the cause of the weakness of the soul, for in coming into matter the soul becomes worse... Matter drags down the soul, not as a being drags it, but as an absence drags down what has life."</p>
+        <span class="attribution">— Enneads I.8.4</span>
+      </div>
+      <p class="body-text" style="margin-top:0.5em;">This has important moral consequences: <strong>the remedy for evil is not destruction of matter</strong> (which is impossible, since matter is the necessary limit of the emanative hierarchy) but the <em>ascent of the soul away from absorption in matter</em>. Vice is forgetting; virtue is remembering.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-rose">Why Does the One Emanate at All?</span></h4>
+        <p>If the One is perfect and self-sufficient, why does anything else exist? Plotinus's answer: <strong>not from need or choice but from an overflow of perfection</strong>. The sun does not "decide" to shine; fire does not "choose" to give heat. Perfection necessarily overflows into its diminishing images. This avoids the voluntarist picture of a God who might have chosen not to create, and grounds existence itself in a kind of metaphysical generosity — <em>bonum est diffusivum sui</em> (the Good diffuses itself), as later Scholastics would put it.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">Against the Gnostic Account of Evil</span></h4>
+        <p>The Gnostics identified matter and the visible world as the work of an <strong>evil or ignorant Demiurge</strong>, and saw the soul as a divine spark imprisoned in an alien cosmos. Plotinus is outraged: this degrades the cosmos, insults the stars, and misunderstands evil. <strong>This world is beautiful</strong> — it is the best possible image of the Intelligible World. To hate the cosmos is to hate one's own participation in the divine. See Ennead II.9 for his sustained polemic.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-purple">The Theodicy Question</span></h4>
+        <p>How can a perfectly good first principle produce a world containing evil and suffering? Plotinus's implicit theodicy: <strong>evil is the necessary cost of the full articulation of being</strong>. A cosmos that contained no matter, no distance from the Good, would not be a cosmos at all but another Nous. The very existence of imperfect, suffering, mortal creatures is a proof of the <em>generosity</em> of the Good — that the Good extends its diffusion all the way to the limit of non-being.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 9: THE SOUL'S ASCENT -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">08 / MYSTICAL ASCENT</span>
+  <h2>The Soul's <span class="accent-amber">Ascent</span> — <em>Epistrophe</em></h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">The <strong>return (ἐπιστροφή)</strong> of the soul to its source is the central practical and spiritual aim of the Enneads. It is not a journey to a distant place but a <em>turning inward</em> — a progressive simplification of the self until the soul recognises what it has always been at its deepest level.</p>
+      <p class="body-text">Plotinus adapts the ascent of Diotima's ladder in Plato's <em>Symposium</em> into a structured path with recognisable stages:</p>
+
+      <!-- Ascent stages as a mini-ladder -->
+      <div style="margin: 0.5em 0; padding: 0.4em 0.6em; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+        <div style="display:flex; align-items:center; gap:0.5em; margin-bottom:0.25em;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.38em;color:var(--accent-amber);min-width:2.5em;">5.</span>
+          <span style="font-size:0.42em;color:var(--accent-amber);font-weight:700;">Henosis — Union with the One</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5em; margin-bottom:0.25em;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.38em;color:var(--accent-purple);min-width:2.5em;">4.</span>
+          <span style="font-size:0.42em;color:var(--text-secondary);">Contemplation of Nous — identity with Intellect, vision of all Forms</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5em; margin-bottom:0.25em;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.38em;color:var(--accent-green);min-width:2.5em;">3.</span>
+          <span style="font-size:0.42em;color:var(--text-secondary);">Contemplation of Beauty Itself — the soul recognises its own nature</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5em; margin-bottom:0.25em;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.38em;color:var(--accent-blue);min-width:2.5em;">2.</span>
+          <span style="font-size:0.42em;color:var(--text-secondary);">Contemplation of beautiful souls, virtues, sciences — turning from body to mind</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5em;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.38em;color:var(--text-muted);min-width:2.5em;">1.</span>
+          <span style="font-size:0.42em;color:var(--text-secondary);"><strong style="color:var(--text-primary);">Katharsis (purification)</strong> — detachment from bodily pleasures, cultivation of virtue</span>
+        </div>
+      </div>
+
+      <div class="quote-box" style="margin-top:0.5em;">
+        <p>"Often I have woken to myself from the body, come out from everything else to arrive within myself; and I have seen beauty of surpassing greatness, and believed, then more than ever, that I belonged to the better part."</p>
+        <span class="attribution">— Enneads IV.8.1</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">Porphyry's Report</span></h4>
+        <p>Porphyry records that <strong>Plotinus attained mystical union four times</strong> in the six years they were together — and Plotinus himself three times before that. This is presented not as a miraculous gift but as the natural outcome of sustained philosophical practice. The <em>Life of Plotinus</em> is our primary source and is itself a work of art in religious biography, modelling Plotinus on Socrates and framing his death as a philosophical apotheosis.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">Philosophy as Spiritual Exercise</span></h4>
+        <p>The Enneads are not merely theoretical treatises — they are <strong>practical instruments of ascent</strong>. Pierre Hadot influentially argued that ancient philosophy was primarily a "way of life," a set of spiritual exercises. Plotinus exemplifies this: the sustained attention required to follow his argument <em>is</em> the beginning of the ascent. Reading the Enneads is not like reading a textbook; it is closer to <strong>meditation with conceptual content</strong>.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">The Flight of the Alone to the Alone</span></h4>
+        <p>The final words of the Enneads (VI.9.11) describe the goal: <em>"the flight of the alone to the Alone."</em> This phrase has echoed through all subsequent mysticism. It does not mean solipsism: it means that <strong>the soul, having shed all accretions of individuality</strong>, finds that it is not alone but united with the very source of all existence. The apparent paradox — losing oneself to find oneself — becomes the signature movement of Western mystical theology.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 10: THE BEAUTIFUL -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">09 / AESTHETICS</span>
+  <h2>The <span class="accent-amber">Beautiful</span> — <em>Enneads</em> I.6</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;"><em>On Beauty</em> (I.6) is the most accessible of the Enneads and the most influential single text for Western aesthetic theory. It opens the Enneadic collection (as Porphyry arranged it) because beauty is the first experience that can lift the soul out of purely material concerns and set it on the path of ascent.</p>
+      <p class="body-text">Plotinus begins with a sharp critique of the <strong>Stoic account of beauty as symmetry</strong> (the commensuration of parts). If beauty were simply symmetry, then nothing simple — a pure colour, a single note, lightning at night, the sun — could be beautiful. But these clearly are beautiful. Furthermore, the same face can be beautiful when alive and not when dead, though the symmetry of parts remains: <strong>what animates beauty is not arrangement but presence</strong>.</p>
+      <p class="body-text">His account: beauty is the <strong>presence of Form or Idea in matter</strong>. When the soul perceives beauty in a sensible object, it recognises its own nature in that object — it sees the intelligible shining through the material. The soul's pleasure in beauty is therefore a <strong>recognition, a homecoming</strong>. Ugliness is the resistance of matter to form; beauty is matter's submission to its intelligible archetype.</p>
+      <div class="quote-box">
+        <p>"Withdraw into yourself and look. And if you do not find yourself beautiful yet, act as does the creator of a statue that is to be made beautiful; he cuts away here, he smooths there, he makes this line lighter, this other purer, until a lovely face has grown upon his work."</p>
+        <span class="attribution">— Enneads I.6.9</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">The Ladder of Beauty</span></h4>
+        <p>Following Plato's <em>Symposium</em> and <em>Phaedrus</em>, Plotinus traces a <strong>hierarchy of beauties</strong> leading to Beauty Itself. Beautiful bodies lead upward to beautiful souls (the beauty of virtue, wisdom, justice — more beautiful than any face). Beautiful souls lead to the intelligible beauty of Nous — the self-luminous world of Forms. And beyond even that, to the One, which is not beautiful (beauty is already a predicate, already multiplicity) but is the <strong>source of all beauty</strong>: what Plotinus calls "the Good beyond the Beautiful."</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">The Soul Recognises Itself</span></h4>
+        <p>The key epistemological claim: <strong>beauty is known by kinship</strong>. The soul recognises beauty because the soul itself is beautiful — it is a Form, an intelligible being. This is why beauty provokes a peculiar emotion: not mere pleasure (which food and warmth provide) but <em>wonder, longing, and disturbance</em>. Eros is the name for this stirring. Beauty wakes the soul to what it already is, and the ascent from beautiful bodies to Beautiful Itself is simultaneously a journey outward into the cosmos and <strong>inward into the soul's own depth</strong>.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">Influence on Art and Aesthetics</span></h4>
+        <p>Plotinian aesthetics directly shapes <strong>Renaissance art theory</strong> (via Ficino), Schopenhauer's account of aesthetic contemplation as temporary release from the will, Hegel's Aesthetics, and contemporary debates about the relationship between beauty and truth. The sculptor's image — carving away the inessential to reveal the form within — becomes the standard model of artistic creation for centuries. Michelangelo likely knew it through Ficino.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 11: AGAINST THE GNOSTICS -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">10 / POLEMIC</span>
+  <h2>Against the <span class="accent-rose">Gnostics</span> — <em>Enneads</em> II.9</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;"><em>Against the Gnostics</em> (II.9) is Plotinus at his most combative and — in places — his most emotionally engaged. It is directed against a group of Gnostics who attended his own school in Rome, possibly disciples of the Sethian or Valentinian movements, who used Neo-Platonic language but drew conclusions Plotinus found philosophically disastrous and morally corrupting.</p>
+      <p class="body-text">The Gnostics held that <strong>the visible world is the product of an ignorant or evil Demiurge</strong> — a secondary god who wrongly believed himself supreme. The material cosmos is a prison; matter is corruption; the souls of the pneumatic elect are sparks of divine light trapped in alien flesh. Salvation requires secret knowledge (<em>gnosis</em>) of one's divine origin, not philosophical effort or ethical transformation.</p>
+      <p class="body-text">Plotinus's counter-argument unfolds on several levels. First, <strong>this world is beautiful and ordered</strong> — it is as perfect an image of the Intelligible as matter can receive. To despise it is to misunderstand both matter and the Intelligible. Second, the Gnostic Demiurge is incoherent: how could an ignorant being produce such order? Third, the claim that only elect souls can be saved is <strong>aristocratic arrogance dressed as spirituality</strong>: Plotinus insists on the universality of the soul's capacity for return.</p>
+      <div class="quote-box">
+        <p>"Those who despise what is so closely tied to the Divine Intellect and is so evidently its offspring — this universe and everything in it — seem to me to know neither the Divine nor the Good."</p>
+        <span class="attribution">— Enneads II.9.16</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-rose">The Gnostic Threat</span></h4>
+        <p>Why does Plotinus care so passionately? Partly philosophical: Gnosticism imports <strong>arbitrary myth into metaphysics</strong>, replacing argument with narrative. Partly ethical: a doctrine that this world is evil generates <strong>antinomian attitudes</strong> — if the body and its world are the enemy, why cultivate virtue? Why care for the social fabric? Plotinus sees in Gnosticism the corruption of philosophy into a mystery cult that flatters the spiritual pride of its adherents rather than transforming them.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">The Beauty of the Cosmos</span></h4>
+        <p>Against Gnostic world-rejection, Plotinus mounts what is in effect a <strong>philosophical defence of natural beauty</strong>. Look at the sky at night: the stars are divine intelligences. Look at the ocean: it is the World Soul's generative power made visible. Even lowly things — insects, worms — are expressions of the World Soul's inexhaustible creativity. <strong>The correct response to the cosmos is wonder and gratitude</strong>, not contempt. This position is philosophically continuous with Stoic cosmology and points forward to later natural theology.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-purple">The Problem of Salvation</span></h4>
+        <p>The Gnostic claim to exclusive election troubles Plotinus deeply. For him, <strong>every soul has the same nature and the same capacity for return</strong>. The difference between the sage and the vulgar is not a difference of metaphysical substance but of attention and effort. Anyone who turns inward with sufficient seriousness can begin the ascent. This universalism is both more democratic and more demanding than Gnostic election: <strong>no one is guaranteed salvation, but no one is excluded by nature.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 12: THE LATER NEO-PLATONISTS -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">11 / TRADITION</span>
+  <h2>The Later <span class="accent-amber">Neo-Platonists</span></h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="label-chip chip-amber">c.234–305 CE</span>
+      <h4><span class="accent-amber">Porphyry of Tyre</span></h4>
+      <p>Plotinus's pupil and literary executor. His <em>Life of Plotinus</em> is an indispensable source and a masterwork of ancient biography. His <em>Isagoge</em> (Introduction to Aristotle's Categories) became the standard logic textbook of the Latin Middle Ages, sparking the great medieval debate over universals that occupied Abelard, Aquinas, and Scotus. His <em>Against the Christians</em> (15 volumes) was so potent that Constantine and Theodosius ordered it burned — of which we have only fragments in rebuttals. Porphyry is more Aristotelian than Plotinus and less interested in theurgy; he believed purely intellectual contemplation sufficient for salvation.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-purple">c.245–325 CE</span>
+      <h4><span class="accent-purple">Iamblichus of Chalcis</span></h4>
+      <p>Founder of the Syrian school of Neo-Platonism and the decisive figure in the tradition's turn toward <strong>ritual and theurgy</strong>. His <em>On the Mysteries</em> (written as a reply to Porphyry) argues that intellectual contemplation alone cannot achieve union with the divine — <strong>the gods must descend to us</strong>, and this descent is mediated through theurgy: ritual acts, symbols (<em>synthemata</em>), and sacred objects that carry divine power. Iamblichus also elaborated the hierarchical structure of the divine, introducing a series of additional hypostases between the One and Nous. His influence on Julian the Apostate made him central to the late pagan revival.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-green">412–485 CE</span>
+      <h4><span class="accent-green">Proclus Diadochus</span></h4>
+      <p>The last great head of the Platonic Academy in Athens and perhaps the <strong>supreme systematic philosopher of antiquity</strong>. His <em>Elements of Theology</em> is 211 propositions in the formal style of Euclid — an axiomatised metaphysics of the divine. His <em>Platonic Theology</em> is a vast synthesis of all Neo-Platonic thought, and his commentaries on the Timaeus, Parmenides, and Alcibiades remain indispensable. Proclus introduced the triadic schema of <em>monē-proodos-epistrophe</em> (remaining-procession-return) as the universal structure of causation, which Pseudo-Dionysius absorbs wholesale. His influence on medieval Christian, Islamic, and Jewish philosophy is immense.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-rose">fl. c.500 CE</span>
+      <h4><span class="accent-rose">Pseudo-Dionysius the Areopagite</span></h4>
+      <p>An unknown Syrian Christian monk who wrote under the pseudonym of the Athenian convert of Paul (Acts 17:34), giving his work apostolic authority. His corpus — <em>Divine Names</em>, <em>Mystical Theology</em>, <em>Celestial Hierarchy</em>, <em>Ecclesiastical Hierarchy</em> — is a Christianisation of Proclus with Christian Trinity and Scripture substituted for the Platonic gods. His <em>Mystical Theology</em> (the shortest text in the corpus) is the founding document of the <strong>apophatic tradition</strong> in Christian mysticism: the ascent to God involves progressive unknowing until even the negations are negated, and the soul enters the "divine darkness" beyond all language. Shaped Eckhart, Aquinas, the Cloud of Unknowing, Bonaventure, and John of the Cross.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 13: NEO-PLATONISM AND CHRISTIANITY -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">12 / RECEPTION</span>
+  <h2>Neo-Platonism <span class="accent-amber">&amp;</span> Christianity</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">The encounter between Neo-Platonism and Christianity is one of the most consequential intellectual events in Western history. It was not a peaceful assimilation: it involved genuine tensions, creative misreadings, and transformations that changed both traditions permanently.</p>
+      <p class="body-text"><strong>Augustine's conversion</strong> (386 CE) is the pivotal episode. In the <em>Confessions</em> VII, Augustine describes reading Latin translations of Neo-Platonic texts (almost certainly Plotinus and Porphyry, translated by Marius Victorinus) before his baptism. The "books of the Platonists" gave him what Scripture alone could not: a <strong>philosophical understanding of God as incorporeal</strong>, of evil as privation rather than substance, and of the soul's capacity for return. He explicitly says Platonism showed him the goal but not the way — Christ the <em>via</em> that Platonism lacked.</p>
+      <div class="quote-box">
+        <p>"And I found there — not in so many words, but with entirely the same meaning — that 'In the beginning was the Word, and the Word was with God, and the Word was God.' But that 'the Word was made flesh' — this I found not there."</p>
+        <span class="attribution">— Augustine, Confessions VII.9</span>
+      </div>
+      <p class="body-text" style="margin-top:0.5em;">The most contested difference: <strong>emanation vs creation ex nihilo</strong>. For Plotinus, the cosmos is eternal and the emanation of the One is necessary. For Christianity, creation is a free act of will by a personal God who could have chosen otherwise, and the cosmos began in time. This difference entails radically different understandings of matter, time, and freedom.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">The Logos Doctrine</span></h4>
+        <p>The prologue of John's Gospel ("In the beginning was the Logos") uses a term with a rich Stoic and Middle Platonic background. Early Christian theologians — Justin Martyr, Origen, Clement of Alexandria — developed a <strong>Logos Christology</strong> that identified Christ with the divine Reason/Word structuring all reality. This is theologically distinct from Plotinus's Nous, but the conceptual resemblance was strong enough for both sides to notice. The identification of Christ with the second hypostasis became standard in Christian Neo-Platonic theology.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">The Via Negativa</span></h4>
+        <p>Pseudo-Dionysius's apophatic theology — the claim that God is beyond all affirmation and negation — is Plotinus's doctrine of the One dressed in Christian vestments. This tradition shapes: <strong>Eckhart</strong> ("the Godhead beyond God"), <strong>Aquinas</strong>'s treatment of divine names in <em>Summa Theologiae</em> I.13, the anonymous <em>Cloud of Unknowing</em>, John of the Cross's <em>Dark Night of the Soul</em>, and much of modern Continental philosophy of religion (Derrida on negative theology, Jean-Luc Marion on God without Being).</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">Islam and Judaism</span></h4>
+        <p>Neo-Platonism also flows into medieval Islamic and Jewish philosophy. <strong>Al-Farabi and Avicenna</strong> develop emanationist cosmologies. The <em>Theologia Aristotelis</em> (actually excerpts from Plotinus's Enneads IV–VI) circulates in Arabic as genuine Aristotle, profoundly shaping Islamic philosophy. <strong>Maimonides</strong>'s negative theology in the <em>Guide for the Perplexed</em> is deeply Plotinian. <strong>Ibn Arabi</strong>'s mystical metaphysics of emanation and return is the fullest Islamic elaboration of the Neo-Platonic inheritance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 14: NEO-PLATONISM AND THE RENAISSANCE -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">13 / RENAISSANCE</span>
+  <h2>Neo-Platonism <span class="accent-amber">&amp;</span> the Renaissance</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p class="body-text" style="margin-top:0.4em;">The decisive moment for the Renaissance reception of Neo-Platonism is the <strong>Council of Florence (1438–1439)</strong>, convened to negotiate the union of Greek and Latin churches. Among the Greek delegation was <strong>Gemistos Plethon</strong>, an aged Platonic philosopher from Mistra who delivered lectures on the differences between Plato and Aristotle that astonished the Florentine intelligentsia. He persuaded Cosimo de' Medici to found a new Platonic Academy.</p>
+      <p class="body-text">Cosimo entrusted the task to <strong>Marsilio Ficino (1433–1499)</strong>, who learned Greek, translated the entire Platonic corpus, and then — crucially — translated the Enneads of Plotinus, completing the work in 1492. Ficino's <em>Theologia Platonica</em> (1482) is a Neo-Platonic synthesis of Plato, Plotinus, and Christian theology arguing for the immortality and dignity of the soul. His concept of <strong><em>amor platonicus</em></strong> (Platonic love) — love as the soul's desire for divine beauty — transforms Renaissance lyric poetry, painting, and court culture.</p>
+      <div class="quote-box">
+        <p>"The soul... is the copula of the world, the centre of nature, the middle term of all things, the link of the world, the face of all things, the knot and bond of the world."</p>
+        <span class="attribution">— Ficino, Theologia Platonica IV.i</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-amber">Pico della Mirandola</span></h4>
+        <p>Ficino's younger colleague at the Florentine Academy. His <em>Oration on the Dignity of Man</em> (1486) — sometimes called "the manifesto of the Renaissance" — is profoundly Plotinian: the soul's capacity to <strong>ascend through all levels of being</strong>, from matter to angel, is its unique dignity. Pico's <em>900 Theses</em> synthesise Plato, Aristotle, Plotinus, Porphyry, Iamblichus, Proclus, Kabbalah, and Arabic philosophy — a Neo-Platonic encyclopaedia of esoteric wisdom that scandalised Pope Innocent VIII.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4><span class="accent-purple">Michelangelo and Aesthetic Theology</span></h4>
+        <p>Michelangelo grew up in the Medici household and absorbed Ficino's Neo-Platonism directly. His <strong>sonnets describe love as the soul's recognition of divine beauty</strong> in a human face. His sculpture embodies the Plotinian image of the artist revealing the form hidden in stone. The <em>Pietà</em> and the <em>David</em> are expressions of a theological aesthetics in which the highest beauty manifests the divine. The later "unfinished" (<em>non finito</em>) sculptures — the Prisoners — literalise Plotinus: <strong>the form straining to emerge from matter</strong>.</p>
+      </div>
+      <div class="card">
+        <h4><span class="accent-green">Hermeticism, Magic, and Astrology</span></h4>
+        <p>Ficino also translated the <em>Corpus Hermeticum</em>, believed to be ancient Egyptian wisdom (actually Greco-Egyptian texts of the 2nd–3rd century CE, contemporaneous with Plotinus). He developed a <strong>Neo-Platonic natural magic</strong>: since all things are connected through the World Soul, like can attract like, and the philosopher-mage can use this sympathy to draw celestial influences downward. This was not superstition but a logical extension of Neo-Platonic cosmology. It gives rise to the Renaissance tradition of <em>magia naturalis</em> in Bruno, Campanella, and Dee.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 15: CORE TENSIONS -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">14 / CRITIQUE</span>
+  <h2>Core <span class="accent-amber">Tensions</span></h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="label-chip chip-amber">LANGUAGE</span>
+      <h4><span class="accent-amber">The Ineffable and the Sayable</span></h4>
+      <p>Plotinus writes extensively about what cannot be said. The Enneads are a vast, eloquent discourse about a reality that exceeds all discourse. This generates a genuine philosophical aporia: either the One is truly ineffable, in which case the Enneads are self-undermining — or they are not, in which case the via negativa is overstated. Later thinkers (Wittgenstein, Derrida) return to this tension. <strong>Can a philosophy of silence be written?</strong></p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-purple">COSMOLOGY</span>
+      <h4><span class="accent-purple">Emanation vs Creation Ex Nihilo</span></h4>
+      <p>In Plotinus, the cosmos is <strong>eternally generated by necessity</strong> — the One could not have failed to overflow. In Christian (and Islamic and Jewish) orthodoxy, creation is a free act of a personal will, and the cosmos has a beginning in time. This is not a trivial difference: it determines whether God is a person or a principle, whether freedom enters the cosmos at the top or only at the human level, and whether prayer makes sense.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-rose">EMBODIMENT</span>
+      <h4><span class="accent-rose">The Body as Prison or Temple?</span></h4>
+      <p>Plotinus is at times deeply <strong>ambivalent about embodiment</strong> — ashamed of his body, reluctant to celebrate birthdays, describing descent into matter as a kind of fall. Yet he also insists this world is beautiful and the body necessary for the soul's full development. The tension between body-as-obstacle and body-as-instrument is never fully resolved and generates all subsequent debates about asceticism, sexuality, and the ethics of care for the self.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-green">EXPERIENCE</span>
+      <h4><span class="accent-green">Mystical Experience and Philosophy</span></h4>
+      <p>The goal of the Enneads is an experience (henosis) that <strong>leaves no conceptual content</strong> — no image, no thought, no memory of a self who experienced something. Can such an experience serve as evidence for any metaphysical claim? Can it be communicated? Is it genuinely cognitive or merely affective? The epistemology of mystical experience remains one of the hardest problems in philosophy of religion, and Plotinus is its most rigorous ancient formulation.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-amber">ETHICS</span>
+      <h4><span class="accent-amber">Absorption and the Self</span></h4>
+      <p>If the soul's goal is union with the One — the dissolution of individual selfhood into the sourceless source — what is the status of <strong>individual ethical obligations</strong>? Does the mystic, absorbed in the One, care about justice? Plotinus's ethics are relatively thin (he relies heavily on Plato's <em>Republic</em> virtues), and later critics note that a philosophy of cosmic love can generate <strong>indifference to particular persons</strong> — the "one" in the abstract at the expense of the neighbour in the concrete.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-blue">THEOLOGY</span>
+      <h4><span class="accent-blue">Neo-Platonism and Polytheism</span></h4>
+      <p>Plotinus himself is relatively <strong>indifferent to the traditional Greek gods</strong>, seeing them as expressions of lower levels of the hierarchy. But later Neo-Platonists (Iamblichus, Proclus) develop an elaborate theological polytheism in which the traditional gods are reinterpreted as intermediate principles between the One and the cosmos. This creates a synthesis of Greek religion and philosophy that was the intellectual backbone of <strong>late antique paganism's last stand</strong> against Christianity.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 16: ESSENTIAL READINGS -->
+<section>
+<div class="slide-pad">
+  <span class="section-number">15 / BIBLIOGRAPHY</span>
+  <h2>Essential <span class="accent-amber">Readings</span></h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="label-chip chip-amber">PRIMARY</span>
+      <h4><span class="accent-amber">Enneads I.6 — On Beauty</span></h4>
+      <p>The most accessible entry point into Plotinus. A sustained argument that beauty is not symmetry but the presence of intelligible Form in matter, culminating in the call to carve the soul as a sculptor carves stone. Essential reading for anyone interested in aesthetics, Platonism, or the contemplative tradition. <strong>Begin here.</strong> The Armstrong (Loeb) translation is recommended; the MacKenna translation is more literary.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-amber">PRIMARY</span>
+      <h4><span class="accent-amber">Enneads I.3 — On Dialectic</span></h4>
+      <p>Plotinus's account of philosophy as the highest form of music — the dialectic that leads through the sciences to the vision of Intellect and ultimately to the One. Here Plotinus sets out who can undertake the philosophical ascent: the <strong>lover (of beauty), the musician (of order), and the philosopher (of being)</strong>. A compact and demanding text that reveals the pedagogical structure of the entire Enneadic project.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-amber">PRIMARY</span>
+      <h4><span class="accent-amber">Enneads VI.9 — On the Good/the One</span></h4>
+      <p>The final treatise and the summit of the Enneads. Plotinus's most direct account of the One, the soul's ascent to it, and the moment of union. Closes with the phrase that has echoed through all subsequent mysticism: <em>"the flight of the alone to the Alone."</em> Demanding but essential. Should be read alongside I.6 as a diptych: <strong>the beginning and the end of the ascent</strong>.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-purple">PRIMARY</span>
+      <h4><span class="accent-purple">Porphyry — Life of Plotinus</span></h4>
+      <p>The preface to the Enneads in Porphyry's edition. Indispensable biographical source and a masterwork of ancient religious biography. Porphyry models Plotinus on Socrates and frames his life as the embodiment of his philosophy: the philosopher who lived as he taught, ashamed of his body, four times united with the divine, dying with a benediction on his lips. Also contains crucial information about the composition and arrangement of the Enneads.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-green">PRIMARY</span>
+      <h4><span class="accent-green">Proclus — Elements of Theology</span></h4>
+      <p>211 propositions axiomatising Neo-Platonic metaphysics in Euclidean form. The most systematic and rigorous expression of the tradition. E.R. Dodds's 1933 edition with Greek text and commentary remains the standard; his introduction is one of the finest accounts of the Neo-Platonic system. Essential for understanding the transmission of Neo-Platonism into medieval Christian, Islamic, and Jewish philosophy via Pseudo-Dionysius and the <em>Liber de Causis</em>.</p>
+    </div>
+    <div class="card">
+      <span class="label-chip chip-rose">SECONDARY</span>
+      <h4><span class="accent-rose">Secondary Works</span></h4>
+      <p><strong>Lloyd P. Gerson</strong>, <em>Plotinus</em> (Routledge Arguments of Philosophers, 1994) — the best English-language introduction. <strong>A.H. Armstrong</strong>, Loeb Plotinus (7 vols) — definitive facing-page translation with invaluable introductions. <strong>Pierre Hadot</strong>, <em>Plotinus or the Simplicity of Vision</em> — philosophical and spiritual. <strong>Dominic O'Meara</strong>, <em>Plotinus: An Introduction to the Enneads</em> — rigorous and clear. <strong>E.R. Dodds</strong>, <em>Pagan and Christian in an Age of Anxiety</em> — on the cultural context.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 17: CLOSING -->
+<section>
+<div class="slide-pad" style="text-align:center;">
+  <span class="section-number">CLOSING</span>
+  <h2>The <span class="accent-amber">Flight</span> of the Alone<br/>to the <span class="accent-amber">Alone</span></h2>
+  <div class="separator"></div>
+
+  <!-- Closing Emanation SVG -->
+  <div style="margin: 0.5em auto; width: 320px; height: 230px;">
+    <svg viewBox="0 0 320 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+      <defs>
+        <radialGradient id="cglow1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#d4a053" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#d4a053" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="cglow2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#9b72cf" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#9b72cf" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="cglow3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ecca3" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#4ecca3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="cglow4" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#5b8cd4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#5b8cd4" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="160" cy="115" rx="148" ry="108" fill="url(#cglow4)" stroke="#2a2a3a" stroke-width="1"/>
+      <ellipse cx="160" cy="115" rx="108" ry="79" fill="url(#cglow3)" stroke="#4ecca3" stroke-width="0.9" stroke-dasharray="5 3" opacity="0.7"/>
+      <ellipse cx="160" cy="115" rx="70" ry="51" fill="url(#cglow2)" stroke="#9b72cf" stroke-width="1" opacity="0.85"/>
+      <ellipse cx="160" cy="115" rx="33" ry="24" fill="url(#cglow1)" stroke="#d4a053" stroke-width="1.8"/>
+      <ellipse cx="160" cy="115" rx="12" ry="9" fill="#d4a053" opacity="0.95"/>
+      <text x="160" y="119" text-anchor="middle" font-family="Playfair Display,serif" font-size="7.5" fill="#0a0a0f" font-weight="800">THE ONE</text>
+      <text x="160" y="98" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#9b72cf" opacity="0.8">NOUS</text>
+      <text x="160" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#4ecca3" opacity="0.75">SOUL</text>
+      <text x="160" y="206" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#5b8cd4" opacity="0.6">MATTER</text>
+    </svg>
+  </div>
+
+  <div class="quote-box" style="margin: 0.5em auto; max-width: 70%;">
+    <p>"Withdraw into yourself and look. And if you do not find yourself beautiful yet, act as does the creator of a statue that is to be made beautiful; he cuts away here, he smooths there, he makes this line lighter, this other purer, until a lovely face has grown upon his work. So do you also: cut away all that is excessive, straighten all that is crooked, bring light to all that is dark and dim, and do not cease working on your statue until there shall shine out on you the godlike splendour of virtue, until you shall see the perfect goodness established in the stainless shrine."</p>
+    <span class="attribution">— Enneads I.6.9</span>
+  </div>
+
+  <div class="quote-box" style="margin: 0.5em auto; max-width: 70%; border-left-color: var(--accent-purple);">
+    <p>"We ought not to ask from where it comes: there is no 'where' for it; it neither comes nor goes anywhere, but simply appears or does not appear. We must not run after it but wait in tranquillity until it appears, preparing ourselves to contemplate it, as the eye waits for the rising of the sun."</p>
+    <span class="attribution">— Enneads V.5.8</span>
+  </div>
+
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.36em; color:var(--text-muted); letter-spacing:0.18em; margin-top:0.6em;">
+    PLOTINUS · 204/5–270 CE · ἡ τοῦ μόνου πρὸς τὸ μόνον φυγή
+  </p>
+  <p class="note-text" style="margin-top:0.3em;">
+    "The flight of the alone to the Alone" — the final words of the Enneads, VI.9.11
+  </p>
+</div>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display='block'; s.style.maxHeight=maxH; }); } Reveal.on('ready',fixSlides); Reveal.on('slidechanged',fixSlides); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){ if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();} }</script>
+</body>
+</html>

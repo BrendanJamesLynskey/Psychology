@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seneca — Stoic Wisdom, Mortality &amp; the Art of Living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: TITLE -->
+<section style="padding: 2em 2.5em; text-align: center;">
+  <span class="section-number">PHILOSOPHY SERIES</span>
+  <svg viewBox="0 0 480 200" style="width:65%; max-width:500px; margin: 0.4em auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Stoic cosmology: concentric circles (logos/pneuma) with a central flame -->
+    <!-- Outermost ring: kosmos / logos -->
+    <circle cx="240" cy="100" r="88" fill="none" stroke="#d4a053" stroke-width="1.2" stroke-dasharray="6,3" opacity="0.5"/>
+    <!-- Second ring: Zeus / fate / providence -->
+    <circle cx="240" cy="100" r="68" fill="none" stroke="#9b72cf" stroke-width="1.2" opacity="0.6"/>
+    <!-- Third ring: pneuma -->
+    <circle cx="240" cy="100" r="48" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.7"/>
+    <!-- Inner ring: individual soul -->
+    <circle cx="240" cy="100" r="28" fill="rgba(212,160,83,0.05)" stroke="#d4a053" stroke-width="1.5"/>
+    <!-- Central flame -->
+    <path d="M240,118 Q232,105 236,92 Q238,100 240,95 Q242,100 244,92 Q248,105 240,118 Z" fill="#d4a053" opacity="0.85"/>
+    <path d="M240,112 Q235,103 237,95 Q239,101 240,98 Q241,101 243,95 Q245,103 240,112 Z" fill="#cf7272" opacity="0.7"/>
+    <!-- Labels -->
+    <text x="335" y="35" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#d4a053" opacity="0.8">LOGOS / KOSMOS</text>
+    <text x="324" y="58" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9b72cf" opacity="0.8">ZEUS / FATE / PROVIDENCE</text>
+    <text x="296" y="80" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#4ecca3" opacity="0.8">PNEUMA</text>
+    <text x="272" y="100" font-family="JetBrains Mono,monospace" font-size="8" fill="#d4a053">HEGEMONIKON</text>
+    <!-- Connecting lines -->
+    <line x1="333" y1="33" x2="310" y2="40" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+    <line x1="321" y1="56" x2="298" y2="62" stroke="#9b72cf" stroke-width="0.8" opacity="0.5"/>
+    <line x1="293" y1="78" x2="278" y2="82" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+    <!-- Bottom label -->
+    <text x="240" y="196" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6a6a7a">STOIC COSMOLOGY — THE RATIONAL FIRE OF THE UNIVERSE</text>
+  </svg>
+  <h1>Seneca</h1>
+  <p class="subtitle">Stoicism · Virtue · Mortality · Logos · The Examined Life</p>
+  <div class="separator"></div>
+  <div class="quote-box" style="margin: 0.6em auto;">
+    <p>"Nusquam est qui ubique est." (He who is everywhere is nowhere.)</p>
+    <span class="attribution">— Seneca, <em>Epistulae Morales</em> I.2</span>
+  </div>
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.38em; color:var(--text-muted); margin-top:0.8em; letter-spacing:0.1em;">c. 4 BCE–65 CE · Córdoba &amp; Rome</p>
+</section>
+
+<!-- SLIDE 2: LIFE & FORMATION -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">01 — BIOGRAPHY</span>
+  <h2>Life &amp; Formation</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin-top:0.8em;">
+    <div class="card">
+      <span class="icon accent-amber">🏛</span>
+      <h4 class="accent-amber">Corduba, Spain &amp; Rome</h4>
+      <p>Lucius Annaeus Seneca was born around 4 BCE in Corduba (modern Córdoba), capital of the Roman province of Baetica in Hispania — making him a provincial who would ascend to the centre of imperial power. His father, Seneca the Elder, was a celebrated rhetorician and teacher, whose surviving works on declamation provide a vivid portrait of Augustan and Tiberian intellectual culture. The family moved to Rome during Seneca's early childhood, where he received an elite education in rhetoric and philosophy. He studied under the Stoic Attalus, whose lectures on poverty and simplicity made a deep impression, and under Sotion, a neo-Pythagorean who convinced him (briefly) to embrace vegetarianism. Seneca suffered severe health problems — likely tuberculosis — throughout his life; a near-fatal illness in Egypt (where he stayed with an aunt) shaped his lifelong preoccupation with the proper attitude toward death. On returning to Rome under Caligula, he emerged as a brilliant advocate and rhetorician, winning first place in the senatorial eloquence competitions — which aroused the jealous rage of the emperor, who was restrained from killing him only by a woman who argued Seneca was so ill he would die naturally.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-rose">⛵</span>
+      <h4 class="accent-rose">Exile to Corsica (41–49 CE)</h4>
+      <p>Under the emperor Claudius, Seneca was exiled to the island of Corsica in 41 CE on a charge of adultery with Julia Livilla, sister of the late Caligula and niece of Claudius. Most ancient and modern authorities suspect the charge was fabricated — a product of court intrigue orchestrated by Messalina, Claudius's wife. He spent eight years on Corsica, an experience of social death and physical remoteness that profoundly tested and deepened his Stoic commitments. During this period he wrote the three <em>Consolationes</em>: to Marcia (on the death of her son), to his mother Helvia (consoling her for his own exile), and to Polybius (a freedman and courtier of Claudius — an embarrassing piece of flattery aimed at securing his recall). The <em>Consolatio ad Helviam</em> in particular shows Stoic philosophy put to existential use: reframing exile as merely a change of place, irrelevant to the philosopher who carries his real home within him. He was recalled in 49 CE through the influence of Agrippina the Younger, who had replaced Messalina and wished Seneca to tutor her son, the young Nero.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-green">👑</span>
+      <h4 class="accent-green">Tutor and Advisor to Nero (49–62 CE)</h4>
+      <p>Seneca's decade as tutor and then chief minister to Nero represents the central and most troubling episode of his life. Together with the Praetorian prefect Burrus, he effectively governed the Roman Empire during the first five years of Nero's reign (54–59 CE) — a period later called the <em>quinquennium Neronis</em> and praised even by Trajan as the best years of Roman government. Seneca wrote Nero's speeches, managed his public image, and moderated his excesses. But the accommodation required was severe. He was implicated, by silence or complicity, in the murder of Britannicus (55 CE) and the murder of Agrippina herself (59 CE) — a matricide that shocked even the Roman public. His <em>De Clementia</em>, written in 55–56 CE and addressed to Nero, reads as a sophisticated attempt to educate an emperor in Stoic virtue while also cementing his own position. He accumulated enormous personal wealth — estimated at 300 million sesterces — which became a source of bitter criticism: how could the philosopher who preached poverty and virtue live in such extraordinary luxury? His defence, implicit in the letters, was that externals are indifferent — but it satisfied few then and satisfies few now.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-purple">⚔</span>
+      <h4 class="accent-purple">The Forced Death (65 CE)</h4>
+      <p>By 62 CE, with Burrus dead and Nero increasingly beyond influence, Seneca retired from court — or was effectively pushed out — to devote himself to philosophy and writing. The final three years produced his greatest works: the <em>Epistulae Morales ad Lucilium</em>, the <em>Naturales Quaestiones</em>, and (probably) several tragedies. In April 65 CE, the Pisonian conspiracy against Nero was discovered. Seneca had no proven involvement — his young kinsman Lucan was among the conspirators — but Nero seized the opportunity. The freedman Gavius Silvanus brought Seneca the emperor's order to die. Seneca complied with Stoic deliberateness, cutting the veins in his arms, his legs, and (when death came slowly) behind his knees. His wife Paulina attempted to die with him; Nero, learning of it, ordered her veins bound to keep her alive. Tacitus's account in the <em>Annals</em> (XV.60–64) is one of the great set-pieces of Latin prose: Seneca consoling his weeping friends, dictating final thoughts, embracing Paulina, discussing the nature of philosophy with those around him as his life ebbed away — a death explicitly modelled on Socrates'.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: TIMELINE -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">02 — CHRONOLOGY</span>
+  <h2>A Life in Time</h2>
+  <div class="separator"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2em; margin-top:0.8em; max-width:92%; margin-left:auto; margin-right:auto;">
+    <div>
+      <div class="timeline-item"><span class="year">c.4 BCE</span><div class="event"><strong>Birth in Corduba, Hispania</strong>Father Seneca the Elder is a celebrated rhetorician. Family moves to Rome in early childhood.</div></div>
+      <div class="timeline-item"><span class="year">c.10s CE</span><div class="event"><strong>Education in Rome</strong>Studies rhetoric and Stoic philosophy under Attalus, and neo-Pythagorean ethics under Sotion; brief period of vegetarianism.</div></div>
+      <div class="timeline-item"><span class="year">c.20s CE</span><div class="event"><strong>Health Crisis in Egypt</strong>Near-fatal illness (likely tuberculosis); stays with aunt who is wife of the prefect of Egypt; near-death experience deepens philosophical commitments.</div></div>
+      <div class="timeline-item"><span class="year">c.37 CE</span><div class="event"><strong>Rises under Caligula</strong>Wins first place in senatorial oratory competitions; Caligula, jealous, nearly executes him — restrained by advisers who say Seneca is terminally ill.</div></div>
+      <div class="timeline-item"><span class="year">41 CE</span><div class="event"><strong>Exiled to Corsica</strong>Claudius exiles him on charges of adultery with Julia Livilla — almost certainly politically fabricated by Messalina. Begins writing the Consolationes.</div></div>
+      <div class="timeline-item"><span class="year">49 CE</span><div class="event"><strong>Recalled to Rome</strong>Agrippina the Younger, having displaced Messalina, engineers his recall to serve as tutor to her son, Domitius Ahenobarbus, the future Nero.</div></div>
+      <div class="timeline-item"><span class="year">54 CE</span><div class="event"><strong>Claudius Dies — Nero Becomes Emperor</strong>With Burrus as Praetorian prefect, Seneca effectively governs the empire during the <em>quinquennium Neronis</em> — widely praised as exemplary administration.</div></div>
+    </div>
+    <div>
+      <div class="timeline-item"><span class="year">55 CE</span><div class="event"><strong>De Clementia</strong>Writes his treatise on mercy addressed to Nero; Britannicus (Claudius's son) poisoned at Nero's order — Seneca's complicity by silence confirmed for many critics.</div></div>
+      <div class="timeline-item"><span class="year">59 CE</span><div class="event"><strong>Agrippina Murdered</strong>Nero has his own mother killed; Seneca reportedly writes the senate speech justifying the act. His moral authority permanently compromised.</div></div>
+      <div class="timeline-item"><span class="year">62 CE</span><div class="event"><strong>Retirement from Court</strong>Burrus dies; Tigellinus replaces him as Praetorian prefect. Seneca offers to return all wealth to Nero; Nero declines. Seneca effectively withdraws from public life.</div></div>
+      <div class="timeline-item"><span class="year">62–65 CE</span><div class="event"><strong>The Great Works</strong>Writes the <em>Epistulae Morales ad Lucilium</em> (124 letters), the <em>Naturales Quaestiones</em>, probably the tragedies in final form; philosophy as consolation and preparation.</div></div>
+      <div class="timeline-item"><span class="year">65 CE</span><div class="event"><strong>Pisonian Conspiracy Discovered</strong>Seneca not proven involved, but Nero orders his death in April 65 CE. His kinsman the poet Lucan is among the conspirators who confess and implicate associates.</div></div>
+      <div class="timeline-item"><span class="year">65 CE</span><div class="event"><strong>Death — A Stoic End</strong>Cuts veins in arms, legs, and knees. Dictates philosophical reflections. Takes hemlock (which fails to work quickly). Eventually suffocated in a steam bath. Tacitus records the scene in detail.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: WHAT IS STOICISM? -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">03 — THE STOIC SCHOOL</span>
+  <h2>What is Stoicism? — History and Structure</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">Stoicism is one of the three great Hellenistic philosophical schools (along with Epicureanism and Scepticism) and the most influential philosophical tradition in Western ethical thought after Platonism and Aristotelianism. It was founded in Athens around 300 BCE and produced its greatest texts in Rome three centuries later. Its core claim — that virtue alone is sufficient for happiness — is at once demanding, paradoxical, and permanently provocative.</p>
+  <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:0.9em; max-width:92%; margin:0 auto;">
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Zeno and the Painted Porch</h4>
+        <p>Zeno of Citium (c.334–262 BCE), a Phoenician merchant from Cyprus, came to Athens and eventually began teaching in the <em>Stoa Poikile</em> — the Painted Porch — a public colonnade in the Agora painted with battle scenes. His followers were called Stoics (those of the Porch). Zeno had studied with the Cynic Crates, from whom he inherited the emphasis on virtue, indifference to externals, and cosmopolitanism. He synthesised Cynic ethics with Academic epistemology and Heraclitean physics into a unified philosophical system — one of antiquity's great intellectual achievements.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Three Parts of Philosophy</h4>
+        <p>Stoics divided philosophy into three parts, famously compared to an orchard: <strong>Logic</strong> is the fence (enabling clear thinking and sound inference); <strong>Physics</strong> is the soil (the nature of the universe that grounds ethical claims); <strong>Ethics</strong> is the fruit (the proper goal of philosophical practice — the good life). All three are interdependent: one cannot understand Stoic ethics without understanding Stoic physics (the logos that pervades all things) and Stoic logic (the theory of rational assent and the passions). Modern popular Stoicism that imports only the ethics radically decontextualises the tradition.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">The Three Periods</h4>
+        <p>The <strong>Old Stoa</strong> (Zeno, Cleanthes, Chrysippus — 3rd–2nd c. BCE): systematic and rigorous; Chrysippus was the school's greatest logician and systematiser. The <strong>Middle Stoa</strong> (Panaetius, Posidonius — 2nd–1st c. BCE): engagement with Rome, adaptation to Roman aristocratic ethics, influence on Cicero. The <strong>Roman Stoa</strong> (Seneca, Musonius Rufus, Epictetus, Marcus Aurelius — 1st–2nd c. CE): practical, therapeutic, biographical — philosophy as <em>askêsis</em> (practice), not just theory. The Roman Stoics are the ones most read today.</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 320 380" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="320" height="380" rx="8" fill="#12121a"/>
+        <text x="160" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#d4a053" font-weight="700">Stoic School Lineage</text>
+        <!-- Zeno -->
+        <rect x="90" y="30" width="140" height="36" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+        <text x="160" y="49" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Zeno of Citium</text>
+        <text x="160" y="61" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#6a6a7a">c.334–262 BCE · Athens</text>
+        <!-- Line -->
+        <line x1="160" y1="66" x2="160" y2="80" stroke="#d4a053" stroke-width="1.2"/>
+        <!-- Cleanthes -->
+        <rect x="90" y="80" width="140" height="36" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+        <text x="160" y="99" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Cleanthes</text>
+        <text x="160" y="111" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#6a6a7a">c.330–230 BCE · Hymn to Zeus</text>
+        <line x1="160" y1="116" x2="160" y2="130" stroke="#9b72cf" stroke-width="1.2"/>
+        <!-- Chrysippus -->
+        <rect x="90" y="130" width="140" height="36" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+        <text x="160" y="149" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Chrysippus</text>
+        <text x="160" y="161" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#6a6a7a">c.280–206 BCE · "If not for Chrysippus..."</text>
+        <line x1="160" y1="166" x2="160" y2="180" stroke="#9b72cf" stroke-width="1.2"/>
+        <!-- Panaetius -->
+        <rect x="90" y="180" width="140" height="36" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+        <text x="160" y="199" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Panaetius / Posidonius</text>
+        <text x="160" y="211" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#6a6a7a">Middle Stoa · Rome-facing</text>
+        <line x1="160" y1="216" x2="160" y2="230" stroke="#4ecca3" stroke-width="1.2"/>
+        <!-- Fork: three Roman Stoics -->
+        <line x1="60" y1="240" x2="260" y2="240" stroke="#4ecca3" stroke-width="1.2"/>
+        <line x1="60" y1="230" x2="60" y2="240" stroke="#4ecca3" stroke-width="1.2"/>
+        <line x1="160" y1="230" x2="160" y2="240" stroke="#4ecca3" stroke-width="1.2"/>
+        <line x1="260" y1="230" x2="260" y2="240" stroke="#4ecca3" stroke-width="1.2"/>
+        <!-- Three Roman Stoics -->
+        <rect x="5" y="248" width="108" height="42" rx="6" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+        <text x="59" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#d4a053" font-weight="700">Seneca</text>
+        <text x="59" y="277" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">c.4 BCE–65 CE</text>
+        <text x="59" y="287" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">Letters · Tragedies</text>
+        <rect x="106" y="248" width="108" height="42" rx="6" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+        <text x="160" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#cf7272" font-weight="700">Epictetus</text>
+        <text x="160" y="277" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">c.50–135 CE</text>
+        <text x="160" y="287" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">Discourses · Enchiridion</text>
+        <rect x="207" y="248" width="108" height="42" rx="6" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+        <text x="261" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#5b8cd4" font-weight="700">Marcus Aurelius</text>
+        <text x="261" y="277" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">121–180 CE</text>
+        <text x="261" y="287" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a6a7a">Meditations</text>
+        <!-- Role labels -->
+        <text x="59" y="308" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Courtier-philosopher</text>
+        <text x="160" y="308" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Freed slave</text>
+        <text x="261" y="308" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Emperor of Rome</text>
+        <text x="160" y="340" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6a6a7a">All conditions — Stoicism reaches all</text>
+        <text x="160" y="354" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6a6a7a">ROMAN STOICS c. 50 BCE – 180 CE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: STOIC PHYSICS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">04 — STOIC PHYSICS</span>
+  <h2>The Stoic Physics — Logos, Pneuma &amp; Providence</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">Stoic physics is materialist but not mechanistic — the universe is thoroughly rational, ensouled, and providential. Everything that exists is body (even the soul, even God); but matter is always combined with an active rational principle that structures, animates, and directs it. This is perhaps the most coherent and ambitious monistic metaphysics in antiquity, and it grounds the ethical claims that make Stoicism distinctive.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">Logos — Cosmic Reason</h4>
+      <p>The <em>logos</em> (reason, word, rational principle) is the active, structuring, divine intelligence that pervades the entire cosmos. It is simultaneously God, Zeus, fate, and providence — not a personal God who stands apart from creation, but the rational principle <em>identical</em> with the universe itself, directing it toward good ends. Heraclitus had spoken of a universal logos that most people fail to understand; the Stoics made this the cornerstone of a complete metaphysical system. Everything that happens, happens according to logos — which is why the sage accepts all events as expressions of divine reason, even those that appear disastrous.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Pneuma — The Binding Breath</h4>
+      <p><em>Pneuma</em> (literally "breath" or "spirit") is the fine, fire-infused air that pervades all things and constitutes their cohesive, vital principle. Different grades of pneuma produce different grades of being: bare pneuma = the cohesion of stones (hexis); pneuma with growth = the nature of plants (physis); with sensitive soul = animal life; with rational soul = human life; the purest pneuma = the logos itself. The <em>hegemonikon</em> — the ruling part of the soul, located in the heart — is the seat of reason, perception, and impulse; it is the part of the soul governed by logos and capable of virtue or vice. This thoroughly physicalist psychology is remarkable: even our rational faculties are a kind of fire.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Fate, Providence &amp; the Eternal Recurrence</h4>
+      <p>All events are causally necessitated by the logos — there is no genuine contingency or chance in the Stoic cosmos. Fate (<em>heimarmenê</em>) is the sequence of causes woven together by divine reason toward ends that are universally good. The Stoic God is not the indifferent Aristotelian Unmoved Mover but an actively providential intelligence that cares for the cosmos and even for individuals. At vast intervals of time, the universe is consumed in a cosmic conflagration (<em>ekpyrosis</em>) and then reconstituted identically — the eternal recurrence. Each individual has lived before, exactly as now, and will live again. This stark determinism creates a fundamental tension with Stoic moral responsibility that its practitioners were acutely aware of.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Four Elements</h4>
+      <p>Like Aristotle, the Stoics accepted the four Empedoclean elements (earth, water, air, fire) as the basic constituents of matter. But their interpretation is distinctive: fire is not just an element but the primary principle; the logos itself is a kind of intelligent, creative fire. The cosmos begins as fire, differentiates into the four elements, passes through a complete natural cycle, and returns to fire. The four elements are constituted by two "qualities" (hot/cold, wet/dry) in passive matter and two active principles (fire/air as the active pair, earth/water as the passive pair) — a hierarchical dualism within an otherwise monistic framework.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Naturales Quaestiones</h4>
+      <p>Seneca's own contribution to Stoic natural philosophy — the <em>Naturales Quaestiones</em>, written in his final years — applies Stoic physical theory to meteorological and geographical phenomena: earthquakes, floods, comets, thunder, lightning, winds, and the Nile's flooding. Though the specific explanations are largely superseded, the work is historically significant as (a) one of the most substantial Latin scientific texts; (b) an expression of Seneca's view that natural inquiry itself is a form of Stoic practice — expanding the mind beyond the local and transient toward the cosmic and permanent; (c) a reflection on the proper human relationship to nature: admiration, not exploitation.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Providence vs. the Problem of Evil</h4>
+      <p>The Stoic God is providential — yet the good suffer, the virtuous are exiled and executed, tyrants prosper. In his <em>De Providentia</em>, Seneca addresses this directly: adversity is not punishment but exercise. The good person is "tested" by misfortune — God sends difficulty to the virtuous precisely because they are strong enough to bear it and to demonstrate virtue's sufficiency. Hardship is the gymnasium of the soul. This is the Stoic theodicy, and it is simultaneously bracing and troubling: it risks making the suffering of the innocent into a spectacle for divine admiration. Seneca is aware of the difficulty; he does not wholly resolve it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: VIRTUE AS THE ONLY GOOD -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">05 — STOIC ETHICS</span>
+  <h2>Virtue as the Only Good — The Ethical Core</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">The single most provocative and distinctive claim of Stoicism is ethical: virtue (<em>aretê</em>) is the only genuine good; vice is the only genuine evil; everything else — health, wealth, reputation, pleasure, bodily integrity, life itself — is morally indifferent (<em>adiaphon</em>). This is not mere posturing: it follows rigorously from Stoic physics (the logos is good; only what participates in logos is genuinely good; only virtue does so without qualification) and Stoic psychology (externals are not in our control; virtue is).</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9em; max-width:92%; margin:0.5em auto 0;">
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">The Four Cardinal Virtues</h4>
+        <p>Following Plato and Aristotle, Stoics accepted four primary virtues: <strong>Phronesis</strong> (practical wisdom / prudence) — knowing what is truly good and evil; <strong>Dikaiosynê</strong> (justice) — giving others their due, social virtue; <strong>Andreia</strong> (courage) — endurance of genuine hardships; <strong>Sophrosynê</strong> (temperance/moderation) — correct ordering of desires. The Stoics added: these four are unified — one cannot possess any one virtue without all the others. The person with genuine courage must also have wisdom (to know when danger is worth facing), justice, and temperance. This unity of virtue thesis is one of the most debated claims in ancient ethics.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Preferred Indifferents (Proegmena Adiaphora)</h4>
+        <p>If health, wealth, and life itself are morally indifferent, how can the Stoics justify preferring health to illness, life to death? Their answer is the doctrine of "preferred indifferents" (<em>proegmena adiaphora</em>): though these things are not genuine goods, they are naturally preferable — in accordance with nature — and rational beings will normally select (but not value unconditionally) health, life, social relationships, and civic participation. The difference between a good and a preferred indifferent is this: a genuine good must always be chosen; a preferred indifferent is to be selected <em>ceteris paribus</em>, but relinquished without grief when circumstances require.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">The Sage — An Ideal and a Problem</h4>
+        <p>The Stoic sage (<em>sophos</em>) is the person of perfect virtue who never acts from passion, never makes a false value-judgement, is perfectly happy in all circumstances — even on the rack (the Stoics were challenged on this repeatedly). Most Stoics admitted that the sage is extraordinarily rare — perhaps one person in a generation; Chrysippus suggested the sage might never actually exist. Seneca, with characteristic candour, repeatedly acknowledges that he himself is far from being a sage: "I am not yet cured; not even treating myself well." The gap between the ideal and reality is one of Stoicism's permanent tensions and one source of its humane appeal.</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 330 420" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="330" height="420" rx="8" fill="#12121a"/>
+        <text x="165" y="22" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#d4a053" font-weight="700">The Stoic Value Hierarchy</text>
+        <!-- Good -->
+        <rect x="70" y="32" width="190" height="44" rx="6" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="2"/>
+        <text x="165" y="52" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#d4a053" font-weight="700">GOOD</text>
+        <text x="165" y="67" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Virtue alone — wisdom, justice, courage, temperance</text>
+        <!-- Arrow -->
+        <line x1="165" y1="76" x2="165" y2="92" stroke="#2a2a3a" stroke-width="1.5" marker-end="url(#arrG)"/>
+        <defs><marker id="arrG" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2a2a3a"/></marker></defs>
+        <!-- Preferred Indifferents -->
+        <rect x="30" y="92" width="265" height="80" rx="6" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1.5"/>
+        <text x="165" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4ecca3" font-weight="700">PREFERRED INDIFFERENTS</text>
+        <text x="165" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Select, but do not value unconditionally</text>
+        <text x="165" y="143" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Health · Life · Wealth · Reputation · Social bonds</text>
+        <text x="165" y="157" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Freedom · Civic participation · Pleasure</text>
+        <!-- Arrow -->
+        <line x1="165" y1="172" x2="165" y2="188" stroke="#2a2a3a" stroke-width="1.5" marker-end="url(#arrG2)"/>
+        <defs><marker id="arrG2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2a2a3a"/></marker></defs>
+        <!-- Dispreferred Indifferents -->
+        <rect x="30" y="188" width="265" height="80" rx="6" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1.5"/>
+        <text x="165" y="208" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#cf7272" font-weight="700">DISPREFERRED INDIFFERENTS</text>
+        <text x="165" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Avoid if possible, but not genuine evils</text>
+        <text x="165" y="239" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Illness · Death · Poverty · Exile · Pain</text>
+        <text x="165" y="253" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">Disgrace · Loss of social status</text>
+        <!-- Arrow -->
+        <line x1="165" y1="268" x2="165" y2="284" stroke="#2a2a3a" stroke-width="1.5" marker-end="url(#arrG3)"/>
+        <defs><marker id="arrG3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2a2a3a"/></marker></defs>
+        <!-- Evil -->
+        <rect x="70" y="284" width="190" height="44" rx="6" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="2"/>
+        <text x="165" y="304" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" fill="#cf7272" font-weight="700">EVIL</text>
+        <text x="165" y="319" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Vice alone — folly, injustice, cowardice, excess</text>
+        <!-- Key observation -->
+        <rect x="12" y="342" width="306" height="66" rx="6" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
+        <text x="165" y="358" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9.5" fill="#9b72cf" font-weight="700">The Radical Claim</text>
+        <text x="165" y="372" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Nothing outside virtue can make you genuinely unhappy.</text>
+        <text x="165" y="385" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Nothing outside vice can make you genuinely unhappy.</text>
+        <text x="165" y="398" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6a6a7a">The sage is happy on the rack. (Stoics claimed this seriously.)</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: DICHOTOMY OF CONTROL -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">06 — STOIC PRACTICE</span>
+  <h2>The Dichotomy of Control — <em>Eph' Hēmin</em></h2>
+  <div class="separator"></div>
+  <div class="quote-box" style="margin: 0.4em auto 0.6em;">
+    <p>"Some things are in our control and others not. Things in our control are opinion, pursuit, desire, aversion, and, in a word, whatever are our own actions. Things not in our control are body, reputation, command, and, in one word, whatever are not our own actions."</p>
+    <span class="attribution">— Epictetus, <em>Enchiridion</em> 1.1 (Higginson translation)</span>
+  </div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent-amber">What Is "Up to Us"</h4>
+      <p>The Greek <em>eph' hēmin</em> — "up to us," "in our power" — identifies the domain where Stoic freedom and virtue reside: our <em>judgements</em> (the assent we give or withhold to impressions); our <em>impulses</em> (the motivations that arise from those judgements); our <em>desires</em> and <em>aversions</em> (what we pursue and avoid). These are entirely ours because they are operations of our own rational faculty, the <em>hegemonikon</em>. No external force can compel the rational mind to assent to a false judgement — it can destroy the body, but not the will. This is Stoic freedom: not freedom from circumstances, but freedom from the tyranny of false values.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">What Is Not "Up to Us"</h4>
+      <p>Our <em>body</em> (health, strength, pleasure, pain), our <em>property</em>, our <em>reputation</em>, our <em>social position</em> and <em>office</em> — these are not in our control. They depend on factors outside us: other people's choices, Fortune's wheel, the body's own fragility. The Stoic does not pretend these things don't happen or don't hurt. The point is that their value is entirely a function of our judgements about them: if I judge that exile is terrible, I am its victim; if I judge that exile merely changes my location, Fortune has no power over me. The work of Stoic practice is precisely the restructuring of these value-judgements.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Reserve Clause — Kathêkon with a Caveat</h4>
+      <p>Stoics distinguished between what they pursued (preferred indifferents) and their attachment to the outcome. Seneca's formulation — and Epictetus's — is to act with a "reserve clause" (<em>hupexairesis</em>): "I will pursue this outcome, fate permitting." One pursues getting the promotion, keeping one's health, maintaining the relationship — but without treating success as the measure of one's virtue or happiness. The archer analogy: the good archer does everything in his power to hit the target — selects the right arrow, takes aim correctly, releases well — then is entirely unconcerned with the wind. Excellence lies in the trying; the outcome lies with fate.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Cognitive Behavioural Parallels</h4>
+      <p>The 20th-century psychotherapist Albert Ellis cited the Stoics — Epictetus in particular — as direct precursors of Rational Emotive Behaviour Therapy (REBT) and what became Cognitive Behavioural Therapy (CBT). The core CBT insight — that emotional distress arises not from events themselves but from our interpretations of them — is precisely the Stoic thesis about <em>prohairesis</em> (choice) and the rational restructuring of <em>phantasiai</em> (impressions). Aaron Beck, the founder of CBT, acknowledged the Stoic influence. This has enabled a remarkable popular revival: from Ryan Holiday's Stoicism-for-entrepreneurs genre to clinical applications in anxiety, depression, and chronic pain.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.5em;">
+    <p>"Men are disturbed not by things, but by their opinions about things."</p>
+    <span class="attribution">— Epictetus, <em>Enchiridion</em> 5 (echoing Seneca, <em>Epistulae Morales</em> 78.13)</span>
+  </div>
+</section>
+
+<!-- SLIDE 8: MEMENTO MORI -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">07 — MORTALITY</span>
+  <h2>Memento Mori — The Art of Dying Well</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">More than any other ancient philosopher, Seneca made the meditation on death central to philosophical practice. This is not morbidity but philosophy's most practical exercise: if we can face death without terror, we can face everything. The <em>De Brevitate Vitae</em> (On the Shortness of Life) and the <em>Epistulae Morales</em> return to mortality again and again — not to generate despair but to generate urgency, clarity, and freedom.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9em; max-width:92%; margin:0.5em auto 0;">
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">De Brevitate Vitae</h4>
+        <p>Written perhaps in the 40s CE and addressed to Paulinus (his father-in-law and prefect of the Roman grain supply), the <em>De Brevitate Vitae</em> opens with the stunning claim that life is not short — we make it short by wasting it. "It is not that we have a short time to live, but that we waste a lot of it." The treatise distinguishes between merely passing time (<em>transire</em>) and genuinely living (<em>vivere</em>). The busy person — the ambitious lawyer, the flatterer of the powerful, the collector of estates — passes through life without ever inhabiting it. Philosophy is the only activity that gives time back: by living in the present, by examining what is genuinely valuable, by refusing to barter now for an indefinitely deferred later.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Time as the Only True Resource</h4>
+        <p>In <em>Epistulae</em> I, Seneca's opening move is characteristic: "Ita fac, mi Lucili: vindica te tibi." ("Do this, my Lucilius: claim yourself for yourself.") He distinguishes losing time (which everyone accepts as a minor inconvenience) from losing money (which everyone treats as a catastrophe). The asymmetry is irrational: money can be replaced, time never. Every moment squandered in shallow diversions, in the pursuit of what others value rather than what is genuinely good, is a small death. Seneca's formulation — that we die daily (<em>cotidie morimur</em>) — foreshadows Heidegger's "being-toward-death" as the condition that makes authentic living possible.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Meditating on Death as Liberation</h4>
+        <p><em>Melete thanatou</em> (meditation on death, which Plato assigned to philosophy in the <em>Phaedo</em>) is for Seneca not a grim exercise but a liberating one. The person who has truly prepared for death cannot be blackmailed by the fear of it: they cannot be forced to act dishonourably to preserve their life, cannot be enslaved by any tyrant who threatens death, cannot be paralysed by the fragility of health or fortune. "Let us prepare our minds as if we had come to the very end of life. Let us postpone nothing. Let us balance life's books each day." (<em>Ep.</em> 101.7–8). This is not renunciation of life but its fullest inhabitation.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-rose">The Three Kinds of Time</h4>
+        <p>In <em>Epistulae</em> 1 and <em>De Brevitate Vitae</em> 10, Seneca makes a remarkable analysis: all time is either past (which is fixed, and therefore can be recalled and "possessed" by memory), present (which is fleeting but entirely ours while we have it), or future (which is not yet ours and may never be). Most people live almost entirely in the future — constantly deferring present engagement to anticipated goals. The philosopher lives in all three: drawing on the past through philosophical reading and memory, inhabiting the present fully, and regarding the future with calm equanimity rather than anxious longing.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">Contemptus Mundi vs Amor Fati</h4>
+        <p>Seneca sometimes appears to counsel withdrawal from the world (<em>contemptus mundi</em>) — retirement to philosophical study, avoidance of the crowd and its contagious vices. Elsewhere he insists that the Stoic sage is the most fully engaged person imaginable — citizen of the world, dedicated to service of others. The tension is genuine: his own retirement in 62 CE and the immense literary productivity of his final years represent a genuine tension between the active and contemplative lives that he never fully resolved. The later Stoics — Epictetus, Marcus Aurelius — both resolve the tension differently, and their different positions illuminate Seneca's difficulty.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-amber">Voluntary Poverty and the Body</h4>
+        <p>Seneca occasionally practices what he preaches — or claims to. <em>Ep.</em> 18 describes practicing voluntary poverty: eating plain food, wearing rough clothing, sleeping on a hard bed — not as asceticism but as inoculation. If you periodically experience the conditions you fear, you discover they are bearable: "Hoc primum philosophia promittit: sensum communem, humanitatem et congregationem." The body is not the enemy (as for the Platonists) but a tool: treat it neither as master nor as slave. The satire here is partly self-directed — Seneca knew well that his 300 million sesterces made his voluntary poverty exercises look somewhat theatrical.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: THE LETTERS TO LUCILIUS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">08 — THE EPISTULAE MORALES</span>
+  <h2>The Letters to Lucilius — Philosophy by Post</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.55em;">The <em>Epistulae Morales ad Lucilium</em> — 124 letters in 20 books, written between approximately 62 and 65 CE and addressed to Gaius Lucilius Junior, a younger friend, procurator in Sicily and aspiring poet — represent the summit of Seneca's literary achievement and one of the finest bodies of philosophical prose in any language. Whether or not they were actually sent (scholars dispute this), they create a sustained fictional dialogue with a younger version of the philosophical self, working through the difficulties of Stoic practice with candour and self-scrutiny.</p>
+  <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:0.9em; max-width:92%; margin:0.5em auto 0;">
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Structure and Method</h4>
+        <p>Each letter typically opens with a vivid scene from daily life — a gladiatorial spectacle, a sea voyage, a visit to the baths, a walk in Scipio's old villa — and uses this as a springboard for philosophical reflection. Seneca quotes liberally from Epicurus (a provocative choice for a Stoic), whom he treats with generous ecumenism: "Epicurus says this, and it is true; I will give credit where it is due." Each letter usually ends with a <em>sententia</em> — a memorable philosophical maxim or quote — which Seneca presents as the "gift" he is sending with his letter. The later letters become increasingly systematic, dealing with extended philosophical questions (time, virtue, the soul's parts) across multiple letters.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Philosophy as Practice, Not Theory</h4>
+        <p>The Letters insistently reject the idea that philosophy is primarily a theoretical enterprise. "Philosophy promises above all else: good sense, humanity, and fellowship." (<em>Ep.</em> 5.4.) One of Seneca's recurring complaints is about people who know all the philosophical arguments but live unreformed lives — who can recite Chrysippus's propositions about desire but cannot resist a banquet. "Recede in te ipse quantum potes" ("Withdraw into yourself as much as you can") — not to retreat from the world but to ensure that engagement with it is governed by one's own values rather than the herd's. Philosophy is not a subject but a way of life.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Key Recurring Themes</h4>
+        <p>The letters circle around a set of interlocking preoccupations: the proper use of <em>time</em> (Ep. 1, 49, 77); the choice of <em>friends</em> and the proper limits of friendship (Ep. 3, 6, 35); the dangers of <em>travel</em> as escape from oneself (Ep. 28: "Hoc primum philosophia promittit... mutare non potest, qui terram mutat" — one who merely changes location cannot change themselves); <em>retirement</em> and the temptations of public life (Ep. 8, 68); the <em>body-mind relationship</em> and the cultivation of both without enslavement to either; and the art of <em>reading</em> — reading deeply rather than widely, feeding on what the mind can digest ("Elige ergo quos legas" — choose carefully whom you read).</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 330 410" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="330" height="410" rx="8" fill="#12121a"/>
+        <text x="165" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#d4a053" font-weight="700">Anatomy of a Senecan Letter</text>
+        <!-- Letter frame -->
+        <rect x="18" y="30" width="294" height="368" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.2"/>
+        <!-- Salutation -->
+        <rect x="26" y="38" width="278" height="32" rx="4" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
+        <text x="165" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#d4a053">SALUTATION</text>
+        <text x="165" y="64" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="8.5" fill="#9a9a9a">"Seneca Lucilio suo salutem"</text>
+        <!-- Everyday scene -->
+        <rect x="26" y="78" width="278" height="52" rx="4" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1"/>
+        <text x="165" y="93" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#4ecca3">SCENE FROM DAILY LIFE</text>
+        <text x="165" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">An observation, incident, or place visited</text>
+        <text x="165" y="120" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">grounds the abstract in the concrete</text>
+        <!-- Philosophical pivot -->
+        <rect x="26" y="138" width="278" height="52" rx="4" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
+        <text x="165" y="153" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#9b72cf">PHILOSOPHICAL PIVOT</text>
+        <text x="165" y="167" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">"Hoc me admonet..." (This reminds me...)</text>
+        <text x="165" y="180" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Move from observation to reflection</text>
+        <!-- Argument -->
+        <rect x="26" y="198" width="278" height="62" rx="4" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="1"/>
+        <text x="165" y="213" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#5b8cd4">ARGUMENT AND EXPLORATION</text>
+        <text x="165" y="227" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Stoic doctrine deployed; sometimes opposing</text>
+        <text x="165" y="240" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">views considered (Epicurus quoted with respect)</text>
+        <text x="165" y="253" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#9a9a9a">Self-critical; admits personal failures</text>
+        <!-- Sententia -->
+        <rect x="26" y="268" width="278" height="52" rx="4" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1.5"/>
+        <text x="165" y="283" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#d4a053">CLOSING SENTENTIA</text>
+        <text x="165" y="297" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="8.5" fill="#e8e6e3">"I shall give you this gift with my letter..."</text>
+        <text x="165" y="310" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9a9a9a">A memorable maxim to carry away</text>
+        <!-- Vale -->
+        <rect x="26" y="328" width="278" height="62" rx="4" fill="rgba(0,0,0,0.2)" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="165" y="343" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#6a6a7a">VALE</text>
+        <text x="165" y="357" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">124 letters survive in 20 books</text>
+        <text x="165" y="370" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8.5" fill="#6a6a7a">written c. 62–65 CE, the last years of his life</text>
+        <text x="165" y="383" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#5b8cd4">Genre: philosophical epistle as spiritual exercise</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10: THE PASSIONS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">09 — STOIC PSYCHOLOGY</span>
+  <h2>The Passions — False Judgements and the Examined Life</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">Stoic psychology is striking for its intellectualism: the passions (<em>pathê</em>) are not blind, irrational forces opposed to reason (as for Plato) but are themselves a form of reason gone wrong — false value-judgements about indifferent things. Anger arises because one judges that a genuine injustice has been done to oneself or one's loved ones and that retaliation is warranted. Remove the judgement and the passion dissolves. This makes moral therapy primarily cognitive, not will-power-based.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent-rose">The Four Passions</h4>
+      <p>Stoics classify the passions in a 2×2 grid: by temporal orientation (present/future) and by direction (approach/avoidance). <strong class="accent-rose">Desire</strong> (<em>epithymia</em>) — irrational reaching toward a future apparent good; <strong class="accent-amber">Fear</strong> (<em>phobos</em>) — irrational aversion to a future apparent evil; <strong class="accent-green">Pleasure</strong> (<em>hêdonê</em>) — irrational elation at a present apparent good; <strong class="accent-purple">Distress</strong> (<em>lypê</em>) — irrational contraction at a present apparent evil. Each has a rational counterpart (the <em>eupatheiai</em>): wish (rational desire), caution (rational avoidance), joy (rational elation), and — significantly — there is no rational counterpart to distress: the sage does not grieve.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">De Ira — On Anger</h4>
+      <p>Seneca's three-book treatise on anger is the most detailed analysis of a single emotion in ancient philosophy. His Stoic analysis: anger is the belief that one has been wronged by an intentional slight, combined with the belief that retaliation is justified. The analysis enables specific therapies: recognise that the "wrong" may not be intentional; realise that retaliation prolongs harm rather than repairing it; understand that brief anger rapidly becomes habitual rage. But Seneca also shows psychological subtlety: the pre-passions (<em>propatheiai</em>) — the initial involuntary flinch of emotion before rational assent — are not subject to choice. Only the full-blown passion, which requires rational endorsement, is a vice. This distincts Stoic psychology from a crude "don't feel anything" caricature.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Pre-Passions (Propatheiai)</h4>
+      <p>One of Seneca's most important psychological contributions in <em>De Ira</em> II.1–4 is the distinction between the first involuntary stirrings of emotion and the passion proper. When a loud noise startles you, or you feel a first chill of fear at bad news, or a flush of pleasure at flattery — these are not vices. They are involuntary physiological and psychological responses (<em>propatheiai</em> — "pre-passions" or "proto-passions") that precede rational assent. The Stoic sage is not immune to them — even Cato might blush in certain situations. What the sage does not do is endorse these pre-passions, let them cascade into full passion, or act from them. The moral work is at the level of judgement and assent, not at the level of initial neural response.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Therapeutic Goal — Apatheia, Not Anesthesia</h4>
+      <p>The Stoic goal is <em>apatheia</em> — freedom from passion — which is not emotional anaesthesia or the suppression of all feeling, but the replacement of false-judgement-based emotions with their rational counterparts. The sage feels joy but not giddy pleasure; caution but not paralyzing fear; active wish but not desperate craving. These are available precisely <em>because</em> they are grounded in correct value-judgements about what is genuinely good rather than merely apparently good. The word <em>apatheia</em> passed into Latin as <em>impassibilitas</em> and eventually into Christian theology — the impassibility of God — a highly contested doctrine. Stoic emotional therapy influenced Boethius, medieval moral theology, and (via a long route) modern CBT.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.5em;">
+    <p>"Ira initium est insaniae." (Anger is the beginning of madness.)</p>
+    <span class="attribution">— Seneca, <em>De Ira</em> I.1.2</span>
+  </div>
+</section>
+
+<!-- SLIDE 11: COSMOPOLITANISM -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">10 — STOIC ETHICS</span>
+  <h2>Cosmopolitanism &amp; the Universal Brotherhood</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">Stoicism produced antiquity's most systematic cosmopolitan ethics. Because the logos pervades all rational beings equally — slave and free, Greek and barbarian, man and woman — all share a fundamental rational equality and belong to a single community whose borders coincide with the universe itself. This had profound practical implications that Stoic thinkers did not always fully enact, but which they articulated with extraordinary clarity.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">The World as Polis</h4>
+      <p>Diogenes the Cynic, when asked where he was from, answered "I am a citizen of the world" (<em>kosmopolitês</em>) — a provocative paradox in an age when identity was rooted in the local city. The Stoics transformed this provocative stance into a systematic cosmopolitanism: every human being is a citizen of two cities — the particular city of their birth, with its specific laws and customs, and the universal city of the cosmos governed by logos and natural law. The first city varies; the second is universal. Obligations to the universal city — to all rational beings as such — ground the strongest moral duties.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Seneca on Slaves</h4>
+      <p><em>Epistulae Morales</em> 47 is the most remarkable text on slavery in the entire ancient world: "They are slaves. But they may also be comrades. They are slaves. But they are also our lowly friends... Reflect that the man you call your slave was born of the same seed, is smiled upon by the same skies, and on equal terms with yourself breathes, lives, and dies." Seneca does not call for the abolition of slavery — he does not fundamentally question the institution — but he insists that the master's power over the slave's body does not extend to the slave's soul, and that the slave who possesses virtue is the slave's master's true superior. This is a partial critique, but in the Roman context it is radical.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Oikeiôsis — Concentric Circles of Care</h4>
+      <p>Stoic ethics employed the concept of <em>oikeiôsis</em> (appropriation, affiliation) to explain moral development. We are naturally "affiliated" first with ourselves, then extend that care in concentric circles to family, friends, neighbours, fellow citizens, and finally all rational beings. The Stoic moral task is to draw those outer circles progressively closer — to treat strangers with something approaching the concern one feels for family. Hierocles (2nd c. CE) described this explicitly: we must try to "contract the circles" — treating the distant more like the near. This is the ancient ancestor of Rawlsian impartiality and Peter Singer's expanding circle of moral concern.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Natural Law</h4>
+      <p>If all humans share in the logos, then there is a universal rational law to which all particular laws are accountable — a natural law (<em>lex naturalis</em>) higher than any civil law. Positive law may be just or unjust; it is judged by the standard of natural law, which is the rational structure of the universe itself. This idea — developed by Cicero from Stoic sources, transmitted through Aquinas, Grotius, Locke, and Jefferson — underwrites the entire Western tradition of universal human rights. When Jefferson writes that all men are "endowed by their Creator with certain unalienable Rights," he is drawing on a tradition whose deepest roots are Stoic.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Marcus Aurelius on Universal Reason</h4>
+      <p>Marcus Aurelius, writing in the 170s CE on campaign against the Marcomanni, returns repeatedly in the <em>Meditations</em> to the cosmopolitan theme: "What is not good for the hive is not good for the bee." "My nature is rational and political; my city is Rome; but as a man, my city is the world." The emperor's private philosophical notebook — never intended for publication — is perhaps the most moving document of Stoic cosmopolitanism: a man with more power than any human had ever held, reminding himself daily of his insignificance and his obligation to serve rather than exploit. The contrast with Nero is exact and devastating.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Seneca on Women</h4>
+      <p>Relative to most ancient thinkers, Seneca's Stoic universalism extended to women. In <em>Ad Marciam de Consolatione</em> he addresses a woman as a philosophical equal capable of full virtue; the very act of writing philosophical prose addressed to a woman (rather than a man) is a departure from convention. The Stoic claim that virtue and reason are equally available to women as to men follows from the metaphysics of logos: if logos is distributed among all rational creatures, gender cannot be a disqualifier. Musonius Rufus (Epictetus's teacher) argued explicitly that women should receive the same philosophical education as men — an extraordinary position in the 1st century CE.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12: MARCUS AND EPICTETUS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">11 — ROMAN STOICISM</span>
+  <h2>Marcus Aurelius &amp; Epictetus — Three Perspectives</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">The Roman Stoics wrote in three radically different stations of life — Seneca as wealthy courtier-philosopher, Epictetus as freed slave, Marcus Aurelius as emperor of Rome. That the same philosophical tradition could be authentically lived from these positions is itself a powerful demonstration of its core thesis: virtue is independent of externals. Yet each brings a distinctive emphasis shaped by their social location.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.7em; max-width:92%; margin:0.5em auto 0;">
+    <div>
+      <div class="card" style="border-color:var(--accent-amber); margin-bottom:0.45em;">
+        <h4 class="accent-amber">Seneca — Courtly Stoicism</h4>
+        <p>Seneca's Stoicism is practised in the shadow of power — advising emperors, accumulating wealth, writing brilliant prose about poverty. His characteristic tone is urgent, personal, confessional: he rarely claims to have achieved what he recommends. His literary genius — the compressed epigram, the vivid scene, the sudden turn — makes his work accessible in a way the drier Chrysippus is not. His critics (then and now) point to the gap between his philosophy and his life; his defenders argue that acknowledging the gap honestly is itself a form of philosophical integrity. The contradictions in his life are the contradictions of any thoughtful person trying to live well in an imperfect world.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-amber">Key Works</h4>
+        <p><em>Epistulae Morales ad Lucilium</em> (124 letters); <em>De Brevitate Vitae</em>; <em>De Ira</em> (3 books); <em>De Clementia</em>; <em>De Beneficiis</em>; <em>De Providentia</em>; <em>Consolationes</em> (3); <em>Naturales Quaestiones</em>; philosophical tragedies (Medea, Phaedra, Thyestes, etc.). The tragedies explore Stoic themes — the destructive power of uncontrolled passion, the relationship between virtue and catastrophe — in a form that inverts the philosophical essays' consolatory mode.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-color:var(--accent-rose); margin-bottom:0.45em;">
+        <h4 class="accent-rose">Epictetus — Radical Freedom</h4>
+        <p>Epictetus (c. 50–135 CE) was a slave of Epaphroditus, himself a freedman of Nero. The story that his master broke his leg for entertainment (and that Epictetus calmly pointed out the leg would break, then remarked "I told you so" when it did) may be apocryphal but captures his spirit perfectly. Freed sometime after Nero's death, he established a school in Nicopolis (northern Greece). His <em>Discourses</em> (recorded by his student Arrian) and the <em>Enchiridion</em> (the pocket manual) are the most uncompromising and demanding of Stoic texts: the dichotomy of control is stated with absolute rigour; there are no mitigating gestures toward preferred indifferents. Epictetus's perspective — that a slave who possesses virtue is freer than any emperor who is enslaved to his passions — is not a consolation but a radical ontological claim.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-rose">Distinctive Contributions</h4>
+        <p>Epictetus develops the concept of <em>prohairesis</em> (rational choice, moral purpose) as the seat of freedom more systematically than any other Stoic. His insistence that we can always choose our response — however constrained our external circumstances — influenced Viktor Frankl's development of logotherapy in the Nazi concentration camps. Frankl explicitly credits Stoic and Epictetian ideas in <em>Man's Search for Meaning</em>. The slave's perspective makes the universality of Stoic freedom not a philosophical abstraction but a lived reality tested under the most extreme conditions imaginable.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-color:var(--accent-blue); margin-bottom:0.45em;">
+        <h4 class="accent-blue">Marcus Aurelius — The Emperor's Notebook</h4>
+        <p>Marcus Aurelius (121–180 CE) became emperor in 161 CE and spent much of his reign on the Danube frontier fighting the Marcomanni — as far from philosophical otium as possible. His <em>Meditations</em> (<em>Ta eis Heauton</em> — "To Himself") were a private journal, never intended for publication, written in Greek. They are, simultaneously, the most intimate document of Stoic practice and one of antiquity's most moving texts: an emperor reminding himself, day after day, that power is transient, that his achievements will be forgotten, that Caracalla and Hadrian are long dead and their glories vanished — and that this does not matter, because virtue alone is the standard.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">Distinctive Contributions</h4>
+        <p>Marcus develops the <em>view from above</em> — the technique of imagining one's life and concerns from the perspective of cosmic time and space, rendering them small and manageable. He also uniquely develops the theme of <em>amor fati</em> (love of fate) — not merely accepting what happens as the logos wills, but actively loving it, finding it beautiful and good. His version of Stoicism is more melancholy and more resigned than Epictetus's; the emperor who cannot leave office, cannot retire from the world, must continue serving until he dies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: SENECA AND TRAGEDY -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">12 — LITERARY LEGACY</span>
+  <h2>Seneca and Tragedy — Philosophy in Dramatic Form</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">Seneca is the only ancient philosopher whose non-philosophical literary work exercised a transformative influence on a later literary tradition. His ten tragedies — nine mythological (Hercules Furens, Thyestes, Phaedra, Medea, Oedipus, Agamemnon, Troades, Phoenissae, Hercules Oetaeus) and one historical (Octavia, probably not by Seneca) — were almost certainly written not for performance but for reading aloud in the private salon (<em>closet dramas</em>), though this is contested.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent-amber">Stoic Themes in Dramatic Form</h4>
+      <p>The tragedies explore what happens when passion displaces reason with catastrophic results — which is precisely the Stoic ethical claim, dramatised rather than argued. Medea's revenge-driven infanticide; Phaedra's incestuous passion; Atreus's nightmarish revenge in the Thyestes (cooking his brother's children and serving them as a meal) — these are not moral parables in a simple sense but profound explorations of the way in which uncontrolled passion, left unchecked, inexorably escalates toward absolute destruction. The tyrant figures in the tragedies are studies in what the Stoics call the complete slave: enslaved to every impulse, free in name only, in reality more imprisoned than any slave in chains.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Influence on Renaissance Drama</h4>
+      <p>When Renaissance humanists rediscovered Greek drama, they did so largely through the lens of Senecan tragedy, which had survived intact through the medieval period. The result was an extraordinary literary cross-pollination: Senecan revenge tragedy, ghost scenes, rhetoric of passion, five-act structure, and the figure of the passionate tyrant flowed directly into Christopher Marlowe's <em>Tamburlaine</em>, Thomas Kyd's <em>Spanish Tragedy</em>, and — most significantly — Shakespeare's tragedies. Hamlet's soliloquies, the revenge plot of Titus Andronicus, the tyranny of Macbeth, and the extremity of Lear all bear Seneca's unmistakable stamp. T.S. Eliot's essay "Seneca in Elizabethan Translation" (1927) is the classical treatment of this influence.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Closet Drama Question</h4>
+      <p>Were Seneca's tragedies written for performance or for reading? The evidence is contested. The extremely long speeches, the rhetorically overloaded dialogue, the occasional practical impossibilities of staging — all suggest composition for the reading salon. But some scholars argue for performance in a private theatrical context. The question matters for interpretation: a play written for reading privileges language and rhetoric over action and spectacle; it addresses an individual reader's imaginative engagement rather than a crowd's collective emotion. If Senecan tragedy is closet drama, it is philosophy in a different mode — not argument but imaginative enactment of philosophical truths about passion, virtue, and catastrophe.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Medea — A Case Study</h4>
+      <p>Seneca's <em>Medea</em> is often considered his masterpiece. Where Euripides' Medea deliberates agonisingly between maternal love and revenge, Senecan Medea wills her transformation into a monster — the play traces the progressive abandonment of human feeling in favour of pure vengeance as the expression of absolute self-will. "Medea nunc sum" ("Now I am Medea") — spoken after the infanticide — is one of ancient literature's most chilling lines. It enacts the Stoic horror story: what happens when the rational soul entirely abdicates its governing role and passion becomes identity. The play is a mirror-image of the philosophical essays: there, Seneca shows how to cultivate reason; here, what happens when reason is destroyed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: STOICISM AND CHRISTIANITY -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">13 — HISTORICAL INFLUENCE</span>
+  <h2>Stoicism and Christianity — Convergence and Conflict</h2>
+  <div class="separator"></div>
+  <p style="max-width:88%; text-align:left; margin:0.4em auto 0.5em;">The encounter between Stoic philosophy and early Christianity is one of the most consequential intellectual events in Western history. The two traditions shared remarkable ethical and cosmological commitments — enough to generate a centuries-long conversation about their relationship. Yet they also differed at precisely the points that matter most for a religious tradition.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-amber">Paul at the Areopagus</h4>
+      <p>Acts 17 records Paul's speech before Athenian philosophers — including Stoics and Epicureans — in the Areopagus. He quotes the Stoic poet Aratus: "We are indeed his offspring" — appropriating Stoic language about the divine logos as a bridge to the Christian proclamation. Paul's theology of creation (the world as rational and ordered, reflecting its creator's logos), his cosmopolitan ethics (neither Jew nor Greek), his concept of natural law in Romans 1–2 (the Gentiles who have the law "written on their hearts") all draw explicitly on Stoic sources. The degree to which Pauline Christianity is a transformed Stoicism remains a major question in early Christian studies.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Logos — Stoic Physics and John's Gospel</h4>
+      <p>The opening of John's Gospel — "In the beginning was the Logos, and the Logos was with God, and the Logos was God... and the Logos became flesh" — is the most dramatic single instance of Stoic vocabulary imported into Christian theology. The Stoic logos is the rational principle that pervades and constitutes the universe; John's logos is the divine reason that becomes incarnate in Jesus Christ. The identification was immediately productive and immediately problematic: it enabled intelligent pagans to understand the Christian message in terms of their own philosophical tradition, but required the radical new claim that this cosmic principle had become a particular historical person. Justin Martyr and the Alexandrian theologians developed these connections extensively.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Spurious Paul-Seneca Correspondence</h4>
+      <p>Fourteen Latin letters, purportedly exchanged between Seneca and the apostle Paul, circulated widely from at least the 4th century CE and were accepted as genuine by Jerome and Augustine. They are certainly forgeries — the Latin is not Seneca's; the ideas are a weak mixture of Stoic and Christian commonplaces; the historical situation is implausible — but their existence attests to the profound cultural pressure to establish a direct personal connection between Rome's greatest philosophical writer and Christianity's greatest missionary. The forgeries express a genuine intellectual truth: Stoic and Pauline ethics are close enough to invite the fantasy of conversation.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Stoic Natural Law and Patristic Ethics</h4>
+      <p>The Stoic concept of natural law — a universal rational standard against which positive law is measured — passed into Christian theology primarily through Cicero and became the foundation of patristic and medieval ethics. Ambrose's <em>De Officiis</em> is almost a direct Christianised rewriting of Cicero's <em>De Officiis</em> (itself a Stoic-influenced text); Aquinas's synthesis of natural law theory in the <em>Summa Theologiae</em> depends on Stoic foundations. The four cardinal virtues (prudence, justice, fortitude, temperance) entered Christian moral theology directly from the Stoic tradition — though now supplemented by the three theological virtues (faith, hope, love).</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Augustine's Critique</h4>
+      <p>Augustine, in <em>The City of God</em>, offers the most powerful ancient critique of Stoic ethics from a Christian perspective. His target is the Stoic claim that virtue is sufficient for happiness and that the sage is happy even on the rack. Augustine argues this requires the sage to deny reality — to pretend that genuine goods (the body, social bonds, earthly flourishing) are not genuinely lost when they are destroyed. Christian hope, by contrast, is not indifference to loss but the belief in resurrection — that genuine goods are restored eschatologically rather than being redefined as indifferent. The debate between Stoic and Christian accounts of suffering and happiness runs through Western thought to the present day.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Apatheia and Impassibilitas</h4>
+      <p>The Stoic concept of <em>apatheia</em> — freedom from passion — entered Christian theology as the <em>impassibilitas Dei</em> (divine impassibility): God cannot be moved by passion, cannot suffer, cannot be changed by external events. This doctrine became highly contested in modern theology: the 20th century saw significant argument for a "suffering God" (Moltmann's <em>The Crucified God</em>) against the classical impassibility tradition. The debate is a direct consequence of the Stoic concept's entry into Christian theology: whether the God who enters human history in the Incarnation can remain untouched by human suffering is a question that Stoic philosophy inadvertently posed for Christian doctrine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 15: CORE TENSIONS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">14 — CRITICAL ASSESSMENT</span>
+  <h2>Core Tensions &amp; Contested Legacy</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent-rose">The Political Collaborator</h4>
+      <p>No tension in Seneca's life or work has generated more heat than his service to Nero. He was implicated by silence, complicity, or active assistance in some of Nero's worst acts: the murder of Britannicus, the execution of Agrippina. He accumulated vast wealth while writing about the unimportance of wealth. He wrote a speech justifying a son's murder of his mother. Hannah Arendt's concept of the "banality of evil" — ordinary, intelligent, well-meaning people enabling catastrophe through accommodation rather than dramatic participation — seems painfully applicable. Seneca himself seems aware of his compromised position: the letters' repeated self-scrutiny, their admission of failure, can be read as a long reckoning with his own life.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Wealth vs. the Preaching of Poverty</h4>
+      <p>The most vivid ancient critique of Seneca's hypocrisy comes from Publius Suillius, who attacked him in Tacitus's <em>Annals</em> (XIII.42) for accumulating 300 million sesterces while preaching Stoic indifference to wealth. Seneca's philosophical reply — in <em>De Vita Beata</em> — is that the Stoic wise man can live virtuously with wealth, just as a good pilot can steer in a storm; the wealth does not affect his soul's constitution. But the reply is difficult to sustain in the face of his actual life. The question he poses — whether it is possible to be genuinely virtuous while exercising enormous power and enjoying enormous wealth — is one the Western tradition has never satisfactorily answered.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Sage Ideal vs Human Reality</h4>
+      <p>The Stoic sage is perfect: perfectly rational, perfectly virtuous, perfectly happy in all circumstances. The gap between this ideal and any actual human being is not a bug but a structural feature of Stoic ethics — the ideal defines the direction of progress rather than a realistic goal. But critics from antiquity onward have wondered whether an ideal so remote from human possibility can serve as a practical moral guide. Seneca's response — implicit in the letters — is that the relevant comparison is not between the proficiens (one making moral progress) and the sage, but between one's past and present self. Progress is the Senecan standard, not perfection.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Fate vs. Freedom</h4>
+      <p>Stoic determinism — the claim that all events are necessitated by the logos — creates a fundamental tension with moral responsibility. If everything I do is fated by cosmic reason, in what sense am I responsible for my vice? The Stoics attempted to resolve this through the concept of "what depends on us" (Chrysippus's theory of "co-fated" causes: my character is co-fated with my action; I am responsible for my character even though my character is also fated). But the tension was never fully resolved, and it resurfaces in every deterministic context: the Calvinist debate about predestination and moral responsibility, the contemporary debate between hard determinism and compatibilism, are direct descendants of the Stoic problematic.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">The Passions and Emotional Life</h4>
+      <p>The Stoic doctrine that all passions are false judgements to be eliminated has been persistently criticised — most acutely by Aristotle (whose doctrine of the mean allows for appropriate emotions). Martha Nussbaum's <em>The Therapy of Desire</em> (1994) argues that the Stoic view fails to respect the genuine value of the emotional attachments it recommends severing: grief at genuine loss is not a false judgement but a recognition of the real value of what is lost. The Stoic reply — that such attachments make us hostages to fortune and therefore perpetual victims — is psychologically compelling but seems to require a kind of emotional surgery that makes the operation more damaging than the disease.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Modern Stoicism — Revival and Dilution</h4>
+      <p>The 21st century has seen a remarkable popular revival of Stoicism — Ryan Holiday's <em>The Obstacle Is the Way</em> (2014) and <em>Ego Is the Enemy</em> (2016) have sold millions of copies; Silicon Valley entrepreneurs and professional athletes cite Marcus Aurelius. Tim Ferriss has called the <em>Meditations</em> "the Bible" of many successful people. This revival recovers something genuine: the emphasis on resilience, the dichotomy of control, the meditations on mortality. But critics argue it strips Stoicism of its physics (the logos, cosmopolitanism, natural law) and retains only a productivity-optimising self-help framework. A Stoicism without the cosmic framework may be a Stoicism without its foundations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 16: ESSENTIAL READINGS -->
+<section style="padding: 1.6em 2.5em;">
+  <span class="section-number">15 — BIBLIOGRAPHY</span>
+  <h2>Essential Readings</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <span class="icon accent-amber">📖</span>
+      <h4 class="accent-amber">Seneca — Epistulae Morales</h4>
+      <p>The central Senecan text. Robin Campbell's Penguin translation (1969) is the best entry point; Richard Mott Gummere's Loeb Classical Library translation (3 vols.) is reliable for closer study. Margaret Graver and A.A. Long's new Harvard University Press translation (2015) is the most scholarly and readable contemporary version. Begin with Letters 1, 5, 12, 18, 28, 47, 49, 77, 84, and 107 for a representative selection of the major themes. The letters repay slow reading — one letter a day, as Seneca himself prescribes for reading, taking time to digest what is offered.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-green">📖</span>
+      <h4 class="accent-green">Seneca — De Brevitate Vitae &amp; Essays</h4>
+      <p>C.D.N. Costa's Penguin translation (<em>Dialogues and Essays</em>, 2007) covers the <em>De Brevitate Vitae</em>, <em>De Ira</em>, <em>De Providentia</em>, <em>De Clementia</em>, and the <em>Consolationes</em>. The <em>De Brevitate Vitae</em> is the best single introduction to Seneca's ethics — short, perfectly structured, and immediately applicable. <em>De Ira</em> remains the most detailed and psychologically sophisticated ancient treatment of anger and should be read alongside modern research on emotion regulation. The <em>Consolationes</em> show Stoic philosophy at work in the face of real grief and political catastrophe.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-purple">📖</span>
+      <h4 class="accent-purple">Epictetus — Enchiridion &amp; Discourses</h4>
+      <p>P.E. Matheson's <em>Enchiridion</em> (Oxford, 1916) remains elegant and readable; Nicholas White's Hackett translation is more modern. Robin Hard's <em>Discourses, Fragments, Handbook</em> (Oxford World's Classics, 2014) is the most comprehensive recent translation with excellent introduction by Christopher Gill. The <em>Enchiridion</em> alone is 52 short chapters and can be read in an afternoon — but digesting it is a lifetime's work. Sharon Lebell's loose paraphrase (<em>Art of Living</em>, 1995) captures the spirit for non-specialists while losing the philosophical precision.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-rose">📖</span>
+      <h4 class="accent-rose">Marcus Aurelius — Meditations</h4>
+      <p>Gregory Hays's Modern Library translation (2002) is the most widely praised contemporary version — vivid, accurate, and beautifully designed. Robin Waterfield's new Oxford World's Classics translation (2021) is more literal and more scholarly. Pierre Hadot's <em>The Inner Citadel: The Meditations of Marcus Aurelius</em> (Harvard, 1998) is the indispensable commentary — Hadot's analysis of the three disciplines (desire, action, assent) is the key to reading the Meditations philosophically rather than merely as a collection of inspiring quotations. Read the Meditations alongside Hadot.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-blue">📖</span>
+      <h4 class="accent-blue">Secondary Works — The Stoic Tradition</h4>
+      <p>Brad Inwood, <em>Reading Seneca</em> (Oxford, 2005) — the finest scholarly treatment of Seneca's philosophy. A.A. Long, <em>Stoic Studies</em> (Cambridge, 1996) — essential for understanding Stoic physics and ethics. Pierre Hadot, <em>Philosophy as a Way of Life</em> (Blackwell, 1995) — the most influential modern treatment of ancient philosophy as spiritual practice. Margaret Graver, <em>Stoicism and Emotion</em> (Chicago, 2007) — definitive on the Stoic theory of the passions. Miriam Griffin, <em>Seneca: A Philosopher in Politics</em> (Oxford, 1976) — the standard historical biography.</p>
+    </div>
+    <div class="card">
+      <span class="icon accent-amber">📖</span>
+      <h4 class="accent-amber">Modern Appropriations</h4>
+      <p>Ryan Holiday, <em>The Obstacle Is the Way</em> (2014) — the most widely read modern Stoic self-help text; philosophically thin but practically effective. Viktor Frankl, <em>Man's Search for Meaning</em> (1946) — the most important 20th-century application of Stoic ideas, written in the context of Auschwitz. Nassim Nicholas Taleb, <em>The Black Swan</em> and <em>Antifragile</em> — explicitly Senecan in the treatment of uncertainty and resilience. Julia Annas, <em>Intelligent Virtue</em> (Oxford, 2011) — sophisticated philosophical appropriation of ancient virtue ethics for contemporary purposes, including substantial Stoic material.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: CLOSING -->
+<section style="padding: 2em 2.5em; text-align: center;">
+  <span class="section-number">CODA</span>
+  <svg viewBox="0 0 480 180" style="width:65%; max-width:500px; margin: 0.3em auto 0.5em; display:block;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Flame of logos -->
+    <g transform="translate(240,90)">
+      <!-- Concentric glow rings -->
+      <circle cx="0" cy="10" r="70" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+      <circle cx="0" cy="10" r="52" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.35"/>
+      <circle cx="0" cy="10" r="36" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.45"/>
+      <!-- Central large flame -->
+      <path d="M0,60 Q-22,-10 -8,-40 Q-2,-20 0,-35 Q2,-20 8,-40 Q22,-10 0,60 Z" fill="#d4a053" opacity="0.8"/>
+      <path d="M0,50 Q-14,5 -4,-22 Q0,-10 4,-22 Q14,5 0,50 Z" fill="#cf7272" opacity="0.75"/>
+      <path d="M0,38 Q-6,8 0,-12 Q6,8 0,38 Z" fill="#e8e6e3" opacity="0.6"/>
+      <!-- Branch flames -->
+      <path d="M-40,55 Q-55,30 -48,10 Q-42,28 -40,55 Z" fill="#d4a053" opacity="0.5"/>
+      <path d="M40,55 Q55,30 48,10 Q42,28 40,55 Z" fill="#d4a053" opacity="0.5"/>
+      <!-- Text below -->
+      <text x="0" y="85" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#d4a053" font-weight="900">ΛΟΓΟΣ</text>
+      <text x="0" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a7a">The rational fire of the universe</text>
+    </g>
+  </svg>
+  <h2 style="margin-bottom:0.2em;">The Art of Living — Ars Longa, Vita Brevis</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2" style="margin:0.7em auto; max-width:80%;">
+    <div class="quote-box" style="margin:0; max-width:100%;">
+      <p>"Dum differtur vita transcurrit." (While we are postponing, life speeds by.)</p>
+      <span class="attribution">— Seneca, <em>Epistulae Morales</em> I.1</span>
+    </div>
+    <div class="quote-box" style="margin:0; max-width:100%;">
+      <p>"Recede in te ipse quantum potes; cum his versare qui te meliorem acturi sunt. Admitte quos potes reddere meliores." (Withdraw into yourself as much as you can; associate with those who will make you better; admit those whom you can make better.)</p>
+      <span class="attribution">— Seneca, <em>Epistulae Morales</em> VII.8</span>
+    </div>
+  </div>
+  <p style="font-size:0.44em; color:var(--text-muted); margin-top:0.8em; max-width:75%; margin-left:auto; margin-right:auto; line-height:1.7;">Seneca is the most human of the ancient Stoics — the one whose life most visibly fails to match his ideals, and who is most honest about that failure. His genius was to make philosophy not a system to be mastered but a practice to be lived, imperfectly and persistently. In an age of distraction, his insistence on the preciousness of time, the destructiveness of unexamined passion, and the liberating power of philosophy as a way of life speaks with undiminished force. "Nusquam est qui ubique est" — he who is everywhere is nowhere. The examined life requires presence: to this moment, to this page, to this one question: how am I living?</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display='block'; s.style.maxHeight=maxH; }); } Reveal.on('ready',fixSlides); Reveal.on('slidechanged',fixSlides); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){ if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();} }</script>
+</body>
+</html>

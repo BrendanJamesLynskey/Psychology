@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William of Ockham — Nominalism, Ockham's Razor &amp; the Birth of Modernity</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 — TITLE -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="ockCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#4ecca3;stop-opacity:0.5"/>
+                    <stop offset="60%" style="stop-color:#d4a053;stop-opacity:0.1"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <!-- The Razor — clean cut through complexity -->
+            <line x1="20" y1="60" x2="100" y2="60" stroke="#4ecca3" stroke-width="2" opacity="0.7"/>
+            <!-- Entities being multiplied (above) -->
+            <circle cx="35" cy="35" r="5" fill="#9b72cf" opacity="0.5"/>
+            <circle cx="55" cy="28" r="4" fill="#9b72cf" opacity="0.4"/>
+            <circle cx="75" cy="38" r="6" fill="#9b72cf" opacity="0.5"/>
+            <circle cx="90" cy="25" r="3" fill="#9b72cf" opacity="0.35"/>
+            <circle cx="45" cy="45" r="3" fill="#9b72cf" opacity="0.4"/>
+            <text x="60" y="15" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#6a6a7a">universals?</text>
+            <!-- Only particulars below -->
+            <circle cx="40" cy="82" r="4" fill="#4ecca3" opacity="0.8"/>
+            <circle cx="65" cy="88" r="4" fill="#4ecca3" opacity="0.8"/>
+            <circle cx="88" cy="80" r="4" fill="#4ecca3" opacity="0.8"/>
+            <text x="60" y="108" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#4ecca3">only particulars exist</text>
+            <!-- Outer ring -->
+            <circle cx="60" cy="60" r="54" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <!-- Razor label -->
+            <text x="7" y="57" font-family="JetBrains Mono" font-size="7" fill="#4ecca3">✂</text>
+        </svg>
+    </div>
+    <h1>William of Ockham</h1>
+    <div class="separator"></div>
+    <p class="subtitle">NOMINALISM &middot; OCKHAM'S RAZOR &middot; DIVINE OMNIPOTENCE &middot; POLITICAL THEOLOGY</p>
+    <div class="quote-box" style="margin-top: 1.2em;">
+        <p>"Entities are not to be multiplied beyond necessity."</p>
+        <span class="attribution">&mdash; <em>Ockham's Razor</em> (formulation by later editors of his principle)</span>
+    </div>
+    <p class="note-text">c.1287&ndash;c.1347 &middot; Ockham, Surrey, England</p>
+</section>
+
+<!-- SLIDE 2 — BIOGRAPHY -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Life &amp; Controversy</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <span class="icon">&#127963;</span>
+            <h4 class="accent-amber">Early Life &amp; Oxford</h4>
+            <p>Born c.1287 in the village of Ockham, Surrey (near Guildford), England. Entered the Franciscan Order as a novice, probably around 1300. Studied theology at Oxford, becoming a Bachelor of Theology and commenting on Peter Lombard's <em>Sentences</em> — the standard curriculum text. His brilliant but provocative lectures attracted attention and students, but he never received the Master's degree he was entitled to: his academic career was interrupted before he could "incept" (formally graduate) at Oxford. Hence he is sometimes called "the Venerable Inceptor."</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#9878;</span>
+            <h4 class="accent-rose">The Avignon Summons</h4>
+            <p>In 1324 Ockham was summoned to the papal court at Avignon to answer charges of heresy — fifty-one propositions from his Oxford lectures had been denounced. He remained at Avignon for nearly four years under a kind of scholarly house arrest, writing prolifically. The commission never issued a formal condemnation, but the process was never concluded. Meanwhile, Ockham became embroiled in the Franciscan poverty controversy — a bitter dispute about whether Christ and the apostles had owned property.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#9993;</span>
+            <h4 class="accent-green">Flight from Avignon</h4>
+            <p>In May 1328, Ockham, with the Minister-General of the Franciscans Michael of Cesena and several others, fled Avignon secretly by night and sought the protection of Emperor Louis IV of Bavaria — then in open conflict with Pope John XXII. It is said Ockham told Louis: "Emperor, protect me with your sword, and I will protect you with my pen." He was excommunicated and spent the rest of his life at the Emperor's court in Munich, writing relentlessly against papal power.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#128196;</span>
+            <h4 class="accent-blue">The Munich Years</h4>
+            <p>From 1328 until his death c.1347 (possibly from the Black Death), Ockham produced an enormous output of political theological writing: attacks on papal claims to temporal power, defences of the Franciscan poverty ideal, and systematic political philosophy. He never returned to purely academic philosophy after leaving Avignon, though his earlier Oxford works remained extraordinarily influential. He may have been reconciled with the papacy shortly before his death.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3 — TIMELINE -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Timeline</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">~1287</span>
+                <span class="event"><strong>Born at Ockham, Surrey</strong>Enters the Franciscan Order as a novice; education at a Franciscan school</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">~1307</span>
+                <span class="event"><strong>Studies at Oxford</strong>Reads theology; comments on the <em>Sentences</em> of Peter Lombard (c.1317–19); earns the title "Venerable Inceptor"</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">~1319</span>
+                <span class="event"><strong><em>Summa Logicae</em> and <em>Quodlibeta</em></strong>Major logical works composed; full articulation of nominalism and terminist logic</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1323</span>
+                <span class="event"><strong>Charges of heresy filed</strong>John Lutterell, former Chancellor of Oxford, denounces 51 propositions from Ockham's Oxford lectures to Pope John XXII</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1324</span>
+                <span class="event"><strong>Summoned to Avignon</strong>Remains at the papal court under investigation; writes extensively; immerses himself in the Franciscan poverty controversy</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1328</span>
+                <span class="event"><strong>Flight from Avignon</strong>Flees with Michael of Cesena to Emperor Louis IV; excommunicated; takes refuge at Munich</span>
+            </div>
+        </div>
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">1328</span>
+                <span class="event"><strong><em>Opus Nonaginta Dierum</em></strong>Defence of Franciscan poverty against John XXII; foundation of his political theology</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1334</span>
+                <span class="event"><strong><em>Dialogus</em> (begun)</strong>Vast political-theological dialogue on Church and State; perhaps his most ambitious work</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1338</span>
+                <span class="event"><strong><em>Octo Quaestiones</em></strong>Eight questions on papal and imperial power; systematic defence of imperial sovereignty</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1340</span>
+                <span class="event"><strong><em>Tractatus de Principatibus</em></strong>Further political theory; influence on conciliarism and early modern constitutionalism</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">~1347</span>
+                <span class="event"><strong>Death at Munich</strong>Probably from the Black Death; possibly reconciled with the papacy shortly before death; excommunication lifted posthumously</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 4 — NOMINALISM -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Nominalism: The Problem of Universals</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"Every universal is one particular thing and it is not universal except by its signification, in that it is a sign of many things."</p>
+        <span class="attribution">&mdash; Ockham, <em>Ordinatio</em>, I, d.2, q.7</span>
+    </div>
+    <div class="diagram-container">
+        <svg width="680" height="195" viewBox="0 0 680 195">
+            <!-- Realism -->
+            <rect x="10" y="20" width="190" height="155" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="105" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#9b72cf">REALISM</text>
+            <text x="105" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Plato · Aquinas</text>
+            <text x="22" y="86" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Universals exist in reality</text>
+            <text x="22" y="103" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; "Human nature" is real</text>
+            <text x="22" y="120" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Shared essence in things</text>
+            <text x="22" y="137" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Grounds moral realism</text>
+            <text x="22" y="154" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Grounded in divine Ideas</text>
+            <!-- Conceptualism -->
+            <rect x="215" y="20" width="190" height="155" rx="6" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="310" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#5b8cd4">CONCEPTUALISM</text>
+            <text x="310" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Abelard · Moderate position</text>
+            <text x="228" y="86" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Universals are concepts</text>
+            <text x="228" y="103" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Exist in the mind</text>
+            <text x="228" y="120" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Not arbitrary — natural</text>
+            <text x="228" y="137" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; No extramental universal</text>
+            <text x="228" y="154" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; A moderate via media</text>
+            <!-- Ockham's Nominalism -->
+            <rect x="420" y="20" width="250" height="155" rx="6" fill="rgba(78,204,163,0.05)" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="545" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#4ecca3">OCKHAM'S NOMINALISM</text>
+            <text x="545" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Only particulars exist</text>
+            <text x="434" y="86" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Universals are mere terms (voces)</text>
+            <text x="434" y="103" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; No shared nature in things</text>
+            <text x="434" y="120" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Each thing absolutely individual</text>
+            <text x="434" y="137" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Concepts are natural signs</text>
+            <text x="434" y="154" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Razor: no universal entities needed</text>
+        </svg>
+    </div>
+    <p class="note-text">Ockham's nominalism was revolutionary: it dissolved the Platonist-Aristotelian metaphysical framework that had supported scholastic theology, cleared the ground for empiricist epistemology, and made each particular thing radically individual.</p>
+</section>
+
+<!-- SLIDE 5 — OCKHAM'S RAZOR -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Ockham's Razor: The Principle of Parsimony</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">The Formulation</h4>
+            <p>Ockham never used the exact phrase "entities are not to be multiplied beyond necessity" — this is a later summary of principles he regularly employed. His actual formulations include: <em>frustra fit per plura quod potest fieri per pauciora</em> ("it is futile to do with more what can be done with fewer") and <em>pluralitas non est ponenda sine necessitate</em> ("plurality is not to be posited without necessity"). The metaphor of a razor — cutting away unnecessary entities — appears in later commentators.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">How the Razor Cuts</h4>
+            <p>Ockham uses the razor against realism about universals: postulating a shared universal entity "humanity" over and above individual humans adds an unnecessary entity. His cognitive psychology similarly eliminates "intelligible species" — Aquinas's mental intermediaries between mind and world — as unnecessary: the intellect knows things directly through intuitive and abstractive cognition, without requiring additional mental entities to mediate knowledge.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Scientific Parsimony</h4>
+            <p>The razor became one of the foundational principles of modern science: prefer the simpler theory over the more complex when both explain the available evidence equally well. Newton used it explicitly in <em>Principia Mathematica</em> (Regulae Philosophandi I): "We are to admit no more causes of natural things than such as are both true and sufficient to explain their appearances." The razor drives Occamist thinking in physics, biology, and philosophy of mind to this day.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Limits of the Razor</h4>
+            <p>The razor does not entail that reality is simple — only that we should not postulate complexity beyond what explanation requires. Moreover, "necessity" is theory-relative: what counts as necessary depends on the explanatory goals. Critics note that the razor can be used to eliminate entities that are real but inconvenient: early resistance to atoms, fields, and curved spacetime was sometimes Razor-inspired. The razor is a heuristic, not an infallible proof.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 6 — LOGIC AND LANGUAGE -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Logic, Language &amp; Mental Terms</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="200" viewBox="0 0 680 200">
+            <!-- Three levels of language -->
+            <rect x="10" y="20" width="195" height="160" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1"/>
+            <text x="107" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#d4a053">MENTAL LANGUAGE</text>
+            <text x="107" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Oratio mentalis</text>
+            <text x="22" y="86" font-family="DM Sans" font-size="9" fill="#9a9a9a">Universal to all humans</text>
+            <text x="22" y="104" font-family="DM Sans" font-size="9" fill="#9a9a9a">Natural signs — concepts</text>
+            <text x="22" y="122" font-family="DM Sans" font-size="9" fill="#9a9a9a">Primary level of signification</text>
+            <text x="22" y="140" font-family="DM Sans" font-size="9" fill="#9a9a9a">Not conventional</text>
+            <text x="22" y="158" font-family="DM Sans" font-size="9" fill="#9a9a9a">Innate to rational minds</text>
+
+            <rect x="242" y="20" width="195" height="160" rx="6" fill="#161622" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="340" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#5b8cd4">SPOKEN LANGUAGE</text>
+            <text x="340" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Oratio vocalis</text>
+            <text x="255" y="86" font-family="DM Sans" font-size="9" fill="#9a9a9a">Conventional — varies by culture</text>
+            <text x="255" y="104" font-family="DM Sans" font-size="9" fill="#9a9a9a">Subordinated to mental terms</text>
+            <text x="255" y="122" font-family="DM Sans" font-size="9" fill="#9a9a9a">Signs of mental concepts</text>
+            <text x="255" y="140" font-family="DM Sans" font-size="9" fill="#9a9a9a">Spoken or written utterances</text>
+            <text x="255" y="158" font-family="DM Sans" font-size="9" fill="#9a9a9a">Subject to grammatical analysis</text>
+
+            <rect x="474" y="20" width="195" height="160" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+            <text x="572" y="46" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#4ecca3">WRITTEN LANGUAGE</text>
+            <text x="572" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Oratio scripta</text>
+            <text x="488" y="86" font-family="DM Sans" font-size="9" fill="#9a9a9a">Tertiary level</text>
+            <text x="488" y="104" font-family="DM Sans" font-size="9" fill="#9a9a9a">Signs of spoken words</text>
+            <text x="488" y="122" font-family="DM Sans" font-size="9" fill="#9a9a9a">Most conventional</text>
+            <text x="488" y="140" font-family="DM Sans" font-size="9" fill="#9a9a9a">Varies across writing systems</text>
+            <text x="488" y="158" font-family="DM Sans" font-size="9" fill="#9a9a9a">Dependent on spoken language</text>
+        </svg>
+    </div>
+    <p class="note-text">Ockham's <em>Summa Logicae</em> (c.1323) is one of the greatest logical works of the Middle Ages. His analysis of mental language — a universal "language of thought" underlying all conventional languages — anticipates Jerry Fodor's 20th-century "language of thought" hypothesis.</p>
+</section>
+
+<!-- SLIDE 7 — COGNITION AND INTUITION -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Cognition: Intuitive &amp; Abstractive Knowledge</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Intuitive Cognition</h4>
+            <p>Intuitive cognition (<em>notitia intuitiva</em>) is direct, immediate knowledge of a particular thing as present and existing. When I see this red apple before me, I have intuitive cognition of it. This cognition grounds existential judgements: "this apple exists." It is the foundation of all empirical knowledge and is caused by the thing itself, acting on the intellect directly — no species or universal intermediary is needed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Abstractive Cognition</h4>
+            <p>Abstractive cognition (<em>notitia abstractiva</em>) is knowledge of an object prescinding from its existence — knowing it regardless of whether it is presently existing. It includes memory, imagination, general concepts, and scientific knowledge. We can abstractively know the nature of fire without fire's being present. Abstractive cognition is derived from intuitive cognition and enables the general knowledge required by science and theology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Sceptical Challenge</h4>
+            <p>Ockham raises a radical possibility: God (by absolute divine power) could cause intuitive cognition of a non-existent object — making us believe we see a thing that does not exist. This is not scepticism about the actual world but a statement about logical possibility: no natural necessity guarantees that our intuitions correspond to existing things. This prefigures Descartes's demon hypothesis and the modern problem of the external world.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Against Aristotelian Species</h4>
+            <p>Aquinas and the Aristotelian tradition held that perception involves the reception of an "intelligible species" — an immaterial form of the thing that mediates knowledge. Ockham eliminates this extra entity: the intellect knows the external thing directly, without an intermediary species. The razor cuts: if direct cognitive access to particulars can explain knowledge, species are unnecessary. This move opened the way for empiricist theories of direct perception.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 8 — DIVINE OMNIPOTENCE AND VOLUNTARISM -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Divine Omnipotence &amp; Voluntarism</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"God is able to do everything that does not involve a contradiction, and nothing that involves a contradiction."</p>
+        <span class="attribution">&mdash; Ockham, <em>Quodlibeta Septem</em>, VI, q.1</span>
+    </div>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-amber">Potentia Absoluta / Ordinata</h4>
+            <p>Ockham distinguishes God's <em>potentia absoluta</em> (absolute power — what God can do, constrained only by logical possibility) from God's <em>potentia ordinata</em> (ordained power — what God has in fact decided to do within the established order of nature and grace). The world as it actually exists is one of many logically possible worlds God could have created. This radical contingency is the metaphysical foundation of Ockham's empiricism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Theological Voluntarism</h4>
+            <p>Against the Thomistic view that God's commands track objective rational goods, Ockham holds that the moral law is constituted by divine will. God commands what is good because God commands it — not because it is independently good. God could (by absolute power) have commanded hatred of God, and it would then have been obligatory. This divine command theory of ethics was enormously influential on Protestant theology (Scotus had moved in this direction; Ockham radicalised it).</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Implications for Science</h4>
+            <p>If the world order is contingent — established by divine will rather than rational necessity — then we cannot know its regularities by reason alone. We must investigate the world empirically, by observation and experiment, to discover how God has in fact ordained things. This is a theological ground for empirical science: the world's contingency makes experiment necessary. Historians of science (including Amos Funkenstein and Wolfhart Pannenberg) have traced a connection between Ockhamist voluntarism and the rise of experimental natural philosophy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 9 — POLITICAL PHILOSOPHY -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Political Theology: Church, Pope &amp; Emperor</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Against Papal Plenitude</h4>
+            <p>Pope John XXII and his successors claimed <em>plenitudo potestatis</em> — a fullness of power extending over both spiritual and temporal affairs. Ockham attacked this claim comprehensively: papal authority is limited to spiritual matters; the pope is not an absolute monarch of the Church, much less of the world. Even in spiritual matters, the pope can err — and individual conscience, scripture, and general councils may stand against papal claims. These arguments contributed to the conciliarist movement.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Natural Rights and Property</h4>
+            <p>The Franciscan poverty controversy forced Ockham to develop a sophisticated theory of natural rights. He distinguished between <em>dominium</em> (ownership — a right requiring positive law and consent), simple use of things (which requires no ownership), and natural right to use what is necessary for survival — a right grounded in natural law and inalienable. This is one of the earliest systematic theories of natural rights in Western philosophy, prefiguring Locke's property theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Individual Rights</h4>
+            <p>Ockham's nominalism — the metaphysical primacy of particulars — maps onto a political primacy of individuals. Rights attach to individuals, not to communities or essences. Political authority is legitimate when it respects individual rights and governs for the common good; it becomes tyrannical when it violates them. Brian Tierney, in <em>The Idea of Natural Rights</em>, argues Ockham is a pivotal figure in the emergence of the modern discourse of individual rights.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Conciliarism</h4>
+            <p>Ockham argued that the whole Church — not just the pope — is the bearer of doctrinal authority. A general council representing the universal Church can override even a heretical pope. Infallibility, if it belongs to any body, belongs to the Church as a whole. These arguments directly fed the conciliarist movement (the claim that general councils are superior to popes) that became dominant in the 15th century and shaped the Council of Constance (1414–18).</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 10 — ETHICS AND FREEDOM -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Ethics, Freedom &amp; Divine Command</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Radical Free Will</h4>
+            <p>For Ockham, the will is radically free — more so than in Aquinas, where the will is naturally directed toward happiness. Ockham's will can reject any particular good, including God. This radical freedom is the ground of moral responsibility: we are responsible for our acts precisely because they are not necessitated by anything outside the will. The will's freedom is so radical that even the beatific vision does not necessitate love of God — love of God in heaven remains a free act.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Divine Command Theory</h4>
+            <p>The obligatory force of moral commands derives from God's will, not from a natural order of goodness independent of God. Under God's absolute power, God could command what we consider vicious. Under God's ordained power — the actual moral order — God has commanded acts that are in fact appropriate to human nature. Ockham does not think the actual moral law is arbitrary: it reflects God's wisdom. But its binding force comes from divine command, not natural necessity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Synderesis and Conscience</h4>
+            <p>Ockham retains a place for natural moral knowledge: <em>synderesis</em> (the innate habit of first moral principles) and right reason guide action. A person who acts against right conscience — even an erring conscience — sins. But ultimately, moral obligation is constituted by divine will, not rationally deducible from human nature alone. This position sits uneasily between rationalist natural law and pure voluntarism, generating the tensions that later moral philosophers would try to resolve.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"By the very fact that God wills something, it is just for it to be done."</p>
+        <span class="attribution">&mdash; Ockham, <em>II Sent.</em>, q.15 (paraphrase of his position)</span>
+    </div>
+</section>
+
+<!-- SLIDE 11 — OCKHAM AND DUNS SCOTUS -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Ockham &amp; Duns Scotus: Two Paths from Aquinas</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Duns Scotus (1265/66–1308) — The Subtle Doctor</h4>
+            <p>Franciscan like Ockham, Scotus reacted against Aquinas differently. He maintained a qualified form of realism about universals (the "formal distinction" — universals have formal but not real existence). He emphasised the absolute primacy of divine will and love (<em>caritas</em>) over intellect. His concept of <em>haecceitas</em> ("thisness") — the principle that makes an individual this individual rather than that one — attempts to account for individuation within a broadly realist framework.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Ockham's Departure</h4>
+            <p>Ockham was trained in the Scotist tradition but departed radically from it. Against Scotus's formal distinction, Ockham insisted there is no genuine distinction short of a real (numerical) distinction. Universals have no existence whatsoever outside the mind — not formally, not really. This eliminates the formal distinction, haecceitas, and the entire apparatus of Scotist metaphysics. Ockham's Razor sweeps through Scotism as much as through Thomism.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Franciscan Intellectual Tradition</h4>
+            <p>Both Scotus and Ockham represent the Franciscan intellectual tradition's emphasis on will over intellect, on God's freedom and sovereignty, and on the priority of the singular over the universal. Augustine of Hippo is their common ancestor; the Franciscan tradition consistently privileged divine will and individual freedom against the Dominican-Thomistic synthesis of reason, nature, and grace. Both traditions remain alive in contemporary philosophy and theology.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Via Moderna vs Via Antiqua</h4>
+            <p>By the 15th century, the dispute between Scotism/Thomism (the <em>via antiqua</em>) and Ockhamism (the <em>via moderna</em>) dominated the universities. Luther was educated in the Ockhamist (<em>via moderna</em>) tradition at Erfurt — his teacher Gabriel Biel was the leading late Ockhamist. Luther's reaction against Ockhamist soteriology ("God will not deny grace to those who do what is in them") shaped his doctrine of grace and set the stage for the Reformation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 12 — LEGACY AND MODERNITY -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Ockham's Razor &amp; the Birth of Modernity</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="195" viewBox="0 0 680 195">
+            <!-- Ockham node -->
+            <rect x="275" y="75" width="130" height="45" rx="5" fill="rgba(78,204,163,0.07)" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="340" y="101" text-anchor="middle" font-family="Playfair Display" font-size="11" fill="#4ecca3">Ockham</text>
+            <text x="340" y="114" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">c.1287–1347</text>
+            <!-- Lines -->
+            <line x1="275" y1="93" x2="150" y2="40" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <line x1="275" y1="97" x2="80" y2="110" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <line x1="340" y1="75" x2="290" y2="20" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <line x1="405" y1="93" x2="530" y2="40" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <line x1="405" y1="100" x2="560" y2="110" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <line x1="340" y1="120" x2="340" y2="165" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <!-- Descendants -->
+            <rect x="65" y="18" width="160" height="32" rx="4" fill="#161622" stroke="#d4a053" stroke-width="0.8"/>
+            <text x="145" y="38" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">Luther &amp; the Reformation</text>
+            <rect x="10" y="92" width="120" height="32" rx="4" fill="#161622" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="70" y="112" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#cf7272">Empiricism (Locke, Hume)</text>
+            <rect x="205" y="3" width="170" height="28" rx="4" fill="#161622" stroke="#5b8cd4" stroke-width="0.8"/>
+            <text x="290" y="22" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#5b8cd4">Modern Natural Science</text>
+            <rect x="465" y="20" width="160" height="32" rx="4" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="545" y="40" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9b72cf">Natural Rights Theory</text>
+            <rect x="505" y="93" width="160" height="32" rx="4" fill="#161622" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="585" y="113" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#4ecca3">Political Liberalism</text>
+            <rect x="270" y="165" width="140" height="28" rx="4" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="340" y="183" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9b72cf">Language of Thought</text>
+        </svg>
+    </div>
+    <p class="note-text">Michael Allen Gillespie (<em>The Theological Origins of Modernity</em>, 2008) argues that Ockham's radical voluntarism — the arbitrary omnipotent God, the contingent world, the isolated individual will — is the hidden theological foundation of modernity's characteristic anxieties and achievements.</p>
+</section>
+
+<!-- SLIDE 13 — CRITICAL RECEPTION -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Critical Reception &amp; Debates</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-rose">The "Nominalist Catastrophe"</h4>
+            <p>Some theologians and philosophers (notably Leo Strauss, Hans Urs von Balthasar, and John Milbank) argue that Ockham's nominalism destroyed the metaphysical foundations of Christian theology and paved the way for nihilism. If universals do not exist, the common good, natural law, and even the concept of a human nature shared by all people are undermined. On this reading, modernity's moral fragmentation is the long-run consequence of the Razor cutting too deep.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Revisionist Defence</h4>
+            <p>Recent historians of medieval philosophy (Marilyn McCord Adams, Philotheus Boehner, Claude Panaccio) have substantially revised the "Ockham as destroyer" narrative. Ockham's nominalism is philosophically sophisticated and internally consistent; his theology is devoutly Christian; his political thought is not proto-liberal but emerges from specific Franciscan concerns. The catastrophist reading projects modern anxieties back onto a medieval thinker who operated in a very different context.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Language of Thought</h4>
+            <p>Jerry Fodor's influential 20th-century theory of a "language of thought" (<em>Mentalese</em>) — the hypothesis that cognition is computations over symbolic mental representations — is explicitly Ockhamist in structure. Fodor's mental representations are natural signs, not arbitrary conventions; they stand in compositional logical relations; they are prior to spoken and written language. Ockham, writing in the 1320s, anticipated the computational theory of mind by six centuries.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Individual Rights Tradition</h4>
+            <p>Brian Tierney's magisterial research on the history of rights theory has rehabilitated Ockham as a pivotal figure in the emergence of the concept of subjective natural rights — rights inhering in individuals rather than being objective properties of a just order. Ockham's property rights arguments are the first sustained application of rights language to individuals in Western political theory. This makes him a key ancestor of Locke, Jefferson, and the Universal Declaration of Human Rights.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 14 — ESSENTIAL READINGS -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Essential Texts</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber"><em>Summa Logicae</em> (c.1323)</h4>
+            <p>Ockham's major work in logic — three parts on terms, propositions, and inference. Arguably the greatest medieval logic text. Part I (on terms) contains his nominalism. Paul Vincent Spade's translations are the best access point for Anglophone readers.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue"><em>Quodlibeta Septem</em> (c.1322–24)</h4>
+            <p>Seven sets of "quodlibetal questions" — the most flexible academic format, where any topic can be raised. Contains Ockham's epistemology (intuitive/abstractive cognition), theology, and ethics in concentrated form. Alfred Freddoso's translation is excellent.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green"><em>Dialogus</em> (1334–c.1347)</h4>
+            <p>Ockham's great unfinished political work — a dialogue form covering church, papacy, heresy, and empire. Part I (on heresy) and Part III (on church-state relations) are the most philosophically important. Available in Latin in the British Academy edition; partial English translations available.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Marilyn McCord Adams: <em>William Ockham</em> (1987)</h4>
+            <p>The definitive two-volume philosophical study — comprehensive, rigorous, sympathetic. The indispensable secondary source for serious engagement with Ockham's logic, metaphysics, epistemology, and theology. Not a beginner's text, but the scholarly gold standard.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Brian Tierney: <em>The Idea of Natural Rights</em> (1997)</h4>
+            <p>A landmark work of intellectual history tracing the concept of individual natural rights from 12th-century canon lawyers through Ockham and beyond. Places Ockham's contribution to rights theory in its proper historical context. Essential for understanding the medieval origins of modern political philosophy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Gillespie: <em>Theological Origins of Modernity</em> (2008)</h4>
+            <p>A provocative thesis arguing that modernity's self-understanding as secular conceals deeply theological origins in Ockhamist nominalism and voluntarism. Stimulating and controversial — best read alongside the revisionist scholarship of Adams and Tierney.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 15 — TENSIONS AND LEGACY -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Core Tensions &amp; Enduring Legacy</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Nominalism and Moral Realism</h4>
+            <p>If universals do not exist, can moral claims be objectively true? Ockham grounds moral obligation in divine will — but this seems to make it arbitrary. His successors tried various moves: natural reason can still discover moral requirements; God's nature ensures the moral law is not arbitrary even if grounded in will. But the tension between nominalism and moral realism has never been fully resolved and remains live in contemporary metaethics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Science and Metaphysics</h4>
+            <p>Ockham's nominalism helped clear the way for empirical science by insisting that only particulars exist and that we must observe the world rather than deduce it from first principles. But it also raised the question of induction: if there are no real universal natures in things, what grounds the regularity of nature that inductive science presupposes? Hume's problem of induction is already present in embryo in Ockham's nominalism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Faith and Reason After Ockham</h4>
+            <p>Ockham's sharp separation of faith and reason — much sharper than Aquinas's harmonious synthesis — opened the way for a "double truth" doctrine in which theology and philosophy speak in irreconcilable registers. If God's will is radically free and beyond rational comprehension, theology cannot be "faith seeking understanding" in Anselm's sense but must be content with revelation alone. This trajectory leads toward fideism, and ultimately toward Luther's rejection of philosophy in theology.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">The Venerable Inceptor</h4>
+            <p>Ockham is one of the most consequential and most contested figures in Western intellectual history. Whether one sees him as the liberator who cleared away mystifying metaphysical fog and enabled modern science, individual rights, and democratic politics — or as the destroyer who dissolved the rational foundations of the Western moral and theological tradition — the scale of his impact is undeniable. Few thinkers have done more to shape the world we inhabit.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Razor's Edge</h4>
+            <p>Ockham's Razor has become the most universally applied principle in intellectual life — invoked in physics, biology, economics, cognitive science, and everyday reasoning. Yet its application remains contested: how much simplicity is enough? What counts as an unnecessary entity? The razor is a heuristic, not an algorithm. Ockham himself knew this — the razor always cuts "beyond necessity," and what is necessary is always a matter for argument. He would have approved of the ongoing debate.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 16 — UNUSED (EXTRA SLIDE) — FILLED WITH ANOTHER TOPIC -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Ockham's Children: Later Ockhamism</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Gabriel Biel (c.1420–1495)</h4>
+            <p>The leading late Ockhamist — nicknamed <em>doctor profundissimus</em>. His synthesis of Ockhamism shaped the theological curriculum at Erfurt, where the young Martin Luther studied. Biel's soteriology — that God will give grace to those who "do what is in them" — was the precise target of Luther's rediscovery of Pauline grace. The Protestant Reformation can be read as a revolt against Bielian Ockhamism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Jean Buridan (c.1301–c.1360)</h4>
+            <p>The greatest Ockhamist logician and natural philosopher — his work on impetus theory anticipated Newton's first law of motion. His thought experiment "Buridan's Ass" — a donkey equidistant between two equal bales of hay, unable to choose — is a classic illustration of the problem of free will and rational choice. Buridan shows that Ockhamist principles could generate serious natural philosophy as well as logical analysis.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">John Wycliffe &amp; the Hussites</h4>
+            <p>While Wycliffe was himself a realist, the Ockhamist tradition's critique of papal authority and emphasis on scripture over institutional hierarchy fed the proto-Reformation movements of Wycliffe and Hus. The Ockhamist political arguments for limiting papal power became available to reform movements that increasingly challenged ecclesiastical authority. The line from Ockham's Munich polemics to the Reformation council of Constance and beyond is a continuous thread.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"The pen is mightier than the sword" — and Ockham's pen, loosed at Avignon and sharpened at Munich, cut further and deeper than he knew.</p>
+        <span class="attribution">&mdash; after Ockham: "Emperor, protect me with your sword, and I will protect you with my pen."</span>
+    </div>
+</section>
+
+<!-- SLIDE 17 — CLOSING -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="ockClosingGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#4ecca3;stop-opacity:0.4"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <!-- Razor line -->
+            <line x1="10" y1="50" x2="90" y2="50" stroke="#4ecca3" stroke-width="1.5" opacity="0.7"/>
+            <!-- Unnecessary entities above (being cut) -->
+            <circle cx="28" cy="30" r="5" fill="#9b72cf" opacity="0.3"/>
+            <circle cx="50" cy="22" r="4" fill="#9b72cf" opacity="0.25"/>
+            <circle cx="70" cy="33" r="5" fill="#9b72cf" opacity="0.3"/>
+            <!-- Particulars below (remaining) -->
+            <circle cx="30" cy="68" r="4" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="55" cy="74" r="4" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="75" cy="65" r="4" fill="#4ecca3" opacity="0.7"/>
+        </svg>
+    </div>
+    <div class="quote-box">
+        <p>"Entities are not to be multiplied beyond necessity."</p>
+        <span class="attribution">&mdash; Ockham's Razor (traditional formulation)</span>
+    </div>
+    <div class="separator" style="margin: 0.6em auto;"></div>
+    <h3 style="font-size: 0.9em; margin-bottom: 0.15em;">William of Ockham</h3>
+    <p style="text-align: center; color: var(--text-muted); font-size: 0.52em !important;">c.1287&ndash;c.1347 &middot; <em>Venerabilis Inceptor</em> &middot; Franciscan</p>
+    <div class="quote-box" style="margin-top: 0.6em; border-left-color: var(--accent-green);">
+        <p style="font-size: 0.40em !important;">"Emperor, protect me with your sword, and I will protect you with my pen."</p>
+        <span class="attribution">&mdash; attributed to Ockham, on fleeing to Louis IV of Bavaria</span>
+    </div>
+    <p class="note-text" style="margin-top: 1em;">The friar with the razor — who dissolved unnecessary entities, multiplied difficult questions,<br>and left the modern world with both its freedom and its metaphysical vertigo.</p>
+</section>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); }
+}
+</script>
+</body>
+</html>

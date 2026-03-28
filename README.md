@@ -50,9 +50,27 @@ Interactive presentations exploring foundational thinkers in psychology and phil
 | 29 | [Simone Weil — Attention, Affliction & Gravity and Grace](Weil/) | 17 | Complete |
 | 30 | [Byung-Chul Han — The Burnout Society & Psychopolitics](Han/) | 17 | Complete |
 
+### Ancient Philosophy
+
+| # | Topic | Slides | Status |
+|---|-------|--------|--------|
+| 35 | [Socrates — The Examined Life, the Gadfly of Athens & the Philosophical Revolution](Socrates/) | 17 | Complete |
+| 36 | [Plato — The Theory of Forms, the Republic & the Ascent to the Good](Plato/) | 17 | Complete |
+| 37 | [Aristotle — The Philosopher of Nature, Virtue & the Unmoved Mover](Aristotle/) | 17 | Complete |
+| 38 | [Seneca — Stoic Wisdom, Mortality & the Art of Living](Seneca/) | 17 | Complete |
+| 39 | [Plotinus & the Neo-Platonists — Emanation, the One & the Soul's Return](Plotinus/) | 17 | Complete |
+
+### Medieval Philosophy
+
+| # | Topic | Slides | Status |
+|---|-------|--------|--------|
+| 40 | [Augustine of Hippo — Grace, Time, Memory & the City of God](Augustine/) | 17 | Complete |
+| 41 | [Thomas Aquinas — Scholasticism, Natural Theology & the Synthesis of Faith and Reason](Aquinas/) | 17 | Complete |
+| 42 | [William of Ockham — Nominalism, Ockham's Razor & the Birth of Modernity](Ockham/) | 17 | Complete |
+
 ## Historical Influences
 
-The thinkers in this collection form a deeply interconnected web of intellectual inheritance spanning three centuries. The landing page includes an SVG influence map tracing these connections.
+The thinkers in this collection form a deeply interconnected web of intellectual inheritance spanning two millennia. The landing page includes an SVG influence map tracing these connections.
 
 ### The Depth Psychology Lineage
 **Kant → Schopenhauer → Nietzsche → Freud → Jung → Neumann → Campbell → Peterson**
@@ -93,6 +111,16 @@ Wittgenstein stands apart — connected to Frege and Russell's logic but ultimat
 **McGilchrist, Scruton & Han**
 
 McGilchrist, Scruton, and Han each argue that Western modernity has become pathologically one-sided. McGilchrist frames this through hemisphere neuroscience; Scruton through aesthetics; Han through the critique of the achievement society and neoliberal psychopolitics. All draw on Heidegger's technology critique.
+
+### The Ancient Lineage
+**Socrates → Plato → Aristotle; Zeno → Seneca; Plotinus**
+
+Socrates founded philosophy as a practice of self-examination and dialogical inquiry, leaving no writings but generating the entire Western tradition through the intensity of his questioning. Plato institutionalised this questioning in the Academy and gave it metaphysical depth: the world of particulars participates imperfectly in a transcendent realm of Forms, culminating in the Form of the Good. Aristotle rejected the separate Forms but kept teleology — making the world itself intelligible through its four causes and final ends, with the Unmoved Mover as the ultimate ground of cosmic motion. In parallel, Zeno of Citium founded Stoicism on the Athenian Stoa Poikile, teaching that virtue alone is the good and that the logos pervades all things — a tradition culminating in Seneca, Epictetus, and Marcus Aurelius. Plotinus in the 3rd century CE synthesised Plato and Aristotle into Neo-Platonism: a system of emanation from the transcendent One through Intellect and Soul to Matter, and a path of return through philosophical contemplation and mystical union.
+
+### The Medieval Lineage
+**Augustine → Aquinas → Ockham**
+
+Augustine synthesised Neo-Platonic Christianity, bequeathing to the West the inward turn of the self, the doctrine of original sin and grace, the two-cities philosophy of history, and the restless heart as the engine of philosophical reflection. Thomas Aquinas, eight centuries later, harmonised Augustine's inheritance with Aristotelian metaphysics: grace perfects nature, faith and reason co-operate, and God is *Ipsum Esse Subsistens* — Being itself. William of Ockham then challenged both: his nominalism dissolved universal natures, his voluntarism freed the divine will from rational constraint, and his Razor cleared the way for empirical science. The arc from Augustine to Ockham represents the inner drama of medieval philosophy — and its output is the world we still inhabit.
 
 ## Architecture
 

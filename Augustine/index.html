@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augustine of Hippo — Grace, Time, Memory &amp; the City of God</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #161622;
+    --accent-amber: #d4a053;
+    --accent-green: #4ecca3;
+    --accent-purple: #9b72cf;
+    --accent-rose: #cf7272;
+    --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent-amber); font-size: 1.0em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 — TITLE -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="augCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#d4a053;stop-opacity:0.7"/>
+                    <stop offset="60%" style="stop-color:#9b72cf;stop-opacity:0.15"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <!-- Outer ring — City of God -->
+            <circle cx="60" cy="60" r="55" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,3"/>
+            <!-- Inner ring — City of Man -->
+            <circle cx="60" cy="60" r="38" fill="none" stroke="#cf7272" stroke-width="0.6" opacity="0.4" stroke-dasharray="2,4"/>
+            <!-- Heart shape — restless heart -->
+            <path d="M60 80 C30 55, 20 35, 40 28 C50 24, 60 32, 60 32 C60 32, 70 24, 80 28 C100 35, 90 55, 60 80Z" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <!-- Central glow -->
+            <circle cx="60" cy="60" r="12" fill="url(#augCore)" stroke="#d4a053" stroke-width="1" opacity="0.7"/>
+            <circle cx="60" cy="60" r="3.5" fill="#d4a053" opacity="0.95"/>
+            <!-- Neo-Platonic emanations -->
+            <circle cx="60" cy="60" r="22" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+    </div>
+    <h1>Augustine of Hippo</h1>
+    <div class="separator"></div>
+    <p class="subtitle">GRACE &middot; ORIGINAL SIN &middot; THE TWO CITIES &middot; TIME &amp; MEMORY</p>
+    <div class="quote-box" style="margin-top: 1.2em;">
+        <p>"Our heart is restless, until it repose in Thee."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, I.1 (tr. Pusey)</span>
+    </div>
+    <p class="note-text">354&ndash;430 &middot; Thagaste &amp; Hippo Regius, North Africa</p>
+</section>
+
+<!-- SLIDE 2 — BIOGRAPHY -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Life &amp; Conversion</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <span class="icon">&#127963;</span>
+            <h4 class="accent-amber">Early Life &amp; Education</h4>
+            <p>Born 354 in Thagaste (modern Algeria), to a pagan father Patricius and a devout Christian mother Monica. Educated in rhetoric at Carthage — brilliant, ambitious, and dissolute. He took a concubine (who bore his son Adeodatus), became a teacher of rhetoric, and joined the Manichaean sect, whose dualist solution to the problem of evil appealed to his restless intellect. A decade of Manichaeism left him increasingly dissatisfied with its intellectual poverty.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#9997;</span>
+            <h4 class="accent-blue">Neo-Platonism &amp; Milan</h4>
+            <p>Moving to Rome and then Milan, Augustine encountered the Neo-Platonist <em>libri Platonicorum</em> — likely works of Plotinus and Porphyry. This was an intellectual revolution: Neo-Platonism dissolved his Manichaean materialism by showing that evil is not a substance but a privation, and that the soul is genuinely immaterial. At Milan he also heard Ambrose's allegorical preaching, which showed the Old Testament could be read spiritually, removing a major intellectual obstacle to Christianity.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#127807;</span>
+            <h4 class="accent-green">The Garden Scene — 386</h4>
+            <p>In a garden in Milan, Augustine heard a child's voice: <em>tolle, lege</em> — "take up and read." He opened Paul's letter to the Romans and read Romans 13:13-14. "No further would I read, nor did I need to; for instantly, as the sentence ended, there was infused in my heart something like the light of full certainty and all the gloom of doubt vanished away." He resigned his professorship and was baptised by Ambrose at Easter 387, alongside his son Adeodatus.</p>
+        </div>
+        <div class="card">
+            <span class="icon">&#9978;</span>
+            <h4 class="accent-purple">Bishop of Hippo</h4>
+            <p>Returning to North Africa after Monica's death, Augustine founded a monastic community at Thagaste. Ordained priest at Hippo in 391 — against his will, as he wept publicly when the congregation acclaimed him — and became Bishop of Hippo in 395. He served for thirty-five years, presiding over a vast correspondence, preaching almost daily, writing against the Manichaeans, Donatists, and Pelagians, and producing his masterworks. He died in 430 as the Vandals besieged Hippo.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3 — TIMELINE -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Timeline</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">354</span>
+                <span class="event"><strong>Born at Thagaste, Numidia</strong>Son of Patricius (pagan) and Monica (Christian); education begins under her devout influence</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">371</span>
+                <span class="event"><strong>Studies at Carthage</strong>Reads Cicero's <em>Hortensius</em>; awakened to philosophy; takes a concubine; joins the Manichaeans</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">383</span>
+                <span class="event"><strong>Rome, then Milan</strong>Professor of rhetoric; growing disillusionment with Manichaeism; discovers Neo-Platonism</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">386</span>
+                <span class="event"><strong>Conversion in the garden</strong><em>Tolle, lege</em> — Romans 13:13; resigns professorship; retires to Cassiciacum for philosophical retreat</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">387</span>
+                <span class="event"><strong>Baptism by Ambrose, Milan</strong>Easter vigil; Monica dies at Ostia on the return to Africa; Adeodatus baptised with him</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">391</span>
+                <span class="event"><strong>Ordained priest at Hippo</strong>Weeps at the congregation's acclamation; begins enormous preaching and writing ministry</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">395</span>
+                <span class="event"><strong>Bishop of Hippo</strong>Leads the diocese for 35 years; organises North African synods; settles the Donatist controversy</span>
+            </div>
+        </div>
+        <div style="padding: 0 0.5em;">
+            <div class="timeline-item">
+                <span class="year">397</span>
+                <span class="event"><strong><em>Confessions</em> written</strong>Thirteen books — autobiography, theology, philosophy of time and memory; the first great spiritual autobiography</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">400</span>
+                <span class="event"><strong><em>De Trinitate</em> begins</strong>Fifteen books on the Trinity; psychological analogies of memory-understanding-will; completed c.420</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">411</span>
+                <span class="event"><strong>Sack of Rome by Alaric</strong>Pagans blame Christians; Augustine begins writing <em>De Civitate Dei</em> in response</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">412</span>
+                <span class="event"><strong>The Pelagian Controversy begins</strong>Against Pelagius's optimism about human free will; develops doctrine of original sin and grace</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">413</span>
+                <span class="event"><strong><em>City of God</em> begun</strong>Twenty-two books; completed 426; the first philosophy of history in Western thought</span>
+            </div>
+            <div class="timeline-item">
+                <span class="year">430</span>
+                <span class="event"><strong>Death at Hippo</strong>Dies 28 August as Vandals besiege the city; his library survives; declared Doctor of the Church</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 4 — THE CONFESSIONS -->
+<section>
+    <span class="section-number">03</span>
+    <h2>The <em>Confessions</em>: Self, Memory &amp; God</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"And our heart is restless, until it repose in Thee... Thou madest us for Thyself, and our heart is restless, until it repose in Thee."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, I.1</span>
+    </div>
+    <div class="card-grid cols-3" style="margin-top: 0.4em;">
+        <div class="card">
+            <h4 class="accent-amber">Autobiography as Theology</h4>
+            <p>The <em>Confessions</em> (397–400) is not merely a memoir but an extended prayer addressed directly to God. Augustine's restless searching — through Manichaeism, scepticism, and Neo-Platonism — is narrated as the story of a soul drawn inexorably toward its true home. The self is intelligible only in relation to God; self-knowledge and God-knowledge are inseparable.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Phenomenology of Memory</h4>
+            <p>Book X is one of the most original philosophical texts of antiquity: a sustained phenomenological investigation of memory. Memory is a vast "cave," containing not only images of past sensory experiences but also non-sensory intellectual contents (mathematical truths, moral notions) and even the memory of happiness we have never experienced. Augustine asks: how can I "remember" God, who I have never known through the senses?</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Analysis of Time</h4>
+            <p>Book XI offers the ancient world's most profound analysis of time. If the past no longer exists and the future does not yet exist, only the present is real — but the present is an instantaneous knife-edge. Augustine's solution: time exists as the soul's distension (<em>distentio animi</em>). Past, present, and future are modes of the mind: the "present of things past" is memory, the "present of things present" is attention, the "present of things future" is expectation.</p>
+        </div>
+    </div>
+    <p class="note-text">Augustine's <em>Confessions</em> invented the literary genre of the spiritual autobiography. Its influence stretches from Petrarch and Dante through Rousseau, Wordsworth, and into the modern memoir and the psychotherapeutic case history.</p>
+</section>
+
+<!-- SLIDE 5 — ORIGINAL SIN AND GRACE -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Original Sin, Free Will &amp; Grace</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="210" viewBox="0 0 680 210">
+            <!-- State of innocence -->
+            <rect x="10" y="20" width="150" height="170" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+            <text x="85" y="44" text-anchor="middle" font-family="Playfair Display" font-size="10" fill="#4ecca3">Original Justice</text>
+            <text x="85" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Before the Fall</text>
+            <text x="20" y="84" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Will rightly ordered</text>
+            <text x="20" y="100" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Reason governs</text>
+            <text x="20" y="116" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Free to sin or not</text>
+            <text x="20" y="132" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Immortal body</text>
+            <text x="20" y="148" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Full harmony</text>
+            <!-- Fall arrow -->
+            <text x="170" y="112" text-anchor="middle" font-family="DM Sans" font-size="20" fill="#cf7272">&#8594;</text>
+            <text x="170" y="128" text-anchor="middle" font-family="DM Sans" font-size="7" fill="#cf7272">THE FALL</text>
+            <!-- Fallen state -->
+            <rect x="185" y="20" width="160" height="170" rx="6" fill="#161622" stroke="#cf7272" stroke-width="1"/>
+            <text x="265" y="44" text-anchor="middle" font-family="Playfair Display" font-size="10" fill="#cf7272">Original Sin</text>
+            <text x="265" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Massa damnata</text>
+            <text x="198" y="84" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Will disordered (concupiscence)</text>
+            <text x="198" y="100" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Ignorance darkens reason</text>
+            <text x="198" y="116" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Free but unable not to sin</text>
+            <text x="198" y="132" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Mortality &amp; suffering</text>
+            <text x="198" y="148" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Guilt transmitted to all</text>
+            <!-- Grace arrow -->
+            <text x="357" y="112" text-anchor="middle" font-family="DM Sans" font-size="20" fill="#d4a053">&#8594;</text>
+            <text x="357" y="128" text-anchor="middle" font-family="DM Sans" font-size="7" fill="#d4a053">GRACE</text>
+            <!-- Redeemed state -->
+            <rect x="368" y="20" width="155" height="170" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1"/>
+            <text x="445" y="44" text-anchor="middle" font-family="Playfair Display" font-size="10" fill="#d4a053">Redeemed Nature</text>
+            <text x="445" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">By divine election</text>
+            <text x="382" y="84" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Will healed by charity</text>
+            <text x="382" y="100" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Faith illumines reason</text>
+            <text x="382" y="116" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Assisted to will the good</text>
+            <text x="382" y="132" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Sacramental life</text>
+            <text x="382" y="148" font-family="DM Sans" font-size="8.5" fill="#9a9a9a">&#8250; Oriented to the City of God</text>
+            <!-- Beatitude -->
+            <rect x="535" y="50" width="135" height="110" rx="6" fill="rgba(212,160,83,0.07)" stroke="#d4a053" stroke-width="1"/>
+            <text x="602" y="78" text-anchor="middle" font-family="Playfair Display" font-size="10" fill="#d4a053">Beatitude</text>
+            <text x="602" y="95" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">Glorified State</text>
+            <text x="548" y="118" font-family="DM Sans" font-size="8" fill="#9a9a9a">&#8250; Unable to sin</text>
+            <text x="548" y="133" font-family="DM Sans" font-size="8" fill="#9a9a9a">&#8250; Beatific Vision</text>
+            <text x="548" y="148" font-family="DM Sans" font-size="8" fill="#9a9a9a">&#8250; Perfect freedom</text>
+            <line x1="523" y1="100" x2="535" y2="100" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+        </svg>
+    </div>
+    <p class="note-text">Augustine's doctrine of original sin and irresistible grace became the most contested in Western theology — generating Pelagianism, semi-Pelagianism, Calvinism, Jansenism, and the Council of Trent as successive responses.</p>
+</section>
+
+<!-- SLIDE 6 — THE TWO CITIES -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The City of God &amp; the City of Man</h2>
+    <div class="separator"></div>
+    <div class="quote-box">
+        <p>"Two loves therefore have given origin to these two cities: self-love in contempt of God unto the Earthly City; love of God in contempt of self to the Heavenly."</p>
+        <span class="attribution">&mdash; <em>City of God</em>, XIV.28</span>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.4em;">
+        <div class="card" style="border-left: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Civitas Dei — The City of God</h4>
+            <p>The community of all those who love God above all things — not identical with the institutional Church, which contains both wheat and tares. Its citizens are the elect of all ages, stretching from Abel to the final resurrection. Its peace is the tranquillity of divine order; its end is the eternal enjoyment of God. It is a pilgrim community on earth, without a permanent home in any temporal state.</p>
+        </div>
+        <div class="card" style="border-left: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Civitas Terrena — The City of Man</h4>
+            <p>The community of all those who love themselves and created goods above God — including the proud and the self-sufficient. Not simply identical with Rome or any political state: the two cities are spiritually intermingled on earth and will only be separated at the Last Judgment. Earthly political order has genuine value — justice, peace, and order are goods — but it cannot deliver ultimate happiness.</p>
+        </div>
+        <div class="card" style="border-left: 2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Response to Rome's Fall</h4>
+            <p>Written after Alaric's Visigoths sacked Rome in 410 — an event that shattered the ancient equation of <em>Roma aeterna</em> with civilisation itself. Pagans blamed Christians for abandoning the old gods. Augustine's answer: Rome's fall is no theological crisis. No earthly city is eternal. The Christian's ultimate loyalty is not to Rome but to the City of God, which no barbarian army can sack.</p>
+        </div>
+        <div class="card" style="border-left: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Philosophy of History</h4>
+            <p><em>De Civitate Dei</em> (413–426) inaugurates Christian philosophy of history: history is not the cyclical repetition of Greek thought but a linear movement from Creation through Fall and Redemption to the Last Judgment and the eternal city. This teleological view of history shaped medieval historiography, the Reformation understanding of the Church, and — secularised — the Enlightenment and Marxist philosophies of historical progress.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 7 — NEO-PLATONISM AND ILLUMINATION -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Neo-Platonism &amp; Divine Illumination</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">The Plotinian Inheritance</h4>
+            <p>Augustine's encounter with Plotinus (<em>Enneads</em>) was decisive. From Neo-Platonism he took: the immateriality of God and the soul; evil as privation of being rather than a positive substance; the soul's ascent toward its divine source through intellectual love; and the transcendence of the One beyond all predication. He then "baptised" these insights — the One becomes the Trinity, the return of the soul becomes redemptive grace.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Divine Illumination</h4>
+            <p>Against the Aristotelian view that all knowledge derives from sense-experience, Augustine (following Plato via Neo-Platonism) holds that the intellect apprehends eternal truths — mathematical relations, moral principles, logical necessities — not by abstraction from sense-data but by a special divine illumination. God is the "interior teacher," the <em>lux intelligibilis</em> within the mind, enabling the intellect to recognise eternal truths.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Inner Life</h4>
+            <p>Augustine's turn inward — <em>noli foras ire, in teipsum redi</em> ("go not outside, return into yourself") — inaugurates the Western philosophical interest in interiority and subjectivity. The Augustinian self is not defined by external relations (as in Greek thought) but by its inner orientation: toward or away from God. This inward turn anticipates Descartes, Kant's transcendental ego, and the psychoanalytic exploration of the unconscious.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"You were more inward to me than my most inward part; and higher than my highest."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, III.6.11</span>
+    </div>
+    <p class="note-text">Augustine's Neo-Platonic Christianity dominated Western theology for 800 years — until Thomas Aquinas introduced the Aristotelian alternative. Even then, Augustinian illuminationism persisted through Bonaventure, Duns Scotus, and into early modern philosophy.</p>
+</section>
+
+<!-- SLIDE 8 — THE TRINITY AND PSYCHOLOGICAL ANALOGY -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Trinity: Psychological Analogy</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="660" height="230" viewBox="0 0 660 230">
+            <!-- Trinity triangle -->
+            <polygon points="330,30 130,200 530,200" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.4"/>
+            <!-- Father -->
+            <circle cx="330" cy="40" r="28" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="330" y="37" text-anchor="middle" font-family="Playfair Display" font-size="9" fill="#d4a053">FATHER</text>
+            <text x="330" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#6a6a7a">Memory</text>
+            <!-- Son -->
+            <circle cx="140" cy="195" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="140" y="192" text-anchor="middle" font-family="Playfair Display" font-size="9" fill="#5b8cd4">SON</text>
+            <text x="140" y="205" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#6a6a7a">Understanding</text>
+            <!-- Holy Spirit -->
+            <circle cx="520" cy="195" r="28" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="520" y="192" text-anchor="middle" font-family="Playfair Display" font-size="9" fill="#4ecca3">SPIRIT</text>
+            <text x="520" y="205" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#6a6a7a">Will / Love</text>
+            <!-- Equal signs -->
+            <text x="235" y="118" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">generated</text>
+            <text x="425" y="118" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">spirated</text>
+            <text x="330" y="210" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#6a6a7a">mutual love</text>
+            <!-- Image in soul -->
+            <rect x="265" y="90" width="130" height="55" rx="5" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3,3"/>
+            <text x="330" y="113" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">IMAGO DEI</text>
+            <text x="330" y="130" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#9a9a9a">Memory · Understanding · Will</text>
+        </svg>
+    </div>
+    <p class="note-text">In <em>De Trinitate</em>, Augustine argues the human soul is the image (<em>imago</em>) of the Trinity precisely in its triple structure of memory, understanding, and will — three distinct operations of one indivisible self. This psychological analogy shaped Christian anthropology for a millennium.</p>
+</section>
+
+<!-- SLIDE 9 — AGAINST THE PELAGIANS -->
+<section>
+    <span class="section-number">08</span>
+    <h2>The Pelagian Controversy: Grace &amp; Freedom</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card" style="border-top: 2px solid var(--accent-green);">
+            <h4 class="accent-green">Pelagius (c. 360–420)</h4>
+            <p>The British monk Pelagius taught that human nature retains, after the Fall, the full natural capacity to choose and do good. Sin is imitation, not inherited guilt. Grace consists in external aids — scripture, Christ's example, forgiveness of past sins — but is not strictly necessary for the first step toward God. The will is genuinely free and can, in principle, achieve moral perfection without grace. God would be unjust to command what is impossible.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Augustine's Response</h4>
+            <p>Augustine's counter: the Fall genuinely corrupted human nature. Without grace, the will is bound — capable of choosing among lesser goods but incapable of turning toward God. Grace is not merely an external aid but an interior transformation of the will itself: God gives us the very willing that leads to salvation (<em>ipsa velle donatur</em>). This means grace is prior to, not conditioned on, human merit — and from this follows predestination.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Predestination</h4>
+            <p>If grace is irresistible and not conditioned on foreknown merit, then God freely elects some to salvation and (in his permissive will) allows others to remain in their deserved damnation — the doctrine of double predestination in its Augustinian form. Augustine insists this is mysterious but not unjust: all deserve damnation; those who receive grace receive an unearned gift; none can complain at receiving justice rather than mercy.</p>
+        </div>
+        <div class="card" style="border-top: 2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Legacy of the Controversy</h4>
+            <p>The Pelagian controversy generated the most theologically consequential debates in Western Christian history: the Council of Carthage (418), the Council of Orange (529), the Reformation (Luther's bondage of the will vs. Erasmus), the Council of Trent, Jansenism, and Calvinist predestinarianism. The tension between grace and human freedom has never been definitively resolved and remains live in contemporary theology and philosophy of religion.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 10 — LANGUAGE, SIGNS, AND TEACHING -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Language, Signs &amp; the Interior Teacher</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Sign Theory</h4>
+            <p>In <em>De Doctrina Christiana</em> and <em>De Magistro</em>, Augustine developed the ancient world's most systematic philosophy of language and signs. A sign (<em>signum</em>) is something that points beyond itself to something else. Signs may be natural (smoke pointing to fire) or conventional (words). This distinction prefigures modern semiotics; Augustine's sign theory influenced the entire medieval logical tradition through Boethius, Anselm, and Ockham.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Inner Word</h4>
+            <p>In <em>De Magistro</em> Augustine argues that no human teacher can directly cause another person to know something: all that teachers do is present signs that prompt the learner to consult the inner truth. Genuine learning is the soul's illumined encounter with eternal truth — the <em>Verbum</em> in the mind. This has profound implications for education: the Augustinian teacher creates conditions for discovery, not mere transmission.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Hermeneutics</h4>
+            <p><em>De Doctrina Christiana</em> is the ancient world's most sophisticated Christian hermeneutics: a theory of how to interpret scripture. Meaning can be literal or figurative; where a literal reading leads to moral absurdity or doctrinal error, a figurative reading is required. The rule of charity: when in doubt about a passage's meaning, read it in the sense that promotes love of God and neighbour. This hermeneutic shaped medieval biblical interpretation and anticipates modern reader-response theory.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"We do not speak in order that others may know; we speak that they may think."</p>
+        <span class="attribution">&mdash; <em>De Magistro</em> (paraphrase)</span>
+    </div>
+</section>
+
+<!-- SLIDE 11 — AGAINST THE DONATISTS -->
+<section>
+    <span class="section-number">10</span>
+    <h2>The Donatist Controversy &amp; the Church</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-rose">The Donatists</h4>
+            <p>The Donatists (named after the bishop Donatus) argued that the validity of sacraments depends on the moral worthiness of the minister: clergy who had handed over scriptures during the Diocletianic persecution (<em>traditores</em>) were spiritually disqualified, making their ordinations and sacraments invalid. The true Church is a pure community of the holy; the Church in communion with Rome, having accepted such clergy, had ceased to be the true Church.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Augustine's Response</h4>
+            <p>Against the Donatists, Augustine argues that the validity of sacraments depends not on the minister's holiness but on Christ's: it is Christ who baptises and ordains, not the human instrument. The Church on earth is necessarily mixed (the parable of the wheat and tares) and cannot be purely holy before the Last Judgment. This "ex opere operato" principle — sacraments work through the act itself — became the Catholic and (in modified form) the Anglican and Lutheran position.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Coercion of Heretics</h4>
+            <p>Faced with Donatist violence, Augustine moved — reluctantly and with anguish — toward endorsing state coercion of heretics: <em>compelle intrare</em> ("compel them to enter," Luke 14:23). This position, deeply uncomfortable to modern ears, shaped medieval practice and was invoked to justify the Inquisition. Augustine's defenders stress his pastoral motives and his insistence on moderation; his critics see it as the original sin of Christian political theology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Ecclesiology</h4>
+            <p>The Donatist controversy forced Augustine to articulate a Catholic ecclesiology: the Church is one, holy, catholic, and apostolic — not as a visible community of the morally perfect, but as the Body of Christ spread through the world, purified at the Last Judgment. The invisible and visible Church are distinguished. The <em>communio</em> — communion with Rome and the historic episcopate — rather than moral perfection, marks the true Church.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 12 — EVIL AND AESTHETICS -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Evil, Aesthetics &amp; Restless Beauty</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Evil as Privation</h4>
+            <p>Augustine's solution to the problem of evil, inherited partly from Plotinus: evil has no independent being. It is a privation (<em>privatio boni</em>) — the absence of a good that ought to be present. Moral evil is the will's defective turning away from the highest good toward lesser goods. Natural evil reflects the disorder introduced by the Fall. This allows Augustine to affirm God's total goodness while accounting for the undeniable reality of suffering and moral disorder.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Beauty and Desire</h4>
+            <p>Augustine's aesthetic theology: beauty (<em>pulchritudo</em>) is a transcendental property of being — wherever there is being, there is beauty. Created beauty is real but derivative, pointing beyond itself to the source of all beauty, which is God. The soul's restless desire for beauty is, at its deepest, the desire for God. Augustine's famous line — "Late have I loved thee, Beauty so ancient and so new" — inaugurates the Christian tradition of aesthetic mysticism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Music and Number</h4>
+            <p>In <em>De Musica</em> (one of his earliest works, begun 387), Augustine develops a Neo-Pythagorean philosophy of music grounded in number and ratio. Music is ordered sound; its beauty is mathematical. The soul's pleasure in beautiful sound reflects its affinity for the divine ratio — the eternal numbers in God's mind. This tradition shaped Boethius's musical theory, medieval polyphony's theological justification, and discussions of beauty and mathematics into the Renaissance.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"Late have I loved thee, Beauty so ancient and so new, late have I loved thee! For behold thou wert within me, and I outside; and I sought thee outside."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, X.27 (tr. Pusey)</span>
+    </div>
+</section>
+
+<!-- SLIDE 13 — INFLUENCE -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Influence &amp; the Augustinian Tradition</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg width="680" height="200" viewBox="0 0 680 200">
+            <!-- Augustine node -->
+            <rect x="260" y="75" width="160" height="50" rx="6" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="340" y="104" text-anchor="middle" font-family="Playfair Display" font-size="12" fill="#d4a053">Augustine</text>
+            <text x="340" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#6a6a7a">354–430</text>
+            <!-- Lines outward -->
+            <line x1="260" y1="95" x2="140" y2="55" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <line x1="260" y1="105" x2="100" y2="130" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <line x1="340" y1="75" x2="340" y2="30" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <line x1="420" y1="95" x2="550" y2="55" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <line x1="420" y1="105" x2="590" y2="130" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <line x1="340" y1="125" x2="340" y2="165" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <!-- Descendant nodes -->
+            <rect x="60" y="30" width="150" height="35" rx="4" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="135" y="52" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9b72cf">Anselm · Bonaventure</text>
+            <rect x="20" y="110" width="120" height="35" rx="4" fill="#161622" stroke="#5b8cd4" stroke-width="0.8"/>
+            <text x="80" y="132" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#5b8cd4">Aquinas (via negativa)</text>
+            <rect x="265" y="5" width="150" height="30" rx="4" fill="#161622" stroke="#d4a053" stroke-width="0.8"/>
+            <text x="340" y="25" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d4a053">Luther &amp; Calvin</text>
+            <rect x="490" y="30" width="155" height="35" rx="4" fill="#161622" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="567" y="52" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#4ecca3">Descartes · Pascal</text>
+            <rect x="530" y="110" width="140" height="35" rx="4" fill="#161622" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="600" y="132" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#cf7272">Jansenism · Blaise Pascal</text>
+            <rect x="265" y="165" width="150" height="30" rx="4" fill="#161622" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="340" y="185" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#9b72cf">Wittgenstein · Arendt</text>
+        </svg>
+    </div>
+    <p class="note-text">Augustine is arguably the most influential thinker in Western Christianity after Paul. His influence on Luther (bondage of the will), Calvin (predestination), Descartes (the inward turn), Wittgenstein (rule-following), and Hannah Arendt (her dissertation was on Augustine) illustrates his extraordinary reach.</p>
+</section>
+
+<!-- SLIDE 14 — LATER CONTROVERSIES -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Controversies &amp; Critical Reception</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-rose">Sexuality &amp; the Body</h4>
+            <p>Augustine's treatment of sexuality has been deeply contested. His view that concupiscence — disordered sexual desire — is the primary vehicle of original sin's transmission is often read as anti-body dualism. Feminist theologians (Elaine Pagels, Margaret Miles) have argued that Augustine's association of sexuality with sin has caused lasting harm to Christian attitudes toward the body, women, and desire. Defenders argue his position is more nuanced: concupiscence is disordered self-love, not sexuality as such.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Coercion and Religious Liberty</h4>
+            <p>Augustine's <em>compelle intrare</em> is one of the most uncomfortable doctrines in his corpus. John Locke, writing against state persecution of dissent, explicitly refuted Augustine's justification of coercion. The Augustinian case for coercion was invoked by medieval inquisitors and early modern persecutors. The Second Vatican Council's <em>Dignitatis Humanae</em> (1965) decisively repudiated religious coercion — a significant departure from Augustine's mature position.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Western/Eastern Split</h4>
+            <p>Augustine's theology of original sin, total depravity, and irresistible grace has always been received very differently in the Eastern Christian tradition. Eastern Orthodox theology, following Irenaeus rather than Augustine, does not hold the Western doctrines of inherited guilt and total depravity. Augustine's enormous influence on the West (both Catholic and Protestant) contributed to the cultural and theological divergence between Western and Eastern Christianity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Secular Augustinianism</h4>
+            <p>Beyond theology, Augustine has shaped secular thought in ways he would not have recognised: Hannah Arendt's notion of natality and new beginning is shaped by her doctoral dissertation on Augustine's concept of love; Charles Taylor's magisterial <em>A Secular Age</em> traces modernity partly through Augustine's "buffered self"; Ricoeur's philosophy of memory draws on Confessions XI; the very form of the modern memoir and confessional autobiography is Augustinian in origin.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 15 — ESSENTIAL READINGS -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Essential Texts</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber"><em>Confessions</em> (397–400)</h4>
+            <p>Thirteen books — autobiography, conversion, philosophy of memory and time, Trinitarian mysticism. The most widely read work of Western antiquity after the Bible. Begin with Books I–X (autobiography) and XI (time). Henry Chadwick's Oxford translation is the scholarly standard; Sarah Ruden's recent version is more vivid.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue"><em>City of God</em> (413–426)</h4>
+            <p>Twenty-two books — Books I–X refute pagan theology; XI–XXII expound the two cities and the philosophy of history. Henry Bettenson's Penguin translation is accessible. Comprehensive but can be read selectively — Books XI–XIV and XIX–XXII are the philosophical core.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green"><em>De Trinitate</em> (400–420)</h4>
+            <p>Fifteen books on the Trinity — the psychological analogy of Books VIII–XV is the philosophical heart. Edmund Hill's translation in the New City Press series is excellent. Harder than the <em>Confessions</em> but essential for Augustine's mature theological anthropology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple"><em>On Free Will</em> / <em>De Libero Arbitrio</em> (387–395)</h4>
+            <p>Three books written partly before baptism, developing Augustine's early views on evil, free will, and the soul's relation to God. The first major Western philosophical treatment of free will — essential for understanding the Pelagian controversy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Peter Brown: <em>Augustine of Hippo</em> (1967)</h4>
+            <p>The definitive biography — a scholarly masterwork that reads as literature. Places Augustine's thought in its late antique context with extraordinary learning and sensitivity. The 2000 revised edition adds important new material on the later Augustine's increasingly austere theology of grace.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">James J. O'Donnell: <em>Augustine: A New Biography</em> (2005)</h4>
+            <p>A revisionist biography by a leading Augustinian scholar — more sceptical about the <em>Confessions</em> as autobiography, more attentive to Augustine the political churchman. A valuable corrective to hagiographic readings. Pairs well with Brown.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 16 — CORE TENSIONS -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Core Tensions &amp; Enduring Legacy</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Freedom vs. Grace</h4>
+            <p>If God's grace is irresistible and predestination unconditional, in what sense is the human will genuinely free? Augustine affirmed both grace and freedom but never satisfactorily resolved the tension — leaving it as the live nerve of Western theology. Luther took the Augustinian logic to its conclusion; Erasmus protested in the name of human dignity. The debate still divides Protestants and Catholics and animates philosophy of religion.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Self and Its Opacity</h4>
+            <p>Augustine's recognition that the self is hidden even from itself — "our heart is deeper than we know" — anticipates both Freud's unconscious and contemporary cognitive science's research on implicit processes. The <em>Confessions</em> as a practice of self-examination under divine scrutiny is the ancestor of psychotherapy, the confessional, and the autobiographical novel. Augustine named and explored a depth of interiority that Greek philosophy had not reached.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">History &amp; Eschatology</h4>
+            <p>Augustine's two-cities framework has been immensely influential and deeply contested. Secularised versions — Hegel's spirit in history, Marx's historical materialism, liberal progress narratives — borrowed the linear, teleological structure while removing the eschatological end. Critics argue that this secularised Augustinianism produces the totalitarian temptation: the attempt to build the City of God by human means, always through violence.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">The Augustinian Self in Modernity</h4>
+            <p>Charles Taylor (<em>Sources of the Self</em>, <em>A Secular Age</em>) argues that Augustine's inward turn is the origin of the modern notion of selfhood: the self as inner depth, self-reflexive, radically individual. The "buffered self" of modernity — walled off from spiritual and natural forces, autonomous and self-defining — is the secular offspring of Augustine's radical interiority. Both the achievement and the pathology of modern individualism are partly Augustinian.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Doctor of Grace</h4>
+            <p>Called <em>Doctor Gratiae</em> — Doctor of Grace — Augustine is the greatest theologian between Paul and Aquinas. His influence on Western civilisation is incalculable: on Latin Christianity's penitential culture, on the Reformation's recovery of grace against works-righteousness, on Western philosophy's preoccupation with interiority and the self, on literature from Dante to Dostoevsky, on political theology from Charlemagne to Reinhold Niebuhr. He remains inexhaustibly generative.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 17 — CLOSING -->
+<section>
+    <div style="margin-top: 2em;">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin-bottom: 0.4em;">
+            <defs>
+                <radialGradient id="augClosingGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#d4a053;stop-opacity:0.5"/>
+                    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <circle cx="50" cy="50" r="32" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
+            <circle cx="50" cy="50" r="20" fill="none" stroke="#cf7272" stroke-width="0.5" opacity="0.3" stroke-dasharray="2,4"/>
+            <circle cx="50" cy="50" r="10" fill="url(#augClosingGlow)" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+            <circle cx="50" cy="50" r="3" fill="#d4a053" opacity="0.9"/>
+        </svg>
+    </div>
+    <div class="quote-box">
+        <p>"Thou awakest us to delight in Thy praise; for Thou madest us for Thyself, and our heart is restless, until it repose in Thee."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, I.1</span>
+    </div>
+    <div class="separator" style="margin: 0.6em auto;"></div>
+    <h3 style="font-size: 0.9em; margin-bottom: 0.15em;">Augustine of Hippo</h3>
+    <p style="text-align: center; color: var(--text-muted); font-size: 0.52em !important;">354&ndash;430 &middot; <em>Doctor Gratiae</em> &middot; Doctor of the Church</p>
+    <div class="quote-box" style="margin-top: 0.6em; border-left-color: var(--accent-purple);">
+        <p style="font-size: 0.40em !important;">"Our heart is restless, until it repose in Thee."</p>
+        <span class="attribution">&mdash; <em>Confessions</em>, I.1</span>
+    </div>
+    <p class="note-text" style="margin-top: 1em;">The philosopher who turned philosophy inward — discovering in the restless heart<br>the question that animates all of Western thought: what is the self, and where does it find rest?</p>
+</section>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900;
+  var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides);
+  Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+</button>
+<script>
+function toggleFullscreen() {
+    if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); }
+}
+</script>
+</body>
+</html>
